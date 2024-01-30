@@ -8,7 +8,11 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentProductListBinding
+import com.ecommerce.app.ui.adapters.ProductListAdapter
+
 import com.ecommerce.app.ui.viewmodels.ProductListViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
@@ -20,6 +24,8 @@ class ProductListFragment : Fragment() {
 
     private val productListViewModel: ProductListViewModel by viewModels()
     private var binding: FragmentProductListBinding by autoCleared()
+    private lateinit var adapter: ProductListAdapter
+    private var productListItem = ArrayList<ProductItem>()
 
 
     override fun onCreateView(
@@ -35,9 +41,16 @@ class ProductListFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        productListViewModel.getProducts(null)
-        setupObservers()
 
+        setupRecyclerView()
+        setupObservers()
+        productListViewModel.getProducts(null)
+    }
+
+    private fun setupRecyclerView() {
+        adapter = ProductListAdapter()
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = adapter
     }
 
 
@@ -46,27 +59,22 @@ class ProductListFragment : Fragment() {
             when (it.status) {
                 ResourceViewState.Status.SUCCESS -> {
                    // setProgressBar(false)
-                    if(it.data!=null)
-                    {
-                        DebugHandler.log("Data== "+it.data)
-                    }
-                   /* if (it.data != null && it.data.status == 1) {
+                   if (it.data != null && it.data.status == 1) {
                         if (it.data.data.isNotEmpty()) {
 
-                            bocItemList = it.data.data as ArrayList<BOCItem>
-                            addTotalItem()
-                            binding.noResultIV.visibility = View.GONE
-                            adapter.setItems(bocItemList)
+                            productListItem = it.data.data as ArrayList<ProductItem>
+                            adapter.setItems(productListItem)
                         } else {
-                            binding.noResultIV.visibility = View.VISIBLE
-
+                            //binding.noResultIV.visibility = View.VISIBLE
+                            Toast.makeText(requireContext(), it.data.message, Toast.LENGTH_LONG).show()
                         }
                     } else
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()*/
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
 
                 }
                 ResourceViewState.Status.ERROR -> {
                    // setProgressBar(false)
+                    DebugHandler.log("Error Naveen== "+it.message)
                     if (it.message?.contains("401") == true) {
                       //  Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
                       //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };

@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
-import com.ecommerce.app.databinding.FragmentHomeBinding
 import com.ecommerce.app.databinding.FragmentSplashBinding
 import com.ecommerce.app.ui.viewmodels.SplashViewModel
 import com.ecommerce.app.utils.autoCleared

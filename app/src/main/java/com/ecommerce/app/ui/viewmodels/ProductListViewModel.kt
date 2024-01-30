@@ -12,18 +12,18 @@ import com.ecommerce.app.utils.ResourceViewState
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
-
 @HiltViewModel
-class ProductListViewModel @Inject constructor(
-    private val repository: ProductRespository
-) : ViewModel() {
+class ProductListViewModel @Inject constructor(private val productRespository: ProductRespository):ViewModel() {
+
+
     private val _request = MutableLiveData<CommonReq>()
 
     private val _response = _request.switchMap {
-        repository.getProducts()
+        productRespository.getProducts()
 
     }
     val response: LiveData<ResourceViewState<ProductRes>> = _response
+
     fun getProducts(request: CommonReq?) {
         val req: String = Gson().toJson(request)
         DebugHandler.log("CommonReq ::  $req")

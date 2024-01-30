@@ -11,12 +11,16 @@ import retrofit2.http.Query
 
 interface ProductService {
 
-    @GET("${Constants.BASE_URL}${Constants.END_POINT_POKEMONS}")
+  //@GET("${Constants.BASE_URL}${Constants.END_POINT_POKEMONS}")
+    @GET("/s1")
     suspend fun getPokemons(): Response<PokemonRes>
+
+    @GET("${Constants.BASE_URL}")
+    suspend fun  getLaunchStatus():Response<String>
 
    // @GET("/products")
     //@GET("${Constants.BASE_URL}/products")
-   @GET("/products")
+   @GET("products")
     suspend fun  getProducts():Response<ProductRes>
    // suspend fun  getProducts(@Query("page") String page):Response<ProductRes>
 }
