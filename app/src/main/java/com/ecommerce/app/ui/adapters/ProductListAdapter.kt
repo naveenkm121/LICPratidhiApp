@@ -1,6 +1,7 @@
 package com.ecommerce.app.ui.adapters
 
 import android.content.Context
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.data.product.ProductItem
+
 
 class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductVH>() {
 
@@ -40,6 +42,10 @@ class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<Pr
 
         holder.productBrandTV.text=product.brand
         holder.productNameTV.text=product.title
+        holder.discountPriceTV.text= "$${product.price}"
+        holder.priceTV.text= "$${product.price}"
+        holder.discountTV.text="${product.discountPercentage}%"
+        holder.priceTV.setPaintFlags(holder.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
         Glide.with(context)
             .load(product.thumbnail)
             .into(holder.productImageView)
@@ -53,6 +59,9 @@ class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<Pr
         val productBrandTV: TextView
         val productNameTV:TextView
         val productImageView:ImageView
+        val discountPriceTV:TextView
+        val priceTV:TextView
+        val discountTV:TextView
 
 
 
@@ -60,6 +69,9 @@ class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<Pr
             productImageView=view.findViewById(R.id.productImageView)
             productBrandTV = view.findViewById(R.id.productBrandTV)
             productNameTV=view.findViewById(R.id.productNameTV)
+            discountPriceTV = view.findViewById(R.id.discountPriceTV)
+            priceTV=view.findViewById(R.id.priceTV)
+            discountTV=view.findViewById(R.id.discountTV)
         }
     }
 

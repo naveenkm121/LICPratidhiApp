@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/margin5"
         android:text="Lace up Ankel length boot"
+        android:maxLines="2"
         android:textSize="@dimen/text_14"
         app:layout_constraintTop_toBottomOf="@id/productBrandTV"
         app:layout_constraintStart_toStartOf="parent"
