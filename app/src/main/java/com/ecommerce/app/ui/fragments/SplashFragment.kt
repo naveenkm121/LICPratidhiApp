@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
-import com.ecommerce.app.databinding.FragmentHomeBinding
 import com.ecommerce.app.databinding.FragmentSplashBinding
 import com.ecommerce.app.ui.viewmodels.SplashViewModel
 import com.ecommerce.app.utils.autoCleared
@@ -38,7 +37,7 @@ class SplashFragment : Fragment() {
 
 
     private fun launchLogin() {
-        findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+        findNavController().navigate(R.id.action_splashFragment_to_productListFragment)
 
     }
 
