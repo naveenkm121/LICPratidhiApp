@@ -38,7 +38,7 @@ class SplashFragment : Fragment() {
 
 
     private fun launchLogin() {
-        findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
+        findNavController().navigate(R.id.action_splashFragment_to_productListFragment)
 
     }
 

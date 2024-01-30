@@ -7,4 +7,6 @@ class ProductRemoteDataSource @Inject constructor( private  val productService: 
     BaseDataSource() {
     suspend fun getPokemons() = getResult { productService.getPokemons()}
 
+    suspend fun getProducts()=getResult { productService.getProducts() }
+
 }

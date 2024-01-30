@@ -9,4 +9,8 @@ class ProductRespository @Inject constructor(private  val  remoteDataSource: Pro
     fun getPokemons() = performGetOperation(
         networkCall = { remoteDataSource.getPokemons() }
     )
+
+    fun getProducts() = performGetOperation(
+        networkCall = { remoteDataSource.getProducts() }
+    )
 }

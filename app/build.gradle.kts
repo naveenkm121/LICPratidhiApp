@@ -44,6 +44,8 @@ android {
 dependencies {
 
     implementation("androidx.annotation:annotation:1.6.0")
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.0")
     val nav_version = "2.7.6"
     val retrofit_version = "2.9.0"
 
