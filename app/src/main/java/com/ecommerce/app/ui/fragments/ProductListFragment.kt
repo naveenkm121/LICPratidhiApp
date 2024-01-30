@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentProductListBinding
@@ -48,8 +49,8 @@ class ProductListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductListAdapter()
-        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        adapter = ProductListAdapter(requireContext())
+        binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
 

@@ -1,14 +1,17 @@
 package com.ecommerce.app.ui.adapters
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.data.product.ProductItem
 
-class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ProductVH>() {
+class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductVH>() {
 
 
     private val items = ArrayList<ProductItem>()
@@ -33,17 +36,30 @@ class ProductListAdapter : RecyclerView.Adapter<ProductListAdapter.ProductVH>() 
         return ProductVH(view)
     }
     override fun onBindViewHolder(holder: ProductVH, position: Int) {
+        val product: ProductItem = items.get(position)
+
+        holder.productBrandTV.text=product.brand
+        holder.productNameTV.text=product.title
+        Glide.with(context)
+            .load(product.thumbnail)
+            .into(holder.productImageView)
+
 
     }
 
 
 
     class ProductVH(view: View) : RecyclerView.ViewHolder(view) {
-       // val textView: TextView
+        val productBrandTV: TextView
+        val productNameTV:TextView
+        val productImageView:ImageView
+
+
 
         init {
-            // Define click listener for the ViewHolder's View
-           // textView = view.findViewById(R.id.textView)
+            productImageView=view.findViewById(R.id.productImageView)
+            productBrandTV = view.findViewById(R.id.productBrandTV)
+            productNameTV=view.findViewById(R.id.productNameTV)
         }
     }
 
