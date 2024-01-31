@@ -46,9 +46,9 @@ class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<Pr
         holder.priceTV.text= "$${product.price}"
         holder.discountTV.text="${product.discountPercentage}%"
         holder.priceTV.setPaintFlags(holder.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
-        Glide.with(context)
+      /*  Glide.with(context)
             .load(product.thumbnail)
-            .into(holder.productImageView)
+            .into(holder.productImageView)*/
 
 
     }
