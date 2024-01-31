@@ -3,16 +3,23 @@ package com.ecommerce.app.ui.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.ecommerce.app.R
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentProductListBinding
 import com.ecommerce.app.ui.adapters.ProductListAdapter
+import androidx.appcompat.widget.SearchView
+import androidx.appcompat.widget.Toolbar
 
 import com.ecommerce.app.ui.viewmodels.ProductListViewModel
 import com.ecommerce.app.utils.DebugHandler
@@ -36,6 +43,7 @@ class ProductListFragment : Fragment() {
     ): View? {
 
         binding = FragmentProductListBinding.inflate(inflater, container, false)
+        //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
 
     }
@@ -59,7 +67,7 @@ class ProductListFragment : Fragment() {
         productListViewModel.response.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 ResourceViewState.Status.SUCCESS -> {
-                   // setProgressBar(false)
+                    setProgressBar(false)
                    if (it.data != null && it.data.status == 1) {
                         if (it.data.data.isNotEmpty()) {
 
@@ -74,7 +82,7 @@ class ProductListFragment : Fragment() {
 
                 }
                 ResourceViewState.Status.ERROR -> {
-                   // setProgressBar(false)
+                    setProgressBar(false)
                     DebugHandler.log("Error Naveen== "+it.message)
                     if (it.message?.contains("401") == true) {
                       //  Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
@@ -85,15 +93,26 @@ class ProductListFragment : Fragment() {
 
                 }
                 ResourceViewState.Status.LOADING ->{
-
+                    setProgressBar(true)
                 }
-                    //setProgressBar(true)
             }
         })
 
     }
 
 
+
+    private fun setProgressBar(b: Boolean) {
+        if (!b) {
+           // binding.progressBarShim.shimmerLayout.visibility = View.GONE
+            binding.progressBar.visibility = View.GONE
+           // binding.progressBarShim.shimmerLayout.showShimmer(false)
+        } else {
+           // binding.progressBarShim.shimmerLayout.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
+           // binding.progressBarShim.shimmerLayout.showShimmer(true)
+        }
+    }
     override fun onDestroyView() {
         super.onDestroyView()
         //binding = null

@@ -17,6 +17,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/padding4"
+        android:background="@color/dull_white"
+        app:layout_constraintBottom_toBottomOf="@id/productImageView"
+        app:layout_constraintEnd_toEndOf="@id/productImageView"
+        >
+        <ImageView
+            android:id="@+id/likeIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_favorite_border_24"/>
+        <TextView
+            android:id="@+id/likeCountTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="741"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/margin2"/>
+    </LinearLayout>
 
     <!-- Product Name -->
     <TextView
