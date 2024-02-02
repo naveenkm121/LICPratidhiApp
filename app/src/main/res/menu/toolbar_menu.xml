@@ -3,14 +3,22 @@
 
     <item
         android:id="@+id/action_search"
-        android:icon="@android:drawable/ic_search_category_default"
+        android:icon="@drawable/ic_search_24"
         android:title="Search"
+        android:iconTint="@color/black"
         app:showAsAction="ifRoom"/>
 
     <item
         android:id="@+id/action_like"
-        android:icon="@android:drawable/btn_star"
-        android:title="Like"
+        android:icon="@drawable/ic_heart_border_24"
+        android:title="Wishlist"
+        android:iconTint="@color/black"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_cart"
+        android:icon="@drawable/ic_outline_shopping_bag_24"
+        android:title="Cart"
+        android:iconTint="@color/black"
         app:showAsAction="ifRoom"/>
 
 </menu>

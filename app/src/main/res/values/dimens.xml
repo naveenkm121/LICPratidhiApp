@@ -133,4 +133,6 @@
     <dimen name="sv_circle_radius">14dp</dimen>
     <dimen name="sv_step_number_text">12dp</dimen>
     <dimen name="text_margin">16dp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
 </resources>

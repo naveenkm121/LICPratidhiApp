@@ -30,7 +30,7 @@
             android:id="@+id/likeIV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/ic_favorite_border_24"/>
+            android:src="@drawable/ic_heart_border_24"/>
         <TextView
             android:id="@+id/likeCountTV"
             android:layout_width="wrap_content"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margin2"
         android:text="$750"
-        android:textSize="@dimen/text_14"
+        android:textSize="@dimen/text_12"
         app:layout_constraintTop_toBottomOf="@id/productNameTV"
         app:layout_constraintStart_toEndOf="@id/discountPriceTV"
         />
@@ -96,7 +96,7 @@
         android:text="80% Off"
         android:textColor="@color/teal_700"
         android:textStyle="bold"
-        android:textSize="@dimen/text_14"
+        android:textSize="@dimen/text_12"
         app:layout_constraintTop_toBottomOf="@id/productNameTV"
         app:layout_constraintStart_toEndOf="@id/priceTV"
         app:layout_constraintEnd_toEndOf="parent" />

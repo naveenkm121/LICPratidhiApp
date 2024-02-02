@@ -42,8 +42,10 @@ class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<Pr
 
         holder.productBrandTV.text=product.brand
         holder.productNameTV.text=product.title
-        holder.discountPriceTV.text= "$${product.price}"
-        holder.priceTV.text= "$${product.price}"
+        //holder.discountPriceTV.text= "$${product.price}"
+        //holder.priceTV.text= "$${product.price}"
+        holder.discountPriceTV.text=context.getString(R.string.input_rs_symbol,product.price.toString())
+        holder.priceTV.text=context.getString(R.string.input_rs_symbol,product.price.toString())
         holder.discountTV.text="${product.discountPercentage}%"
         holder.priceTV.setPaintFlags(holder.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
       /*  Glide.with(context)
