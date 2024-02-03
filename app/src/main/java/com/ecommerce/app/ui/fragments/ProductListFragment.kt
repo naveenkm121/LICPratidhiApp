@@ -20,6 +20,7 @@ import com.ecommerce.app.databinding.FragmentProductListBinding
 import com.ecommerce.app.ui.adapters.ProductListAdapter
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import com.ecommerce.app.ui.adapters.ProductPageAdapter
 
 import com.ecommerce.app.ui.viewmodels.ProductListViewModel
 import com.ecommerce.app.utils.DebugHandler
@@ -52,6 +53,7 @@ class ProductListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
+        //setupObserversNew()
         setupObservers()
         productListViewModel.getProducts(null)
     }
@@ -61,7 +63,11 @@ class ProductListFragment : Fragment() {
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
-
+    private fun setupObserversNew(){
+//       productListViewModel.list.observe(viewLifecycleOwner,Observer {
+//         //  adapter.submitData(lifecycle, it)
+//       })
+    }
 
     private fun setupObservers() {
         productListViewModel.response.observe(viewLifecycleOwner, Observer {

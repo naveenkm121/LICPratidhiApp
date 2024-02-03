@@ -10,4 +10,6 @@ class ProductRemoteDataSource @Inject constructor( private  val productService: 
     suspend fun getLaunchStatus()=getResult { productService.getLaunchStatus() }
     suspend fun getProducts()=getResult { productService.getProducts() }
 
+    //suspend fun getProducts(pageNo:Int)=getResult { productService.getProductsPage(pageNo) }
+
 }

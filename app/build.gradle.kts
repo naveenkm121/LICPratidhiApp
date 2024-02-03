@@ -46,8 +46,8 @@ dependencies {
     implementation("androidx.annotation:annotation:1.6.0")
     implementation("androidx.legacy:legacy-support-v4:1.0.0")
     implementation("androidx.recyclerview:recyclerview:1.3.0")
-    val nav_version = "2.7.6"
-    val retrofit_version = "2.9.0"
+
+
 
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -55,10 +55,14 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+
     // navigation
+    val nav_version = "2.7.6"
     implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
     implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
+
     // retrofit
+    val retrofit_version = "2.9.0"
     implementation("com.squareup.retrofit2:retrofit:$retrofit_version")
     implementation( "com.squareup.retrofit2:converter-gson:$retrofit_version")
     implementation("com.squareup.okhttp3:logging-interceptor:4.11.0")
@@ -69,8 +73,11 @@ dependencies {
 
     //gson
     implementation("com.google.code.gson:gson:2.10.1")
-
+    //Glide
     implementation("com.github.bumptech.glide:glide:4.16.0")
+    //Paging3
+    var paging_version = "3.1.1"
+    implementation ("androidx.paging:paging-runtime:$paging_version")
 
     /*
     // retrofit

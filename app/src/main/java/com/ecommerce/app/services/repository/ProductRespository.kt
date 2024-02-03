@@ -1,6 +1,10 @@
 package com.ecommerce.app.services.repository
 
+import androidx.paging.Pager
+import androidx.paging.PagingConfig
+import androidx.paging.liveData
 import com.ecommerce.app.services.remotedata.ProductRemoteDataSource
+import com.ecommerce.app.ui.paging.ProductPagingSource
 import com.ecommerce.app.utils.performGetOperation
 import javax.inject.Inject
 
@@ -17,4 +21,14 @@ class ProductRespository @Inject constructor(private  val  remoteDataSource: Pro
     fun getProducts() = performGetOperation(
         networkCall = { remoteDataSource.getProducts() }
     )
+  /*  fun getProducts(pageNo:Int) = performGetOperation(
+        networkCall = { remoteDataSource.getProducts(pageNo) }
+    )
+
+   fun getProducts() = Pager(
+        config = PagingConfig(pageSize = 10, maxSize = 100),
+        pagingSourceFactory = { ProductPagingSource(this) }
+   ).liveData*/
+
+
 }

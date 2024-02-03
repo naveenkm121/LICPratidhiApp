@@ -8,91 +8,83 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.data.product.ProductItem
+import com.ecommerce.app.databinding.FragmentProductListBinding
 import com.ecommerce.app.databinding.FragmentWishlistBinding
 import com.ecommerce.app.databinding.FragmentWishlistListDialogBinding
+import com.ecommerce.app.ui.adapters.ProductListAdapter
+import com.ecommerce.app.ui.adapters.ProductPageAdapter
+import com.ecommerce.app.ui.viewmodels.ProductListViewModel
+import com.ecommerce.app.ui.viewmodels.WishlistViewModel
+import com.ecommerce.app.utils.DebugHandler
+import com.ecommerce.app.utils.ResourceViewState
+import com.ecommerce.app.utils.autoCleared
+import dagger.hilt.android.AndroidEntryPoint
 
-// TODO: Customize parameter argument names
-const val ARG_ITEM_COUNT = "item_count"
+@AndroidEntryPoint
+class WishlistFragment : Fragment() {
 
-/**
- *
- * A fragment that shows a list of items as a modal bottom sheet.
- *
- * You can show this modal bottom sheet from your activity like this:
- * <pre>
- *    WishlistFragment.newInstance(30).show(supportFragmentManager, "dialog")
- * </pre>
- */
-class WishlistFragment : BottomSheetDialogFragment() {
+    private val wishlistViewModel: WishlistViewModel by viewModels()
+    private var binding: FragmentWishlistBinding by autoCleared()
+    private lateinit var adapter: ProductPageAdapter
+    private var productListItem = ArrayList<ProductItem>()
 
-    private var _binding: FragmentWishlistListDialogBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
-    private val binding get() = _binding!!
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentWishlistListDialogBinding.inflate(inflater, container, false)
+        binding = FragmentWishlistBinding.inflate(inflater, container, false)
+        //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
 
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        activity?.findViewById<RecyclerView>(R.id.list)?.layoutManager =
-            LinearLayoutManager(context)
-        activity?.findViewById<RecyclerView>(R.id.list)?.adapter =
-            arguments?.getInt(ARG_ITEM_COUNT)?.let { ItemAdapter(it) }
+        super.onViewCreated(view, savedInstanceState)
+
+        setupRecyclerView()
+        setupObserversNew()
+       // productListViewModel.getProducts(null)
     }
 
-    private inner class ViewHolder internal constructor(binding: FragmentWishlistBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    private fun setupRecyclerView() {
+        adapter = ProductPageAdapter(requireContext())
+        binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
+        binding.recyclerView.adapter = adapter
+    }
+    private fun setupObserversNew(){
 
-        internal val text: TextView = binding.text
+        wishlistViewModel.list.observe(viewLifecycleOwner, Observer {
+            adapter.submitData(lifecycle,it)
+        })
+
     }
 
-    private inner class ItemAdapter internal constructor(private val mItemCount: Int) :
-        RecyclerView.Adapter<ViewHolder>() {
 
-        override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
 
-            return ViewHolder(
-                FragmentWishlistBinding.inflate(
-                    LayoutInflater.from(parent.context),
-                    parent,
-                    false
-                )
-            )
 
+    private fun setProgressBar(b: Boolean) {
+        if (!b) {
+            // binding.progressBarShim.shimmerLayout.visibility = View.GONE
+            binding.progressBar.visibility = View.GONE
+            // binding.progressBarShim.shimmerLayout.showShimmer(false)
+        } else {
+            // binding.progressBarShim.shimmerLayout.visibility = View.VISIBLE
+            binding.progressBar.visibility = View.VISIBLE
+            // binding.progressBarShim.shimmerLayout.showShimmer(true)
         }
-
-        override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-            holder.text.text = position.toString()
-        }
-
-        override fun getItemCount(): Int {
-            return mItemCount
-        }
     }
-
-    companion object {
-
-        // TODO: Customize parameters
-        fun newInstance(itemCount: Int): WishlistFragment =
-            WishlistFragment().apply {
-                arguments = Bundle().apply {
-                    putInt(ARG_ITEM_COUNT, itemCount)
-                }
-            }
-
-    }
-
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding = null
+        //binding = null
     }
 }

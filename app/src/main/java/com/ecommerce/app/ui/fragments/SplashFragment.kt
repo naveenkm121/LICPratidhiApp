@@ -1,13 +1,11 @@
 package com.ecommerce.app.ui.fragments
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.databinding.FragmentSplashBinding
@@ -37,7 +35,7 @@ class SplashFragment : Fragment() {
 
 
     private fun launchLogin() {
-        findNavController().navigate(R.id.action_splashFragment_to_productListFragment)
+        findNavController().navigate(R.id.action_splashFragment_to_wishlistFragment)
 
     }
 

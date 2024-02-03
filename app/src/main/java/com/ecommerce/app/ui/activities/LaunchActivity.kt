@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.ui.fragments.SplashFragment
 import com.ecommerce.app.R
 import com.ecommerce.app.databinding.ActivityLaunchBinding

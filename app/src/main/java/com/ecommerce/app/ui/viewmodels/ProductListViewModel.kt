@@ -16,7 +16,7 @@ import javax.inject.Inject
 class ProductListViewModel @Inject constructor(private val productRespository: ProductRespository):ViewModel() {
 
 
-    private val _request = MutableLiveData<CommonReq>()
+    private val _request = MutableLiveData<CommonReq?>()
 
     private val _response = _request.switchMap {
         productRespository.getProducts()
@@ -30,4 +30,9 @@ class ProductListViewModel @Inject constructor(private val productRespository: P
         _request.value = request
 
     }
+
+   // val list = productRespository.getProducts().cachedIn(viewModelScope)
+
+
+   // val response: LiveData<PagingData<ProductItem>> =  productRespository.getProducts().cachedIn(viewModelScope)
 }
