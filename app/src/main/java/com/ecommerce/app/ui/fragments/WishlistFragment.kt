@@ -52,7 +52,9 @@ class WishlistFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupRecyclerView()
-        setupObserversNew()
+       // setupObserversNew()
+        setupObservers()
+        wishlistViewModel.getProducts(null)
        // productListViewModel.getProducts(null)
     }
 
@@ -63,12 +65,19 @@ class WishlistFragment : Fragment() {
     }
     private fun setupObserversNew(){
 
-        wishlistViewModel.list.observe(viewLifecycleOwner, Observer {
+       /* wishlistViewModel.list.observe(viewLifecycleOwner, Observer {
+            adapter.submitData(lifecycle,it)
+        })*/
+
+    }
+
+    private fun setupObservers(){
+
+        wishlistViewModel.response.observe(viewLifecycleOwner, Observer {
             adapter.submitData(lifecycle,it)
         })
 
     }
-
 
 
 

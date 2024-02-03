@@ -23,6 +23,6 @@ interface ProductService {
    @GET("products")
    suspend fun  getProducts():Response<ProductRes>
    @GET("products?pageSize=2")
-    suspend fun  getProductsPage(@Query("pageNo") pageNo:Int):ProductRes
+    suspend fun  getProductsPage(@Query("pageNo") pageNo:Int):Response<ProductRes>
 
 }

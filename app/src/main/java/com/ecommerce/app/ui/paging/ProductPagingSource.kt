@@ -14,9 +14,9 @@ class ProductPagingSource(private val productService: ProductService) : PagingSo
             val response = productService.getProductsPage(position)
 
             return LoadResult.Page(
-                data = response.data,
+                data = response.body()!!.data,
                 prevKey = if (position == 1) null else position - 1,
-                nextKey = if (position == response.totalPages) null else position + 1
+                nextKey = if (position == response.body()!!.totalPages) null else position + 1
             )
         } catch (e: Exception) {
             LoadResult.Error(e)
