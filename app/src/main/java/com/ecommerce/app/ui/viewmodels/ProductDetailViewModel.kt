@@ -26,22 +26,4 @@ class ProductDetailViewModel @Inject constructor(private val productRespository:
 
     val response: LiveData<ResourceViewState<ProductDetailRes>> =  productRespository.getProductDetailsById(prodId = prodId)
 
-
-
-
-
-    /*  private val _request = MutableLiveData<CommonReq?>()
-
-      private val _response = _request.switchMap {
-          productRespository.getProducts()
-
-      }
-      val response: LiveData<ResourceViewState<ProductRes>> = _response
-
-      fun getProducts(request: CommonReq?) {
-          val req: String = Gson().toJson(request)
-          DebugHandler.log("CommonReq ::  $req")
-          _request.value = request
-
-      }*/
 }

@@ -16,14 +16,18 @@ import com.ecommerce.app.ui.viewmodels.ProductDetailViewModel
 import com.ecommerce.app.ui.viewmodels.WishlistViewModel
 import com.ecommerce.app.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
+
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
+
 class ProductDetailFragment : Fragment() {
     private val viewModel: ProductDetailViewModel by viewModels()
     private var binding:FragmentProductDetailBinding by autoCleared()
     private lateinit var adapter: ProductImageViewPagerAdapter
+
     private  var productId: Int=0
+
 
 
     override fun onCreateView(
@@ -65,3 +69,4 @@ class ProductDetailFragment : Fragment() {
 
 
 }
+

@@ -46,3 +46,4 @@ class ProductImageViewPagerAdapter : RecyclerView.Adapter<ProductImageViewPagerA
         }
     }
 }
+

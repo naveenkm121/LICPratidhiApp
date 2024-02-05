@@ -11,6 +11,7 @@ class ProductRemoteDataSource @Inject constructor( private  val productService: 
     suspend fun getProducts()=getResult { productService.getProducts() }
 
     suspend fun getProductDetailsById(prodId:Int)=getResult { productService.getProductDetailsById(prodId) }
+
     //suspend fun getProducts(pageNo:Int)=getResult { productService.getProductsPage(pageNo) }
 
 }

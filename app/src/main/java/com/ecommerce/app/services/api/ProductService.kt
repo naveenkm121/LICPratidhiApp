@@ -30,5 +30,4 @@ interface ProductService {
     @GET("products/{prodId}")
     suspend fun  getProductDetailsById(@Path("prodId") prodId:Int):Response<ProductDetailRes>
 
-
 }
