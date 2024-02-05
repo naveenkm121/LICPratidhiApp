@@ -4,16 +4,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="@dimen/padding5">
+    android:padding="@dimen/padding2">
 
 
     <ImageView
         android:id="@+id/productImageView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height300"
-        android:layout_marginBottom="@dimen/margin40"
+        android:layout_height="@dimen/height400"
+        android:layout_marginBottom="@dimen/margin10"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop"
+        android:scaleType="fitXY"
         android:src="@drawable/ic_product_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

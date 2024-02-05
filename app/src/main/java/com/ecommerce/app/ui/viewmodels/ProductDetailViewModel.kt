@@ -7,9 +7,7 @@ import androidx.lifecycle.switchMap
 import com.ecommerce.app.data.CommonReq
 import com.ecommerce.app.data.product.ProductDetailRes
 import com.ecommerce.app.data.product.ProductRes
-import com.ecommerce.app.services.remotedata.ProductRemoteDataSource
 import com.ecommerce.app.services.repository.ProductRespository
-import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -17,13 +15,25 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductDetailViewModel @Inject constructor(private val productRespository: ProductRespository):ViewModel(){
 
-    private var prodId:Int = 1
-    // val response = productRemoteDataSource.getProductDetailsById(prodId)
+    private var _prodId:Int = 1
+    private val _request = MutableLiveData<Int>()
 
     fun getProductDetailsById(prodId:Int){
-        this.prodId=prodId
+        _request.value=prodId
+        _prodId=prodId
+
+    }
+    private val _response = _request.switchMap {
+        //productRespository.getProducts()
+        productRespository.getProductDetailsById(prodId =_prodId)
+
     }
 
-    val response: LiveData<ResourceViewState<ProductDetailRes>> =  productRespository.getProductDetailsById(prodId = prodId)
+    val response: LiveData<ResourceViewState<ProductDetailRes>> = _response
+    // val response = productRemoteDataSource.getProductDetailsById(prodId)
+
+
+
+   // val response: LiveData<ResourceViewState<ProductDetailRes>> =  productRespository.getProductDetailsById(prodId = _prodId)
 
 }

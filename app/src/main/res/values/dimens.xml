@@ -88,7 +88,8 @@
     <dimen name="height80">80dp</dimen>
     <dimen name="width100">100dp</dimen>
     <dimen name="height100">100dp</dimen>
-    <dimen name="height300">350dp</dimen>
+    <dimen name="height300">300dp</dimen>
+    <dimen name="height400">400dp</dimen>
     <dimen name="width200">200dp</dimen>
     <dimen name="width250">250dp</dimen>
     <dimen name="width280">280dp</dimen>
