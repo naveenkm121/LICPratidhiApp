@@ -23,7 +23,7 @@
             />-->
         <action
             android:id="@+id/action_splashFragment_to_wishlistFragment"
-            app:destination="@id/wishlistFragment"
+            app:destination="@id/productDetailFragment"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right"
             />
@@ -44,6 +44,13 @@
         tools:layout="@layout/fragment_product_list" >
 
     </fragment>
+    <fragment
+        android:id="@+id/productDetailFragment"
+        android:name="com.ecommerce.app.ui.fragments.ProductDetailFragment"
+        android:label="productDetail"
+        tools:layout="@layout/fragment_product_detail" >
+
+    </fragment>
 
     <fragment
         android:id="@+id/wishlistFragment"
@@ -52,4 +59,6 @@
         tools:layout="@layout/fragment_wishlist" >
 
     </fragment>
+
+
 </navigation>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Scrollable View -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/footer">
+
+        <!-- Your content goes here -->
+        <!-- For example, you can use a LinearLayout, RelativeLayout, etc. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/imageViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/circularTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                app:tabBackground="@drawable/tab_pager_circle_selector"
+                app:tabGravity="center"
+                android:background="@color/white"
+                app:tabIndicatorHeight="0dp"
+                app:tabPaddingEnd="@dimen/_10sdp"
+                app:tabPaddingStart="@dimen/_10sdp" />
+            <!-- Add your scrollable content here -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Fixed Footer -->
+    <FrameLayout
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hello"/>
+        <!-- Your fixed footer content goes here -->
+        <!-- For example, you can use buttons, text, etc. -->
+
+    </FrameLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

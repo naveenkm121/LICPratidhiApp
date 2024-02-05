@@ -1,5 +1,6 @@
 package com.ecommerce.app.services.repository
 
+import androidx.core.os.persistableBundleOf
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
@@ -21,6 +22,12 @@ class ProductRespository @Inject constructor(private  val  remoteDataSource: Pro
     fun getProducts() = performGetOperation(
         networkCall = { remoteDataSource.getProducts() }
     )
+
+    fun getProductDetailsById(prodId:Int)= performGetOperation(
+        networkCall = { remoteDataSource.getProductDetailsById(prodId) }
+    )
+
+
   /*  fun getProducts(pageNo:Int) = performGetOperation(
         networkCall = { remoteDataSource.getProducts(pageNo) }
     )
