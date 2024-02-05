@@ -20,6 +20,9 @@ import com.ecommerce.app.databinding.FragmentProductListBinding
 import com.ecommerce.app.ui.adapters.ProductListAdapter
 import androidx.appcompat.widget.SearchView
 import androidx.appcompat.widget.Toolbar
+import androidx.core.os.bundleOf
+import androidx.navigation.fragment.findNavController
+import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.ui.adapters.ProductPageAdapter
 
 import com.ecommerce.app.ui.viewmodels.ProductListViewModel
@@ -29,7 +32,7 @@ import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProductListFragment : Fragment() {
+class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
 
     private val productListViewModel: ProductListViewModel by viewModels()
     private var binding: FragmentProductListBinding by autoCleared()
@@ -59,7 +62,7 @@ class ProductListFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductListAdapter(requireContext())
+        adapter = ProductListAdapter(requireContext(),this)
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
@@ -122,5 +125,13 @@ class ProductListFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         //binding = null
+    }
+
+    override fun onClickedCard(selectedProduct: ProductItem) {
+        DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
+        findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
+            bundleOf( IntentConstants.PRODUCT_DETAILS to selectedProduct.id)
+        )
+
     }
 }

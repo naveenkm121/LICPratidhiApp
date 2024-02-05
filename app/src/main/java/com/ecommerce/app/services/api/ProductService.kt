@@ -2,11 +2,13 @@ package com.ecommerce.app.services.api
 
 import com.ecommerce.app.constants.Constants
 import com.ecommerce.app.data.PokemonRes
+import com.ecommerce.app.data.product.ProductDetailRes
 import com.ecommerce.app.data.product.ProductRes
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ProductService {
@@ -24,5 +26,9 @@ interface ProductService {
    suspend fun  getProducts():Response<ProductRes>
    @GET("products?pageSize=2")
     suspend fun  getProductsPage(@Query("pageNo") pageNo:Int):Response<ProductRes>
+
+    @GET("products/{prodId}")
+    suspend fun  getProductDetailsById(@Path("prodId") prodId:Int):Response<ProductDetailRes>
+
 
 }

@@ -11,12 +11,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.data.product.ProductItem
+import com.ecommerce.app.utils.DebugHandler
 
 
-class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<ProductListAdapter.ProductVH>() {
+class ProductListAdapter(private val context: Context,private val listener: CardItemListener) : RecyclerView.Adapter<ProductListAdapter.ProductVH>() {
 
 
     private val items = ArrayList<ProductItem>()
+
+
+    interface CardItemListener {
+        fun onClickedCard(productItem: ProductItem)
+    }
 
     fun setItems(items: ArrayList<ProductItem>) {
         this.items.clear()
@@ -51,6 +57,10 @@ class ProductListAdapter(private val context: Context) : RecyclerView.Adapter<Pr
       /*  Glide.with(context)
             .load(product.thumbnail)
             .into(holder.productImageView)*/
+        holder.itemView.setOnClickListener {
+            DebugHandler.log("Hello Adapter Product=="+product.id)
+            listener.onClickedCard(product)
+        }
 
 
     }
