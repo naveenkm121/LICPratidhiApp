@@ -47,6 +47,9 @@
     <dimen name="height190">200dp</dimen>
     <dimen name="height200">200dp</dimen>
     <dimen name="height220">220dp</dimen>
+
+    <!-- radius  -->
+    <dimen name="radius5">5dp</dimen>
     <dimen name="radius8">8dp</dimen>
     <dimen name="radius10">10dp</dimen>
     <dimen name="radius20">20dp</dimen>
@@ -135,4 +138,5 @@
     <dimen name="text_margin">16dp</dimen>
     <dimen name="list_item_spacing">16dp</dimen>
     <dimen name="list_item_spacing_half">8dp</dimen>
+    <dimen name="radius_6">6dp</dimen>
 </resources>

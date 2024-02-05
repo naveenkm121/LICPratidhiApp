@@ -4,31 +4,22 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
-    android:padding="@dimen/padding10">
+    android:padding="@dimen/padding5">
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Skip"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_16"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imgIntro"
-        android:layout_width="@dimen/width150"
-        android:layout_height="@dimen/height150"
+        android:id="@+id/productImageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height300"
         android:layout_marginBottom="@dimen/margin40"
         android:adjustViewBounds="true"
         android:scaleType="centerCrop"
         android:src="@drawable/ic_product_item"
-        app:layout_constraintBottom_toTopOf="@id/tvIntroTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
-    <TextView
+<!--    <TextView
         android:id="@+id/tvIntroTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,20 +30,8 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/tvIntroSubTitle"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />-->
 
-    <TextView
-        android:id="@+id/tvIntroSubTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin60"
-        android:gravity="center"
-        android:text="Some Subtitle"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_14"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -17,7 +17,7 @@ import javax.inject.Inject
 @HiltViewModel
 class ProductDetailViewModel @Inject constructor(private val productRespository: ProductRespository):ViewModel(){
 
-    private var prodId:Int = 0
+    private var prodId:Int = 1
     // val response = productRemoteDataSource.getProductDetailsById(prodId)
 
     fun getProductDetailsById(prodId:Int){
