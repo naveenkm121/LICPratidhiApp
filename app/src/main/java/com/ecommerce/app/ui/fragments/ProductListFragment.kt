@@ -1,35 +1,31 @@
 package com.ecommerce.app.ui.fragments
 
+
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toolbar
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentProductListBinding
 import com.ecommerce.app.ui.adapters.ProductListAdapter
-import androidx.appcompat.widget.SearchView
-import androidx.appcompat.widget.Toolbar
-import androidx.core.os.bundleOf
-import androidx.navigation.fragment.findNavController
-import com.ecommerce.app.constants.IntentConstants
-import com.ecommerce.app.ui.adapters.ProductPageAdapter
-
 import com.ecommerce.app.ui.viewmodels.ProductListViewModel
 import com.ecommerce.app.utils.DebugHandler
+import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
+import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
@@ -54,9 +50,8 @@ class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        //setHasOptionsMenu(true)
         setupRecyclerView()
-        //setupObserversNew()
         setupObservers()
         productListViewModel.getProducts(null)
     }
@@ -65,11 +60,6 @@ class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
         adapter = ProductListAdapter(requireContext(),this)
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
-    }
-    private fun setupObserversNew(){
-//       productListViewModel.list.observe(viewLifecycleOwner,Observer {
-//         //  adapter.submitData(lifecycle, it)
-//       })
     }
 
     private fun setupObservers() {
@@ -130,7 +120,7 @@ class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
     override fun onClickedCard(selectedProduct: ProductItem) {
         DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
         findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
-            bundleOf( IntentConstants.PRODUCT_DETAILS to selectedProduct.id)
+            bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))
         )
 
     }

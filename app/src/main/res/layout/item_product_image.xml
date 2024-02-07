@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/productImageView"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/height400"
+        android:layout_height="@dimen/height480"
         android:layout_marginBottom="@dimen/margin10"
         android:adjustViewBounds="true"
         android:scaleType="fitXY"

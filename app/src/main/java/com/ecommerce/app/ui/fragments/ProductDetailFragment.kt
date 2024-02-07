@@ -9,15 +9,15 @@ import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.ecommerce.app.R
+import  androidx.appcompat.widget.Toolbar
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductImage
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentProductDetailBinding
 import com.ecommerce.app.ui.adapters.ProductImageViewPagerAdapter
-import com.ecommerce.app.ui.adapters.ProductPageAdapter
 import com.ecommerce.app.ui.viewmodels.ProductDetailViewModel
-import com.ecommerce.app.ui.viewmodels.WishlistViewModel
 import com.ecommerce.app.utils.DebugHandler
+import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
@@ -31,8 +31,7 @@ class ProductDetailFragment : Fragment() {
     private var binding:FragmentProductDetailBinding by autoCleared()
     private lateinit var adapter: ProductImageViewPagerAdapter
     private var productImageList = ArrayList<ProductImage>()
-    private  var productId: Int=0
-
+    private lateinit var productDetailPassObj: ProductItem
 
 
     override fun onCreateView(
@@ -48,21 +47,31 @@ class ProductDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        productId = arguments?.getInt(IntentConstants.PRODUCT_DETAILS)!!
-        viewModel.getProductDetailsById(productId)
+        //productDetailPassObj = GsonHelper.fromJson<ProductItem>(arguments?.getString(IntentConstants.PRODUCT_DETAILS)!!)
+        productDetailPassObj=
+            GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_DETAILS)!!,ProductItem::class.java)!!
+        viewModel.getProductDetailsById(productDetailPassObj.id)
+        setupToolbar()
         setupRecyclerView()
         setupObservers()
 
     }
 
+    private fun setupToolbar() {
+        val toolbar: Toolbar = requireActivity().findViewById<View>(R.id.toolbar) as Toolbar
+        toolbar.setTitle(productDetailPassObj.brand)
+    }
     private fun setupRecyclerView() {
         adapter = ProductImageViewPagerAdapter()
-        //adapter.setItem(imageList)
         binding.imageViewPager.adapter = adapter
-
         TabLayoutMediator(binding.circularTabLayout, binding.imageViewPager) { tab, position ->
         }.attach()
     }
+
+    private  fun setupDataToUI(productItem: ProductItem){
+        binding.productNameTV.text=productItem.title
+    }
+
 
     private fun setupObservers(){
 
@@ -72,9 +81,10 @@ class ProductDetailFragment : Fragment() {
                     //setProgressBar(false)
                     if (it.data != null && it.data.status == 1) {
                        // if (it.data.isNotEmpty()) {
-
-                            productImageList = it.data.data.images as ArrayList<ProductImage>
-                            adapter.setItem(productImageList)
+                            productDetailPassObj=it.data.data
+                            //productImageList = it.data.data.images as ArrayList<ProductImage>
+                            adapter.setItem(productDetailPassObj.images)
+                            setupDataToUI(productDetailPassObj)
 //                        } else {
 //                            //binding.noResultIV.visibility = View.VISIBLE
 //                            Toast.makeText(requireContext(), it.data.message, Toast.LENGTH_LONG).show()
@@ -98,7 +108,6 @@ class ProductDetailFragment : Fragment() {
                   //  setProgressBar(true)
                 }
             }
-///adapter.setItem(it.data!!.data.images)
         })
 
     }
