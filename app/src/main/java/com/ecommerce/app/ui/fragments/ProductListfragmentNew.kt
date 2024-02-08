@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
-import com.ecommerce.app.databinding.FragmentWishlistBinding
+import com.ecommerce.app.databinding.FragmentProductlistNewBinding
 import com.ecommerce.app.ui.adapters.ProductPageAdapter
 import com.ecommerce.app.ui.viewmodels.WishlistViewModel
 import com.ecommerce.app.utils.DebugHandler
@@ -22,10 +22,10 @@ import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WishlistFragment : Fragment() ,ProductPageAdapter.CardItemListener{
+class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
 
     private val wishlistViewModel: WishlistViewModel by viewModels()
-    private var binding: FragmentWishlistBinding by autoCleared()
+    private var binding: FragmentProductlistNewBinding by autoCleared()
     private lateinit var adapter: ProductPageAdapter
     private var productListItem = ArrayList<ProductItem>()
 
@@ -36,7 +36,7 @@ class WishlistFragment : Fragment() ,ProductPageAdapter.CardItemListener{
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentWishlistBinding.inflate(inflater, container, false)
+        binding = FragmentProductlistNewBinding.inflate(inflater, container, false)
         //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
 

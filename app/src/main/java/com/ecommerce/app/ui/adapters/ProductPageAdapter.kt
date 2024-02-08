@@ -13,10 +13,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.data.product.ProductItem
-import com.ecommerce.app.ui.fragments.WishlistFragment
+import com.ecommerce.app.ui.fragments.ProductListfragmentNew
 import com.ecommerce.app.utils.DebugHandler
 
-class ProductPageAdapter(private val context: Context, private val listener: WishlistFragment): PagingDataAdapter<ProductItem, ProductPageAdapter.ProductVH>(
+class ProductPageAdapter(private val context: Context, private val listener: ProductListfragmentNew): PagingDataAdapter<ProductItem, ProductPageAdapter.ProductVH>(
     COMPARATOR) {
 
 
