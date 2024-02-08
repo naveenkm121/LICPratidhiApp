@@ -15,15 +15,15 @@
                     app:popEnterAnim="@android:anim/slide_in_left"
                     app:popExitAnim="@android:anim/slide_out_right"
                     />-->
-        <!--    <action
+          <action
                 android:id="@+id/action_splashFragment_to_productListFragment"
                 app:destination="@id/productListFragment"
                 app:popEnterAnim="@android:anim/slide_in_left"
                 app:popExitAnim="@android:anim/slide_out_right"
-                />-->
+                />
         <action
             android:id="@+id/action_splashFragment_to_wishlistFragment"
-            app:destination="@id/productListFragment"
+            app:destination="@id/wishlistFragment"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right"
             />
@@ -63,6 +63,12 @@
         android:name="com.ecommerce.app.ui.fragments.WishlistFragment"
         android:label="Login"
         tools:layout="@layout/fragment_wishlist" >
+        <action
+            android:id="@+id/action_wishlistFragment_to_productDetailFragment"
+            app:destination="@id/productDetailFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
 
     </fragment>
 

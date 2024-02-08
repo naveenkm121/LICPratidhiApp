@@ -1,34 +1,28 @@
 package com.ecommerce.app.ui.fragments
 
 import android.os.Bundle
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
-import com.ecommerce.app.databinding.FragmentProductListBinding
 import com.ecommerce.app.databinding.FragmentWishlistBinding
-import com.ecommerce.app.databinding.FragmentWishlistListDialogBinding
-import com.ecommerce.app.ui.adapters.ProductListAdapter
 import com.ecommerce.app.ui.adapters.ProductPageAdapter
-import com.ecommerce.app.ui.viewmodels.ProductListViewModel
 import com.ecommerce.app.ui.viewmodels.WishlistViewModel
 import com.ecommerce.app.utils.DebugHandler
-import com.ecommerce.app.utils.ResourceViewState
+import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class WishlistFragment : Fragment() {
+class WishlistFragment : Fragment() ,ProductPageAdapter.CardItemListener{
 
     private val wishlistViewModel: WishlistViewModel by viewModels()
     private var binding: FragmentWishlistBinding by autoCleared()
@@ -50,24 +44,23 @@ class WishlistFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         setupRecyclerView()
-       // setupObserversNew()
         setupObservers()
         wishlistViewModel.getProducts(null)
        // productListViewModel.getProducts(null)
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductPageAdapter(requireContext())
+        adapter = ProductPageAdapter(requireContext(),this)
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
-    private fun setupObserversNew(){
 
-       /* wishlistViewModel.list.observe(viewLifecycleOwner, Observer {
-            adapter.submitData(lifecycle,it)
-        })*/
+    override fun onClickedCard(selectedProduct: ProductItem) {
+        DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
+        findNavController().navigate(R.id.action_wishlistFragment_to_productDetailFragment,
+            bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))
+        )
 
     }
 

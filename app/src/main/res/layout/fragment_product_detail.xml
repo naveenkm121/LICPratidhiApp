@@ -40,6 +40,7 @@
                 app:tabPaddingStart="@dimen/margin10" />
 
             <com.google.android.material.card.MaterialCardView
+                android:id="@+id/productNameCardView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:theme="@style/Theme.MaterialComponents.Light"
@@ -56,7 +57,6 @@
                         android:layout_height="wrap_content"
                         android:text="Huawei P30"
                         android:textSize="@dimen/text_18"
-                        android:textStyle="bold"
                         android:maxLines="2"
                         android:ellipsize="end"
                         app:layout_constraintStart_toStartOf="parent"
@@ -67,38 +67,75 @@
                         android:id="@+id/discountPriceTV"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="$400"
+                        android:text="@string/input_rs_symbol"
                         android:textStyle="bold"
                         android:textColor="@color/black"
-                        android:textSize="@dimen/text_14"
+                        android:textSize="@dimen/text_18"
                         app:layout_constraintTop_toBottomOf="@id/productNameTV"
                         app:layout_constraintStart_toStartOf="parent" />
                     <TextView
                         android:id="@+id/priceTV"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin2"
-                        android:text="$750"
-                        android:textSize="@dimen/text_12"
-                        app:layout_constraintTop_toBottomOf="@id/productNameTV"
+                        android:layout_marginLeft="@dimen/margin8"
+                        android:text="@string/mrp_rs_input"
+                        android:textSize="@dimen/text_15"
                         app:layout_constraintStart_toEndOf="@id/discountPriceTV"
+                        app:layout_constraintTop_toTopOf="@+id/discountPriceTV"
+                        app:layout_constraintBottom_toBottomOf="@+id/discountPriceTV"
                         />
                     <TextView
                         android:id="@+id/discountTV"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="@dimen/margin2"
-                        android:text="80% Off"
+                        android:layout_marginLeft="@dimen/margin8"
+                        android:text="(80% OFF)"
                         android:textColor="@color/teal_700"
                         android:textStyle="bold"
-                        android:textSize="@dimen/text_12"
-                        app:layout_constraintTop_toBottomOf="@id/productNameTV"
+                        android:textSize="@dimen/text_15"
+                        app:layout_constraintTop_toTopOf="@+id/priceTV"
                         app:layout_constraintStart_toEndOf="@id/priceTV"
+                        app:layout_constraintBottom_toBottomOf="@+id/priceTV"
                         app:layout_constraintEnd_toEndOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </com.google.android.material.card.MaterialCardView>
-            <!-- Add your scrollable content here -->
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/productDetailsCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin15"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:background="@color/white"
+                android:layout_marginBottom="@dimen/margin60">
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/padding10">
+
+                    <TextView
+                        android:id="@+id/productDetailsHeadingTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Product Details"
+                        android:textSize="@dimen/text_16"
+                        android:textColor="@color/black"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/productDetailTV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum"
+                        android:textSize="@dimen/text_14"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/productDetailsHeadingTV" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
 
         </LinearLayout>
     </ScrollView>
@@ -113,12 +150,46 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white">
-        <Button
-            android:layout_width="@dimen/width150"
-            android:layout_height="wrap_content"
-            android:text="Hello"/>
-        <!-- Your fixed footer content goes here -->
-        <!-- For example, you can use buttons, text, etc. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/addToCartBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/add_to_cart"
+                android:textColor="@color/black"
+                android:padding="@dimen/padding10"
+                android:layout_marginLeft="@dimen/margin10"
+                android:layout_marginRight="@dimen/margin5"
+                app:iconSize="@dimen/icon_size_24"
+                app:cornerRadius="@dimen/radius8"
+                app:iconGravity="textStart"
+                app:iconTint="@color/black"
+                app:backgroundTint="@color/white"
+                app:icon="@drawable/ic_outline_shopping_cart_24"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/buyBTN"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/buy_now"
+                android:textColor="@color/white"
+                android:padding="@dimen/padding10"
+                android:layout_marginLeft="@dimen/margin5"
+                android:layout_marginRight="@dimen/margin10"
+                app:iconSize="@dimen/icon_size_24"
+                app:cornerRadius="@dimen/radius8"
+                app:iconGravity="textStart"
+                app:iconTint="@null"
+                app:backgroundTint="@color/proceed_color"
+                app:icon="@drawable/ic_outline_shopping_bag_24"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
+        </LinearLayout>
 
     </FrameLayout>
 

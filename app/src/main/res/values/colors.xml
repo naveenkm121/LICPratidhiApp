@@ -6,6 +6,7 @@
     <color name="colorAccent">@color/white</color>
 
     <color name="white">#FFFFFFFF</color>
+    <color name="proceed_color">#FC2E1F</color>
 
 
     <color name="purple_200">#FFBB86FC</color>
@@ -18,9 +19,7 @@
 
     <color name="white30Percentage">#B3FFFFFF</color>
 
-    <!--  Sorting Heading Color color -->
-    <color name="colorSortAsc">#b55a21</color>
-    <color name="colorSortDesc">@color/red</color>
+
 
     <!-- <color name="ananda_bg">@color/light_blue</color>-->
     <color name="splash_bg">@color/white</color>
@@ -35,7 +34,7 @@
     <color name="blue_heading">#ffca08</color>
     <color name="med_grey">#808080</color>
     <color name="text_dark">#636363</color>
-    <color name="pink">#FF3366</color>
+
     <color name="theme_blue">#00bcd4</color>
     <color name="selgreen">#7bb140</color>
     <color name="blackTransparent">#33000000</color>
@@ -55,7 +54,7 @@
     <color name="orange">#FF7000</color>
     <color name="lightGray">#d3d3d3</color>
     <color name="violet">#0d47a1</color>
-    <color name="btn_choose">#a52a2a</color>
+    <color name="btn_choose">#FF5722</color>
     <color name="ic_launcher_background">#0D4C92</color>
     <color name="light_blue">#ADD8E6</color>
 

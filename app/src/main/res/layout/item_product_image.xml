@@ -13,24 +13,31 @@
         android:layout_height="@dimen/height480"
         android:layout_marginBottom="@dimen/margin10"
         android:adjustViewBounds="true"
-        android:scaleType="fitXY"
+        android:scaleType="fitCenter"
         android:src="@drawable/ic_product_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
 
-<!--    <TextView
-        android:id="@+id/tvIntroTitle"
+    <ImageView
+        android:id="@+id/wishlistIV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/margin10"
-        android:text="Some Title"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_20"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/tvIntroSubTitle"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />-->
+        android:layout_margin="@dimen/margin10"
+        android:src="@drawable/ic_heart_border_24"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageView
+        android:id="@+id/shareIV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin10"
+        android:src="@drawable/ic_share_24"
+        app:layout_constraintTop_toBottomOf="@+id/wishlistIV"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
 
 
 

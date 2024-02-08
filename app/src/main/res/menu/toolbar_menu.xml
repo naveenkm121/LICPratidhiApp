@@ -9,7 +9,7 @@
         app:showAsAction="ifRoom"/>
 
     <item
-        android:id="@+id/action_like"
+        android:id="@+id/action_wishlist"
         android:icon="@drawable/ic_heart_border_24"
         android:title="Wishlist"
         android:iconTint="@color/black"

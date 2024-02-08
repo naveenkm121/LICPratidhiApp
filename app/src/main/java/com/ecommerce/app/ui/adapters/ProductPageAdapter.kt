@@ -10,10 +10,13 @@ import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.data.product.ProductItem
+import com.ecommerce.app.ui.fragments.WishlistFragment
+import com.ecommerce.app.utils.DebugHandler
 
-class ProductPageAdapter(private val context: Context): PagingDataAdapter<ProductItem, ProductPageAdapter.ProductVH>(
+class ProductPageAdapter(private val context: Context, private val listener: WishlistFragment): PagingDataAdapter<ProductItem, ProductPageAdapter.ProductVH>(
     COMPARATOR) {
 
 
@@ -35,6 +38,9 @@ class ProductPageAdapter(private val context: Context): PagingDataAdapter<Produc
     override fun getItemCount(): Int= items.size
 */
 
+    interface CardItemListener {
+        fun onClickedCard(productItem: ProductItem)
+    }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): ProductPageAdapter.ProductVH {
         // Create a new view, which defines the UI of the list item
@@ -55,9 +61,14 @@ class ProductPageAdapter(private val context: Context): PagingDataAdapter<Produc
         holder.priceTV.text=context.getString(R.string.input_rs_symbol,product.price.toString())
         holder.discountTV.text="${product.discountPercentage}%"
         holder.priceTV.setPaintFlags(holder.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
-        /*  Glide.with(context)
-              .load(product.thumbnail)
-              .into(holder.productImageView)*/
+
+        holder.itemView.setOnClickListener {
+            DebugHandler.log("Hello Adapter Product=="+product.id)
+            listener.onClickedCard(product)
+        }
+        Glide.with(context)
+            .load(product.thumbnail)
+            .into(holder.productImageView)
 
 
     }

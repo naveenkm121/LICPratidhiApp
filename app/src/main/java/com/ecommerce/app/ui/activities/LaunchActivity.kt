@@ -5,6 +5,8 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.ui.fragments.SplashFragment
 import com.ecommerce.app.R
@@ -15,6 +17,8 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class LaunchActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLaunchBinding
+    private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityLaunchBinding.inflate(layoutInflater)
@@ -22,6 +26,8 @@ class LaunchActivity : AppCompatActivity() {
         setSupportActionBar(binding.toolbar)
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);
         getSupportActionBar()?.setDisplayShowHomeEnabled(true);
+
+        navController = findNavController(R.id.nav_host_fragment)
 
     }
 
@@ -38,6 +44,10 @@ class LaunchActivity : AppCompatActivity() {
                 // Handle menu item click
                 // For example, show a Toast
                 showToast("Menu item clicked")
+                return true
+            }
+            R.id.action_wishlist->{
+                navController.navigate(R.id.action_splashFragment_to_wishlistFragment)
                 return true
             }
             else -> return super.onOptionsItemSelected(item)

@@ -1,15 +1,17 @@
 package com.ecommerce.app.ui.fragments
 
+import android.graphics.Paint
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.ScaleAnimation
 import android.widget.Toast
+import androidx.appcompat.widget.Toolbar
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import com.ecommerce.app.R
-import  androidx.appcompat.widget.Toolbar
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductImage
 import com.ecommerce.app.data.product.ProductItem
@@ -21,8 +23,8 @@ import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
-
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 
@@ -70,7 +72,14 @@ class ProductDetailFragment : Fragment() {
 
     private  fun setupDataToUI(productItem: ProductItem){
         binding.productNameTV.text=productItem.title
+        binding.discountPriceTV.text=getString(R.string.input_rs_symbol,productItem.price.toString())
+        binding.priceTV.text=getString(R.string.mrp_rs_input,productItem.price.toString())
+        binding.discountTV.text="(${productItem.discountPercentage}% OFF)"
+        binding.priceTV.setPaintFlags(binding.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
+
+       // binding.productDetailTV.text=productItem.description
     }
+
 
 
     private fun setupObservers(){
