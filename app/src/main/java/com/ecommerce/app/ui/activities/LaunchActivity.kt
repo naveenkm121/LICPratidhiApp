@@ -47,7 +47,7 @@ class LaunchActivity : AppCompatActivity() {
                 return true
             }
             R.id.action_wishlist->{
-                navController.navigate(R.id.action_splashFragment_to_wishlistFragment)
+                navController.navigate(R.id.action_splashFragment_to_productListFragment)
                 return true
             }
             else -> return super.onOptionsItemSelected(item)

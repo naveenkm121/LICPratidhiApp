@@ -21,12 +21,12 @@
                 app:popEnterAnim="@android:anim/slide_in_left"
                 app:popExitAnim="@android:anim/slide_out_right"
                 />
-        <action
+     <!--   <action
             android:id="@+id/action_splashFragment_to_wishlistFragment"
             app:destination="@id/wishlistFragment"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right"
-            />
+            />-->
 
     </fragment>
     <!--    <fragment
@@ -39,9 +39,9 @@
 
     <fragment
         android:id="@+id/productListFragment"
-        android:name="com.ecommerce.app.ui.fragments.ProductListFragment"
+        android:name="com.ecommerce.app.ui.fragments.ProductListfragmentNew"
         android:label="Login"
-        tools:layout="@layout/fragment_product_list" >
+        tools:layout="@layout/fragment_productlist_new" >
         <action
             android:id="@+id/action_productListFragment_to_productDetailFragment"
             app:destination="@id/productDetailFragment"
@@ -58,7 +58,7 @@
 
     </fragment>
 
-    <fragment
+  <!--  <fragment
         android:id="@+id/wishlistFragment"
         android:name="com.ecommerce.app.ui.fragments.ProductListfragmentNew"
         android:label="Login"
@@ -70,7 +70,7 @@
             app:popExitAnim="@android:anim/slide_out_right"
             />
 
-    </fragment>
+    </fragment>-->
 
 
 </navigation>

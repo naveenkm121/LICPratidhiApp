@@ -57,7 +57,7 @@ class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
 
     override fun onClickedCard(selectedProduct: ProductItem) {
         DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
-        findNavController().navigate(R.id.action_wishlistFragment_to_productDetailFragment,
+        findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
             bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))
         )
 
