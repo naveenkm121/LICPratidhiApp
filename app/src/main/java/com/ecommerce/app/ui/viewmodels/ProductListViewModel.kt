@@ -35,4 +35,5 @@ class ProductListViewModel @Inject constructor(private val productRespository: P
 
 
    // val response: LiveData<PagingData<ProductItem>> =  productRespository.getProducts().cachedIn(viewModelScope)
+
 }

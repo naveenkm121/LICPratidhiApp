@@ -15,7 +15,7 @@ import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentProductlistNewBinding
 import com.ecommerce.app.ui.adapters.ProductPageAdapter
-import com.ecommerce.app.ui.viewmodels.WishlistViewModel
+import com.ecommerce.app.ui.viewmodels.ProductListNewViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.autoCleared
@@ -24,11 +24,10 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
 
-    private val wishlistViewModel: WishlistViewModel by viewModels()
+    private val productListNewViewModel: ProductListNewViewModel by viewModels()
     private var binding: FragmentProductlistNewBinding by autoCleared()
     private lateinit var adapter: ProductPageAdapter
     private var productListItem = ArrayList<ProductItem>()
-
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -46,7 +45,7 @@ class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupObservers()
-        wishlistViewModel.getProducts(null)
+        productListNewViewModel.getProducts(null)
        // productListViewModel.getProducts(null)
     }
 
@@ -66,7 +65,7 @@ class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
 
     private fun setupObservers(){
 
-        wishlistViewModel.response.observe(viewLifecycleOwner, Observer {
+        productListNewViewModel.response.observe(viewLifecycleOwner, Observer {
             adapter.submitData(lifecycle,it)
         })
 
