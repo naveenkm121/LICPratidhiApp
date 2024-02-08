@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import android.widget.Toolbar
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -16,22 +15,21 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
-import com.ecommerce.app.databinding.FragmentProductListBinding
+import com.ecommerce.app.databinding.FragmentWishlistBinding
 import com.ecommerce.app.ui.adapters.ProductListAdapter
-import com.ecommerce.app.ui.viewmodels.ProductListViewModel
+import com.ecommerce.app.ui.viewmodels.WishlistViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
-import com.google.gson.Gson
 import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
+class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
 
-    private val productListViewModel: ProductListViewModel by viewModels()
-    private var binding: FragmentProductListBinding by autoCleared()
+    private val wishlistViewModel: WishlistViewModel by viewModels()
+    private var binding: FragmentWishlistBinding by autoCleared()
     private lateinit var adapter: ProductListAdapter
     private var productListItem = ArrayList<ProductItem>()
 
@@ -42,7 +40,7 @@ class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentProductListBinding.inflate(inflater, container, false)
+        binding = FragmentWishlistBinding.inflate(inflater, container, false)
         //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
 
@@ -53,7 +51,7 @@ class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
         //setHasOptionsMenu(true)
         setupRecyclerView()
         setupObservers()
-        productListViewModel.getProducts(null)
+        wishlistViewModel.getProducts(null)
     }
 
     private fun setupRecyclerView() {
@@ -63,7 +61,7 @@ class ProductListFragment : Fragment(),ProductListAdapter.CardItemListener {
     }
 
     private fun setupObservers() {
-        productListViewModel.response.observe(viewLifecycleOwner, Observer {
+        wishlistViewModel.response.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 ResourceViewState.Status.SUCCESS -> {
                     setProgressBar(false)

@@ -13,7 +13,7 @@ import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 @HiltViewModel
-class ProductListViewModel @Inject constructor(private val productRespository: ProductRespository):ViewModel() {
+class WishlistViewModel @Inject constructor(private val productRespository: ProductRespository):ViewModel() {
 
 
     private val _request = MutableLiveData<CommonReq?>()
