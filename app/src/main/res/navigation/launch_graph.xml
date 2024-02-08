@@ -39,9 +39,9 @@
 
     <fragment
         android:id="@+id/productListFragment"
-        android:name="com.ecommerce.app.ui.fragments.ProductListfragmentNew"
+        android:name="com.ecommerce.app.ui.fragments.ProductListFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_productlist_new" >
+        tools:layout="@layout/fragment_productlist" >
         <action
             android:id="@+id/action_productListFragment_to_productDetailFragment"
             app:destination="@id/productDetailFragment"

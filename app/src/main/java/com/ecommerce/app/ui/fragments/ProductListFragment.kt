@@ -13,19 +13,19 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
-import com.ecommerce.app.databinding.FragmentProductlistNewBinding
+import com.ecommerce.app.databinding.FragmentProductlistBinding
 import com.ecommerce.app.ui.adapters.ProductPageAdapter
-import com.ecommerce.app.ui.viewmodels.ProductListNewViewModel
+import com.ecommerce.app.ui.viewmodels.ProductListViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
+class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
 
-    private val productListNewViewModel: ProductListNewViewModel by viewModels()
-    private var binding: FragmentProductlistNewBinding by autoCleared()
+    private val productListViewModel: ProductListViewModel by viewModels()
+    private var binding: FragmentProductlistBinding by autoCleared()
     private lateinit var adapter: ProductPageAdapter
     private var productListItem = ArrayList<ProductItem>()
 
@@ -35,7 +35,7 @@ class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
         savedInstanceState: Bundle?
     ): View? {
 
-        binding = FragmentProductlistNewBinding.inflate(inflater, container, false)
+        binding = FragmentProductlistBinding.inflate(inflater, container, false)
         //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
 
@@ -45,7 +45,7 @@ class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerView()
         setupObservers()
-        productListNewViewModel.getProducts(null)
+        productListViewModel.getProducts(null)
        // productListViewModel.getProducts(null)
     }
 
@@ -65,7 +65,7 @@ class ProductListfragmentNew : Fragment() ,ProductPageAdapter.CardItemListener{
 
     private fun setupObservers(){
 
-        productListNewViewModel.response.observe(viewLifecycleOwner, Observer {
+        productListViewModel.response.observe(viewLifecycleOwner, Observer {
             adapter.submitData(lifecycle,it)
         })
 

@@ -14,7 +14,7 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 
 @HiltViewModel
-class ProductListNewViewModel @Inject constructor(private val userRepository: UserRepository):ViewModel() {
+class ProductListViewModel @Inject constructor(private val userRepository: UserRepository):ViewModel() {
 
   //  val list = userRepository.getWishList().cachedIn(viewModelScope)
 
