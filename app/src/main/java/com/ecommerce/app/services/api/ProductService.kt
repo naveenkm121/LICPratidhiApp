@@ -17,9 +17,9 @@ interface ProductService {
 
    // @GET("/products")
     //@GET("${Constants.BASE_URL}/products")
-   @GET("products")
+   @GET("productss")
    suspend fun  getProducts():Response<ProductRes>
-   @GET("products?pageSize=2")
+   @GET("products")
     suspend fun  getProductsPage(@Query("pageNo") pageNo:Int):Response<ProductRes>
 
     @GET("products/{prodId}")

@@ -11,9 +11,6 @@ import javax.inject.Inject
 
 class ProductRespository @Inject constructor(private  val  remoteDataSource: ProductRemoteDataSource) {
 
-    fun getPokemons() = performGetOperation(
-        networkCall = { remoteDataSource.getPokemons() }
-    )
 
     fun getLaunchStatus() = performGetOperation(
         networkCall = { remoteDataSource.getLaunchStatus() }

@@ -18,19 +18,19 @@ class SignUpViewModel @Inject constructor(private val productRespository: Produc
 
 
     private val _request = MutableLiveData<CommonReq>()
-
-    private val _response = _request.switchMap {
-        productRespository.getPokemons()
-
-    }
-    val response: LiveData<ResourceViewState<PokemonRes>> = _response
-
-    fun getPokemonData(request: CommonReq) {
-        val req: String = Gson().toJson(request)
-        DebugHandler.log("CommonReq ::  $req")
-        _request.value = request
-
-    }
+//
+//    private val _response = _request.switchMap {
+//        productRespository.getPokemons()
+//
+//    }
+//    val response: LiveData<ResourceViewState<PokemonRes>> = _response
+//
+//    fun getPokemonData(request: CommonReq) {
+//        val req: String = Gson().toJson(request)
+//        DebugHandler.log("CommonReq ::  $req")
+//        _request.value = request
+//
+//    }
 }
 
 /*

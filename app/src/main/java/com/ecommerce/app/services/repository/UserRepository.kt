@@ -10,8 +10,8 @@ import javax.inject.Inject
 
 class UserRepository @Inject constructor(private val productService: ProductService) {
 
-    fun getWishList() = Pager(
-        config = PagingConfig(pageSize = 3, maxSize = 100),
+    fun getProductList() = Pager(
+        config = PagingConfig(pageSize = 10, maxSize = 100),
         pagingSourceFactory = { ProductPagingSource(productService) }
     ).liveData
 }

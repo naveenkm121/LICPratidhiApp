@@ -21,7 +21,7 @@ class ProductListViewModel @Inject constructor(private val userRepository: UserR
     private val _request = MutableLiveData<CommonReq?>()
 
     private val _response = _request.switchMap {
-        userRepository.getWishList()
+        userRepository.getProductList()
 
     }
     val response: LiveData<PagingData<ProductItem>> = _response
