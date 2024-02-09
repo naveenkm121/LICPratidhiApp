@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -19,6 +20,7 @@ import com.ecommerce.app.ui.viewmodels.ProductListViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.autoCleared
+import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -43,6 +45,7 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setOnClickListener()
         setupRecyclerView()
         setupObservers()
         productListViewModel.getProducts(null)
@@ -55,6 +58,19 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
         binding.recyclerView.adapter = adapter
     }
 
+    private fun setOnClickListener()
+    {
+        binding.sorLL.setOnClickListener {
+
+            // on below line we are creating a new bottom sheet dialog.
+            val dialog = BottomSheetDialog(requireActivity())
+            val view = layoutInflater.inflate(R.layout.bottom_sheet_sort_dialog, null)
+
+            dialog.setCancelable(true)
+            dialog.setContentView(view)
+            dialog.show()
+        }
+    }
     override fun onClickedCard(selectedProduct: ProductItem) {
         DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
         findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
@@ -64,8 +80,11 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
     }
 
     private fun setupObservers(){
+        setProgressBar(true)
 
         productListViewModel.response.observe(viewLifecycleOwner, Observer {
+
+            setProgressBar(false)
             adapter.submitData(lifecycle,it)
         })
 

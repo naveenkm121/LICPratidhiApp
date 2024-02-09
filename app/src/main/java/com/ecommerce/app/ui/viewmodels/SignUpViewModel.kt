@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.ecommerce.app.data.CommonReq
-import com.ecommerce.app.data.PokemonRes
 import com.ecommerce.app.services.repository.ProductRespository
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
