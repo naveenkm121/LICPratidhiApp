@@ -49,12 +49,27 @@
             app:popExitAnim="@android:anim/slide_out_right"
             />
 
+        <action
+            android:id="@+id/action_productListFragment_to_productFilterFragment"
+            app:destination="@id/productFilterFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
     </fragment>
    <fragment
         android:id="@+id/productDetailFragment"
         android:name="com.ecommerce.app.ui.fragments.ProductDetailFragment"
         android:label="productDetail"
         tools:layout="@layout/fragment_product_detail" >
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/productFilterFragment"
+        android:name="com.ecommerce.app.ui.fragments.ProductFilterFragment"
+        android:label="productFilter"
+        tools:layout="@layout/fragment_product_filter" >
 
     </fragment>
 

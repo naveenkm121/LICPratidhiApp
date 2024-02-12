@@ -174,9 +174,13 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
 
 
     override fun onClickedCard(selectedProduct: ProductItem) {
-        findNavController().navigate(
+       /* findNavController().navigate(
             R.id.action_productListFragment_to_productDetailFragment,
             bundleOf(IntentConstants.PRODUCT_DETAILS to GsonHelper.toJson(selectedProduct))
+        )
+*/
+        findNavController().navigate(
+            R.id.action_productListFragment_to_productFilterFragment
         )
 
     }
