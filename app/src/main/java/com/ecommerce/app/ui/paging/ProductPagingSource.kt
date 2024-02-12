@@ -2,6 +2,7 @@ package com.ecommerce.app.ui.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
+import com.ecommerce.app.constants.AppConstants
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.product.ProductReqParam
 import com.ecommerce.app.services.api.ProductService
@@ -11,7 +12,7 @@ class ProductPagingSource(private val productService: ProductService,val product
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ProductItem> {
         return try {
-            val position = params.key ?: 1
+            val position = params.key ?: AppConstants.START_PAGE_NO
             val response = productService.getProductsPage(position,productReqParam.sortBy,productReqParam.sortDir)
 
             return LoadResult.Page(

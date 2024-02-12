@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
+import android.widget.LinearLayout
+import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -12,10 +14,12 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.AppConstants
 import com.ecommerce.app.constants.Constants
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.product.ProductReqParam
+import com.ecommerce.app.databinding.BottomSheetSortDialogBinding
 import com.ecommerce.app.databinding.FragmentProductlistBinding
 import com.ecommerce.app.ui.adapters.ProductPageAdapter
 import com.ecommerce.app.ui.viewmodels.ProductListViewModel
@@ -26,13 +30,14 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
+class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
 
-    private val productListViewModel: ProductListViewModel by viewModels()
+    private val viewModel: ProductListViewModel by viewModels()
     private var binding: FragmentProductlistBinding by autoCleared()
+    private var bottomSheetSortDialogBinding: BottomSheetSortDialogBinding by autoCleared()
+    private lateinit var bottomSheetSortDialog: BottomSheetDialog
     private lateinit var adapter: ProductPageAdapter
-    private lateinit var productReqParam: ProductReqParam;
-    private var productListItem = ArrayList<ProductItem>()
+    private lateinit var productReqParam: ProductReqParam
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -51,50 +56,127 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
         setOnClickListener()
         setupRecyclerView()
         setupObservers()
+        //  sortDialogUIHandling()
 
-
-        productReqParam= ProductReqParam(0,Constants.DEFAULT_SORT_BY,Constants.DEFAULT_SORT_DIRECTION)
-        productListViewModel.getProducts(productReqParam)
-       // productListViewModel.getProducts(null)
+        productReqParam =
+            ProductReqParam(0, Constants.DEFAULT_SORT_BY, Constants.DEFAULT_SORT_DIRECTION)
+        viewModel.getProducts(productReqParam)
+        // productListViewModel.getProducts(null)
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductPageAdapter(requireContext(),this)
-        binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
+        adapter = ProductPageAdapter(requireContext(), this)
+        binding.recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
 
-    private fun setOnClickListener()
-    {
+    private fun setOnClickListener() {
         binding.sorLL.setOnClickListener {
+            showSortDialog()
+        }
+    }
 
-            // on below line we are creating a new bottom sheet dialog.
-            val dialog = BottomSheetDialog(requireActivity())
-            val view = layoutInflater.inflate(R.layout.bottom_sheet_sort_dialog, null)
+    private fun showSortDialog() {
+        bottomSheetSortDialog = BottomSheetDialog(requireActivity())
+        //  val view = layoutInflater.inflate(R.layout.bottom_sheet_sort_dialog, null)
+        bottomSheetSortDialogBinding = BottomSheetSortDialogBinding.inflate(layoutInflater)
+        bottomSheetSortDialog.setContentView(bottomSheetSortDialogBinding.root)
+        bottomSheetSortDialog.setCancelable(true)
+        bottomSheetSortDialog.show()
 
-            dialog.setCancelable(true)
-            dialog.setContentView(view)
-            dialog.show()
+
+        when (productReqParam.sortBy) {
+            AppConstants.SORT_BY_DISCOUNT -> {
+                // bottomSheetSortDialogBinding.discountTV.textColors=requireContext().getColor(R.color.red)
+                bottomSheetSortDialogBinding.discountIcon.setColorFilter(requireContext().getColor(R.color.proceed_color))
+                bottomSheetSortDialogBinding.discountTV.setTextColor(
+                    ContextCompat.getColor(
+                        requireContext(),
+                        R.color.proceed_color
+                    )
+                )
+            }
+
+            AppConstants.SORT_BY_PRICE -> {
+                // bottomSheetSortDialogBinding.discountTV.textColors=requireContext().getColor(R.color.red)
+                when (productReqParam.sortDir) {
+                    AppConstants.SORT_DESCENDING -> {
+                        bottomSheetSortDialogBinding.priceHighToLowIcon.setColorFilter(
+                            requireContext().getColor(R.color.proceed_color)
+                        )
+                        bottomSheetSortDialogBinding.priceHighToLowTV.setTextColor(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.proceed_color
+                            )
+                        )
+                    }
+
+                    else -> {
+                        bottomSheetSortDialogBinding.priceLowToHighIcon.setColorFilter(
+                            requireContext().getColor(R.color.proceed_color)
+                        )
+                        bottomSheetSortDialogBinding.priceLowToHighTV.setTextColor(
+                            ContextCompat.getColor(
+                                requireContext(),
+                                R.color.proceed_color
+                            )
+                        )
+                    }
+                }
+
+            }
+        }
+
+        bottomSheetSortDialogBinding.popularityLL.setOnClickListener {
+            DebugHandler.log("Hello popularityLL")
+        }
+
+        bottomSheetSortDialogBinding.discountLL.setOnClickListener {
+            productReqParam.pageNo = 0
+            productReqParam.sortBy = AppConstants.SORT_BY_DISCOUNT
+            productReqParam.sortDir = AppConstants.SORT_DESCENDING
+            viewModel.getProducts(productReqParam)
+            bottomSheetSortDialog.dismiss()
+        }
+        bottomSheetSortDialogBinding.priceHighToLowLL.setOnClickListener {
+            productReqParam.pageNo = 0
+            productReqParam.sortBy = AppConstants.SORT_BY_PRICE
+            productReqParam.sortDir = AppConstants.SORT_DESCENDING
+            viewModel.getProducts(productReqParam)
+            bottomSheetSortDialog.dismiss()
+
+
+        }
+        bottomSheetSortDialogBinding.priceLowToHighLL.setOnClickListener {
+            productReqParam.pageNo = 0
+            productReqParam.sortBy = AppConstants.SORT_BY_PRICE
+            productReqParam.sortDir = AppConstants.SORT_ASCENDING
+            viewModel.getProducts(productReqParam)
+            bottomSheetSortDialog.dismiss()
+        }
+        bottomSheetSortDialogBinding.ratingLL.setOnClickListener {
+            DebugHandler.log("Hello ratingLL")
         }
     }
 
 
-    private fun setupObservers(){
+    private fun setupObservers() {
         setProgressBar(true)
 
-        productListViewModel.response.observe(viewLifecycleOwner, Observer {
+        viewModel.response.observe(viewLifecycleOwner, Observer {
 
             setProgressBar(false)
-            adapter.submitData(lifecycle,it)
+            adapter.submitData(lifecycle, it)
         })
 
     }
 
 
     override fun onClickedCard(selectedProduct: ProductItem) {
-        DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
-        findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
-            bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))
+        findNavController().navigate(
+            R.id.action_productListFragment_to_productDetailFragment,
+            bundleOf(IntentConstants.PRODUCT_DETAILS to GsonHelper.toJson(selectedProduct))
         )
 
     }
@@ -110,6 +192,7 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
             // binding.progressBarShim.shimmerLayout.showShimmer(true)
         }
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
         //binding = null

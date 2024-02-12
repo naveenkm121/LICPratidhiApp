@@ -1,0 +1,99 @@
+{
+  "status": 1,
+  "message": "Filter parameters retrieved successfully",
+  "filters": [
+    {
+      "id": 1,
+      "filterType": "brands",
+      "filterItems": [
+        {"id": 1, "name": "Brand A", "value": "brand_a"},
+        {"id": 2, "name": "Brand B", "value": "brand_b"},
+        {"id": 3, "name": "Brand C", "value": "brand_c"}
+      ]
+    },
+    {
+      "id": 2,
+      "filterType": "price_ranges",
+      "filterItems": [
+        {"id": 1, "name": "Under $50", "min_price": 0, "max_price": 50, "value": "under_50"},
+        {"id": 2, "name": "$50 - $100", "min_price": 50, "max_price": 100, "value": "50_to_100"},
+        {"id": 3, "name": "Over $100", "min_price": 100, "max_price": -1, "value": "over_100"}
+      ]
+    },
+    {
+      "id": 3,
+      "filterType": "sizes",
+      "filterItems": [
+        {"id": 1, "name": "S", "value": "small"},
+        {"id": 2, "name": "M", "value": "medium"},
+        {"id": 3, "name": "L", "value": "large"},
+        {"id": 4, "name": "XL", "value": "extra_large"}
+      ]
+    },
+    {
+      "id": 4,
+      "filterType": "colors",
+      "filterItems": [
+        {"id": 1, "name": "Red", "value": "red"},
+        {"id": 2, "name": "Blue", "value": "blue"},
+        {"id": 3, "name": "Green", "value": "green"},
+        {"id": 4, "name": "Black", "value": "black"}
+      ]
+    },
+    {
+      "id": 5,
+      "filterType": "categories",
+      "filterItems": [
+        {"id": 1, "name": "T-Shirts", "value": "t_shirts"},
+        {"id": 2, "name": "Jeans", "value": "jeans"},
+        {"id": 3, "name": "Shirts", "value": "shirts"},
+        {"id": 4, "name": "Dresses", "value": "dresses"}
+      ]
+    },
+    {
+      "id": 6,
+      "filterType": "styles",
+      "filterItems": [
+        {"id": 1, "name": "Casual", "value": "casual"},
+        {"id": 2, "name": "Formal", "value": "formal"},
+        {"id": 3, "name": "Sports", "value": "sports"}
+      ]
+    },
+    {
+      "id": 7,
+      "filterType": "materials",
+      "filterItems": [
+        {"id": 1, "name": "Cotton", "value": "cotton"},
+        {"id": 2, "name": "Polyester", "value": "polyester"},
+        {"id": 3, "name": "Leather", "value": "leather"}
+      ]
+    },
+    {
+      "id": 8,
+      "filterType": "discounts",
+      "filterItems": [
+        {"id": 1, "name": "10% Off", "value": "10_percent_off"},
+        {"id": 2, "name": "20% Off", "value": "20_percent_off"},
+        {"id": 3, "name": "30% Off", "value": "30_percent_off"}
+      ]
+    },
+    {
+      "id": 9,
+      "filterType": "patterns",
+      "filterItems": [
+        {"id": 1, "name": "Stripes", "value": "stripes"},
+        {"id": 2, "name": "Checks", "value": "checks"},
+        {"id": 3, "name": "Floral", "value": "floral"}
+      ]
+    },
+    {
+      "id": 10,
+      "filterType": "occasions",
+      "filterItems": [
+        {"id": 1, "name": "Wedding", "value": "wedding"},
+        {"id": 2, "name": "Party", "value": "party"},
+        {"id": 3, "name": "Casual", "value": "casual"}
+      ]
+    }
+  ]
+}
