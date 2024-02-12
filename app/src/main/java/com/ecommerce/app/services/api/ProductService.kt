@@ -10,19 +10,24 @@ import retrofit2.http.Query
 
 interface ProductService {
 
-  //@GET("${Constants.BASE_URL}${Constants.END_POINT_POKEMONS}")
+    //@GET("${Constants.BASE_URL}${Constants.END_POINT_POKEMONS}")
 
     @GET("${Constants.BASE_URL}")
-    suspend fun  getLaunchStatus():Response<String>
+    suspend fun getLaunchStatus(): Response<String>
 
-   // @GET("/products")
+    // @GET("/products")
     //@GET("${Constants.BASE_URL}/products")
-   @GET("productss")
-   suspend fun  getProducts():Response<ProductRes>
-   @GET("products")
-    suspend fun  getProductsPage(@Query("pageNo") pageNo:Int):Response<ProductRes>
+    @GET("productss")
+    suspend fun getProducts(): Response<ProductRes>
+
+    @GET("products")
+    suspend fun getProductsPage(
+        @Query("pageNo") pageNo: Int,
+        @Query("sortBy") sortBy: String,
+        @Query("sortDir") sortDir: String
+    ): Response<ProductRes>
 
     @GET("products/{prodId}")
-    suspend fun  getProductDetailsById(@Path("prodId") prodId:Int):Response<ProductDetailRes>
+    suspend fun getProductDetailsById(@Path("prodId") prodId: Int): Response<ProductDetailRes>
 
 }

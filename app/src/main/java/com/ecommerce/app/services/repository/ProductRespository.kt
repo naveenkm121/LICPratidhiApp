@@ -4,6 +4,7 @@ import androidx.core.os.persistableBundleOf
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
+import com.ecommerce.app.data.product.ProductReqParam
 import com.ecommerce.app.services.remotedata.ProductRemoteDataSource
 import com.ecommerce.app.ui.paging.ProductPagingSource
 import com.ecommerce.app.utils.performGetOperation
@@ -23,6 +24,9 @@ class ProductRespository @Inject constructor(private  val  remoteDataSource: Pro
     fun getProductDetailsById(prodId:Int)= performGetOperation(
         networkCall = { remoteDataSource.getProductDetailsById(prodId) }
     )
+
+    fun getProductList(productReqParam: ProductReqParam) = remoteDataSource.getProductList(productReqParam)
+
   /*  fun getProducts(pageNo:Int) = performGetOperation(
         networkCall = { remoteDataSource.getProducts(pageNo) }
     )

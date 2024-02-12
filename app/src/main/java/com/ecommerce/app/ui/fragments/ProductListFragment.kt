@@ -12,8 +12,10 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.Constants
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
+import com.ecommerce.app.data.product.ProductReqParam
 import com.ecommerce.app.databinding.FragmentProductlistBinding
 import com.ecommerce.app.ui.adapters.ProductPageAdapter
 import com.ecommerce.app.ui.viewmodels.ProductListViewModel
@@ -29,6 +31,7 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
     private val productListViewModel: ProductListViewModel by viewModels()
     private var binding: FragmentProductlistBinding by autoCleared()
     private lateinit var adapter: ProductPageAdapter
+    private lateinit var productReqParam: ProductReqParam;
     private var productListItem = ArrayList<ProductItem>()
 
     override fun onCreateView(
@@ -48,7 +51,10 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
         setOnClickListener()
         setupRecyclerView()
         setupObservers()
-        productListViewModel.getProducts(null)
+
+
+        productReqParam= ProductReqParam(0,Constants.DEFAULT_SORT_BY,Constants.DEFAULT_SORT_DIRECTION)
+        productListViewModel.getProducts(productReqParam)
        // productListViewModel.getProducts(null)
     }
 
@@ -71,13 +77,7 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
             dialog.show()
         }
     }
-    override fun onClickedCard(selectedProduct: ProductItem) {
-        DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
-        findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
-            bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))
-        )
 
-    }
 
     private fun setupObservers(){
         setProgressBar(true)
@@ -91,6 +91,13 @@ class ProductListFragment : Fragment() ,ProductPageAdapter.CardItemListener{
     }
 
 
+    override fun onClickedCard(selectedProduct: ProductItem) {
+        DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
+        findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
+            bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))
+        )
+
+    }
 
     private fun setProgressBar(b: Boolean) {
         if (!b) {
