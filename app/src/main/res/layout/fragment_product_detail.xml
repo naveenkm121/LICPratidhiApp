@@ -186,7 +186,7 @@
                 app:cornerRadius="@dimen/radius8"
                 app:iconGravity="textStart"
                 app:iconTint="@null"
-                app:backgroundTint="@color/proceed_color"
+                app:backgroundTint="@color/select_color"
                 app:icon="@drawable/ic_outline_shopping_bag_24"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton" />
         </LinearLayout>

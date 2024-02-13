@@ -4,8 +4,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.LinearLayout
 import androidx.core.content.ContextCompat
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
@@ -74,6 +72,12 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
         binding.sorLL.setOnClickListener {
             showSortDialog()
         }
+
+        binding.filterLL.setOnClickListener {
+            findNavController().navigate(
+                R.id.action_productListFragment_to_productFilterFragment
+            )
+        }
     }
 
     private fun showSortDialog() {
@@ -88,11 +92,11 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
         when (productReqParam.sortBy) {
             AppConstants.SORT_BY_DISCOUNT -> {
                 // bottomSheetSortDialogBinding.discountTV.textColors=requireContext().getColor(R.color.red)
-                bottomSheetSortDialogBinding.discountIcon.setColorFilter(requireContext().getColor(R.color.proceed_color))
+                bottomSheetSortDialogBinding.discountIcon.setColorFilter(requireContext().getColor(R.color.select_color))
                 bottomSheetSortDialogBinding.discountTV.setTextColor(
                     ContextCompat.getColor(
                         requireContext(),
-                        R.color.proceed_color
+                        R.color.select_color
                     )
                 )
             }
@@ -102,24 +106,24 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
                 when (productReqParam.sortDir) {
                     AppConstants.SORT_DESCENDING -> {
                         bottomSheetSortDialogBinding.priceHighToLowIcon.setColorFilter(
-                            requireContext().getColor(R.color.proceed_color)
+                            requireContext().getColor(R.color.select_color)
                         )
                         bottomSheetSortDialogBinding.priceHighToLowTV.setTextColor(
                             ContextCompat.getColor(
                                 requireContext(),
-                                R.color.proceed_color
+                                R.color.select_color
                             )
                         )
                     }
 
                     else -> {
                         bottomSheetSortDialogBinding.priceLowToHighIcon.setColorFilter(
-                            requireContext().getColor(R.color.proceed_color)
+                            requireContext().getColor(R.color.select_color)
                         )
                         bottomSheetSortDialogBinding.priceLowToHighTV.setTextColor(
                             ContextCompat.getColor(
                                 requireContext(),
-                                R.color.proceed_color
+                                R.color.select_color
                             )
                         )
                     }
@@ -174,14 +178,12 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
 
 
     override fun onClickedCard(selectedProduct: ProductItem) {
-       /* findNavController().navigate(
+        findNavController().navigate(
             R.id.action_productListFragment_to_productDetailFragment,
             bundleOf(IntentConstants.PRODUCT_DETAILS to GsonHelper.toJson(selectedProduct))
         )
-*/
-        findNavController().navigate(
-            R.id.action_productListFragment_to_productFilterFragment
-        )
+
+
 
     }
 

@@ -51,4 +51,6 @@
     <string name="customer_rating">Customer Rating</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="apply">Apply</string>
+    <string name="cancel">Cancel</string>
 </resources>

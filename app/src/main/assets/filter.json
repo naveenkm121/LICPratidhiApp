@@ -5,6 +5,7 @@
     {
       "id": 1,
       "filterType": "brands",
+      "filterName": "Brands",
       "filterItems": [
         {"id": 1, "name": "Brand A", "value": "brand_a"},
         {"id": 2, "name": "Brand B", "value": "brand_b"},
@@ -14,6 +15,7 @@
     {
       "id": 2,
       "filterType": "price_ranges",
+      "filterName": "Price Range",
       "filterItems": [
         {"id": 1, "name": "Under $50", "min_price": 0, "max_price": 50, "value": "under_50"},
         {"id": 2, "name": "$50 - $100", "min_price": 50, "max_price": 100, "value": "50_to_100"},
@@ -23,6 +25,7 @@
     {
       "id": 3,
       "filterType": "sizes",
+      "filterName": "Size",
       "filterItems": [
         {"id": 1, "name": "S", "value": "small"},
         {"id": 2, "name": "M", "value": "medium"},
@@ -33,6 +36,7 @@
     {
       "id": 4,
       "filterType": "colors",
+      "filterName": "Colors",
       "filterItems": [
         {"id": 1, "name": "Red", "value": "red"},
         {"id": 2, "name": "Blue", "value": "blue"},
@@ -43,6 +47,7 @@
     {
       "id": 5,
       "filterType": "categories",
+      "filterName": "Categories",
       "filterItems": [
         {"id": 1, "name": "T-Shirts", "value": "t_shirts"},
         {"id": 2, "name": "Jeans", "value": "jeans"},
@@ -53,6 +58,7 @@
     {
       "id": 6,
       "filterType": "styles",
+      "filterName": "Styles",
       "filterItems": [
         {"id": 1, "name": "Casual", "value": "casual"},
         {"id": 2, "name": "Formal", "value": "formal"},
@@ -62,6 +68,7 @@
     {
       "id": 7,
       "filterType": "materials",
+      "filterName": "Materials",
       "filterItems": [
         {"id": 1, "name": "Cotton", "value": "cotton"},
         {"id": 2, "name": "Polyester", "value": "polyester"},
@@ -71,6 +78,7 @@
     {
       "id": 8,
       "filterType": "discounts",
+      "filterName": "Discounts",
       "filterItems": [
         {"id": 1, "name": "10% Off", "value": "10_percent_off"},
         {"id": 2, "name": "20% Off", "value": "20_percent_off"},
@@ -80,6 +88,7 @@
     {
       "id": 9,
       "filterType": "patterns",
+      "filterName": "Patterns",
       "filterItems": [
         {"id": 1, "name": "Stripes", "value": "stripes"},
         {"id": 2, "name": "Checks", "value": "checks"},
@@ -89,6 +98,7 @@
     {
       "id": 10,
       "filterType": "occasions",
+      "filterName": "Occasions",
       "filterItems": [
         {"id": 1, "name": "Wedding", "value": "wedding"},
         {"id": 2, "name": "Party", "value": "party"},
