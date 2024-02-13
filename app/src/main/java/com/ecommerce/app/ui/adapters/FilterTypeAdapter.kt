@@ -11,15 +11,20 @@ import com.ecommerce.app.data.filter.Filter
 import com.ecommerce.app.databinding.ItemFilterTypeBinding
 import com.ecommerce.app.utils.DebugHandler
 
-class FilterTypeAdapter() : RecyclerView.Adapter<FilterTypeAdapter.FilterTypeVH>() {
+class FilterTypeAdapter(val listener: FilterTypeAdapter.SelectFilterTypeListener) :
+    RecyclerView.Adapter<FilterTypeAdapter.FilterTypeVH>() {
 
     private var itemList: List<Filter> = listOf()
+
+    interface SelectFilterTypeListener {
+        fun onSelectFilterType(selectedFilter: Filter)
+    }
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FilterTypeVH {
         val binding: ItemFilterTypeBinding =
             ItemFilterTypeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-        return FilterTypeVH(parent.context, binding)
+        return FilterTypeVH(parent.context, binding, listener)
     }
 
 
@@ -38,6 +43,7 @@ class FilterTypeAdapter() : RecyclerView.Adapter<FilterTypeAdapter.FilterTypeVH>
     class FilterTypeVH(
         private val mContext: Context,
         private val itemBinding: ItemFilterTypeBinding,
+        private val listener: SelectFilterTypeListener
     ) : RecyclerView.ViewHolder(itemBinding.root),
         View.OnClickListener {
 
@@ -50,18 +56,24 @@ class FilterTypeAdapter() : RecyclerView.Adapter<FilterTypeAdapter.FilterTypeVH>
         @SuppressLint("SetTextI18n")
         fun bind(filter: Filter) {
 
-            if(filter.isSelected){
+            if (filter.isSelected) {
                 itemBinding.root.setBackgroundColor(mContext.getColor(R.color.white))
-            }else{
+            } else {
                 itemBinding.root.setBackgroundColor(mContext.getColor(R.color.dull_white))
             }
 
             itemBinding.filterTypeTV.text = filter.filterName
+            itemBinding.root.setOnClickListener {
+                listener.onSelectFilterType(filter)
+            }
+
 
         }
 
         override fun onClick(v: View?) {
-            DebugHandler.log("Hello Ji testing")
+            // DebugHandler.log("Hello Ji testing")
+            // listener.onSelectFilterType(f)
+
         }
 
 

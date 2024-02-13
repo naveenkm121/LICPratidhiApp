@@ -58,7 +58,6 @@ class ProductListAdapter(private val context: Context,private val listener: Card
             .load(product.thumbnail)
             .into(holder.productImageView)*/
         holder.itemView.setOnClickListener {
-            DebugHandler.log("Hello Adapter Product=="+product.id)
             listener.onClickedCard(product)
         }
 

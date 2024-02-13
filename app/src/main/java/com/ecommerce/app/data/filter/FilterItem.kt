@@ -6,5 +6,5 @@ data class FilterItem(
     val min_price: Int,
     val name: String,
     val value: String,
-    val isSelected:Boolean
+    var isSelected:Boolean
 )

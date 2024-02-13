@@ -8,6 +8,8 @@ import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.data.filter.Filter
+import com.ecommerce.app.data.filter.FilterItem
 import com.ecommerce.app.data.filter.FilterRes
 import com.ecommerce.app.databinding.FragmentProductFilterBinding
 import com.ecommerce.app.ui.adapters.FilterItemsAdapter
@@ -18,12 +20,13 @@ import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.autoCleared
 
 
-class ProductFilterFragment : Fragment() {
+class ProductFilterFragment : Fragment() ,FilterTypeAdapter.SelectFilterTypeListener,FilterItemsAdapter.SelectFilterItemListener{
 
     private var binding:FragmentProductFilterBinding by autoCleared()
     private lateinit var filterTypeAdapter:FilterTypeAdapter
     private lateinit var  filterItemsAdapter:FilterItemsAdapter
     private lateinit var filterRes: FilterRes
+    private var selectedFilterTypeIndex=0
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -49,14 +52,14 @@ class ProductFilterFragment : Fragment() {
     }
 
     private fun setupRecyclerView() {
-        filterTypeAdapter=FilterTypeAdapter()
+        filterTypeAdapter=FilterTypeAdapter(this)
         filterTypeAdapter.setItem(filterRes.filters)
         binding.filterTypeRV.layoutManager = LinearLayoutManager(requireContext())
         binding.filterTypeRV.adapter=filterTypeAdapter
 
 
-        filterItemsAdapter= FilterItemsAdapter()
-        filterItemsAdapter.setItem(filterRes.filters.get(2).filterItems)
+        filterItemsAdapter= FilterItemsAdapter(this)
+        filterItemsAdapter.setItem(filterRes.filters.get(0).filterItems)
         binding.filterItemsRV.layoutManager=LinearLayoutManager(requireContext())
         binding.filterItemsRV.adapter=filterItemsAdapter
 
@@ -70,7 +73,30 @@ class ProductFilterFragment : Fragment() {
 
     }
 
+    override fun onSelectFilterType(selectedFilter: Filter) {
 
+        selectedFilterTypeIndex = filterRes.filters.indexOf(selectedFilter)
+        if(selectedFilterTypeIndex != -1)
+        {
+            filterRes.filters.forEach {
+                filter ->filter.isSelected=false
+            }
+
+            filterRes.filters.get(selectedFilterTypeIndex).isSelected=true
+            filterTypeAdapter.notifyDataSetChanged()
+
+            filterItemsAdapter.setItem(filterRes.filters.get(selectedFilterTypeIndex).filterItems)
+            filterTypeAdapter.notifyDataSetChanged()
+        }
+    }
+
+    override fun onSelectFilterType(selectedFilterItem: FilterItem) {
+        DebugHandler.log("HEllom FilterItem == "+selectedFilterItem)
+        var selectedFilterItemIndex= filterRes.filters.get(selectedFilterTypeIndex).filterItems.indexOf(selectedFilterItem)
+        filterRes.filters.get(selectedFilterTypeIndex).filterItems.get(selectedFilterItemIndex).isSelected=true
+        filterItemsAdapter.setItem(filterRes.filters.get(selectedFilterTypeIndex).filterItems)
+        filterTypeAdapter.notifyDataSetChanged()
+    }
 
 
 }

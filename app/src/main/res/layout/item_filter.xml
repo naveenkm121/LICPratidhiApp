@@ -13,6 +13,7 @@
         android:textSize="@dimen/text_16"
         android:padding="@dimen/padding10"
         android:layout_marginLeft="@dimen/margin10"
+        app:buttonTint="@color/black60Percentage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
