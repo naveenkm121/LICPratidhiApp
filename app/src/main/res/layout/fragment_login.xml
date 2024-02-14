@@ -11,8 +11,8 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="@dimen/height150"
-        android:layout_marginTop="@dimen/margin60"
-        android:layout_marginBottom="@dimen/margin40"
+        android:layout_marginTop="@dimen/margin100"
+        android:layout_marginBottom="@dimen/margin50"
         android:src="@drawable/app_logo" />
 
 
@@ -25,7 +25,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/signup"
+            android:text="@string/login"
             android:textColor="@color/black"
             android:textSize="@dimen/text_18"
             android:textStyle="bold" />
@@ -34,30 +34,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin5"
-            android:text="@string/enter_your_credentials" />
+            android:text="Enter your email and password " />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameIL"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin10"
-            android:hint="@string/name_id">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="text"
-                android:maxLength="30"
-                android:scrollIndicators="none"
-                android:windowSoftInputMode="adjustResize" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/emailTIL"
+            android:id="@+id/userIdTIL"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -65,32 +45,11 @@
             android:hint="@string/email_id">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/emailET"
+                android:id="@+id/userIdET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
                 android:inputType="textEmailAddress"
-                android:maxLength="25"
-                android:scrollIndicators="none"
-                android:windowSoftInputMode="adjustResize" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/mobileTIL"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margin10"
-            android:hint="@string/mobile_id">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/mobileET"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:imeOptions="actionNext"
-                android:inputType="number"
-                android:maxLength="10"
                 android:scrollIndicators="none"
                 android:windowSoftInputMode="adjustResize" />
 
@@ -116,9 +75,23 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin10"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:text="@string/forget_password"
+                android:textColor="@color/select_color" />
+
+        </LinearLayout>
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buyBTN"
+            android:id="@+id/loginBTN"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -141,15 +114,16 @@
                 android:id="@+id/signupMsgTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/already_account"
+                android:text="@string/donot_have_account"
                 android:textColor="@color/black" />
 
             <TextView
+                android:id="@+id/signupTV"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="@dimen/margin5"
                 android:layout_toRightOf="@id/signupMsgTV"
-                android:text="@string/login"
+                android:text="@string/signup"
                 android:textColor="@color/select_color"
                 android:textStyle="bold" />
 
