@@ -5,7 +5,7 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 android:background="@color/white"
-tools:context=".ui.activities.LaunchActivity">
+tools:context=".ui.activities.HomeActivity">
 
     <!-- Toolbar -->
     <androidx.appcompat.widget.Toolbar
@@ -38,5 +38,5 @@ tools:context=".ui.activities.LaunchActivity">
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintTop_toBottomOf="@+id/toolbar"
-    app:navGraph="@navigation/launch_graph" />
+    app:navGraph="@navigation/app_navigation_graph" />
 </androidx.constraintlayout.widget.ConstraintLayout>

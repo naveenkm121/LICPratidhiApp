@@ -15,6 +15,7 @@ import com.ecommerce.app.R
 import com.ecommerce.app.constants.AppConstants
 import com.ecommerce.app.constants.Constants
 import com.ecommerce.app.constants.IntentConstants
+import com.ecommerce.app.data.filter.FilterRes
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.product.ProductReqParam
 import com.ecommerce.app.databinding.BottomSheetSortDialogBinding
@@ -37,6 +38,8 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
     private lateinit var adapter: ProductPageAdapter
     private lateinit var productReqParam: ProductReqParam
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -51,6 +54,7 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+       // filterRes= GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_FILTER_DATA)!!,FilterRes::class.java)!!
         setOnClickListener()
         setupRecyclerView()
         setupObservers()
@@ -77,6 +81,10 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
             findNavController().navigate(
                 R.id.action_productListFragment_to_productFilterFragment
             )
+           /* findNavController().navigate(
+                R.id.action_productListFragment_to_productFilterFragment,
+                bundleOf(IntentConstants.PRODUCT_FILTER_DATA to GsonHelper.toJson(filterRes))
+            )*/
         }
     }
 

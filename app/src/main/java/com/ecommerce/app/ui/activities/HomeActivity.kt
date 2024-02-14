@@ -7,21 +7,18 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
-import com.ecommerce.app.ui.fragments.SplashFragment
 import com.ecommerce.app.R
-import com.ecommerce.app.databinding.ActivityLaunchBinding
-import com.ecommerce.app.databinding.ActivityMainBinding
+import com.ecommerce.app.databinding.ActivityHomeBinding
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class LaunchActivity : AppCompatActivity() {
-    private lateinit var binding: ActivityLaunchBinding
+class HomeActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityHomeBinding
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityLaunchBinding.inflate(layoutInflater)
+        binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
         setSupportActionBar(binding.toolbar)
         getSupportActionBar()?.setDisplayHomeAsUpEnabled(true);

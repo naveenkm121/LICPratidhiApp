@@ -71,6 +71,13 @@
         android:label="productFilter"
         tools:layout="@layout/fragment_product_filter" >
 
+        <action
+            android:id="@+id/action_productFilterFragment_to_productListFragment"
+            app:destination="@id/productListFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
     </fragment>
 
   <fragment
