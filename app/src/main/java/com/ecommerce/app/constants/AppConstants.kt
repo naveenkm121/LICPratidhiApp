@@ -13,5 +13,7 @@ class AppConstants {
         const val SORT_DESCENDING = "desc"
         const val SORT_ASCENDING= "asc"
 
+        val SUCCESS:String="SUCCESS"
+
     }
 }

@@ -1,13 +1,13 @@
 package com.ecommerce.app.services.api
 
-import com.ecommerce.app.data.product.ProductDetailRes
+import com.ecommerce.app.data.login.LoginReq
+import com.ecommerce.app.data.login.LoginRes
 import retrofit2.Response
-import retrofit2.http.GET
+import retrofit2.http.Body
 import retrofit2.http.POST
-import retrofit2.http.Path
 
 interface UserService {
 
     @POST("auth/login")
-    suspend fun getProductDetailsById(@Path("prodId") prodId: Int): Response<ProductDetailRes>
+    suspend fun getLogin(@Body request: LoginReq): Response<LoginRes>
 }

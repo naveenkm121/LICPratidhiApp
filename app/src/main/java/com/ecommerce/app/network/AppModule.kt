@@ -2,6 +2,7 @@ package com.ecommerce.app.network
 
 import com.ecommerce.app.constants.Constants
 import com.ecommerce.app.services.api.ProductService
+import com.ecommerce.app.services.api.UserService
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import dagger.Module
@@ -12,6 +13,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 
@@ -42,8 +44,13 @@ class AppModule {
             .build()
 
     @Provides
-    fun providePokeService(retrofit: Retrofit): ProductService =
+    fun provideProductService(retrofit: Retrofit): ProductService =
         retrofit.create(ProductService::class.java)
+
+    @Provides
+    fun provideUserService(retrofit: Retrofit): UserService =
+        retrofit.create(UserService::class.java)
+
     @Provides
     fun provideGson(): Gson = GsonBuilder().create()
 
