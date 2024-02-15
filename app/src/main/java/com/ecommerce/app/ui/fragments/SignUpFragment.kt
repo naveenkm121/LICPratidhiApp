@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import com.ecommerce.app.databinding.FragmentSignupBinding
+import com.ecommerce.app.ui.viewmodels.LoginViewModel
 
 import com.ecommerce.app.ui.viewmodels.SignUpViewModel
 import com.ecommerce.app.utils.autoCleared
@@ -18,7 +19,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class SignUpFragment : Fragment() {
 
-    private val loginViewModel: SignUpViewModel by viewModels()
+    private val viewModel: LoginViewModel by viewModels()
     private var binding: FragmentSignupBinding by autoCleared()
 
 

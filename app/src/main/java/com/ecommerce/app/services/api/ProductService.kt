@@ -3,6 +3,7 @@ package com.ecommerce.app.services.api
 import com.ecommerce.app.constants.Constants
 import com.ecommerce.app.data.product.ProductDetailRes
 import com.ecommerce.app.data.product.ProductRes
+import com.ecommerce.app.data.wishlist.WishlistRes
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -29,5 +30,8 @@ interface ProductService {
 
     @GET("products/{prodId}")
     suspend fun getProductDetailsById(@Path("prodId") prodId: Int): Response<ProductDetailRes>
+
+
+
 
 }

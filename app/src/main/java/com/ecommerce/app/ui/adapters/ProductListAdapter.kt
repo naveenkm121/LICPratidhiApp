@@ -11,20 +11,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.data.product.ProductItem
+import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.utils.DebugHandler
 
 
 class ProductListAdapter(private val context: Context,private val listener: CardItemListener) : RecyclerView.Adapter<ProductListAdapter.ProductVH>() {
 
 
-    private val items = ArrayList<ProductItem>()
+    private val items = ArrayList<WishlistItem>()
 
 
     interface CardItemListener {
-        fun onClickedCard(productItem: ProductItem)
+        fun onClickedCard(productItem: WishlistItem)
     }
 
-    fun setItems(items: ArrayList<ProductItem>) {
+    fun setItems(items: ArrayList<WishlistItem>) {
         this.items.clear()
         this.items.addAll(items)
         notifyDataSetChanged()
@@ -44,7 +45,7 @@ class ProductListAdapter(private val context: Context,private val listener: Card
         return ProductVH(view)
     }
     override fun onBindViewHolder(holder: ProductVH, position: Int) {
-        val product: ProductItem = items.get(position)
+        val product: WishlistItem = items.get(position)
 
         holder.productBrandTV.text=product.brand
         holder.productNameTV.text=product.title
@@ -52,7 +53,7 @@ class ProductListAdapter(private val context: Context,private val listener: Card
         //holder.priceTV.text= "$${product.price}"
         holder.discountPriceTV.text=context.getString(R.string.input_rs_symbol,product.price.toString())
         holder.priceTV.text=context.getString(R.string.input_rs_symbol,product.price.toString())
-        holder.discountTV.text="${product.discountPercentage}%"
+        holder.discountTV.text="${product.discount_per}%"
         holder.priceTV.setPaintFlags(holder.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
       /*  Glide.with(context)
             .load(product.thumbnail)

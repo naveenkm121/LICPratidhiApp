@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
+import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentWishlistBinding
 import com.ecommerce.app.ui.adapters.ProductListAdapter
 import com.ecommerce.app.ui.viewmodels.WishlistViewModel
@@ -31,7 +32,7 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
     private val wishlistViewModel: WishlistViewModel by viewModels()
     private var binding: FragmentWishlistBinding by autoCleared()
     private lateinit var adapter: ProductListAdapter
-    private var productListItem = ArrayList<ProductItem>()
+    private var productListItem = ArrayList<WishlistItem>()
 
 
     override fun onCreateView(
@@ -51,7 +52,7 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
         //setHasOptionsMenu(true)
         setupRecyclerView()
         setupObservers()
-        wishlistViewModel.getProducts(null)
+        wishlistViewModel.getWishlist(null)
     }
 
     private fun setupRecyclerView() {
@@ -68,7 +69,7 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
                    if (it.data != null && it.data.status == 1) {
                         if (it.data.data.isNotEmpty()) {
 
-                            productListItem = it.data.data as ArrayList<ProductItem>
+                            productListItem = it.data.data as ArrayList<WishlistItem>
                             adapter.setItems(productListItem)
                         } else {
                             //binding.noResultIV.visibility = View.VISIBLE
@@ -80,7 +81,6 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
                 }
                 ResourceViewState.Status.ERROR -> {
                     setProgressBar(false)
-                    DebugHandler.log("Error Naveen== "+it.message)
                     if (it.message?.contains("401") == true) {
                       //  Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
                       //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
@@ -115,7 +115,7 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
         //binding = null
     }
 
-    override fun onClickedCard(selectedProduct: ProductItem) {
+    override fun onClickedCard(selectedProduct: WishlistItem) {
         DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
         findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
             bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))

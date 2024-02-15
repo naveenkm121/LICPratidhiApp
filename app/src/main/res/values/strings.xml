@@ -66,4 +66,6 @@
     <string name="signup_label">Signup Screen</string>
     <string name="enter_your_credentials">Enter your credentials to continue</string>
     <string name="loading">Loading</string>
+    <string name="err_email">Enter a valid email address</string>
+    <string name="err_password_empty">Enter password</string>
 </resources>

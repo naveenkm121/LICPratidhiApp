@@ -7,4 +7,6 @@ import javax.inject.Inject
 class UserRemoteDataSource @Inject constructor(private val userService: UserService): BaseDataSource() {
 
     suspend fun getLogin( loginReq: LoginReq)=getResult { userService.getLogin(loginReq) }
+
+    suspend fun getWishlist( )=getResult { userService.getWishlist() }
 }

@@ -1,6 +1,5 @@
 package com.ecommerce.app.ui.fragments
 
-import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -13,18 +12,13 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.AppConstants
-import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.LoginRes
-import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentLoginBinding
-import com.ecommerce.app.databinding.FragmentProductDetailBinding
 import com.ecommerce.app.ui.activities.HomeActivity
-import com.ecommerce.app.ui.activities.LaunchActivity
 import com.ecommerce.app.ui.viewmodels.LoginViewModel
-import com.ecommerce.app.ui.viewmodels.ProductDetailViewModel
+import com.ecommerce.app.utils.CommonUtility
 import com.ecommerce.app.utils.DebugHandler
-import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
@@ -63,32 +57,42 @@ class LoginFragment : Fragment() {
     private fun setOnClickListener() {
 
         binding.loginBTN.setOnClickListener {
-
             // UICommon.hideSoftKeyboard(binding.passwordET, activity as Activity)
             // Timber.d(NetworkUtils.getIpAddress(requireContext()))
-
             var userId = binding.userIdET.text.toString().trim()
             var password = binding.passwordET.text.toString().trim()
 
-            loginReq.username = userId
-            loginReq.password = password
-
-            viewModel.getLogin(loginReq)
-
-
-            /*if (checkIdPwdValidation(userId, password)) {
-                loginRequest.username = binding.userIdET.text.toString().trim()
-                loginRequest.password = binding.passwordET.text.toString().trim().toString()
-                viewModel.login(loginRequest)
+            if (isValidInputData(userId, password)) {
+                loginReq.username = binding.userIdET.text.toString().trim()
+                loginReq.password = binding.passwordET.text.toString().trim()
+                viewModel.getLogin(loginReq)
             }
-*/
         }
-
-
 
         binding.signupRL.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
+    }
+
+
+    private fun isValidInputData(email: String, password: String): Boolean {
+
+        return if (!email.isNullOrBlank() && CommonUtility.isValidEmail(email)) {
+            binding.userIdTIL.error = ""
+
+            if (!password.isNullOrBlank()) {
+                binding.passwordTIL.error = ""
+                true
+            } else {
+                binding.passwordTIL.error = getString(R.string.err_password_empty)
+                false
+            }
+
+        } else {
+            binding.userIdTIL.error = getString(R.string.err_email)
+            false
+        }
+
     }
 
     private fun setupObservers() {
@@ -100,7 +104,7 @@ class LoginFragment : Fragment() {
                 }
 
                 ResourceViewState.Status.SUCCESS -> {
-
+                    setProgressBar(false)
                     if (it.data?.message?.startsWith(
                             AppConstants.SUCCESS,
                             true
@@ -111,11 +115,11 @@ class LoginFragment : Fragment() {
 //                        else
 //                            login(true, it.data)
                         //compare hash string with recd hash
-                        setProgressBar(true)
                         launchHomePage(true, it.data)
 
                     } else {
                         DebugHandler.log(it.data?.message)
+
                         Toast.makeText(requireContext(), it.data?.message, Toast.LENGTH_SHORT)
                             .show()
                     }
