@@ -17,7 +17,7 @@ import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentWishlistBinding
-import com.ecommerce.app.ui.adapters.ProductListAdapter
+import com.ecommerce.app.ui.adapters.WishlistAdapter
 import com.ecommerce.app.ui.viewmodels.WishlistViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
@@ -27,11 +27,11 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
+class WishlistFragment : Fragment(),WishlistAdapter.CardItemListener {
 
     private val wishlistViewModel: WishlistViewModel by viewModels()
     private var binding: FragmentWishlistBinding by autoCleared()
-    private lateinit var adapter: ProductListAdapter
+    private lateinit var adapter: WishlistAdapter
     private var productListItem = ArrayList<WishlistItem>()
 
 
@@ -56,7 +56,7 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
     }
 
     private fun setupRecyclerView() {
-        adapter = ProductListAdapter(requireContext(),this)
+        adapter = WishlistAdapter(requireContext(),this)
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
@@ -70,7 +70,7 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
                         if (it.data.data.isNotEmpty()) {
 
                             productListItem = it.data.data as ArrayList<WishlistItem>
-                            adapter.setItems(productListItem)
+                            adapter.setItem(productListItem)
                         } else {
                             //binding.noResultIV.visibility = View.VISIBLE
                             Toast.makeText(requireContext(), it.data.message, Toast.LENGTH_LONG).show()
@@ -116,9 +116,12 @@ class WishlistFragment : Fragment(),ProductListAdapter.CardItemListener {
     }
 
     override fun onClickedCard(selectedProduct: WishlistItem) {
-        DebugHandler.log("Hello Fragment Product=="+selectedProduct.id)
-        findNavController().navigate(R.id.action_productListFragment_to_productDetailFragment,
-            bundleOf( IntentConstants.PRODUCT_DETAILS to  GsonHelper.toJson(selectedProduct))
+        DebugHandler.log("Hello Fragment Product=="+selectedProduct.prodId)
+        findNavController().navigate(R.id.action_wishlistFragment_to_productDetailFragment,
+            bundleOf(
+                IntentConstants.PRODUCT_ID to selectedProduct.prodId,
+                IntentConstants.PRODUCT_BRAND to selectedProduct.brand
+            )
         )
 
     }

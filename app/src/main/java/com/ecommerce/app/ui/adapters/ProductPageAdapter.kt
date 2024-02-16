@@ -20,24 +20,6 @@ class ProductPageAdapter(private val context: Context, private val listener: Pro
     COMPARATOR) {
 
 
-/*
-
-
-    private val items = ArrayList<ProductItem>()
-
-    fun setItems(items: ArrayList<ProductItem>) {
-        this.items.clear()
-        this.items.addAll(items)
-        notifyDataSetChanged()
-    }
-    fun clear() {
-        this.items.clear()
-        notifyDataSetChanged()
-    }
-
-    override fun getItemCount(): Int= items.size
-*/
-
     interface CardItemListener {
         fun onClickedCard(productItem: ProductItem)
     }
@@ -50,13 +32,10 @@ class ProductPageAdapter(private val context: Context, private val listener: Pro
         return ProductVH(view)
     }
     override fun onBindViewHolder(holder: ProductVH, position: Int) {
-        //val product: ProductItem = items.get(position)
         val  product: ProductItem? =getItem(position)
 
         holder.productBrandTV.text=product!!.brand
         holder.productNameTV.text=product.title
-        //holder.discountPriceTV.text= "$${product.price}"
-        //holder.priceTV.text= "$${product.price}"
         holder.discountPriceTV.text=context.getString(R.string.input_rs_symbol,product.price.toString())
         holder.priceTV.text=context.getString(R.string.input_rs_symbol,product.price.toString())
         holder.discountTV.text="${product.discountPercentage}%"

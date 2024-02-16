@@ -32,7 +32,6 @@ class ProductDetailFragment : Fragment() {
     private val viewModel: ProductDetailViewModel by viewModels()
     private var binding:FragmentProductDetailBinding by autoCleared()
     private lateinit var adapter: ProductImageViewPagerAdapter
-    private var productImageList = ArrayList<ProductImage>()
     private lateinit var productDetailPassObj: ProductItem
 
 
@@ -49,19 +48,19 @@ class ProductDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //productDetailPassObj = GsonHelper.fromJson<ProductItem>(arguments?.getString(IntentConstants.PRODUCT_DETAILS)!!)
-        productDetailPassObj=
-            GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_DETAILS)!!,ProductItem::class.java)!!
-        viewModel.getProductDetailsById(productDetailPassObj.id)
-        setupToolbar()
+       // productDetailPassObj= GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_DETAILS)!!,ProductItem::class.java)!!
+        val prodId= arguments?.getInt(IntentConstants.PRODUCT_ID)
+        val prodBrand= arguments?.getString(IntentConstants.PRODUCT_BRAND).toString()
+        viewModel.getProductDetailsById(prodId!!)
+        setupToolbar(prodBrand)
         setupRecyclerView()
         setupObservers()
 
     }
 
-    private fun setupToolbar() {
+    private fun setupToolbar(title:String) {
         val toolbar: Toolbar = requireActivity().findViewById<View>(R.id.toolbar) as Toolbar
-        toolbar.setTitle(productDetailPassObj.brand)
+        toolbar.setTitle(title)
     }
     private fun setupRecyclerView() {
         adapter = ProductImageViewPagerAdapter()
