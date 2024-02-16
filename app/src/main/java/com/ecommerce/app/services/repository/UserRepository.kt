@@ -4,6 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.ecommerce.app.data.login.LoginReq
+import com.ecommerce.app.data.login.SignupReq
 import com.ecommerce.app.services.api.ProductService
 import com.ecommerce.app.services.remotedata.UserRemoteDataSource
 import com.ecommerce.app.ui.paging.ProductPagingSource
@@ -20,6 +21,10 @@ class UserRepository @Inject constructor(private val userRemoteDataSource: UserR
 
     fun getLogin(loginReq: LoginReq) = performGetOperation(
         networkCall = { userRemoteDataSource.getLogin(loginReq) }
+    )
+
+    fun getSignup(signupReq: SignupReq) = performGetOperation(
+        networkCall = { userRemoteDataSource.getSignup(signupReq) }
     )
 
     fun getWishlist() = performGetOperation(

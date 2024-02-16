@@ -1,6 +1,6 @@
 package com.ecommerce.app.data.login
 
-data class LoginData(
+data class UserData(
     val createdDate: String="",
     val dob: String="",
     val email: String="",

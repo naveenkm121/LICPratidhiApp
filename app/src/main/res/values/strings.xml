@@ -67,5 +67,8 @@
     <string name="enter_your_credentials">Enter your credentials to continue</string>
     <string name="loading">Loading</string>
     <string name="err_email">Enter a valid email address</string>
+    <string name="err_mobile">Invalid Mobile number</string>
+    <string name="err_username_empty">Username is empty</string>
+    <string name="err_password">Password must be more than 6 character</string>
     <string name="err_password_empty">Enter password</string>
 </resources>

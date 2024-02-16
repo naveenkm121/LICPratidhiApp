@@ -21,6 +21,7 @@ import com.ecommerce.app.utils.CommonUtility
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.SaveSharedPreference
+import com.ecommerce.app.utils.UICommon
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -119,7 +120,6 @@ class LoginFragment : Fragment() {
 
                     } else {
                         DebugHandler.log(it.data?.message)
-
                         Toast.makeText(requireContext(), it.data?.message, Toast.LENGTH_SHORT)
                             .show()
                     }

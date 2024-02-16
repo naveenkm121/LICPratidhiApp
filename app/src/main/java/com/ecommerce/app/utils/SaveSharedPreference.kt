@@ -2,14 +2,12 @@ package com.ecommerce.app.utils
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.service.autofill.UserData
 import com.ecommerce.app.constants.SharedPrefs
 import com.ecommerce.app.constants.SharedPrefs.Companion.ACCESS_TOKEN
 import com.ecommerce.app.constants.SharedPrefs.Companion.LOGGED_IN_PREF
 import com.ecommerce.app.constants.SharedPrefs.Companion.USER_DETAILS
-import com.ecommerce.app.data.login.LoginData
+import com.ecommerce.app.data.login.UserData
 import com.ecommerce.app.data.login.LoginRes
-import com.ecommerce.app.data.product.ProductItem
 
 
 object SaveSharedPreference {
@@ -50,9 +48,9 @@ object SaveSharedPreference {
         else
             return true
     }*/
-    fun getUserDetails(context: Context?): LoginData? {
+    fun getUserDetails(context: Context?): UserData? {
         val userDataJson:String = getUserDetailsPreferences(context)?.getString(USER_DETAILS, "").toString()
-        return GsonHelper.fromJson(userDataJson, LoginData::class.java)
+        return GsonHelper.fromJson(userDataJson, UserData::class.java)
     }
 
     fun getTokenValue(context: Context?): String {

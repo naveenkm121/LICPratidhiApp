@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,18 +9,25 @@
     tools:context=".ui.fragments.LoginFragment">
 
     <ImageView
+        android:id="@+id/appLogoIV"
         android:layout_width="match_parent"
         android:layout_height="@dimen/height150"
-        android:layout_marginTop="@dimen/margin60"
-        android:layout_marginBottom="@dimen/margin40"
-        android:src="@drawable/app_logo" />
+        android:layout_marginTop="@dimen/margin50"
+        android:src="@drawable/app_logo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
 
 
     <LinearLayout
         style="@style/margin30LeftRight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin30"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appLogoIV">
 
         <TextView
             android:layout_width="match_parent"
@@ -37,7 +44,7 @@
             android:text="@string/enter_your_credentials" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/nameIL"
+            android:id="@+id/userNameTIL"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -45,7 +52,7 @@
             android:hint="@string/name_id">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/nameET"
+                android:id="@+id/userNameET"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:imeOptions="actionNext"
@@ -118,19 +125,19 @@
 
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/buyBTN"
+            android:id="@+id/signupBTN"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin15"
             android:padding="@dimen/padding12"
-            android:text="@string/login"
+            android:text="@string/signup"
             android:textColor="@color/white"
             app:backgroundTint="@color/select_color"
             app:cornerRadius="@dimen/radius8" />
 
         <RelativeLayout
-            android:id="@+id/signupRL"
+            android:id="@+id/loginRL"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/margin10"
@@ -157,4 +164,14 @@
 
 
     </LinearLayout>
-</LinearLayout>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
