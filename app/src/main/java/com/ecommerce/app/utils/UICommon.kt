@@ -22,16 +22,16 @@ class UICommon {
     companion object {
         protected var progressDialog: Dialog? = null
 
-        fun showSnackbar(act: Activity, message: String?, duration: Int) {
+   /*     fun showSnackbar(act: Activity, message: String?, duration: Int) {
             var duration = duration
             duration = if (duration >= 1) Snackbar.LENGTH_INDEFINITE else Snackbar.LENGTH_LONG
             val snackbar: Snackbar =
-                Snackbar.make(act.findViewById(R.id.content), message.toString(), duration)
+                Snackbar.make(act.findViewById(R.id.appBarMain), message.toString(), duration)
             val group = snackbar.getView() as ViewGroup
             group.setBackgroundColor(group.context.resources.getColor(R.color.black))
             //group.setBackgroundColor(ContextCompat.getColor(act.getApplicationContext(), R.color.primary));
             snackbar.show()
-        }
+        }*/
         fun hideSoftKeyboard(view: View, act: Activity){
             (act.getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager).apply {
                 hideSoftInputFromWindow(view.windowToken, 0)
@@ -66,7 +66,7 @@ class UICommon {
                     ?.loadDataWithBaseURL(null, message.toString(), "text/html", "utf-8", null)
             }
         }
-        fun showMessageInViews(context: Activity, message: String?, type: MESSAGETYPE?) {
+        /*fun showMessageInViews(context: Activity, message: String?, type: MESSAGETYPE?) {
             when (type) {
                 MESSAGETYPE.SNACK_BAR -> showSnackbar(context, message, 0)
                 MESSAGETYPE.ALERT -> showAlertDialog(
@@ -76,7 +76,7 @@ class UICommon {
 
                 else -> {}
             }
-        }
+        }*/
 
         public fun showProgressDialog(act: Activity, msg: String?, isCancelable: Boolean) {
            try {

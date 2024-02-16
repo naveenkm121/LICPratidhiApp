@@ -2,10 +2,12 @@ package com.ecommerce.app.ui.fragments
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.KeyEvent
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
@@ -57,22 +59,36 @@ class LoginFragment : Fragment() {
 
     private fun setOnClickListener() {
 
-        binding.loginBTN.setOnClickListener {
-            // UICommon.hideSoftKeyboard(binding.passwordET, activity as Activity)
-            // Timber.d(NetworkUtils.getIpAddress(requireContext()))
-            var userId = binding.userIdET.text.toString().trim()
-            var password = binding.passwordET.text.toString().trim()
-
-            if (isValidInputData(userId, password)) {
-                loginReq.username = binding.userIdET.text.toString().trim()
-                loginReq.password = binding.passwordET.text.toString().trim()
-                viewModel.getLogin(loginReq)
+        binding.passwordET.setOnEditorActionListener { _, actionId, event ->
+            if (actionId == EditorInfo.IME_ACTION_DONE ||
+                (event.action == KeyEvent.ACTION_DOWN && event.keyCode == KeyEvent.KEYCODE_ENTER)) {
+                    performLogin()
+                    true // Consume the event
+            } else {
+                false // Let the system handle other key events
             }
+        }
+
+
+        binding.loginBTN.setOnClickListener {
+            performLogin()
         }
 
         binding.signupRL.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_signupFragment)
         }
+    }
+
+    private fun performLogin() {
+        var userId = binding.userIdET.text.toString().trim()
+        var password = binding.passwordET.text.toString().trim()
+
+        if (isValidInputData(userId, password)) {
+            loginReq.username = binding.userIdET.text.toString().trim()
+            loginReq.password = binding.passwordET.text.toString().trim()
+            viewModel.getLogin(loginReq)
+        }
+
     }
 
 
