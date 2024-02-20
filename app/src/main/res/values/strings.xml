@@ -71,4 +71,9 @@
     <string name="err_username_empty">Username is empty</string>
     <string name="err_password">Password must be more than 6 character</string>
     <string name="err_password_empty">Enter password</string>
+    <string name="profile">Profile</string>
+    <string name="account">Account</string>
+    <string name="categories">Categories</string>
+    <string name="home">Home</string>
+    <string name="trending">Trending</string>
 </resources>

@@ -4,17 +4,33 @@
     tools:showIn="navigation_view">
 
     <group android:checkableBehavior="single">
+        <!-- Categories -->
         <item
-            android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:id="@+id/category_fashion"
+            android:title="Fashion">
+            <menu>
+                <!-- Subcategories under Fashion -->
+                <item
+                    android:id="@+id/subcategory_men"
+                    android:title="Men's Fashion" />
+                <item
+                    android:id="@+id/subcategory_women"
+                    android:title="Women's Fashion" />
+            </menu>
+        </item>
         <item
-            android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
-        <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
+            android:id="@+id/category_electronics"
+            android:title="Electronics">
+            <menu>
+                <!-- Subcategories under Electronics -->
+                <item
+                    android:id="@+id/subcategory_phones"
+                    android:title="Phones" />
+                <item
+                    android:id="@+id/subcategory_laptops"
+                    android:title="Laptops" />
+            </menu>
+        </item>
+        <!-- Add more categories and subcategories as needed -->
     </group>
 </menu>
