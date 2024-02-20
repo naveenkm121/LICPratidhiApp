@@ -23,4 +23,6 @@ class ProductRemoteDataSource @Inject constructor( private  val productService: 
         pagingSourceFactory = { ProductPagingSource(productService,productReqParam) }
     ).liveData
 
+
+    suspend fun getCategories()=getResult { productService.getCategories() }
 }

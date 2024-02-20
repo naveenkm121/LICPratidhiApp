@@ -36,5 +36,9 @@ class ProductRespository @Inject constructor(private  val  remoteDataSource: Pro
         pagingSourceFactory = { ProductPagingSource(this) }
    ).liveData*/
 
+    fun getCategories() = performGetOperation(
+        networkCall = { remoteDataSource.getCategories() }
+    )
+
 
 }

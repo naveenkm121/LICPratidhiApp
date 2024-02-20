@@ -1,6 +1,7 @@
 package com.ecommerce.app.services.api
 
 import com.ecommerce.app.constants.Constants
+import com.ecommerce.app.data.category.CategoryRes
 import com.ecommerce.app.data.product.ProductDetailRes
 import com.ecommerce.app.data.product.ProductRes
 import com.ecommerce.app.data.wishlist.WishlistRes
@@ -31,6 +32,8 @@ interface ProductService {
     @GET("products/{prodId}")
     suspend fun getProductDetailsById(@Path("prodId") prodId: Int): Response<ProductDetailRes>
 
+    @GET("categories")
+    suspend fun getCategories(): Response<CategoryRes>
 
 
 

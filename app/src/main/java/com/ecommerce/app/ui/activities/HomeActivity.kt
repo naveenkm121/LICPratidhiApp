@@ -1,13 +1,17 @@
 package com.ecommerce.app.ui.activities
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -16,11 +20,14 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.databinding.ActivityHomeBinding
-import com.ecommerce.app.databinding.ActivityMainBinding
+import com.ecommerce.app.ui.viewmodels.HomeViewModel
+import com.ecommerce.app.ui.viewmodels.ProductDetailViewModel
 import com.ecommerce.app.utils.DebugHandler
+import com.ecommerce.app.utils.ResourceViewState
+import com.ecommerce.app.utils.autoCleared
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
+
 
 @AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
@@ -30,6 +37,7 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var navController: NavController
     private lateinit var navView: NavigationView
 
+   // private val viewModel: HomeViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -75,6 +83,23 @@ class HomeActivity : AppCompatActivity() {
             }
         }*/
 
+
+       // setNavigationDrawer()
+       // viewModel.getCategories("hello")
+      //  setupObservers()
+    }
+
+    private fun setNavigationDrawer(){
+        val menu: Menu = navView.getMenu()
+        for (i in 1..3) {
+            menu.add("Runtime item $i")
+            val subMenu = menu.addSubMenu("SubMenu Title")
+            for (i in 1..2) {
+                subMenu.add("SubMenu Item $i")
+            }
+        }
+
+
     }
 
 
@@ -108,5 +133,37 @@ class HomeActivity : AppCompatActivity() {
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+
+
+    private fun setupObservers(){
+
+        /*   viewModel.response.observe(this, Observer {
+               when (it.status) {
+                  *//* ResourceViewState.Status.SUCCESS -> {
+                    //setProgressBar(false)
+                    if (it.data != null && it.data.status == 1) {
+
+                    } else
+                        //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+
+                }
+                ResourceViewState.Status.ERROR -> {
+                    // setProgressBar(false)
+                    DebugHandler.log("Error Naveen== "+it.message)
+                    if (it.message?.contains("401") == true) {
+                        //  Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
+                        //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
+
+                    } else
+                       // Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+
+                }
+                ResourceViewState.Status.LOADING ->{
+                    //  setProgressBar(true)
+                }*//*
+            }
+        })*/
+
     }
 }
