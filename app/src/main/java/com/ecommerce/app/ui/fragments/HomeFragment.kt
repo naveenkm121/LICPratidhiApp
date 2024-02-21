@@ -36,7 +36,7 @@ class HomeFragment : Fragment() {
         //setHasOptionsMenu(true)
         //wishlistViewModel.getWishlist(null)
         DebugHandler.log("Hello Bootom")
-        bottomNavigationListerner()
+      //  bottomNavigationListerner()
     }
 
 
@@ -44,7 +44,7 @@ class HomeFragment : Fragment() {
     {
 
 
-        binding.bottomNavigation.setOnNavigationItemSelectedListener(
+     /*   binding.bottomNavigation.setOnNavigationItemSelectedListener(
             BottomNavigationView.OnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.navigation_home -> {
@@ -57,17 +57,18 @@ class HomeFragment : Fragment() {
                     }
                     R.id.navigation_categories ->    {
                         DebugHandler.log("Hello navigation_categories")
-                        findNavController().navigate(R.id.action_homeFragment_to_wishlistFragment)
+                        findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
                         return@OnNavigationItemSelectedListener true
                     }
                     R.id.navigation_account ->     {
                         DebugHandler.log("Hello navigation_trending")
+                        findNavController().navigate(R.id.action_homeFragment_to_wishlistFragment)
                         return@OnNavigationItemSelectedListener true
                     }
 
                 }
                 false
-            })
+            })*/
 
 
     }

@@ -97,6 +97,7 @@
     <dimen name="width250">250dp</dimen>
     <dimen name="width280">280dp</dimen>
     <dimen name="height125">125dp</dimen>
+    <dimen name="height140">140dp</dimen>
     <dimen name="height150">150dp</dimen>
     <dimen name="height180">180dp</dimen>
     <dimen name="radius35">35dp</dimen>

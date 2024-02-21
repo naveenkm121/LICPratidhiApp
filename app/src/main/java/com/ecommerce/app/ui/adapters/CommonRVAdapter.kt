@@ -7,8 +7,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ecommerce.app.constants.ScreenName
-import com.ecommerce.app.data.product.Category
+import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.databinding.ItemCategoryBinding
+import com.ecommerce.app.utils.DebugHandler
 
 
 class CommonRVAdapter(private val fromScreen: String) :
@@ -30,8 +31,9 @@ class CommonRVAdapter(private val fromScreen: String) :
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonViewHolder {
 
-        if(fromScreen==ScreenName.CATEGORY_FRAGMENT.value){
-            val binding:ItemCategoryBinding=ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        if (fromScreen == ScreenName.CATEGORY_FRAGMENT.value) {
+            val binding: ItemCategoryBinding =
+                ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
             return CommonViewHolder(parent.context, binding, fromScreen)
         }
 
@@ -62,15 +64,14 @@ class CommonViewHolder(
     fun bind(item: Any) {
         if (fromScreen == ScreenName.CATEGORY_FRAGMENT.value) {
             item as Category
+            itemBinding.nameTV.text=item.name
         }
 
-        }
-
-    override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
     }
 
-
+    override fun onClick(p0: View?) {
+        DebugHandler.log("Hello Categories")
+    }
 
 
 }

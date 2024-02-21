@@ -3,28 +3,26 @@ package com.ecommerce.app.ui.activities
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContentProviderCompat.requireContext
+
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.Observer
+
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.databinding.ActivityHomeBinding
-import com.ecommerce.app.ui.viewmodels.HomeViewModel
-import com.ecommerce.app.ui.viewmodels.ProductDetailViewModel
+
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -87,6 +85,9 @@ class HomeActivity : AppCompatActivity() {
        // setNavigationDrawer()
        // viewModel.getCategories("hello")
       //  setupObservers()
+
+
+        bottomNavigationListerner()
     }
 
     private fun setNavigationDrawer(){
@@ -98,6 +99,41 @@ class HomeActivity : AppCompatActivity() {
                 subMenu.add("SubMenu Item $i")
             }
         }
+
+
+    }
+
+    private fun bottomNavigationListerner()
+    {
+        binding.appBarMain.bottomNavigation.setOnNavigationItemSelectedListener(
+            BottomNavigationView.OnNavigationItemSelectedListener { item ->
+                when (item.itemId) {
+                    R.id.navigation_home -> {
+                        DebugHandler.log("Hello Home")
+                        navController.navigate(R.id.homeFragment)
+                        return@OnNavigationItemSelectedListener true
+                    }
+                    R.id.navigation_trending ->     {
+                        DebugHandler.log("Hello navigation_trending")
+                        navController.navigate(R.id.wishlistFragment)
+                        return@OnNavigationItemSelectedListener true
+                    }
+                    R.id.navigation_categories ->    {
+                        DebugHandler.log("Hello navigation_categories")
+                        navController.navigate(R.id.categoryFragment)
+                       // findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
+                        return@OnNavigationItemSelectedListener true
+                    }
+                    R.id.navigation_account ->     {
+                        DebugHandler.log("Hello navigation_trending")
+                        navController.navigate(R.id.productListFragment)
+                       // findNavController().navigate(R.id.action_homeFragment_to_wishlistFragment)
+                        return@OnNavigationItemSelectedListener true
+                    }
+
+                }
+                false
+            })
 
 
     }

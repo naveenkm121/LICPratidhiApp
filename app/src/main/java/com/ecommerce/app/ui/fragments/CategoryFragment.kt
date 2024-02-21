@@ -19,24 +19,19 @@ import com.ecommerce.app.databinding.FragmentHomeBinding
 import com.ecommerce.app.databinding.FragmentProductDetailBinding
 import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.adapters.WishlistAdapter
+import com.ecommerce.app.ui.viewmodels.CategoryViewModel
 import com.ecommerce.app.ui.viewmodels.HomeViewModel
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
+import dagger.hilt.android.AndroidEntryPoint
 
-
+@AndroidEntryPoint
 class CategoryFragment : Fragment() {
     private var binding: FragmentCategoryBinding by autoCleared()
-    private val viewModel: HomeViewModel by viewModels()
+    private val viewModel: CategoryViewModel by viewModels()
     private lateinit var adapter: CommonRVAdapter
     private var categoryList = ArrayList<Category>()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setupRecyclerView()
-        setupObservers()
-        viewModel.getCategories("hello")
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -47,6 +42,15 @@ class CategoryFragment : Fragment() {
         //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //setHasOptionsMenu(true)
+        setupRecyclerView()
+        setupObservers()
+        viewModel.getCategories(ScreenName.CATEGORY_FRAGMENT.value)
+    }
+
 
     private fun setupRecyclerView() {
         adapter = CommonRVAdapter(ScreenName.CATEGORY_FRAGMENT.value)

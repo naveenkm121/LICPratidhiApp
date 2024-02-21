@@ -6,25 +6,30 @@
     app:startDestination="@id/homeFragment">
 
 
-       <fragment
-            android:id="@+id/homeFragment"
-            android:name="com.ecommerce.app.ui.fragments.HomeFragment"
-            android:label="Login"
-            tools:layout="@layout/fragment_home" >
-           <action
-               android:id="@+id/action_homeFragment_to_wishlistFragment"
-               app:destination="@id/wishlistFragment"
-               app:popEnterAnim="@android:anim/slide_in_left"
-               app:popExitAnim="@android:anim/slide_out_right"
-               />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.ecommerce.app.ui.fragments.HomeFragment"
+        android:label="@string/fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_categoryFragment"
+            app:destination="@id/categoryFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
 
-        </fragment>
+        <action
+            android:id="@+id/action_homeFragment_to_wishlistFragment"
+            app:destination="@id/wishlistFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+
+    </fragment>
 
 
     <fragment
         android:id="@+id/productListFragment"
         android:name="com.ecommerce.app.ui.fragments.ProductListFragment"
-        android:label="Login"
+        android:label="@string/fragment_products"
         tools:layout="@layout/fragment_productlist">
         <action
             android:id="@+id/action_productListFragment_to_productDetailFragment"
@@ -42,7 +47,7 @@
     <fragment
         android:id="@+id/productDetailFragment"
         android:name="com.ecommerce.app.ui.fragments.ProductDetailFragment"
-        android:label="productDetail"
+        android:label="@string/fragment_product_details"
         tools:layout="@layout/fragment_product_detail">
 
     </fragment>
@@ -50,7 +55,7 @@
     <fragment
         android:id="@+id/productFilterFragment"
         android:name="com.ecommerce.app.ui.fragments.ProductFilterFragment"
-        android:label="productFilter"
+        android:label="@string/fragment_filter"
         tools:layout="@layout/fragment_product_filter">
 
         <action
@@ -64,7 +69,7 @@
     <fragment
         android:id="@+id/wishlistFragment"
         android:name="com.ecommerce.app.ui.fragments.WishlistFragment"
-        android:label="Login"
+        android:label="@string/fragment_wishlist"
         tools:layout="@layout/fragment_wishlist">
         <action
             android:id="@+id/action_wishlistFragment_to_productDetailFragment"
@@ -77,11 +82,10 @@
     <fragment
         android:id="@+id/categoryFragment"
         android:name="com.ecommerce.app.ui.fragments.CategoryFragment"
-        android:label="Categories"
+        android:label="@string/fragment_category"
         tools:layout="@layout/fragment_category">
 
     </fragment>
-
 
 
 </navigation>

@@ -10,6 +10,14 @@
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
+    <!-- Strings related to Fragment -->
+    <string name="fragment_home">Home</string>
+    <string name="fragment_category">Categories</string>
+    <string name="fragment_wishlist">Wishlist</string>
+    <string name="fragment_products">Products</string>
+    <string name="fragment_product_details">Product Details</string>
+    <string name="fragment_filter">Filters</string>
+
     <!-- Strings related to login -->
     <string name="welcome_back">Welcome back</string>
     <string name="login">Login</string>
