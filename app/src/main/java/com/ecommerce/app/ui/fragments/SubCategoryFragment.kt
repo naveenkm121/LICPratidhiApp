@@ -14,6 +14,7 @@ import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.category.SubCategory
 import com.ecommerce.app.data.category.SubSubCategory
 import com.ecommerce.app.databinding.FragmentSubCategoryBinding
+import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.ui.adapters.SubCategoryAdapter
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
@@ -22,7 +23,7 @@ import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class SubCategoryFragment : Fragment(),CommonSelectItemRVListerner {
+class SubCategoryFragment : Fragment(), CommonSelectItemRVListerner {
 
     private var binding: FragmentSubCategoryBinding by autoCleared()
     private lateinit var adapter: SubCategoryAdapter
@@ -47,17 +48,20 @@ class SubCategoryFragment : Fragment(),CommonSelectItemRVListerner {
             selectedCategory = GsonHelper.fromJson(categoriesJson, Category::class.java)!!
             // Use the value as needed
         }
+
+        (activity as? HomeActivity)?.hideBottomNavigationView()
         setupRecyclerView()
     }
 
     private fun setupRecyclerView() {
-        adapter=SubCategoryAdapter(this)
+        adapter = SubCategoryAdapter(this)
         adapter.setItem(selectedCategory.subCategories)
         binding.recyclerView.adapter = adapter
-        binding.recyclerView.layoutManager =  LinearLayoutManager(requireContext())
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
     }
-    private fun launchProductListScreen(){
+
+    private fun launchProductListScreen() {
         findNavController().navigate(
             R.id.action_categoryFragment_to_productListFragment
         )
@@ -65,17 +69,22 @@ class SubCategoryFragment : Fragment(),CommonSelectItemRVListerner {
 
     override fun onSelectItemRVType(selectedItem: Any) {
 
-        if(selectedItem is SubCategory) {
-            //selectedItem as SubCategory
-            var selectedSubCategoryIndex = selectedCategory.subCategories.indexOf(selectedItem)
-            selectedCategory.subCategories.get(selectedSubCategoryIndex).isSelected =
-                !selectedItem.isSelected
-            // adapter.setItem(selectedCategory.subCategories)
-            adapter.notifyItemChanged(selectedSubCategoryIndex)
-        }else if(selectedItem is SubSubCategory)
-        {
-            launchProductListScreen()
+        when (selectedItem) {
+
+            is SubCategory -> {
+                var selectedSubCategoryIndex = selectedCategory.subCategories.indexOf(selectedItem)
+                selectedCategory.subCategories.get(selectedSubCategoryIndex).isSelected =
+                    !selectedItem.isSelected
+                adapter.notifyItemChanged(selectedSubCategoryIndex)
+            }
+
+            is SubSubCategory -> {
+                launchProductListScreen()
+            }
+
+            else -> println("obj is SubCategory a String nor an SubSubCategory")
         }
+
     }
 
     override fun onDestroyView() {

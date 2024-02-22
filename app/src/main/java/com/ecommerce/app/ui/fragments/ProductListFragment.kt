@@ -186,24 +186,24 @@ class ProductListFragment : Fragment(), ProductPageAdapter.CardItemListener {
 
 
     override fun onClickedCard(selectedProduct: ProductItem) {
-        findNavController().navigate(
-            R.id.action_productListFragment_to_productDetailFragment,
-            bundleOf(IntentConstants.PRODUCT_DETAILS to GsonHelper.toJson(selectedProduct))
-        )
 
-
-
+        launchProductDetailScreen(selectedProduct)
     }
 
+    private fun launchProductDetailScreen(selectedItem: ProductItem){
+        findNavController().navigate(
+            R.id.action_productListFragment_to_productDetailFragment,
+            bundleOf(
+                IntentConstants.PRODUCT_ID to selectedItem.id,
+                IntentConstants.PRODUCT_BRAND to selectedItem.brand
+            )
+        )
+    }
     private fun setProgressBar(b: Boolean) {
         if (!b) {
-            // binding.progressBarShim.shimmerLayout.visibility = View.GONE
             binding.progressBar.visibility = View.GONE
-            // binding.progressBarShim.shimmerLayout.showShimmer(false)
         } else {
-            // binding.progressBarShim.shimmerLayout.visibility = View.VISIBLE
             binding.progressBar.visibility = View.VISIBLE
-            // binding.progressBarShim.shimmerLayout.showShimmer(true)
         }
     }
 

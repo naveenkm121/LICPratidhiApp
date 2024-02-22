@@ -3,6 +3,7 @@ package com.ecommerce.app.ui.activities
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 
@@ -136,6 +137,11 @@ class HomeActivity : AppCompatActivity() {
             })
 
 
+    }
+
+
+    fun hideBottomNavigationView() {
+        binding.appBarMain.bottomNavigation.visibility = View.GONE
     }
 
 

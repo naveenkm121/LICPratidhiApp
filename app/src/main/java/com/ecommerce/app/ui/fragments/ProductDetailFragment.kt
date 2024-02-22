@@ -105,7 +105,7 @@ class ProductDetailFragment : Fragment() {
                    // setProgressBar(false)
                     DebugHandler.log("Error Naveen== "+it.message)
                     if (it.message?.contains("401") == true) {
-                        //  Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
+                          Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
                         //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
 
                     } else
