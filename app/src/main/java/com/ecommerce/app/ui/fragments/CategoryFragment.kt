@@ -49,6 +49,13 @@ class CategoryFragment : Fragment() {
         setupRecyclerView()
         setupObservers()
         viewModel.getCategories(ScreenName.CATEGORY_FRAGMENT.value)
+
+        val childFragment = SubCategoryFragment()
+
+        // Replace fragment_container with childFragment
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragment_subcategory, childFragment)
+            .commit()
     }
 
 

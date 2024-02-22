@@ -40,38 +40,6 @@ class HomeFragment : Fragment() {
     }
 
 
-    private fun bottomNavigationListerner()
-    {
-
-
-     /*   binding.bottomNavigation.setOnNavigationItemSelectedListener(
-            BottomNavigationView.OnNavigationItemSelectedListener { item ->
-                when (item.itemId) {
-                    R.id.navigation_home -> {
-                        DebugHandler.log("Hello Home")
-                        return@OnNavigationItemSelectedListener true
-                    }
-                    R.id.navigation_trending ->     {
-                        DebugHandler.log("Hello navigation_trending")
-                        return@OnNavigationItemSelectedListener true
-                    }
-                    R.id.navigation_categories ->    {
-                        DebugHandler.log("Hello navigation_categories")
-                        findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
-                        return@OnNavigationItemSelectedListener true
-                    }
-                    R.id.navigation_account ->     {
-                        DebugHandler.log("Hello navigation_trending")
-                        findNavController().navigate(R.id.action_homeFragment_to_wishlistFragment)
-                        return@OnNavigationItemSelectedListener true
-                    }
-
-                }
-                false
-            })*/
-
-
-    }
 
     override fun onDestroyView() {
         super.onDestroyView()
