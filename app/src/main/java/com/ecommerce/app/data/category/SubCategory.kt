@@ -4,5 +4,6 @@ data class SubCategory(
     val catId: Int,
     val id: Int,
     val name: String,
-    val subSubCategories: List<SubSubCategory>
+    val subSubCategories: List<SubSubCategory>,
+    var isSelected:Boolean=false
 )

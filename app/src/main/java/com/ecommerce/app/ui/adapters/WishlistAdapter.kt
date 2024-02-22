@@ -16,10 +16,11 @@ import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.ItemFilterBinding
 import com.ecommerce.app.databinding.ItemProductBinding
+import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
 
 
-class WishlistAdapter(private val context: Context, private val listener: CardItemListener) : RecyclerView.Adapter<WishlistAdapter.ProductVH>() {
+class WishlistAdapter( private val listener: CommonSelectItemRVListerner) : RecyclerView.Adapter<WishlistAdapter.ProductVH>() {
 
     private var itemList: List<WishlistItem> = listOf()
 
@@ -28,9 +29,6 @@ class WishlistAdapter(private val context: Context, private val listener: CardIt
         notifyDataSetChanged()
     }
 
-    interface CardItemListener {
-        fun onClickedCard(wishlistItem: WishlistItem)
-    }
 
     override fun getItemCount(): Int= itemList.size
 
@@ -48,7 +46,7 @@ class WishlistAdapter(private val context: Context, private val listener: CardIt
     class ProductVH(
         private val context: Context,
         private val itemBinding: ItemProductBinding,
-        private  val listener: WishlistAdapter.CardItemListener,
+        private  val listener: CommonSelectItemRVListerner,
     ) : RecyclerView.ViewHolder(itemBinding.root),
         View.OnClickListener  {
 
@@ -72,7 +70,7 @@ class WishlistAdapter(private val context: Context, private val listener: CardIt
                 .into(itemBinding.productImageView)
 
             itemBinding.root.setOnClickListener{
-                listener.onClickedCard(item)
+                listener.onSelectItemRVType(item)
             }
 
         }

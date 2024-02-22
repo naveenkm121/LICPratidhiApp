@@ -19,6 +19,7 @@ import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentWishlistBinding
 import com.ecommerce.app.ui.adapters.WishlistAdapter
 import com.ecommerce.app.ui.viewmodels.WishlistViewModel
+import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
@@ -27,7 +28,7 @@ import dagger.hilt.android.AndroidEntryPoint
 
 
 @AndroidEntryPoint
-class WishlistFragment : Fragment(),WishlistAdapter.CardItemListener {
+class WishlistFragment : Fragment(),CommonSelectItemRVListerner {
 
     private val wishlistViewModel: WishlistViewModel by viewModels()
     private var binding: FragmentWishlistBinding by autoCleared()
@@ -42,7 +43,6 @@ class WishlistFragment : Fragment(),WishlistAdapter.CardItemListener {
     ): View? {
 
         binding = FragmentWishlistBinding.inflate(inflater, container, false)
-        //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
 
     }
@@ -56,7 +56,7 @@ class WishlistFragment : Fragment(),WishlistAdapter.CardItemListener {
     }
 
     private fun setupRecyclerView() {
-        adapter = WishlistAdapter(requireContext(),this)
+        adapter = WishlistAdapter(this)
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
@@ -112,17 +112,16 @@ class WishlistFragment : Fragment(),WishlistAdapter.CardItemListener {
     }
     override fun onDestroyView() {
         super.onDestroyView()
-        //binding = null
     }
 
-    override fun onClickedCard(selectedProduct: WishlistItem) {
-        DebugHandler.log("Hello Fragment Product=="+selectedProduct.prodId)
+
+    override fun onSelectItemRVType(selectedItem: Any) {
+        selectedItem as WishlistItem
         findNavController().navigate(R.id.action_wishlistFragment_to_productDetailFragment,
             bundleOf(
-                IntentConstants.PRODUCT_ID to selectedProduct.prodId,
-                IntentConstants.PRODUCT_BRAND to selectedProduct.brand
+                IntentConstants.PRODUCT_ID to selectedItem.prodId,
+                IntentConstants.PRODUCT_BRAND to selectedItem.brand
             )
         )
-
     }
 }

@@ -8,16 +8,20 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.category.Category
+import com.ecommerce.app.data.filter.Filter
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.utils.DebugHandler
 
 
-class CommonRVAdapter(private val fromScreen: String) :
+class CommonRVAdapter(private val fromScreen: String,val listener: CommonRVAdapter.SelectCommonItemRVListener) :
     RecyclerView.Adapter<CommonViewHolder>() {
 
 
     private val items = arrayListOf<Any>()
 
+    interface SelectCommonItemRVListener {
+        fun onSelectCommonItemType(item: Any)
+    }
     fun <T> setItems(items: ArrayList<T>) {
         this.items.clear()
         this.items.addAll(items as ArrayList<*>)
@@ -34,7 +38,7 @@ class CommonRVAdapter(private val fromScreen: String) :
         if (fromScreen == ScreenName.CATEGORY_FRAGMENT.value) {
             val binding: ItemCategoryBinding =
                 ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            return CommonViewHolder(parent.context, binding, fromScreen)
+            return CommonViewHolder(parent.context, binding, fromScreen,listener)
         }
 
         return TODO("Provide the return value")
@@ -52,12 +56,12 @@ class CommonViewHolder(
     private val mContext: Context,
     private val itemBinding: ItemCategoryBinding,
     private val fromScreen: String,
-) : RecyclerView.ViewHolder(itemBinding.root),
-    View.OnClickListener {
+    private val listener: CommonRVAdapter.SelectCommonItemRVListener
+) : RecyclerView.ViewHolder(itemBinding.root) {
 
 
     init {
-        itemBinding.root.setOnClickListener(this)
+        //itemBinding.root.setOnClickListener(this)
     }
 
     @SuppressLint("SetTextI18n")
@@ -65,13 +69,14 @@ class CommonViewHolder(
         if (fromScreen == ScreenName.CATEGORY_FRAGMENT.value) {
             item as Category
             itemBinding.nameTV.text=item.name
+
+            itemBinding.root.setOnClickListener{
+                listener.onSelectCommonItemType(item)
+            }
         }
 
     }
 
-    override fun onClick(p0: View?) {
-        DebugHandler.log("Hello Categories")
-    }
 
 
 }

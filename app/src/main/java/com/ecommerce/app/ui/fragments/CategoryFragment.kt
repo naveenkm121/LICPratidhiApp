@@ -9,10 +9,12 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.constants.ScreenName
-import com.ecommerce.app.data.product.Category
+import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentCategoryBinding
 import com.ecommerce.app.databinding.FragmentHomeBinding
@@ -21,12 +23,13 @@ import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.adapters.WishlistAdapter
 import com.ecommerce.app.ui.viewmodels.CategoryViewModel
 import com.ecommerce.app.ui.viewmodels.HomeViewModel
+import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CategoryFragment : Fragment() {
+class CategoryFragment : Fragment(),CommonRVAdapter.SelectCommonItemRVListener {
     private var binding: FragmentCategoryBinding by autoCleared()
     private val viewModel: CategoryViewModel by viewModels()
     private lateinit var adapter: CommonRVAdapter
@@ -37,9 +40,7 @@ class CategoryFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         binding = FragmentCategoryBinding.inflate(inflater, container, false)
-        //val toolbar: Toolbar = root.findViewById(R.id.toolbar)
         return binding.root
     }
 
@@ -50,17 +51,26 @@ class CategoryFragment : Fragment() {
         setupObservers()
         viewModel.getCategories(ScreenName.CATEGORY_FRAGMENT.value)
 
-        val childFragment = SubCategoryFragment()
 
-        // Replace fragment_container with childFragment
-        childFragmentManager.beginTransaction()
-            .replace(R.id.fragment_subcategory, childFragment)
-            .commit()
     }
 
 
+    private fun launchSubCategoryUI(category: Category) {
+
+        val bundle = Bundle().apply {
+            putString(IntentConstants.CATEGORY_ITEM, GsonHelper.toJson(category))
+        }
+        val subCategoryFragment=SubCategoryFragment()
+        subCategoryFragment.arguments=bundle
+
+        childFragmentManager.beginTransaction()
+            .replace(R.id.fragment_subcategory, subCategoryFragment)
+            .commit()
+
+    }
+
     private fun setupRecyclerView() {
-        adapter = CommonRVAdapter(ScreenName.CATEGORY_FRAGMENT.value)
+        adapter = CommonRVAdapter(ScreenName.CATEGORY_FRAGMENT.value,this)
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
@@ -115,6 +125,12 @@ class CategoryFragment : Fragment() {
             // binding.progressBarShim.shimmerLayout.showShimmer(true)
         }
     }
+
+    override fun onSelectCommonItemType(item: Any) {
+        item as Category
+        launchSubCategoryUI(item)
+    }
+
 
 
 }

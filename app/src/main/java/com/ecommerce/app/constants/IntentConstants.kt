@@ -9,5 +9,8 @@ class IntentConstants {
         val PRODUCT_TITLE="prodTitle"
         val PRODUCT_BRAND="prodTitle"
 
+
+        val CATEGORY_ITEM="categoryItem"
+
     }
 }
