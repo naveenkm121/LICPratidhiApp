@@ -6,22 +6,23 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import androidx.viewbinding.ViewBinding
+import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.category.Category
-import com.ecommerce.app.data.filter.Filter
+import com.ecommerce.app.data.category.SubCategory
 import com.ecommerce.app.databinding.ItemCategoryBinding
+import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
+import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
 
 
-class CommonRVAdapter(private val fromScreen: String,val listener: CommonRVAdapter.SelectCommonItemRVListener) :
+class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelectItemRVListerner) :
     RecyclerView.Adapter<CommonViewHolder>() {
 
 
     private val items = arrayListOf<Any>()
 
-    interface SelectCommonItemRVListener {
-        fun onSelectCommonItemType(item: Any)
-    }
     fun <T> setItems(items: ArrayList<T>) {
         this.items.clear()
         this.items.addAll(items as ArrayList<*>)
@@ -34,11 +35,25 @@ class CommonRVAdapter(private val fromScreen: String,val listener: CommonRVAdapt
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonViewHolder {
+        when (fromScreen) {
+            ScreenName.FRAGMENT_HOME_TOP_CATEGORY.value -> {
 
-        if (fromScreen == ScreenName.CATEGORY_FRAGMENT.value) {
-            val binding: ItemCategoryBinding =
-                ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-            return CommonViewHolder(parent.context, binding, fromScreen,listener)
+                val binding: ItemCategoryHorizontalBinding =
+                    ItemCategoryHorizontalBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
+            ScreenName.FRAGMENT_CATEGORY.value -> {
+
+                val binding: ItemCategoryBinding =
+                    ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
         }
 
         return TODO("Provide the return value")
@@ -54,29 +69,41 @@ class CommonRVAdapter(private val fromScreen: String,val listener: CommonRVAdapt
 
 class CommonViewHolder(
     private val mContext: Context,
-    private val itemBinding: ItemCategoryBinding,
+    private val itemBinding: ViewBinding,
     private val fromScreen: String,
-    private val listener: CommonRVAdapter.SelectCommonItemRVListener
-) : RecyclerView.ViewHolder(itemBinding.root) {
+    private val listener: CommonSelectItemRVListerner
+) : RecyclerView.ViewHolder(itemBinding.root), View.OnClickListener {
 
+    private lateinit var selectedItem: Any
 
     init {
-        //itemBinding.root.setOnClickListener(this)
+        itemBinding.root.setOnClickListener(this)
     }
 
     @SuppressLint("SetTextI18n")
     fun bind(item: Any) {
-        if (fromScreen == ScreenName.CATEGORY_FRAGMENT.value) {
-            item as Category
-            itemBinding.nameTV.text=item.name
+        selectedItem = item
+        when (fromScreen) {
 
-            itemBinding.root.setOnClickListener{
-                listener.onSelectCommonItemType(item)
+            ScreenName.FRAGMENT_HOME_TOP_CATEGORY.value -> {
+                item as Category
+                itemBinding as ItemCategoryHorizontalBinding
+                itemBinding.nameTV.text = item.name
             }
+
+            ScreenName.FRAGMENT_CATEGORY.value -> {
+                item as Category
+                itemBinding as ItemCategoryBinding
+                itemBinding.nameTV.text = item.name
+            }
+
         }
 
     }
 
-
+    override fun onClick(p0: View?) {
+        DebugHandler.log("Helllo Selected Item")
+        listener.onSelectItemRVType(selectedItem)
+    }
 
 }

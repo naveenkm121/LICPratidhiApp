@@ -1,0 +1,91 @@
+{
+  "views": [
+    {
+      "type": "small_icon",
+      "heading": "Category",
+      "data": [
+        {
+          "id": 1,
+          "name": "Category 1",
+          "icon_url": "https://example.com/images/category1_icon.png"
+        },
+        {
+          "id": 2,
+          "name": "Category 2",
+          "icon_url": "https://example.com/images/category2_icon.png"
+        },
+        {
+          "id": 3,
+          "name": "Category 3",
+          "icon_url": "https://example.com/images/category3_icon.png"
+        }
+      ]
+    },
+    {
+      "type": "big_banner",
+      "data": [
+        {
+          "id": 1,
+          "image_url": "https://example.com/images/big_banner1.jpg",
+          "click_url": "https://example.com/big_banner1"
+        },
+        {
+          "id": 2,
+          "image_url": "https://example.com/images/big_banner2.jpg",
+          "click_url": "https://example.com/big_banner2"
+        },
+        {
+          "id": 3,
+          "image_url": "https://example.com/images/big_banner3.jpg",
+          "click_url": "https://example.com/big_banner3"
+        }
+      ]
+    },
+    {
+      "type": "small_banner",
+      "data": [
+        {
+          "id": 1,
+          "image_url": "https://example.com/images/small_banner1.jpg",
+          "click_url": "https://example.com/small_banner1"
+        },
+        {
+          "id": 2,
+          "image_url": "https://example.com/images/small_banner2.jpg",
+          "click_url": "https://example.com/small_banner2"
+        },
+        {
+          "id": 3,
+          "image_url": "https://example.com/images/small_banner3.jpg",
+          "click_url": "https://example.com/small_banner3"
+        }
+      ]
+    },
+    {
+      "type": "product_card",
+      "data": [
+        {
+          "id": 1,
+          "name": "Product 1",
+          "description": "Description of Product 1",
+          "price": 19.99,
+          "image_url": "https://example.com/images/product1.jpg"
+        },
+        {
+          "id": 2,
+          "name": "Product 2",
+          "description": "Description of Product 2",
+          "price": 29.99,
+          "image_url": "https://example.com/images/product2.jpg"
+        },
+        {
+          "id": 3,
+          "name": "Product 3",
+          "description": "Description of Product 3",
+          "price": 39.99,
+          "image_url": "https://example.com/images/product3.jpg"
+        }
+      ]
+    }
+  ]
+}

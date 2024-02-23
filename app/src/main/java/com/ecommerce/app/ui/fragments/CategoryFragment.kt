@@ -23,13 +23,15 @@ import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.adapters.WishlistAdapter
 import com.ecommerce.app.ui.viewmodels.CategoryViewModel
 import com.ecommerce.app.ui.viewmodels.HomeViewModel
+import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
+import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CategoryFragment : Fragment(),CommonRVAdapter.SelectCommonItemRVListener {
+class CategoryFragment : Fragment(),CommonSelectItemRVListerner {
     private var binding: FragmentCategoryBinding by autoCleared()
     private val viewModel: CategoryViewModel by viewModels()
     private lateinit var adapter: CommonRVAdapter
@@ -49,7 +51,7 @@ class CategoryFragment : Fragment(),CommonRVAdapter.SelectCommonItemRVListener {
         //setHasOptionsMenu(true)
         setupRecyclerView()
         setupObservers()
-        viewModel.getCategories(ScreenName.CATEGORY_FRAGMENT.value)
+        viewModel.getCategories(ScreenName.FRAGMENT_CATEGORY.value)
 
 
     }
@@ -70,7 +72,7 @@ class CategoryFragment : Fragment(),CommonRVAdapter.SelectCommonItemRVListener {
     }
 
     private fun setupRecyclerView() {
-        adapter = CommonRVAdapter(ScreenName.CATEGORY_FRAGMENT.value,this)
+        adapter = CommonRVAdapter(ScreenName.FRAGMENT_CATEGORY.value,this)
         binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
         binding.recyclerView.adapter = adapter
     }
@@ -83,7 +85,7 @@ class CategoryFragment : Fragment(),CommonRVAdapter.SelectCommonItemRVListener {
                     setProgressBar(false)
                     if (it.data != null && it.data.status == 1) {
                         if (it.data.data.isNotEmpty()) {
-
+                            SaveSharedPreference.setCategoryValue(requireContext(),it.data)
                             categoryList = it.data.data as ArrayList<Category>
                             adapter.setItems(categoryList)
                         } else {
@@ -126,11 +128,11 @@ class CategoryFragment : Fragment(),CommonRVAdapter.SelectCommonItemRVListener {
         }
     }
 
-    override fun onSelectCommonItemType(item: Any) {
-        item as Category
-        launchSubCategoryUI(item)
-    }
 
+    override fun onSelectItemRVType(selectedItem: Any) {
+        selectedItem as Category
+        launchSubCategoryUI(selectedItem)
+    }
 
 
 }
