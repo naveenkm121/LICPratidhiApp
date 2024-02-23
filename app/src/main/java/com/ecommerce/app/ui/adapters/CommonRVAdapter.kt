@@ -89,6 +89,8 @@ class CommonViewHolder(
                 item as Category
                 itemBinding as ItemCategoryHorizontalBinding
                 itemBinding.nameTV.text = item.name
+                //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
+                itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
             }
 
             ScreenName.FRAGMENT_CATEGORY.value -> {
