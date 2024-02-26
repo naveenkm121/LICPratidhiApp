@@ -8,10 +8,16 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.category.CategoryRes
+import com.ecommerce.app.data.filter.FilterRes
+import com.ecommerce.app.data.home.HomeRes
+import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.FragmentHomeBinding
 import com.ecommerce.app.ui.adapters.CommonRVAdapter
+import com.ecommerce.app.ui.adapters.HomeAdapter
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
+import com.ecommerce.app.utils.CommonUtility
 import com.ecommerce.app.utils.DebugHandler
+import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,7 +27,9 @@ import dagger.hilt.android.AndroidEntryPoint
 class HomeFragment : Fragment(),CommonSelectItemRVListerner {
     private var binding: FragmentHomeBinding by autoCleared()
     private lateinit var topCategoryAdapter: CommonRVAdapter
+    private lateinit var homeAdapter: HomeAdapter
     private lateinit var categoryRes: CategoryRes
+    private lateinit var homeRes: HomeRes
 
 
 
@@ -39,8 +47,13 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         //setHasOptionsMenu(true)
-        DebugHandler.log("Hello Bootom")
-        setupCategoryRecyclerView()
+      //  setupCategoryRecyclerView()
+
+
+
+
+
+        setupRecylerView()
 
     }
 
@@ -50,6 +63,17 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
         topCategoryAdapter.setItems(categoryRes.data as ArrayList<Category>)
         binding.topCategoryRV.layoutManager =  LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
         binding.topCategoryRV.adapter = topCategoryAdapter
+    }
+
+    private fun setupRecylerView()
+    {
+        val homeJsonString = CommonUtility.getJsonDataFromAsset(requireContext(), "home.json")
+        homeRes = GsonHelper.fromJson(homeJsonString, HomeRes::class.java)!!
+
+        homeAdapter = HomeAdapter()
+        homeAdapter.setItems(homeRes.views as ArrayList<ViewType>)
+        binding.topCategoryRV.layoutManager =  LinearLayoutManager(requireContext())
+        binding.topCategoryRV.adapter = homeAdapter
     }
 
 

@@ -16,4 +16,6 @@ class AppConstants {
         val SUCCESS:String="SUCCESS"
 
     }
+
+
 }

@@ -7,10 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.category.Category
-import com.ecommerce.app.data.category.SubCategory
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
@@ -90,7 +88,7 @@ class CommonViewHolder(
                 itemBinding as ItemCategoryHorizontalBinding
                 itemBinding.nameTV.text = item.name
                 //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
-                itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
+                // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
             }
 
             ScreenName.FRAGMENT_CATEGORY.value -> {
