@@ -61,8 +61,8 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
         categoryRes= SaveSharedPreference.getCategoryResValue(requireContext())!!
         topCategoryAdapter = CommonRVAdapter(ScreenName.FRAGMENT_HOME_TOP_CATEGORY.value,this)
         topCategoryAdapter.setItems(categoryRes.data as ArrayList<Category>)
-        binding.topCategoryRV.layoutManager =  LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
-        binding.topCategoryRV.adapter = topCategoryAdapter
+        binding.recyclerView.layoutManager =  LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
+        binding.recyclerView.adapter = topCategoryAdapter
     }
 
     private fun setupRecylerView()
@@ -70,10 +70,10 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
         val homeJsonString = CommonUtility.getJsonDataFromAsset(requireContext(), "home.json")
         homeRes = GsonHelper.fromJson(homeJsonString, HomeRes::class.java)!!
 
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter(this)
         homeAdapter.setItems(homeRes.views as ArrayList<ViewType>)
-        binding.topCategoryRV.layoutManager =  LinearLayoutManager(requireContext())
-        binding.topCategoryRV.adapter = homeAdapter
+        binding.recyclerView.layoutManager =  LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = homeAdapter
     }
 
 
@@ -84,7 +84,7 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
     }
 
     override fun onSelectItemRVType(selectedItem: Any) {
-        DebugHandler.log("Hello categoryclick")
+       "Hellol"
     }
 
 

@@ -8,7 +8,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
 import com.ecommerce.app.constants.ScreenName
+import com.ecommerce.app.constants.ViewTypeEnum
 import com.ecommerce.app.data.category.Category
+import com.ecommerce.app.data.home.ViewItemData
+import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
@@ -34,6 +37,18 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonViewHolder {
         when (fromScreen) {
+
+            ViewTypeEnum.SMALL_ICON_TYPE.value -> {
+
+                val binding: ItemCategoryHorizontalBinding =
+                    ItemCategoryHorizontalBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
             ScreenName.FRAGMENT_HOME_TOP_CATEGORY.value -> {
 
                 val binding: ItemCategoryHorizontalBinding =
@@ -52,9 +67,10 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
                 return CommonViewHolder(parent.context, binding, fromScreen, listener)
             }
 
+            else -> throw IllegalArgumentException("Invalid view type")
+
         }
 
-        return TODO("Provide the return value")
     }
 
     override fun getItemCount(): Int = items.size
@@ -83,8 +99,8 @@ class CommonViewHolder(
         selectedItem = item
         when (fromScreen) {
 
-            ScreenName.FRAGMENT_HOME_TOP_CATEGORY.value -> {
-                item as Category
+            ViewTypeEnum.SMALL_ICON_TYPE.value -> {
+                item as ViewItemData
                 itemBinding as ItemCategoryHorizontalBinding
                 itemBinding.nameTV.text = item.name
                 //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
