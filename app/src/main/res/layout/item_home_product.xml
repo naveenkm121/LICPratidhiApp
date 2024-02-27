@@ -5,8 +5,8 @@
     app:cardCornerRadius="@dimen/radius8"
     app:cardElevation="@dimen/elevation2"
     android:layout_margin="@dimen/margin5"
-    app:strokeColor="@color/light_grey"
-    app:strokeWidth="2dp"
+    app:strokeColor="@color/dull_white"
+    app:strokeWidth="1.5dp"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <androidx.constraintlayout.widget.ConstraintLayout
