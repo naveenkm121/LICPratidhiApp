@@ -26,9 +26,7 @@ import dagger.hilt.android.AndroidEntryPoint
 @AndroidEntryPoint
 class HomeFragment : Fragment(),CommonSelectItemRVListerner {
     private var binding: FragmentHomeBinding by autoCleared()
-    private lateinit var topCategoryAdapter: CommonRVAdapter
     private lateinit var homeAdapter: HomeAdapter
-    private lateinit var categoryRes: CategoryRes
     private lateinit var homeRes: HomeRes
 
 
@@ -49,21 +47,11 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
         //setHasOptionsMenu(true)
       //  setupCategoryRecyclerView()
 
-
-
-
-
         setupRecylerView()
 
     }
 
-    private fun setupCategoryRecyclerView() {
-        categoryRes= SaveSharedPreference.getCategoryResValue(requireContext())!!
-        topCategoryAdapter = CommonRVAdapter(ScreenName.FRAGMENT_HOME_TOP_CATEGORY.value,this)
-        topCategoryAdapter.setItems(categoryRes.data as ArrayList<Category>)
-        binding.recyclerView.layoutManager =  LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL,false)
-        binding.recyclerView.adapter = topCategoryAdapter
-    }
+
 
     private fun setupRecylerView()
     {

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView android:id="@+id/cardView"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/radius8"
+    app:cardElevation="@dimen/elevation2"
+    android:layout_margin="@dimen/margin5"
+    app:strokeColor="@color/light_grey"
+    app:strokeWidth="2dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="@dimen/width200"
+        android:layout_height="@dimen/height300"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_margin="@dimen/margin2"
+        android:background="@color/white30Percentage">
+
+
+        <ImageView
+            android:id="@+id/productImageView"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/height200"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_product_item"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/productBrandTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Levis"
+            android:textSize="@dimen/text_16"
+            android:textStyle="bold"
+            android:layout_margin="@dimen/margin5"
+            app:layout_constraintTop_toBottomOf="@id/productImageView"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/productNameTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Lace up Ankel length boot"
+            android:maxLines="2"
+            android:textSize="@dimen/text_14"
+            android:layout_marginLeft="@dimen/margin5"
+            android:layout_marginRight="@dimen/margin5"
+            app:layout_constraintTop_toBottomOf="@id/productBrandTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+
+        <TextView
+            android:id="@+id/discountPriceTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="$400"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_14"
+            android:layout_marginLeft="@dimen/margin5"
+            android:layout_marginRight="@dimen/margin5"
+            app:layout_constraintTop_toBottomOf="@id/productNameTV"
+            app:layout_constraintStart_toStartOf="parent" />
+        <TextView
+            android:id="@+id/priceTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin2"
+            android:text="$750"
+            android:textSize="@dimen/text_12"
+            app:layout_constraintTop_toBottomOf="@id/productNameTV"
+            app:layout_constraintStart_toEndOf="@id/discountPriceTV"
+            />
+        <TextView
+            android:id="@+id/discountTV"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin2"
+            android:text="80% Off"
+            android:textColor="@color/teal_700"
+            android:textStyle="bold"
+            android:textSize="@dimen/text_12"
+            app:layout_constraintTop_toBottomOf="@id/productNameTV"
+            app:layout_constraintStart_toEndOf="@id/priceTV"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
+<!---->

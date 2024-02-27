@@ -14,7 +14,7 @@ import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.home.ViewItemData
 import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.CommonRecyclerViewBinding
-import com.ecommerce.app.databinding.ItemCategoryBinding
+import com.ecommerce.app.databinding.CommonRecyclerViewHeadingBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.ui.adapters.HomeViewType.BIG_BANNER_VIEW_TYPE
 import com.ecommerce.app.ui.adapters.HomeViewType.PRODUCT_CARD_VIEW_TYPE
@@ -25,13 +25,14 @@ import com.ecommerce.app.utils.DebugHandler
 
 
 object HomeViewType {
-         const val SMALL_ICON_VIEW_TYPE = 0
-         const val SMALL_BANNER_VIEW_TYPE = 1
-         const val BIG_BANNER_VIEW_TYPE = 2
-         const val PRODUCT_CARD_VIEW_TYPE = 3
+    const val SMALL_ICON_VIEW_TYPE = 0
+    const val SMALL_BANNER_VIEW_TYPE = 1
+    const val BIG_BANNER_VIEW_TYPE = 2
+    const val PRODUCT_CARD_VIEW_TYPE = 3
 }
 
-class HomeAdapter(val listener: CommonSelectItemRVListerner) : RecyclerView.Adapter<CommonHomeViewHolder>() {
+class HomeAdapter(val listener: CommonSelectItemRVListerner) :
+    RecyclerView.Adapter<CommonHomeViewHolder>() {
 
 
     private val items = arrayListOf<Any>()
@@ -48,25 +49,44 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) : RecyclerView.Adap
     }
 
 
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonHomeViewHolder {
         return when (viewType) {
             SMALL_ICON_VIEW_TYPE -> {
-                val binding: CommonRecyclerViewBinding = CommonRecyclerViewBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                CommonHomeViewHolder(parent.context, binding, viewType,listener)
+                val binding: CommonRecyclerViewBinding = CommonRecyclerViewBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                CommonHomeViewHolder(parent.context, binding, viewType, listener)
             }
+
             SMALL_BANNER_VIEW_TYPE -> {
-                val binding: ItemCategoryHorizontalBinding = ItemCategoryHorizontalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                CommonHomeViewHolder(parent.context, binding, viewType,listener)
+                val binding: ItemCategoryHorizontalBinding = ItemCategoryHorizontalBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                CommonHomeViewHolder(parent.context, binding, viewType, listener)
             }
-           BIG_BANNER_VIEW_TYPE -> {
-                val binding: ItemCategoryHorizontalBinding = ItemCategoryHorizontalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-               CommonHomeViewHolder(parent.context, binding, viewType,listener)
+
+            BIG_BANNER_VIEW_TYPE -> {
+                val binding: ItemCategoryHorizontalBinding = ItemCategoryHorizontalBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                CommonHomeViewHolder(parent.context, binding, viewType, listener)
             }
+
             PRODUCT_CARD_VIEW_TYPE -> {
-                val binding: ItemCategoryHorizontalBinding = ItemCategoryHorizontalBinding.inflate(LayoutInflater.from(parent.context), parent, false)
-                CommonHomeViewHolder(parent.context, binding, viewType,listener)
+                val binding: CommonRecyclerViewHeadingBinding = CommonRecyclerViewHeadingBinding.inflate(
+                    LayoutInflater.from(parent.context),
+                    parent,
+                    false
+                )
+                CommonHomeViewHolder(parent.context, binding, viewType, listener)
             }
+
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -81,14 +101,13 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) : RecyclerView.Adap
     }
 
     override fun getItemViewType(position: Int): Int {
-        val viewTypeData=items.get(position) as ViewType
-        DebugHandler.log("getViewType=="+viewTypeData.type)
+        val viewTypeData = items.get(position) as ViewType
         return when (viewTypeData.type) {
-            ViewTypeEnum.SMALL_ICON_TYPE.value ->SMALL_ICON_VIEW_TYPE
+            ViewTypeEnum.SMALL_ICON_TYPE.value -> SMALL_ICON_VIEW_TYPE
             ViewTypeEnum.SMALL_BANNER_TYPE.value -> SMALL_BANNER_VIEW_TYPE
             ViewTypeEnum.BIG_BANNER_TYPE.value -> BIG_BANNER_VIEW_TYPE
             ViewTypeEnum.PRODUCT_CARD_TYPE.value -> PRODUCT_CARD_VIEW_TYPE
-            else ->throw IllegalArgumentException("Invalid view type")
+            else -> throw IllegalArgumentException("Invalid view type")
         }
     }
 
@@ -118,13 +137,37 @@ class CommonHomeViewHolder(
                 item as ViewType
                 itemBinding as CommonRecyclerViewBinding
 
-                val adapter = CommonRVAdapter(ViewTypeEnum.SMALL_ICON_TYPE.value,listener)
+                val adapter = CommonRVAdapter(ViewTypeEnum.SMALL_ICON_TYPE.value, listener)
                 adapter.setItems(item.data as ArrayList<ViewItemData>)
-                itemBinding.recyclerView.setLayoutManager(LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false))
+                itemBinding.recyclerView.setLayoutManager(
+                    LinearLayoutManager(
+                        context,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                )
                 itemBinding.recyclerView.setHasFixedSize(true)
                 itemBinding.recyclerView.setAdapter(adapter)
                 //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
                 // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
+            }
+
+            PRODUCT_CARD_VIEW_TYPE->{
+                item as ViewType
+                itemBinding as CommonRecyclerViewHeadingBinding
+                itemBinding.headingTV.text=item.heading
+                val adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_TYPE.value, listener)
+                adapter.setItems(item.data as ArrayList<ViewItemData>)
+
+                itemBinding.recyclerView.setLayoutManager(
+                    LinearLayoutManager(
+                        context,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                )
+                itemBinding.recyclerView.setHasFixedSize(true)
+                itemBinding.recyclerView.setAdapter(adapter)
             }
 
         }
@@ -133,7 +176,7 @@ class CommonHomeViewHolder(
 
     override fun onClick(p0: View?) {
         DebugHandler.log("Helllo Selected Item")
-       // listener.onSelectItemRVType(selectedItem)
+        // listener.onSelectItemRVType(selectedItem)
     }
 
 }

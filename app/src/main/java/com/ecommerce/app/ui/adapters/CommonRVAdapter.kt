@@ -2,11 +2,14 @@ package com.ecommerce.app.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
+import com.bumptech.glide.Glide
+import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.constants.ViewTypeEnum
 import com.ecommerce.app.data.category.Category
@@ -14,6 +17,7 @@ import com.ecommerce.app.data.home.ViewItemData
 import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
+import com.ecommerce.app.databinding.ItemHomeProductBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
 
@@ -42,6 +46,17 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
 
                 val binding: ItemCategoryHorizontalBinding =
                     ItemCategoryHorizontalBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
+            ViewTypeEnum.PRODUCT_CARD_TYPE.value -> {
+
+                val binding: ItemHomeProductBinding =
+                    ItemHomeProductBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
@@ -82,7 +97,7 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
 }
 
 class CommonViewHolder(
-    private val mContext: Context,
+    private val context: Context,
     private val itemBinding: ViewBinding,
     private val fromScreen: String,
     private val listener: CommonSelectItemRVListerner
@@ -103,6 +118,24 @@ class CommonViewHolder(
                 item as ViewItemData
                 itemBinding as ItemCategoryHorizontalBinding
                 itemBinding.nameTV.text = item.name
+                //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
+                // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
+            }
+
+            ViewTypeEnum.PRODUCT_CARD_TYPE.value -> {
+                item as ViewItemData
+                itemBinding as ItemHomeProductBinding
+
+                //itemBinding.productBrandTV.text=item!!.name
+                itemBinding.productNameTV.text=item.name
+                itemBinding.discountPriceTV.text=context.getString(R.string.input_rs_symbol,item.price.toString())
+                itemBinding.priceTV.text=context.getString(R.string.input_rs_symbol,item.price.toString())
+                itemBinding.discountTV.text="${item.discountPercentage}%"
+                itemBinding.priceTV.setPaintFlags(itemBinding.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
+                Glide.with(context)
+                    .load(item.src)
+                    .into(itemBinding.productImageView)
+
                 //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
                 // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
             }

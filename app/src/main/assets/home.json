@@ -39,6 +39,37 @@
       ]
     },
     {
+      "type": "product_card",
+      "heading": "Trending Products",
+      "src": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      "data": [
+        {
+          "id": 1,
+          "name": "HP Chromebook MediaTek Kompanio 500 - (4 GB/64 GB EMMC Storage/Chrome OS) 11A-NA0002MU Chromebook  (11.6 inch, Indigo Blue, 1.07 kg)",
+          "description": "Description of Product 1",
+          "price": 19.99,
+          "discountPercentage": "12.25",
+          "src": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/u/m/a/-original-imagkqwzxzff6zaa.jpeg?q=70"
+        },
+        {
+          "id": 2,
+          "name": "Men Solid Polo Neck Cotton Blend (220 gsm) Green T-Shirt",
+          "description": "Description of Product 2",
+          "price": 29.99,
+          "discountPercentage": "18.25",
+          "src": "https://rukminim2.flixcart.com/image/832/832/xif0q/television/b/g/n/-original-imagtwterapbxxdj.jpeg"
+        },
+        {
+          "id": 3,
+          "name": "iPhone 7  Black",
+          "description": "Description of Product 3",
+          "price": 39.99,
+          "discountPercentage": "36.25",
+          "src": "https://i.dummyjson.com/data/products/6/thumbnail.png"
+        }
+      ]
+    },
+    {
       "type": "big_banner",
       "heading": "New Arrivals",
       "src": "https://example.com/images/category1_icon.png",
@@ -61,6 +92,37 @@
       ]
     },
     {
+      "type": "product_card",
+      "heading": "Already Visited Products",
+      "src": "https://i.dummyjson.com/data/products/6/thumbnail.png",
+      "data": [
+        {
+          "id": 1,
+          "name": "HP Chromebook MediaTek Kompanio 500 - (4 GB/64 GB EMMC Storage/Chrome OS) 11A-NA0002MU Chromebook  (11.6 inch, Indigo Blue, 1.07 kg)",
+          "description": "Description of Product 1",
+          "price": 19.99,
+          "discountPercentage": "12.25",
+          "src": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/u/m/a/-original-imagkqwzxzff6zaa.jpeg?q=70"
+        },
+        {
+          "id": 2,
+          "name": "Men Solid Polo Neck Cotton Blend (220 gsm) Green T-Shirt",
+          "description": "Description of Product 2",
+          "price": 29.99,
+          "discountPercentage": "18.25",
+          "src": "https://rukminim2.flixcart.com/image/832/832/xif0q/television/b/g/n/-original-imagtwterapbxxdj.jpeg"
+        },
+        {
+          "id": 3,
+          "name": "iPhone 7  Black",
+          "description": "Description of Product 3",
+          "price": 39.99,
+          "discountPercentage": "36.25",
+          "src": "https://i.dummyjson.com/data/products/6/thumbnail.png"
+        }
+      ]
+    },
+    {
       "type": "small_banner",
       "heading": "What is New",
       "src": "https://example.com/images/category1_icon.png",
@@ -79,37 +141,6 @@
           "id": 3,
           "src": "https://example.com/images/small_banner3.jpg",
           "click_url": "https://example.com/small_banner3"
-        }
-      ]
-    },
-    {
-      "type": "product_card",
-      "heading": "Trending Products",
-      "src": "https://example.com/images/category1_icon.png",
-      "data": [
-        {
-          "id": 1,
-          "name": "Product 1",
-          "description": "Description of Product 1",
-          "price": 19.99,
-          "discountPercentage": "12.25",
-          "src": "https://example.com/images/product1.jpg"
-        },
-        {
-          "id": 2,
-          "name": "Product 2",
-          "description": "Description of Product 2",
-          "price": 29.99,
-          "discountPercentage": "18.25",
-          "src": "https://example.com/images/product2.jpg"
-        },
-        {
-          "id": 3,
-          "name": "Product 3",
-          "description": "Description of Product 3",
-          "price": 39.99,
-          "discountPercentage": "36.25",
-          "src": "https://example.com/images/product3.jpg"
         }
       ]
     }
