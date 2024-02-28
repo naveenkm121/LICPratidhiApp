@@ -2,9 +2,12 @@ package com.ecommerce.app.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.graphics.Color
+import android.graphics.drawable.BitmapDrawable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
@@ -81,12 +84,13 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) :
                 CommonHomeViewHolder(parent.context, binding, viewType, listener)
             }
 
-            PRODUCT_CARD_VIEW_TYPE -> {
-                val binding: CommonRecyclerViewHeadingBinding = CommonRecyclerViewHeadingBinding.inflate(
-                    LayoutInflater.from(parent.context),
-                    parent,
-                    false
-                )
+            PRODUCT_CARD_VIEW_TYPE, PRODUCT_CARD_VIEW_BANNER_TYPE -> {
+                val binding: CommonRecyclerViewHeadingBinding =
+                    CommonRecyclerViewHeadingBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
                 CommonHomeViewHolder(parent.context, binding, viewType, listener)
             }
 
@@ -110,7 +114,7 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) :
             ViewTypeEnum.SMALL_BANNER_TYPE.value -> SMALL_BANNER_VIEW_TYPE
             ViewTypeEnum.BIG_BANNER_TYPE.value -> BIG_BANNER_VIEW_TYPE
             ViewTypeEnum.PRODUCT_CARD_TYPE.value -> PRODUCT_CARD_VIEW_TYPE
-            ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> PRODUCT_CARD_VIEW_TYPE
+            ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> PRODUCT_CARD_VIEW_BANNER_TYPE
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -156,33 +160,28 @@ class CommonHomeViewHolder(
                 // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
             }
 
-            PRODUCT_CARD_VIEW_TYPE->{
+            PRODUCT_CARD_VIEW_TYPE, PRODUCT_CARD_VIEW_BANNER_TYPE -> {
                 item as ViewType
                 itemBinding as CommonRecyclerViewHeadingBinding
-                itemBinding.headingTV.text=item.heading
-                val adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_TYPE.value, listener)
+                itemBinding.headingTV.text = item.heading
+                val adapter: CommonRVAdapter
+                if (PRODUCT_CARD_VIEW_BANNER_TYPE == viewType) {
+
+                    itemBinding.headingTV.visibility = View.GONE
+                    itemBinding.bannerLL.visibility = View.VISIBLE
+
+                    val bitmap = (itemBinding.bannerIV.drawable as BitmapDrawable).bitmap
+                    Palette.from(bitmap).generate { palette ->
+                        val dominantColor = palette?.lightVibrantSwatch?.rgb ?: Color.WHITE
+                        itemBinding.rootLL.setBackgroundColor(dominantColor)
+                    }
+                    adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value, listener)
+
+                } else {
+                    adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_TYPE.value, listener)
+                }
+
                 adapter.setItems(item.data as ArrayList<ViewItemData>)
-
-                itemBinding.recyclerView.setLayoutManager(
-                    LinearLayoutManager(
-                        context,
-                        LinearLayoutManager.HORIZONTAL,
-                        false
-                    )
-                )
-                itemBinding.recyclerView.setHasFixedSize(true)
-                itemBinding.recyclerView.setAdapter(adapter)
-            }
-
-            PRODUCT_CARD_VIEW_BANNER_TYPE->{
-                item as ViewType
-                itemBinding as CommonRecyclerViewHeadingBinding
-                itemBinding.headingTV.visibility=View.GONE
-                itemBinding.bannerLL.visibility=View.VISIBLE
-
-                val adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value, listener)
-                adapter.setItems(item.data as ArrayList<ViewItemData>)
-
                 itemBinding.recyclerView.setLayoutManager(
                     LinearLayoutManager(
                         context,
