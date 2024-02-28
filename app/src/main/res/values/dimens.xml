@@ -91,6 +91,7 @@
 
     <dimen name="height30">25dp</dimen>
     <dimen name="height_30">30dp</dimen>
+    <dimen name="height250">250dp</dimen>
 
     <dimen name="height40">40dp</dimen>
     <dimen name="height45">45dp</dimen>

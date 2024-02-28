@@ -125,21 +125,21 @@
     {
       "type": "small_banner",
       "heading": "What is New",
-      "src": "https://example.com/images/category1_icon.png",
+      "src": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/u/m/a/-original-imagkqwzxzff6zaa.jpeg?q=70",
       "data": [
         {
           "id": 1,
-          "src": "https://example.com/images/small_banner1.jpg",
+          "src": "https://rukminim2.flixcart.com/image/832/832/xif0q/television/b/g/n/-original-imagtwterapbxxdj.jpeg",
           "click_url": "https://example.com/small_banner1"
         },
         {
           "id": 2,
-          "src": "https://example.com/images/small_banner2.jpg",
+          "src": "https://rukminim2.flixcart.com/image/832/832/xif0q/television/b/g/n/-original-imagtwterapbxxdj.jpeg",
           "click_url": "https://example.com/small_banner2"
         },
         {
           "id": 3,
-          "src": "https://example.com/images/small_banner3.jpg",
+          "src": "https://rukminim2.flixcart.com/image/416/416/xif0q/computer/u/m/a/-original-imagkqwzxzff6zaa.jpeg?q=70",
           "click_url": "https://example.com/small_banner3"
         }
       ]

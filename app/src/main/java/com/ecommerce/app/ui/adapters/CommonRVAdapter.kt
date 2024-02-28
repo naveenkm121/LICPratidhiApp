@@ -11,13 +11,14 @@ import androidx.viewbinding.ViewBinding
 import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
-import com.ecommerce.app.constants.ViewTypeEnum
+import com.ecommerce.app.constants.HomeViewTypeEnum
 import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.home.ViewItemData
-import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.databinding.ItemHomeProductBinding
+import com.ecommerce.app.databinding.ItemProductImageBinding
+import com.ecommerce.app.databinding.ItemSmallBannerBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
 
@@ -42,7 +43,7 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonViewHolder {
         when (fromScreen) {
 
-            ViewTypeEnum.SMALL_ICON_TYPE.value -> {
+            HomeViewTypeEnum.SMALL_ICON_TYPE.value -> {
 
                 val binding: ItemCategoryHorizontalBinding =
                     ItemCategoryHorizontalBinding.inflate(
@@ -53,7 +54,18 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
                 return CommonViewHolder(parent.context, binding, fromScreen, listener)
             }
 
-            ViewTypeEnum.PRODUCT_CARD_TYPE.value,ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> {
+            HomeViewTypeEnum.SMALL_BANNER_TYPE.value -> {
+
+                val binding: ItemSmallBannerBinding =
+                    ItemSmallBannerBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
+            HomeViewTypeEnum.PRODUCT_CARD_TYPE.value,HomeViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> {
 
                 val binding: ItemHomeProductBinding =
                     ItemHomeProductBinding.inflate(
@@ -114,15 +126,22 @@ class CommonViewHolder(
         selectedItem = item
         when (fromScreen) {
 
-            ViewTypeEnum.SMALL_ICON_TYPE.value -> {
+            HomeViewTypeEnum.SMALL_ICON_TYPE.value -> {
                 item as ViewItemData
                 itemBinding as ItemCategoryHorizontalBinding
                 itemBinding.nameTV.text = item.name
-                //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
-                // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
             }
 
-            ViewTypeEnum.PRODUCT_CARD_TYPE.value,ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> {
+            HomeViewTypeEnum.SMALL_BANNER_TYPE.value -> {
+                item as ViewItemData
+                itemBinding as ItemSmallBannerBinding
+             //   itemBindiproductImageView
+               /* Glide.with(context)
+                    .load(item.src)
+                    .into(itemBinding.productImageView)*/
+            }
+
+            HomeViewTypeEnum.PRODUCT_CARD_TYPE.value,HomeViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> {
                 item as ViewItemData
                 itemBinding as ItemHomeProductBinding
 

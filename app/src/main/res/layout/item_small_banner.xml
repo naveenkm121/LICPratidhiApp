@@ -1,0 +1,100 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="@dimen/height220">
+
+    <!-- CardView with background image -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardCornerRadius="@dimen/radius8"
+        app:cardElevation="@dimen/elevation2"
+        android:layout_margin="@dimen/margin10"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/backgroundImageView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/small_banner_bg" />
+
+        <!-- Other content inside the card view -->
+
+    </androidx.cardview.widget.CardView>
+
+    <!-- Image view to be placed at the top-left corner -->
+    <ImageView
+        android:id="@+id/topLeftImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin10"
+        android:elevation="@dimen/elevation5"
+        android:src="@drawable/ic_product_item"
+        app:layout_constraintStart_toStartOf="@id/cardView"
+        app:layout_constraintTop_toTopOf="@id/cardView"
+        app:layout_constraintBottom_toBottomOf="@+id/cardView"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <!--
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+        android:layout_height="@dimen/height250"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardView"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:cardCornerRadius="@dimen/radius10"
+            app:cardElevation="@dimen/elevation2"
+            android:layout_margin="@dimen/margin10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintHorizontal_bias="0.5">
+
+            &lt;!&ndash; Image View for the background image &ndash;&gt;
+            <ImageView
+                android:id="@+id/backgroundImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/small_banner_bg" />
+
+            &lt;!&ndash; Other content inside the card view &ndash;&gt;
+
+        </com.google.android.material.card.MaterialCardView>
+
+        &lt;!&ndash; Guideline to divide the CardView into two halves horizontally &ndash;&gt;
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/halfwayGuideline"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="206dp" />
+
+        &lt;!&ndash; Image View for the image to be placed in the left half &ndash;&gt;
+        <ImageView
+            android:id="@+id/productImageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/dimen_12"
+            android:scaleType="fitXY"
+            android:layout_margin="@dimen/margin10"
+            android:src="@drawable/ic_product_item"
+            app:layout_constraintBottom_toBottomOf="@id/cardView"
+            app:layout_constraintEnd_toStartOf="@id/halfwayGuideline"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/cardView"
+            app:layout_constraintVertical_bias="0.5"
+            android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    -->

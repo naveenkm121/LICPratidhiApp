@@ -1,6 +1,6 @@
 package com.ecommerce.app.constants
 
-enum class ViewTypeEnum (val value: String) {
+enum class HomeViewTypeEnum (val value: String) {
 
     //Home
     SMALL_ICON_TYPE("small_icon"),

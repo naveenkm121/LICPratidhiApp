@@ -11,9 +11,7 @@ import androidx.palette.graphics.Palette
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewbinding.ViewBinding
-import com.ecommerce.app.constants.ScreenName
-import com.ecommerce.app.constants.ViewTypeEnum
-import com.ecommerce.app.data.category.Category
+import com.ecommerce.app.constants.HomeViewTypeEnum
 import com.ecommerce.app.data.home.ViewItemData
 import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.CommonRecyclerViewBinding
@@ -67,7 +65,7 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) :
             }
 
             SMALL_BANNER_VIEW_TYPE -> {
-                val binding: ItemCategoryHorizontalBinding = ItemCategoryHorizontalBinding.inflate(
+                val binding: CommonRecyclerViewBinding = CommonRecyclerViewBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
@@ -110,11 +108,11 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) :
     override fun getItemViewType(position: Int): Int {
         val viewTypeData = items.get(position) as ViewType
         return when (viewTypeData.type) {
-            ViewTypeEnum.SMALL_ICON_TYPE.value -> SMALL_ICON_VIEW_TYPE
-            ViewTypeEnum.SMALL_BANNER_TYPE.value -> SMALL_BANNER_VIEW_TYPE
-            ViewTypeEnum.BIG_BANNER_TYPE.value -> BIG_BANNER_VIEW_TYPE
-            ViewTypeEnum.PRODUCT_CARD_TYPE.value -> PRODUCT_CARD_VIEW_TYPE
-            ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> PRODUCT_CARD_VIEW_BANNER_TYPE
+            HomeViewTypeEnum.SMALL_ICON_TYPE.value -> SMALL_ICON_VIEW_TYPE
+            HomeViewTypeEnum.SMALL_BANNER_TYPE.value -> SMALL_BANNER_VIEW_TYPE
+            HomeViewTypeEnum.BIG_BANNER_TYPE.value -> BIG_BANNER_VIEW_TYPE
+            HomeViewTypeEnum.PRODUCT_CARD_TYPE.value -> PRODUCT_CARD_VIEW_TYPE
+            HomeViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> PRODUCT_CARD_VIEW_BANNER_TYPE
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -145,7 +143,7 @@ class CommonHomeViewHolder(
                 item as ViewType
                 itemBinding as CommonRecyclerViewBinding
 
-                val adapter = CommonRVAdapter(ViewTypeEnum.SMALL_ICON_TYPE.value, listener)
+                val adapter = CommonRVAdapter(HomeViewTypeEnum.SMALL_ICON_TYPE.value, listener)
                 adapter.setItems(item.data as ArrayList<ViewItemData>)
                 itemBinding.recyclerView.setLayoutManager(
                     LinearLayoutManager(
@@ -156,8 +154,24 @@ class CommonHomeViewHolder(
                 )
                 itemBinding.recyclerView.setHasFixedSize(true)
                 itemBinding.recyclerView.setAdapter(adapter)
-                //itemBinding.cardView.setBackgroundColor(mContext.getColor(R.color.light_blue))
-                // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
+            }
+
+            SMALL_BANNER_VIEW_TYPE -> {
+
+                item as ViewType
+                itemBinding as CommonRecyclerViewBinding
+
+                val adapter = CommonRVAdapter(HomeViewTypeEnum.SMALL_BANNER_TYPE.value, listener)
+                adapter.setItems(item.data as ArrayList<ViewItemData>)
+                itemBinding.recyclerView.setLayoutManager(
+                    LinearLayoutManager(
+                        context,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                )
+                itemBinding.recyclerView.setHasFixedSize(true)
+                itemBinding.recyclerView.setAdapter(adapter)
             }
 
             PRODUCT_CARD_VIEW_TYPE, PRODUCT_CARD_VIEW_BANNER_TYPE -> {
@@ -175,10 +189,10 @@ class CommonHomeViewHolder(
                         val dominantColor = palette?.lightVibrantSwatch?.rgb ?: Color.WHITE
                         itemBinding.rootLL.setBackgroundColor(dominantColor)
                     }
-                    adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value, listener)
+                    adapter = CommonRVAdapter(HomeViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value, listener)
 
                 } else {
-                    adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_TYPE.value, listener)
+                    adapter = CommonRVAdapter(HomeViewTypeEnum.PRODUCT_CARD_TYPE.value, listener)
                 }
 
                 adapter.setItems(item.data as ArrayList<ViewItemData>)
