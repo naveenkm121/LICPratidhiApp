@@ -53,7 +53,7 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
                 return CommonViewHolder(parent.context, binding, fromScreen, listener)
             }
 
-            ViewTypeEnum.PRODUCT_CARD_TYPE.value -> {
+            ViewTypeEnum.PRODUCT_CARD_TYPE.value,ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> {
 
                 val binding: ItemHomeProductBinding =
                     ItemHomeProductBinding.inflate(
@@ -122,7 +122,7 @@ class CommonViewHolder(
                 // itemBinding.cardView.setBackgroundResource(R.drawable.ic_facebook);
             }
 
-            ViewTypeEnum.PRODUCT_CARD_TYPE.value -> {
+            ViewTypeEnum.PRODUCT_CARD_TYPE.value,ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> {
                 item as ViewItemData
                 itemBinding as ItemHomeProductBinding
 

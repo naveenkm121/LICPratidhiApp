@@ -7,5 +7,6 @@ enum class ViewTypeEnum (val value: String) {
     SMALL_BANNER_TYPE("small_banner"),
     BIG_BANNER_TYPE("big_banner"),
     PRODUCT_CARD_TYPE("product_card"),
+    PRODUCT_CARD_BANNER_TYPE("product_card_banner"),
 
 }

@@ -17,6 +17,7 @@ import com.ecommerce.app.databinding.CommonRecyclerViewBinding
 import com.ecommerce.app.databinding.CommonRecyclerViewHeadingBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.ui.adapters.HomeViewType.BIG_BANNER_VIEW_TYPE
+import com.ecommerce.app.ui.adapters.HomeViewType.PRODUCT_CARD_VIEW_BANNER_TYPE
 import com.ecommerce.app.ui.adapters.HomeViewType.PRODUCT_CARD_VIEW_TYPE
 import com.ecommerce.app.ui.adapters.HomeViewType.SMALL_BANNER_VIEW_TYPE
 import com.ecommerce.app.ui.adapters.HomeViewType.SMALL_ICON_VIEW_TYPE
@@ -29,6 +30,7 @@ object HomeViewType {
     const val SMALL_BANNER_VIEW_TYPE = 1
     const val BIG_BANNER_VIEW_TYPE = 2
     const val PRODUCT_CARD_VIEW_TYPE = 3
+    const val PRODUCT_CARD_VIEW_BANNER_TYPE = 4
 }
 
 class HomeAdapter(val listener: CommonSelectItemRVListerner) :
@@ -50,6 +52,7 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) :
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CommonHomeViewHolder {
+
         return when (viewType) {
             SMALL_ICON_VIEW_TYPE -> {
                 val binding: CommonRecyclerViewBinding = CommonRecyclerViewBinding.inflate(
@@ -107,6 +110,7 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) :
             ViewTypeEnum.SMALL_BANNER_TYPE.value -> SMALL_BANNER_VIEW_TYPE
             ViewTypeEnum.BIG_BANNER_TYPE.value -> BIG_BANNER_VIEW_TYPE
             ViewTypeEnum.PRODUCT_CARD_TYPE.value -> PRODUCT_CARD_VIEW_TYPE
+            ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> PRODUCT_CARD_VIEW_TYPE
             else -> throw IllegalArgumentException("Invalid view type")
         }
     }
@@ -157,6 +161,26 @@ class CommonHomeViewHolder(
                 itemBinding as CommonRecyclerViewHeadingBinding
                 itemBinding.headingTV.text=item.heading
                 val adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_TYPE.value, listener)
+                adapter.setItems(item.data as ArrayList<ViewItemData>)
+
+                itemBinding.recyclerView.setLayoutManager(
+                    LinearLayoutManager(
+                        context,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                )
+                itemBinding.recyclerView.setHasFixedSize(true)
+                itemBinding.recyclerView.setAdapter(adapter)
+            }
+
+            PRODUCT_CARD_VIEW_BANNER_TYPE->{
+                item as ViewType
+                itemBinding as CommonRecyclerViewHeadingBinding
+                itemBinding.headingTV.visibility=View.GONE
+                itemBinding.bannerLL.visibility=View.VISIBLE
+
+                val adapter = CommonRVAdapter(ViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value, listener)
                 adapter.setItems(item.data as ArrayList<ViewItemData>)
 
                 itemBinding.recyclerView.setLayoutManager(
