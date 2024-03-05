@@ -71,23 +71,28 @@
     },
     {
       "type": "big_banner",
-      "heading": "New Arrivals",
-      "src": "https://example.com/images/category1_icon.png",
+      "heading": "What is New",
+      "src": "https://assets.myntassets.com/f_webp,dpr_1.5,q_auto:eco,w_600,c_limit,fl_progressive/assets/images/retaillabs/2024/3/1/7d43954f-5e88-49e8-bbb8-89f7e35351711709263038165-image_png2118381691.png",
       "data": [
         {
           "id": 1,
-          "src": "https://example.com/images/big_banner1.jpg",
-          "click_url": "https://example.com/big_banner1"
+          "src": "https://assets.myntassets.com/f_webp,dpr_1.5,q_auto:eco,w_600,c_limit,fl_progressive/assets/images/2024/2/24/8dcfc932-eb11-448c-af32-f38664af7ace1708770633549-CK.png",
+          "click_url": "https://example.com/small_banner1"
         },
         {
           "id": 2,
-          "src": "https://example.com/images/big_banner2.jpg",
-          "click_url": "https://example.com/big_banner2"
+          "src": "https://assets.myntassets.com/f_webp,dpr_1.5,q_auto:eco,w_600,c_limit,fl_progressive/assets/images/retaillabs/2024/3/4/812fe505-8348-4c4a-94ea-057875c8d3e71709540986458-image_png_1927977833.png",
+          "click_url": "https://example.com/small_banner2"
         },
         {
           "id": 3,
-          "src": "https://example.com/images/big_banner3.jpg",
-          "click_url": "https://example.com/big_banner3"
+          "src": "https://assets.myntassets.com/f_webp,dpr_1.5,q_auto:eco,w_600,c_limit,fl_progressive/assets/images/retaillabs/2024/3/1/7d43954f-5e88-49e8-bbb8-89f7e35351711709263038165-image_png2118381691.png",
+          "click_url": "https://example.com/small_banner3"
+        },
+        {
+          "id": 4,
+          "src": "https://assets.myntassets.com/f_webp,dpr_1.5,q_auto:eco,w_600,c_limit,fl_progressive/assets/images/retaillabs/2024/3/1/7d43954f-5e88-49e8-bbb8-89f7e35351711709263038165-image_png2118381691.png",
+          "click_url": "https://example.com/small_banner3"
         }
       ]
     },

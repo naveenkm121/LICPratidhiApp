@@ -1,0 +1,29 @@
+<androidx.cardview.widget.CardView
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height270"
+    android:layout_margin="@dimen/margin5"
+    app:cardCornerRadius="@dimen/radius10"
+    app:cardElevation="@dimen/elevation2"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ImageView
+        android:id="@+id/backgroundImageView"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scaleType="fitXY"
+        android:src="@drawable/small_banner_bg" />
+
+    <!-- Other content inside the card view -->
+
+</androidx.cardview.widget.CardView>
+
+
+
+
+

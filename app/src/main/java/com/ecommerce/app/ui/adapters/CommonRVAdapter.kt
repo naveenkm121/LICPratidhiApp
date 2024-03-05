@@ -14,6 +14,7 @@ import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.constants.HomeViewTypeEnum
 import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.home.ViewItemData
+import com.ecommerce.app.databinding.ItemBigBannerBinding
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.databinding.ItemHomeProductBinding
@@ -58,6 +59,17 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
 
                 val binding: ItemSmallBannerBinding =
                     ItemSmallBannerBinding.inflate(
+                        LayoutInflater.from(parent.context),
+                        parent,
+                        false
+                    )
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
+            HomeViewTypeEnum.BIG_BANNER_TYPE.value -> {
+
+                val binding: ItemBigBannerBinding =
+                    ItemBigBannerBinding.inflate(
                         LayoutInflater.from(parent.context),
                         parent,
                         false
@@ -139,6 +151,15 @@ class CommonViewHolder(
                /* Glide.with(context)
                     .load(item.src)
                     .into(itemBinding.productImageView)*/
+            }
+
+            HomeViewTypeEnum.BIG_BANNER_TYPE.value -> {
+                item as ViewItemData
+                itemBinding as ItemBigBannerBinding
+               //itemBinding.root.layoutParams.height=context.resources.getDimensionPixelSize(R.dimen.height300)
+                 Glide.with(context)
+                     .load(item.src)
+                     .into(itemBinding.backgroundImageView)
             }
 
             HomeViewTypeEnum.PRODUCT_CARD_TYPE.value,HomeViewTypeEnum.PRODUCT_CARD_BANNER_TYPE.value -> {

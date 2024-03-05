@@ -74,7 +74,7 @@ class HomeAdapter(val listener: CommonSelectItemRVListerner) :
             }
 
             BIG_BANNER_VIEW_TYPE -> {
-                val binding: ItemCategoryHorizontalBinding = ItemCategoryHorizontalBinding.inflate(
+                val binding: CommonRecyclerViewBinding = CommonRecyclerViewBinding.inflate(
                     LayoutInflater.from(parent.context),
                     parent,
                     false
@@ -173,6 +173,25 @@ class CommonHomeViewHolder(
                 itemBinding.recyclerView.setHasFixedSize(true)
                 itemBinding.recyclerView.setAdapter(adapter)
             }
+
+            BIG_BANNER_VIEW_TYPE -> {
+
+                item as ViewType
+                itemBinding as CommonRecyclerViewBinding
+
+                val adapter = CommonRVAdapter(HomeViewTypeEnum.BIG_BANNER_TYPE.value, listener)
+                adapter.setItems(item.data as ArrayList<ViewItemData>)
+                itemBinding.recyclerView.setLayoutManager(
+                    LinearLayoutManager(
+                        context,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                )
+                itemBinding.recyclerView.setHasFixedSize(true)
+                itemBinding.recyclerView.setAdapter(adapter)
+            }
+
 
             PRODUCT_CARD_VIEW_TYPE, PRODUCT_CARD_VIEW_BANNER_TYPE -> {
                 item as ViewType
