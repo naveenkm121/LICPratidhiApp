@@ -31,7 +31,8 @@ import javax.net.ssl.X509TrustManager
 
 @Module
 @InstallIn(SingletonComponent::class)
-class AppModule {
+class
+AppModule {
 
 /*
     private val httpLoggingInterceptor by lazy {
