@@ -76,7 +76,7 @@ class ProductDetailFragment : Fragment() {
         binding.discountTV.text="(${productItem.discountPercentage}% OFF)"
         binding.priceTV.setPaintFlags(binding.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
 
-       // binding.productDetailTV.text=productItem.description
+        binding.productDetailTV.text=productItem.description
     }
 
 
@@ -90,8 +90,9 @@ class ProductDetailFragment : Fragment() {
                     if (it.data != null && it.data.status == 1) {
                        // if (it.data.isNotEmpty()) {
                             productDetailPassObj=it.data.data
-                            //productImageList = it.data.data.images as ArrayList<ProductImage>
-                            adapter.setItem(productDetailPassObj.images)
+                        var productImageList = it.data.data.images as ArrayList<ProductImage>
+                        if(productImageList.isEmpty())productImageList.add(ProductImage(1,1,productDetailPassObj.thumbnail))
+                        adapter.setItem(productDetailPassObj.images)
                             setupDataToUI(productDetailPassObj)
 //                        } else {
 //                            //binding.noResultIV.visibility = View.VISIBLE
