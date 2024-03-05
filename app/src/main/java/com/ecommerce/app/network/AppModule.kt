@@ -136,6 +136,7 @@ AppModule {
 
 
 
+
     fun unSafeOkHttpClient() :OkHttpClient.Builder {
         val okHttpClient = OkHttpClient.Builder()
         try {
