@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 
@@ -25,6 +26,7 @@ import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.autoCleared
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.messaging.FirebaseMessaging
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -121,6 +123,7 @@ class HomeActivity : AppCompatActivity() {
                     }
                     R.id.navigation_categories ->    {
                         DebugHandler.log("Hello navigation_categories")
+                        fcmToken()
                         navController.navigate(R.id.categoryFragment)
                        // findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
                         return@OnNavigationItemSelectedListener true
@@ -177,35 +180,22 @@ class HomeActivity : AppCompatActivity() {
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 
-
-    private fun setupObservers(){
-
-        /*   viewModel.response.observe(this, Observer {
-               when (it.status) {
-                  *//* ResourceViewState.Status.SUCCESS -> {
-                    //setProgressBar(false)
-                    if (it.data != null && it.data.status == 1) {
-
-                    } else
-                        //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-
+    private fun fcmToken(){
+        FirebaseMessaging.getInstance().token
+            .addOnCompleteListener { task ->
+                // this fail
+                if (!task.isSuccessful) {
+                    DebugHandler.log("Fetching FCM registration token failed"+task.exception)
+                    return@addOnCompleteListener
                 }
-                ResourceViewState.Status.ERROR -> {
-                    // setProgressBar(false)
-                    DebugHandler.log("Error Naveen== "+it.message)
-                    if (it.message?.contains("401") == true) {
-                        //  Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
-                        //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
+                //this token
+                val token = task.result
+                //to showing
+                //binding!!.token.setText(token)
+                Toast.makeText(this, "get a token", Toast.LENGTH_SHORT).show()
+    }
 
-                    } else
-                       // Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
 
-                }
-                ResourceViewState.Status.LOADING ->{
-                    //  setProgressBar(true)
-                }*//*
-            }
-        })*/
 
     }
 }

@@ -3,6 +3,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id ("kotlin-kapt")
     id ("com.google.dagger.hilt.android")
+    id("com.google.gms.google-services")
 
 }
 
@@ -55,6 +56,7 @@ dependencies {
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("com.google.firebase:firebase-messaging:23.4.1")
 
     // navigation
     val nav_version = "2.7.6"

@@ -142,6 +142,10 @@ class CommonViewHolder(
                 item as ViewItemData
                 itemBinding as ItemCategoryHorizontalBinding
                 itemBinding.nameTV.text = item.name
+                Glide.with(context)
+                    .load(item.src)
+                    .into(itemBinding.iconIV)
+
             }
 
             HomeViewTypeEnum.SMALL_BANNER_TYPE.value -> {
