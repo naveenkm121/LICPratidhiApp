@@ -35,10 +35,12 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
 
     override fun onMessageReceived(message: RemoteMessage) {
+        DebugHandler.log("Hi Message Reached ")
         if (message.data.size > 0) {
             DebugHandler.log("Message Data payload: " + message.data)
         }
         if (message.notification != null) {
+            DebugHandler.log("Hello Notification test")
             sendNotification(
                 message.notification!!.body, message.notification!!.title, "null"
             )
