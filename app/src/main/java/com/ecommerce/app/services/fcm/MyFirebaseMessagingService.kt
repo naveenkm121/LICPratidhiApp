@@ -1,17 +1,15 @@
-package com.ecommerce.app.service
+package com.ecommerce.app.services.fcm
 
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.app.Service
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.media.RingtoneManager
 import androidx.core.app.NotificationCompat
 import android.os.Build
-import android.os.IBinder
 import com.ecommerce.app.R
 import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.utils.DebugHandler
