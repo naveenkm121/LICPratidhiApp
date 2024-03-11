@@ -1,21 +1,22 @@
-package com.ecommerce.app.service
+package com.ecommerce.app.services.fcm
 
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
-import android.app.Service
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.media.RingtoneManager
 import androidx.core.app.NotificationCompat
 import android.os.Build
-import android.os.IBinder
 import com.ecommerce.app.R
 import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.utils.DebugHandler
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
+import java.io.IOException
+import java.net.URL
 
 class MyFirebaseMessagingService : FirebaseMessagingService() {
 
@@ -34,15 +35,16 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
 
 
-    override fun onMessageReceived(message: RemoteMessage) {
-        DebugHandler.log("Hi Message Reached ")
-        if (message.data.size > 0) {
-            DebugHandler.log("Message Data payload: " + message.data)
+    override fun onMessageReceived(remoteMessage: RemoteMessage) {
+        if (remoteMessage.data.size > 0) {
+            DebugHandler.log("Message Data payload: " + remoteMessage.data)
+            val value = remoteMessage.data["notification"]
+
         }
-        if (message.notification != null) {
-            DebugHandler.log("Hello Notification test")
+        if (remoteMessage.notification != null) {
+            DebugHandler.log("Message notification payload: " +  remoteMessage.notification)
             sendNotification(
-                message.notification!!.body, message.notification!!.title, "null"
+                remoteMessage.notification!!.body, remoteMessage.notification!!.title, "null"
             )
         }
     }
@@ -54,14 +56,14 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
             this, 0 /* Request code */, intent,
             PendingIntent.FLAG_IMMUTABLE
         )
-//        var bmp: Bitmap? = null
-//        DebugHandler.log( "sendNotification: " + imgUrl.toString())
-//        try {
-//            val `in` = URL(imgUrl.toString()).openStream()
-//            bmp = BitmapFactory.decodeStream(`in`)
-//        } catch (e: IOException) {
-//            e.printStackTrace()
-//        }
+        var bmp: Bitmap? = null
+        DebugHandler.log( "sendNotification: " + imgUrl.toString())
+        try {
+            val `in` = URL(imgUrl.toString()).openStream()
+            bmp = BitmapFactory.decodeStream(`in`)
+        } catch (e: IOException) {
+            e.printStackTrace()
+        }
         val channelId = getString(R.string.app_name)
         val defaultSoundUri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION)
         val notificationBuilder: NotificationCompat.Builder =
@@ -72,7 +74,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
                 .setAutoCancel(true)
                 .setSound(defaultSoundUri)
                 .setContentIntent(pendingIntent)
-                //.setStyle(NotificationCompat.BigPictureStyle().bigPicture(bmp))
+                .setStyle(NotificationCompat.BigPictureStyle().bigPicture(bmp))
                 .setPriority(Notification.PRIORITY_HIGH)
         val notificationManager = getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 

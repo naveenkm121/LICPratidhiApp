@@ -76,7 +76,10 @@ class ProductDetailFragment : Fragment() {
         binding.discountTV.text="(${productItem.discountPercentage}% OFF)"
         binding.priceTV.setPaintFlags(binding.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
 
-        binding.productDetailTV.text=productItem.description
+        //binding.productDetailTV.text=productItem.description
+
+        binding.webView.settings.javaScriptEnabled = true
+        binding.webView.loadDataWithBaseURL(null, productItem.description, "text/html", "UTF-8", null)
     }
 
 
