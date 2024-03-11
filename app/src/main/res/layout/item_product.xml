@@ -25,6 +25,7 @@
         android:background="@drawable/rounded_background"
         app:layout_constraintBottom_toBottomOf="@id/productImageView"
         app:layout_constraintEnd_toEndOf="@id/productImageView"
+        android:visibility="invisible"
         >
         <ImageView
             android:id="@+id/likeIV"

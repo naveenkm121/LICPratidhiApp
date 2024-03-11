@@ -7,23 +7,18 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
-
+import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
-
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.databinding.ActivityHomeBinding
-
 import com.ecommerce.app.utils.DebugHandler
-import com.ecommerce.app.utils.ResourceViewState
-import com.ecommerce.app.utils.autoCleared
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.messaging.FirebaseMessaging
@@ -171,7 +166,15 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
-        menuInflater.inflate(R.menu.main, menu)
+        menuInflater.inflate(com.ecommerce.app.R.menu.main, menu)
+/*        val menuItem = menu.findItem(com.ecommerce.app.R.id.action_search)
+
+        // Set the icon tint color
+
+        // Set the icon tint color
+        val icon = menuItem.icon
+        icon!!.setTint(ContextCompat.getColor(this, com.ecommerce.app.R.color.white))
+        menuItem.setIcon(icon)*/
         return true
     }
 
