@@ -11,6 +11,7 @@ class SharedPrefs {
         val USER_TYPE="user_type"
         val SESSION_PARAMS="session_params"
         val ACCESS_TOKEN="access_token"
+        val FCM_TOKEN="fcm_token"
         val NAME="name"
 
     }

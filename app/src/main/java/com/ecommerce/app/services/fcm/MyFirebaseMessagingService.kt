@@ -13,6 +13,7 @@ import android.os.Build
 import com.ecommerce.app.R
 import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.utils.DebugHandler
+import com.ecommerce.app.utils.SaveSharedPreference
 import com.google.firebase.messaging.FirebaseMessagingService
 import com.google.firebase.messaging.RemoteMessage
 import java.io.IOException
@@ -31,6 +32,7 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
 
     private fun sendRegistrationToServer(token: String?) {
         DebugHandler.log("sendRegistrationTokenToServer($token)")
+        SaveSharedPreference.setFCMToken(this,token!!);
     }
 
 

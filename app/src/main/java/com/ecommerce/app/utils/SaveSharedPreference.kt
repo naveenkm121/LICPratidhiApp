@@ -5,6 +5,7 @@ import android.content.SharedPreferences
 import com.ecommerce.app.constants.SharedPrefs
 import com.ecommerce.app.constants.SharedPrefs.Companion.ACCESS_TOKEN
 import com.ecommerce.app.constants.SharedPrefs.Companion.CATEGORY_RES_VAL
+import com.ecommerce.app.constants.SharedPrefs.Companion.FCM_TOKEN
 import com.ecommerce.app.constants.SharedPrefs.Companion.LOGGED_IN_PREF
 import com.ecommerce.app.constants.SharedPrefs.Companion.USER_DETAILS
 import com.ecommerce.app.data.category.CategoryRes
@@ -78,5 +79,16 @@ object SaveSharedPreference {
         val categoryResJSON = getCategoryPreferences(context)?.getString(CATEGORY_RES_VAL, "").toString()
         return GsonHelper.fromJson(categoryResJSON, CategoryRes::class.java)
     }
+
+    fun getFCMToken(context: Context?): String {
+        val token = getUserDetailsPreferences(context)?.getString(SharedPrefs.FCM_TOKEN, "").toString()
+        return token
+    }
+    fun setFCMToken(context: Context?, fcmToken: String) {
+        val editor: SharedPreferences.Editor? = getCategoryPreferences(context)?.edit()
+        editor?.putString(FCM_TOKEN, fcmToken)
+        editor?.apply()
+    }
+
 
 }

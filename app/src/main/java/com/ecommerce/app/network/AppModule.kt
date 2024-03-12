@@ -4,6 +4,7 @@ import android.content.Context
 import com.ecommerce.app.constants.Constants
 import com.ecommerce.app.services.api.ProductService
 import com.ecommerce.app.services.api.UserService
+import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.SaveSharedPreference
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
@@ -105,6 +106,7 @@ AppModule {
             .addInterceptor { chain: Interceptor.Chain ->
                 val original: Request = chain.request()
                 val token =SaveSharedPreference.getTokenValue(appContext)
+                DebugHandler.log("Authorization =="+token)
                 val requestBuilder: Request.Builder = original.newBuilder()
                     .header("Authorization", "Bearer $token")
                 val request: Request = requestBuilder.build()

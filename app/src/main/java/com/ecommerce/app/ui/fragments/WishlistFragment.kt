@@ -23,6 +23,7 @@ import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
+import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,7 +37,7 @@ class WishlistFragment : Fragment(),CommonSelectItemRVListerner {
     private var productListItem = ArrayList<WishlistItem>()
 
 
-    override fun onCreateView(
+        override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -52,6 +53,7 @@ class WishlistFragment : Fragment(),CommonSelectItemRVListerner {
         //setHasOptionsMenu(true)
         setupRecyclerView()
         setupObservers()
+        DebugHandler.log("Session =="+SaveSharedPreference.getTokenValue(requireContext()))
         wishlistViewModel.getWishlist(null)
     }
 
@@ -82,7 +84,7 @@ class WishlistFragment : Fragment(),CommonSelectItemRVListerner {
                 ResourceViewState.Status.ERROR -> {
                     setProgressBar(false)
                     if (it.message?.contains("401") == true) {
-                      //  Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
+                       Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
                       //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
 
                     } else
