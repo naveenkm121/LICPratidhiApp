@@ -1,5 +1,6 @@
 package com.ecommerce.app.services.api
 
+import com.ecommerce.app.data.address.AddressRes
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.LoginRes
 import com.ecommerce.app.data.login.SignupReq
@@ -19,6 +20,9 @@ interface UserService {
 
     @GET("wishlist")
     suspend fun getWishlist(): Response<WishlistRes>
+
+    @GET("address")
+    suspend fun getAddressList(): Response<AddressRes>
 
 
 }

@@ -4,6 +4,7 @@ import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
@@ -45,10 +46,35 @@ class MyFirebaseMessagingService : FirebaseMessagingService() {
         }
         if (remoteMessage.notification != null) {
             DebugHandler.log("Message notification payload: " +  remoteMessage.notification)
-            sendNotification(
+           /* sendNotification(
                 remoteMessage.notification!!.body, remoteMessage.notification!!.title, "null"
-            )
+            )*/
+            sendNotificationNew(remoteMessage.notification!!.body, remoteMessage.notification!!.title!!)
         }
+
+
+    }
+
+    private fun sendNotificationNew(messageBody: String?, title: String){
+        // Create intent for target activity
+        val intent = Intent(this, HomeActivity::class.java).apply {
+            putExtra("key", "value") // Optionally, pass any additional data to the target activity
+            addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        }
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent,
+            PendingIntent.FLAG_ONE_SHOT or PendingIntent.FLAG_IMMUTABLE)
+
+        val notificationBuilder = NotificationCompat.Builder(this, getString(R.string.app_name))
+            .setSmallIcon(R.drawable.ic_facebook)
+            .setContentTitle(title)
+            .setContentText(messageBody)
+            .setAutoCancel(true)
+            .setContentIntent(pendingIntent)
+
+        // Show notification
+        val notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.notify(11, notificationBuilder.build())
+
     }
 
     private fun sendNotification(messageBody: String?, title: String?, imgUrl: String) {
