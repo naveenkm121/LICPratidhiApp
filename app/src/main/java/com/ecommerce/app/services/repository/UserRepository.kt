@@ -31,4 +31,8 @@ class UserRepository @Inject constructor(private val userRemoteDataSource: UserR
         networkCall = { userRemoteDataSource.getWishlist() }
     )
 
+    fun getAddressList() = performGetOperation(
+        networkCall = { userRemoteDataSource.getAddressList() }
+    )
+
 }

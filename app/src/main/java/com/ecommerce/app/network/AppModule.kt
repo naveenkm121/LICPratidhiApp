@@ -17,6 +17,7 @@ import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.logging.HttpLoggingInterceptor
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
@@ -92,13 +93,75 @@ AppModule {
         .client(okHttpClient)
         .build()*/
 
-
     @Provides
     @Singleton
     @Named("ecommerceAuthOkHttpClient")
     fun provideEcommerceAuthOkHttpClient(@ApplicationContext appContext: Context): OkHttpClient {
-        val interceptor = HttpLoggingInterceptor()
+        val okHttpClient = OkHttpClient.Builder()
+        try {
+            // Create a trust manager that does not validate certificate chains
+            val trustAllCerts:  Array<TrustManager> = arrayOf(object : X509TrustManager {
+                override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?){}
+                override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
+                override fun getAcceptedIssuers(): Array<X509Certificate>  = arrayOf()
+            })
+
+            // Install the all-trusting trust manager
+            val  sslContext = SSLContext.getInstance("SSL")
+            sslContext.init(null, trustAllCerts, SecureRandom())
+
+            // Create an ssl socket factory with our all-trusting manager
+            val sslSocketFactory = sslContext.socketFactory
+            if (trustAllCerts.isNotEmpty() &&  trustAllCerts.first() is X509TrustManager) {
+                okHttpClient.sslSocketFactory(sslSocketFactory, trustAllCerts.first() as X509TrustManager)
+                okHttpClient.hostnameVerifier { _, _ -> true } // change here
+            }
+            val interceptor = HttpLoggingInterceptor()
+            interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+
+
+            okHttpClient.connectTimeout(3, TimeUnit.MINUTES)
+            okHttpClient.readTimeout(3, TimeUnit.MINUTES)
+            okHttpClient.writeTimeout(3, TimeUnit.MINUTES)
+            okHttpClient.addInterceptor { chain: Interceptor.Chain ->
+                    val original: Request = chain.request()
+                    val token =SaveSharedPreference.getTokenValue(appContext)
+                    DebugHandler.log("Authorization =="+token)
+                    val requestBuilder: Request.Builder = original.newBuilder()
+                        .header("Authorization", "Bearer $token")
+                    val request: Request = requestBuilder.build()
+                    chain.proceed(request)
+                }
+            okHttpClient.addInterceptor(interceptor)
+
+
+            return okHttpClient.build()
+        } catch (e: Exception) {
+            return okHttpClient.build()
+        }
+
+
+     /*   val interceptor = HttpLoggingInterceptor()
         interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
+
+
+        val trustAllCerts:  Array<TrustManager> = arrayOf(object : X509TrustManager {
+            override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?){}
+            override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
+            override fun getAcceptedIssuers(): Array<X509Certificate>  = arrayOf()
+        })
+
+        // Install the all-trusting trust manager
+        val  sslContext = SSLContext.getInstance("SSL")
+        sslContext.init(null, trustAllCerts, SecureRandom())
+
+        // Create an ssl socket factory with our all-trusting manager
+        val sslSocketFactory = sslContext.socketFactory
+       *//* if (trustAllCerts.isNotEmpty() &&  trustAllCerts.first() is X509TrustManager) {
+            okHttpClient.sslSocketFactory(sslSocketFactory, trustAllCerts.first() as X509TrustManager)
+            okHttpClient.hostnameVerifier { _, _ -> true } // change here
+        }*//*
+
         return OkHttpClient.Builder()
             .connectTimeout(3, TimeUnit.MINUTES)
             .readTimeout(3, TimeUnit.MINUTES)
@@ -113,7 +176,9 @@ AppModule {
                 chain.proceed(request)
             }
             .addInterceptor(interceptor)
-            .build()
+            .sslSocketFactory(sslSocketFactory, trustAllCerts.first() as X509TrustManager)
+            .hostnameVerifier { _, _ -> true }
+            .build()*/
     }
 
     @Provides
@@ -122,7 +187,7 @@ AppModule {
             .client(ecommerceAuthOkHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .baseUrl(Constants.BASE_URL)
-            .client(unSafeOkHttpClient().build())
+//            .client(unSafeOkHttpClient().build())
             .build()
 
     @Provides
