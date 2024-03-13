@@ -6,11 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.databinding.FragmentAddressBinding
 import com.ecommerce.app.databinding.FragmentCategoryBinding
 import com.ecommerce.app.databinding.FragmentWishlistBinding
+import com.ecommerce.app.ui.adapters.WishlistAdapter
 import com.ecommerce.app.ui.viewmodels.AddressViewModel
 import com.ecommerce.app.ui.viewmodels.CategoryViewModel
 import com.ecommerce.app.utils.autoCleared
@@ -33,6 +35,12 @@ class AddressFragment : Fragment() {
     ): View? {
         binding = FragmentAddressBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    private fun setupRecyclerView() {
+        adapter = WishlistAdapter(this)
+        binding.recyclerView.layoutManager =  GridLayoutManager(requireContext(), 2)
+        binding.recyclerView.adapter = adapter
     }
 
 }

@@ -16,8 +16,8 @@ import dagger.hilt.components.SingletonComponent
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.Request
+import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor
-import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.security.SecureRandom
@@ -36,63 +36,17 @@ import javax.net.ssl.X509TrustManager
 class
 AppModule {
 
-/*
-    private val httpLoggingInterceptor by lazy {
-        HttpLoggingInterceptor().apply {
-            level = HttpLoggingInterceptor.Level.BODY
-        }
+class TokenInterceptor(private val context: Context) : Interceptor {
+    override fun intercept(chain: Interceptor.Chain): Response {
+        val token = SaveSharedPreference.getTokenValue(context)
+        val originalRequest: Request = chain.request()
+        val requestBuilder: Request.Builder = originalRequest.newBuilder()
+            .header("Authorization", "Bearer $token")
+
+        val request: Request = requestBuilder.build()
+        return chain.proceed(request)
     }
-
-    val authInterceptor = object : Interceptor {
-        override fun intercept(chain: Interceptor.Chain): Response {
-            val token = SaveSharedPreference.getUserDetails(context = null)?.token
-            val originalRequest: Request = chain.request()
-            val requestBuilder: Request.Builder = originalRequest.newBuilder()
-                .header("Authorization", "Bearer $token")
-
-            val request: Request = requestBuilder.build()
-            return chain.proceed(request)
-        }
-    }
-
-    private val okHttpClient: OkHttpClient by lazy {
-        OkHttpClient.Builder()
-            .addInterceptor(httpLoggingInterceptor)
-            .build()
-    }*/
-
-/*
-    @Singleton
-    @Provides
-    fun provideRetrofit(): Retrofit =
-        Retrofit.Builder()
-            .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
-            .baseUrl(Constants.BASE_URL)
-            .build()
-*/
-
-
-/*
-    @Provides
-    fun provideOkHttpClient(): OkHttpClient {
-        val interceptor = HttpLoggingInterceptor()
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-        return OkHttpClient.Builder()
-            .addInterceptor(interceptor)
-            .connectTimeout(60, TimeUnit.SECONDS)
-            .readTimeout(60, TimeUnit.SECONDS)
-            .writeTimeout(60, TimeUnit.SECONDS)
-            .build()
-    }
-
-    @Provides
-    fun provideRetrofit(gson: Gson,okHttpClient: OkHttpClient) : Retrofit = Retrofit.Builder()
-        .baseUrl(Constants.BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create(gson))
-        .client(okHttpClient)
-        .build()*/
-
+}
     @Provides
     @Singleton
     @Named("ecommerceAuthOkHttpClient")
@@ -123,7 +77,8 @@ AppModule {
             okHttpClient.connectTimeout(3, TimeUnit.MINUTES)
             okHttpClient.readTimeout(3, TimeUnit.MINUTES)
             okHttpClient.writeTimeout(3, TimeUnit.MINUTES)
-            okHttpClient.addInterceptor { chain: Interceptor.Chain ->
+            okHttpClient.addInterceptor(TokenInterceptor(appContext))
+          /*  okHttpClient.addInterceptor { chain: Interceptor.Chain ->
                     val original: Request = chain.request()
                     val token =SaveSharedPreference.getTokenValue(appContext)
                     DebugHandler.log("Authorization =="+token)
@@ -131,7 +86,7 @@ AppModule {
                         .header("Authorization", "Bearer $token")
                     val request: Request = requestBuilder.build()
                     chain.proceed(request)
-                }
+                }*/
             okHttpClient.addInterceptor(interceptor)
 
 
@@ -140,45 +95,6 @@ AppModule {
             return okHttpClient.build()
         }
 
-
-     /*   val interceptor = HttpLoggingInterceptor()
-        interceptor.setLevel(HttpLoggingInterceptor.Level.BODY)
-
-
-        val trustAllCerts:  Array<TrustManager> = arrayOf(object : X509TrustManager {
-            override fun checkClientTrusted(chain: Array<out X509Certificate>?, authType: String?){}
-            override fun checkServerTrusted(chain: Array<out X509Certificate>?, authType: String?) {}
-            override fun getAcceptedIssuers(): Array<X509Certificate>  = arrayOf()
-        })
-
-        // Install the all-trusting trust manager
-        val  sslContext = SSLContext.getInstance("SSL")
-        sslContext.init(null, trustAllCerts, SecureRandom())
-
-        // Create an ssl socket factory with our all-trusting manager
-        val sslSocketFactory = sslContext.socketFactory
-       *//* if (trustAllCerts.isNotEmpty() &&  trustAllCerts.first() is X509TrustManager) {
-            okHttpClient.sslSocketFactory(sslSocketFactory, trustAllCerts.first() as X509TrustManager)
-            okHttpClient.hostnameVerifier { _, _ -> true } // change here
-        }*//*
-
-        return OkHttpClient.Builder()
-            .connectTimeout(3, TimeUnit.MINUTES)
-            .readTimeout(3, TimeUnit.MINUTES)
-            .writeTimeout(3, TimeUnit.MINUTES)
-            .addInterceptor { chain: Interceptor.Chain ->
-                val original: Request = chain.request()
-                val token =SaveSharedPreference.getTokenValue(appContext)
-                DebugHandler.log("Authorization =="+token)
-                val requestBuilder: Request.Builder = original.newBuilder()
-                    .header("Authorization", "Bearer $token")
-                val request: Request = requestBuilder.build()
-                chain.proceed(request)
-            }
-            .addInterceptor(interceptor)
-            .sslSocketFactory(sslSocketFactory, trustAllCerts.first() as X509TrustManager)
-            .hostnameVerifier { _, _ -> true }
-            .build()*/
     }
 
     @Provides

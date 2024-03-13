@@ -32,8 +32,7 @@ class AddressViewModel @Inject constructor(private val userRepository: UserRepos
     val response: LiveData<ResourceViewState<AddressRes>> = _response
 
     fun getAddress(request: String?) {
-        val req: String = Gson().toJson(request)
-        DebugHandler.log("CommonReq ::  $req")
+        DebugHandler.log("CommonReq ::  $request")
         _request.value = request!!
 
     }
