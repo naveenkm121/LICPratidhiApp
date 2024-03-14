@@ -14,6 +14,7 @@ import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.constants.HomeViewTypeEnum
 import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.home.ViewItemData
+import com.ecommerce.app.databinding.ItemAddressBinding
 import com.ecommerce.app.databinding.ItemBigBannerBinding
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
@@ -103,6 +104,13 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
 
                 val binding: ItemCategoryBinding =
                     ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
+            ScreenName.FRAGMENT_ADDRESS.value -> {
+
+                val binding: ItemAddressBinding =
+                    ItemAddressBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 return CommonViewHolder(parent.context, binding, fromScreen, listener)
             }
 
