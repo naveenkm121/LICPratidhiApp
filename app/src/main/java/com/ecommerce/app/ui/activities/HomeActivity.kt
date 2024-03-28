@@ -108,7 +108,7 @@ class HomeActivity : AppCompatActivity() {
                 when (item.itemId) {
                     R.id.navigation_home -> {
                         DebugHandler.log("Hello Home")
-                        navController.navigate(R.id.addressFragment)
+                        navController.navigate(R.id.addAddressFragment)
                         return@OnNavigationItemSelectedListener true
                     }
                     R.id.navigation_trending ->     {

@@ -17,6 +17,7 @@
     <string name="fragment_products">Products</string>
     <string name="fragment_product_details">Product Details</string>
     <string name="fragment_filter">Filters</string>
+    <string name="fragment_add_address">Add Address</string>
 
     <!-- Strings related to login -->
     <string name="welcome_back">Welcome back</string>
@@ -84,4 +85,18 @@
     <string name="home">Home</string>
     <string name="trending">Trending</string>
     <string name="session_expired">Session expired.Please Login again.</string>
+    <string name="add_address">Add Address</string>
+    <string name="save_address">Save Address</string>
+    <string name="contact_info">Contact Info</string>
+    <string name="address_info">Address Info</string>
+    <string name="flat_building">Flat No / Building Name</string>
+    <string name="locality_area_street">Locality/Area/Street</string>
+    <string name="landmark">Landmark</string>
+    <string name="pincode">Pincode</string>
+    <string name="city">City</string>
+    <string name="state">State</string>
+    <string name="address_type">Type of Address</string>
+    <string name="office">Office</string>
+    <string name="others">Others</string>
+    <string name="default_address">Make as Default Address</string>
 </resources>
