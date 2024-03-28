@@ -216,7 +216,7 @@
                                 android:layout_height="wrap_content"
                                 android:imeOptions="actionNext"
                                 android:inputType="text"
-                                android:maxLength="30"
+                                android:maxLength="20"
                                 android:scrollIndicators="none"
                                 android:windowSoftInputMode="adjustResize" />
 
@@ -271,27 +271,30 @@
 
                     <RadioGroup
                         android:id="@+id/radioGroup"
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:orientation="horizontal">
 
                         <RadioButton
                             android:id="@+id/homeRB"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/home" />
 
                         <RadioButton
                             android:id="@+id/officeRB"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/office" />
 
                         <RadioButton
                             android:id="@+id/otherRB"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:text="@string/others" />
                     </RadioGroup>
                 <CheckBox
