@@ -1,15 +1,12 @@
 package com.ecommerce.app.ui.adapters
 
-import android.R
 import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ecommerce.app.data.category.SubCategory
 import com.ecommerce.app.data.category.SubSubCategory
-import com.ecommerce.app.databinding.ItemSubCategoryBinding
 import com.ecommerce.app.databinding.ItemSubSubCategoryBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 
@@ -62,7 +59,7 @@ class SubSubCategoryAdapter(val listener: CommonSelectItemRVListerner) :
 
         override fun onClick(p0: View?) {
 
-            listener.onSelectItemRVType(selectedItem)
+            listener.onSelectItemRVType(selectedItem,"")
         }
     }
 

@@ -20,10 +20,8 @@ import com.ecommerce.app.databinding.ItemBigBannerBinding
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.databinding.ItemHomeProductBinding
-import com.ecommerce.app.databinding.ItemProductImageBinding
 import com.ecommerce.app.databinding.ItemSmallBannerBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
-import com.ecommerce.app.utils.DebugHandler
 
 
 class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelectItemRVListerner) :
@@ -209,6 +207,16 @@ class CommonViewHolder(
                 itemBinding.cityPincodeTV.text= item.city+"-"+item.pincode
                 itemBinding.state.text= item.state
                 itemBinding.mobileTV.text= context.getString(R.string.mobile_str,item.mobile)
+
+                itemBinding.deleteLL.setOnClickListener {
+                    listener.onSelectItemRVType(item,ScreenName.ACTION_DELETE_ADDRESS.value)
+                }
+                itemBinding.editLL.setOnClickListener {
+                    listener.onSelectItemRVType(item,ScreenName.ACTION_EDIT_ADDRESS.value)
+                }
+                itemBinding.defaultLL.setOnClickListener {
+                    listener.onSelectItemRVType(item,ScreenName.ACTION_DEFAULT_ADDRESS.value)
+                }
             }
 
         }
@@ -216,8 +224,7 @@ class CommonViewHolder(
     }
 
     override fun onClick(p0: View?) {
-        DebugHandler.log("Helllo Selected Item")
-        listener.onSelectItemRVType(selectedItem)
+        listener.onSelectItemRVType(selectedItem,"")
     }
 
 }

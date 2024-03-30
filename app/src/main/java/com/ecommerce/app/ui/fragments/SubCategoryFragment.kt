@@ -5,7 +5,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
@@ -17,7 +16,6 @@ import com.ecommerce.app.databinding.FragmentSubCategoryBinding
 import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.ui.adapters.SubCategoryAdapter
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
-import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -67,7 +65,7 @@ class SubCategoryFragment : Fragment(), CommonSelectItemRVListerner {
         )
     }
 
-    override fun onSelectItemRVType(selectedItem: Any) {
+    override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
 
         when (selectedItem) {
 

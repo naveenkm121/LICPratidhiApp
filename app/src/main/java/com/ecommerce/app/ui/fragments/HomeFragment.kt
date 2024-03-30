@@ -5,20 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.ecommerce.app.constants.ScreenName
-import com.ecommerce.app.data.category.Category
-import com.ecommerce.app.data.category.CategoryRes
-import com.ecommerce.app.data.filter.FilterRes
 import com.ecommerce.app.data.home.HomeRes
 import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.FragmentHomeBinding
-import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.adapters.HomeAdapter
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.CommonUtility
-import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
-import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -71,7 +64,7 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
         //binding = null
     }
 
-    override fun onSelectItemRVType(selectedItem: Any) {
+    override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
        "Hellol"
     }
 

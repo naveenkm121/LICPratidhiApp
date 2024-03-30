@@ -6,20 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.databinding.FragmentAddressBinding
 import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.viewmodels.AddressViewModel
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
-import com.ecommerce.app.utils.DebugHandler
+import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
-import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -99,8 +100,24 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
             binding.progressBar.visibility = View.VISIBLE
         }
     }
-    override fun onSelectItemRVType(selectedItem: Any) {
+    override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
+       selectedItem as AddressItem
+        when(selectedAction){
+            ScreenName.ACTION_DELETE_ADDRESS.value->{
 
+            }
+            ScreenName.ACTION_EDIT_ADDRESS.value->{
+                findNavController().navigate(
+                    R.id.action_addressFragment_to_addAddressFragment,
+                    bundleOf(
+                        IntentConstants.ADDRESS_DATA to GsonHelper.toJson(selectedItem)
+                    )
+                )
+            }
+            ScreenName.ACTION_DEFAULT_ADDRESS.value->{
+
+            }
+        }
     }
 
 }

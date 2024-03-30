@@ -6,23 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.viewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.category.Category
-import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentCategoryBinding
-import com.ecommerce.app.databinding.FragmentHomeBinding
-import com.ecommerce.app.databinding.FragmentProductDetailBinding
 import com.ecommerce.app.ui.adapters.CommonRVAdapter
-import com.ecommerce.app.ui.adapters.WishlistAdapter
 import com.ecommerce.app.ui.viewmodels.CategoryViewModel
-import com.ecommerce.app.ui.viewmodels.HomeViewModel
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
@@ -129,7 +122,7 @@ class CategoryFragment : Fragment(),CommonSelectItemRVListerner {
     }
 
 
-    override fun onSelectItemRVType(selectedItem: Any) {
+    override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
         selectedItem as Category
         launchSubCategoryUI(selectedItem)
     }

@@ -25,6 +25,8 @@ import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
+import com.ecommerce.app.constants.IntentConstants
+import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.PincodeRes
 import com.ecommerce.app.data.login.SignupReq
@@ -48,11 +50,27 @@ class AddAddressFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        var addressData: String? =arguments?.getString(IntentConstants.ADDRESS_DATA)
+        if(!addressData.isNullOrBlank()){
+            val addressItem=GsonHelper.fromJson(addressData,AddressItem::class.java)
+            setDataOnViews(addressItem!!)
+        }
+        // filterRes= GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_FILTER_DATA)!!,FilterRes::class.java)!!
         setOnClickListener()
         setupObservers()
 
     }
 
+    private fun setDataOnViews(addressItem: AddressItem){
+        binding.nameET.setText(addressItem.name)
+        binding.mobileET.setText(addressItem.mobile)
+        binding.address1ET.setText(addressItem.address1)
+        binding.address2ET.setText(addressItem.address2)
+        binding.landmarkET.setText(addressItem.landmark)
+        binding.pincodeET.setText(addressItem.pincode)
+        binding.cityET.setText(addressItem.city)
+        binding.stateET.setText(addressItem.state)
+    }
 
     private fun validateInput(): Boolean {
         val username = binding.nameET.text.toString()

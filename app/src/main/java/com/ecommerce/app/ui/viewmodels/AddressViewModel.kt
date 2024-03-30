@@ -21,7 +21,6 @@ import javax.inject.Inject
 class AddressViewModel @Inject constructor(private val userRepository: UserRepository):
     ViewModel() {
 
-    //  val list = userRepository.getWishList().cachedIn(viewModelScope)
 
     private val _request = MutableLiveData<String>()
 

@@ -14,14 +14,12 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
-import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentWishlistBinding
 import com.ecommerce.app.ui.adapters.WishlistAdapter
 import com.ecommerce.app.ui.viewmodels.WishlistViewModel
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
-import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
@@ -117,7 +115,7 @@ class WishlistFragment : Fragment(),CommonSelectItemRVListerner {
     }
 
 
-    override fun onSelectItemRVType(selectedItem: Any) {
+    override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
         selectedItem as WishlistItem
         findNavController().navigate(R.id.action_wishlistFragment_to_productDetailFragment,
             bundleOf(

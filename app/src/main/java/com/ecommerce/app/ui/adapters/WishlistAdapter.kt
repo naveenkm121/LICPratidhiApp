@@ -6,18 +6,12 @@ import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.ecommerce.app.R
-import com.ecommerce.app.data.filter.FilterItem
-import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.wishlist.WishlistItem
-import com.ecommerce.app.databinding.ItemFilterBinding
 import com.ecommerce.app.databinding.ItemProductBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
-import com.ecommerce.app.utils.DebugHandler
 
 
 class WishlistAdapter( private val listener: CommonSelectItemRVListerner) : RecyclerView.Adapter<WishlistAdapter.ProductVH>() {
@@ -70,7 +64,7 @@ class WishlistAdapter( private val listener: CommonSelectItemRVListerner) : Recy
                 .into(itemBinding.productImageView)
 
             itemBinding.root.setOnClickListener{
-                listener.onSelectItemRVType(item)
+                listener.onSelectItemRVType(item,"")
             }
 
         }
