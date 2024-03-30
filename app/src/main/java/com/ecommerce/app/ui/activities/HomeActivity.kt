@@ -107,24 +107,21 @@ class HomeActivity : AppCompatActivity() {
             BottomNavigationView.OnNavigationItemSelectedListener { item ->
                 when (item.itemId) {
                     R.id.navigation_home -> {
-                        DebugHandler.log("Hello Home")
-                        navController.navigate(R.id.addAddressFragment)
+                        navController.navigate(R.id.addressFragment)
+                        hideBottomNavigationView()
                         return@OnNavigationItemSelectedListener true
                     }
                     R.id.navigation_trending ->     {
-                        DebugHandler.log("Hello navigation_trending")
                         navController.navigate(R.id.wishlistFragment)
                         return@OnNavigationItemSelectedListener true
                     }
                     R.id.navigation_categories ->    {
-                        DebugHandler.log("Hello navigation_categories")
                         fcmToken()
                         navController.navigate(R.id.categoryFragment)
                        // findNavController().navigate(R.id.action_homeFragment_to_categoryFragment)
                         return@OnNavigationItemSelectedListener true
                     }
                     R.id.navigation_account ->     {
-                        DebugHandler.log("Hello navigation_trending")
                         navController.navigate(R.id.productListFragment)
                        // findNavController().navigate(R.id.action_homeFragment_to_wishlistFragment)
                         return@OnNavigationItemSelectedListener true

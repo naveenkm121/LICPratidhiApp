@@ -1,5 +1,6 @@
 package com.ecommerce.app.services.remotedata
 
+import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.SignupReq
 import com.ecommerce.app.services.api.UserService
@@ -14,5 +15,7 @@ class UserRemoteDataSource @Inject constructor(private val userService: UserServ
     suspend fun getWishlist( )=getResult { userService.getWishlist() }
 
     suspend fun getAddressList( )=getResult { userService.getAddressList() }
+
+    suspend fun addAddress(addressReq: AddressReq)=getResult { userService.addAddress(addressReq) }
     suspend fun getPincodeDetails(pincode:String )=getResult { userService.getPincodeDetails(pincode) }
 }

@@ -96,10 +96,8 @@ class AddAddressFragment : Fragment() {
     private fun setOnClickListener() {
 
         binding.pincodeET.setOnEditorActionListener { _, actionId, event ->
-            if ((actionId == EditorInfo.IME_ACTION_NEXT || (event.action == KeyEvent.ACTION_DOWN && event.keyCode == KeyEvent.KEYCODE_ENTER)) && (binding.pincodeET.text.toString().length == 6)) {
-                //performLogin()
+            if ((actionId == EditorInfo.IME_ACTION_DONE || (event.action == KeyEvent.ACTION_DOWN && event.keyCode == KeyEvent.KEYCODE_ENTER)) && (binding.pincodeET.text.toString().length == 6)) {
                 var pincode: String = binding.pincodeET.text.toString();
-                DebugHandler.log("pincode == " + pincode)
                 viewModel.getPincodeDetails(pincode)
                 true // Consume the event
             } else {
@@ -107,10 +105,6 @@ class AddAddressFragment : Fragment() {
             }
         }
 
-   /*     binding.radioGroup.setOnCheckedChangeListener { group, checkedId ->
-            if(checkedId==R.id.homeRB)
-                addressReq.
-        }*/
 
         binding.defaultAddCB.setOnCheckedChangeListener { buttonView, isChecked ->
             if (isChecked)
@@ -130,6 +124,8 @@ class AddAddressFragment : Fragment() {
                 addressReq.pincode = binding.pincodeET.text.toString()
                 addressReq.city = binding.cityET.text.toString()
                 addressReq.state = binding.stateET.text.toString()
+
+                viewModel.addAddress(addressReq)
 
                 DebugHandler.log("Address Req == "+ GsonHelper.toJson(addressReq))
 
@@ -180,6 +176,7 @@ class AddAddressFragment : Fragment() {
     }
 
     private fun setupObservers() {
+
         viewModel.response.observe(viewLifecycleOwner, Observer {
             when (it.status) {
 
@@ -201,14 +198,46 @@ class AddAddressFragment : Fragment() {
                 }
 
                 ResourceViewState.Status.ERROR -> {
-                    setProgressBar(true)
+                  //  setProgressBar(true)
+                    Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
                 }
 
             }
 
         })
+
+        viewModel.responseAddAddress.observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+
+                ResourceViewState.Status.LOADING -> {
+                    // setProgressBar(true)
+                }
+
+                ResourceViewState.Status.SUCCESS -> {
+                    setProgressBar(false)
+                    if (it.data?.message?.startsWith(AppConstants.SUCCESS, true) == true) {
+                        launchAddressListScreen()
+                    } else {
+                        Toast.makeText(requireContext(), it.data?.message, Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+
+                ResourceViewState.Status.ERROR -> {
+                    //  setProgressBar(true)
+                    Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
+                }
+
+            }
+
+        })
+
+
     }
 
+    private fun launchAddressListScreen(){
+        findNavController().navigate(R.id.action_addAddressFragment_to_addressFragment)
+    }
 
     private fun setProgressBar(b: Boolean) {
         if (!b) {

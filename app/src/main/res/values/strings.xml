@@ -101,4 +101,8 @@
     <string name="office">Office</string>
     <string name="others">Others</string>
     <string name="default_address">Make as Default Address</string>
+    <string name="something_went_wrong">Something went wrong</string>
+    <string name="mobile_str">Mobile : %1$s</string>
+    <string name="landmark_str">Landmark - %1$s</string>
+
 </resources>

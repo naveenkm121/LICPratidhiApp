@@ -12,6 +12,7 @@ import com.bumptech.glide.Glide
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.constants.HomeViewTypeEnum
+import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.home.ViewItemData
 import com.ecommerce.app.databinding.ItemAddressBinding
@@ -196,6 +197,18 @@ class CommonViewHolder(
                 item as Category
                 itemBinding as ItemCategoryBinding
                 itemBinding.nameTV.text = item.name
+            }
+
+            ScreenName.FRAGMENT_ADDRESS.value -> {
+                item as AddressItem
+                itemBinding as ItemAddressBinding
+                itemBinding.nameTV.text = item.name
+                itemBinding.address1TV.text=item.address1
+                itemBinding.address2TV.text=item.address2+", "+item.locality
+                itemBinding.landmark.text=context.getString(R.string.landmark_str,item.landmark)
+                itemBinding.cityPincodeTV.text= item.city+"-"+item.pincode
+                itemBinding.state.text= item.state
+                itemBinding.mobileTV.text= context.getString(R.string.mobile_str,item.mobile)
             }
 
         }

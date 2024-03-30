@@ -1,5 +1,7 @@
 package com.ecommerce.app.services.api
 
+import com.ecommerce.app.data.address.AddAddressRes
+import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.AddressRes
 import com.ecommerce.app.data.address.PincodeRes
 import com.ecommerce.app.data.login.LoginReq
@@ -25,9 +27,12 @@ interface UserService {
 
     @GET("address")
     suspend fun getAddressList(): Response<AddressRes>
+    @POST("address")
+    suspend fun addAddress(@Body addressReq: AddressReq): Response<AddAddressRes>
 
     @GET("pincode/{pincode}")
     suspend fun getPincodeDetails(@Path("pincode") pincode:String): Response<PincodeRes>
+
 
 
 }

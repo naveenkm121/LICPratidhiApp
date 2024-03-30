@@ -96,12 +96,22 @@
         android:name="com.ecommerce.app.ui.fragments.AddressFragment"
         android:label="@string/fragment_category"
         tools:layout="@layout/fragment_address">
+        <action
+            android:id="@+id/action_addressFragment_to_addAddressFragment"
+            app:destination="@id/addAddressFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/addAddressFragment"
         android:name="com.ecommerce.app.ui.fragments.AddAddressFragment"
         android:label="@string/fragment_add_address"
         tools:layout="@layout/fragment_address">
+        <action
+            android:id="@+id/action_addAddressFragment_to_addressFragment"
+            app:destination="@id/addressFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
 </navigation>

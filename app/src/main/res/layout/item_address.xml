@@ -67,7 +67,7 @@
             android:layout_height="wrap_content"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/state"
-            android:text="Mobile:7813423111"
+            android:text="@string/mobile_str"
             android:textColor="@color/black"
             android:textSize="@dimen/text_15" />
 

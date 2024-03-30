@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
@@ -30,8 +31,6 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
     private var addressItemList = ArrayList<AddressItem>()
 
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -45,7 +44,7 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
         //setHasOptionsMenu(true)
         setupRecyclerView()
         setupObservers()
-        DebugHandler.log("Session =="+ SaveSharedPreference.getTokenValue(requireContext()))
+        setOnClickListener()
         viewModel.getAddress(ScreenName.FRAGMENT_CATEGORY.value)
     }
     private fun setupRecyclerView() {
@@ -53,7 +52,11 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
         binding.recyclerView.layoutManager =  LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }
-
+    private fun setOnClickListener() {
+        binding.addAddressBTN.setOnClickListener({
+            findNavController().navigate(R.id.action_addressFragment_to_addAddressFragment)
+        })
+    }
     private fun setupObservers() {
         viewModel.response.observe(viewLifecycleOwner, Observer {
             when (it.status) {

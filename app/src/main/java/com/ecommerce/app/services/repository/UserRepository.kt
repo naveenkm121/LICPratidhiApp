@@ -3,6 +3,7 @@ package com.ecommerce.app.services.repository
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
+import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.SignupReq
 import com.ecommerce.app.services.api.ProductService
@@ -35,6 +36,9 @@ class UserRepository @Inject constructor(private val userRemoteDataSource: UserR
         networkCall = { userRemoteDataSource.getAddressList() }
     )
 
+    fun addAddress(addAddressReq: AddressReq) = performGetOperation(
+        networkCall = { userRemoteDataSource.addAddress(addAddressReq) }
+    )
     fun getPincodeDetails(pincode:String) = performGetOperation(
         networkCall = { userRemoteDataSource.getPincodeDetails(pincode) }
     )
