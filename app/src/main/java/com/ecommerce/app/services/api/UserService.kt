@@ -24,5 +24,8 @@ interface UserService {
     @GET("address")
     suspend fun getAddressList(): Response<AddressRes>
 
+    @GET("pincode")
+    suspend fun getAddressList(): Response<AddressRes>
+
 
 }
