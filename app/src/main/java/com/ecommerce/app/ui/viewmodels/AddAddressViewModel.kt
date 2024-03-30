@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import com.ecommerce.app.data.CommonReq
+import com.ecommerce.app.data.address.PincodeRes
 import com.ecommerce.app.data.wishlist.WishlistRes
 import com.ecommerce.app.services.repository.UserRepository
 import com.ecommerce.app.utils.DebugHandler
@@ -17,24 +18,20 @@ import javax.inject.Inject
 class AddAddressViewModel @Inject constructor(private val userRepository: UserRepository): ViewModel() {
 
 
-    private val _request = MutableLiveData<CommonReq?>()
+    private val _request = MutableLiveData<String>()
 
-    private val _response = _request.switchMap {
-        userRepository.getWishlist()
+    private val _response = _request.switchMap { request->
+        userRepository.getPincodeDetails(request)
 
     }
-    val response: LiveData<ResourceViewState<WishlistRes>> = _response
 
-    fun getWishlist(request: CommonReq?) {
+    val response: LiveData<ResourceViewState<PincodeRes>> = _response
+
+    fun getPincodeDetails(request: String) {
         val req: String = Gson().toJson(request)
         DebugHandler.log("CommonReq ::  $req")
         _request.value = request
 
     }
-
-    // val list = productRespository.getProducts().cachedIn(viewModelScope)
-
-
-    // val response: LiveData<PagingData<ProductItem>> =  productRespository.getProducts().cachedIn(viewModelScope)
 
 }

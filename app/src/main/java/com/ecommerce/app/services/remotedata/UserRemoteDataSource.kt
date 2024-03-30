@@ -14,4 +14,5 @@ class UserRemoteDataSource @Inject constructor(private val userService: UserServ
     suspend fun getWishlist( )=getResult { userService.getWishlist() }
 
     suspend fun getAddressList( )=getResult { userService.getAddressList() }
+    suspend fun getPincodeDetails(pincode:String )=getResult { userService.getPincodeDetails(pincode) }
 }
