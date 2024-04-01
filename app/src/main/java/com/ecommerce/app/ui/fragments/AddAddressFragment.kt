@@ -39,6 +39,7 @@ class AddAddressFragment : Fragment() {
     private var binding: FragmentAddAddressBinding by autoCleared()
     private val viewModel: AddAddressViewModel by viewModels()
     private var addressReq: AddressReq = AddressReq()
+    private var isNewAddress=true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,6 +54,7 @@ class AddAddressFragment : Fragment() {
         var addressData: String? =arguments?.getString(IntentConstants.ADDRESS_DATA)
         if(!addressData.isNullOrBlank()){
             val addressItem=GsonHelper.fromJson(addressData,AddressItem::class.java)
+            isNewAddress=false
             setDataOnViews(addressItem!!)
         }
         // filterRes= GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_FILTER_DATA)!!,FilterRes::class.java)!!
@@ -70,6 +72,8 @@ class AddAddressFragment : Fragment() {
         binding.pincodeET.setText(addressItem.pincode)
         binding.cityET.setText(addressItem.city)
         binding.stateET.setText(addressItem.state)
+
+        binding.defaultAddCB.isChecked=(addressItem.isDefault==1)
     }
 
     private fun validateInput(): Boolean {
@@ -143,7 +147,10 @@ class AddAddressFragment : Fragment() {
                 addressReq.city = binding.cityET.text.toString()
                 addressReq.state = binding.stateET.text.toString()
 
-                viewModel.addAddress(addressReq)
+                if(isNewAddress)
+                    viewModel.addAddress(addressReq)
+                else
+                    DebugHandler.log("Hello EDIT Button")
 
                 DebugHandler.log("Address Req == "+ GsonHelper.toJson(addressReq))
 

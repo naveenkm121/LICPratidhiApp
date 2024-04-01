@@ -140,6 +140,7 @@
 
                 <!-- Icon for the third part -->
                 <ImageView
+                    android:id="@+id/defaultIV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding2"
@@ -147,9 +148,10 @@
 
                 <!-- Text for the third part -->
                 <TextView
+                    android:id="@+id/defaultTV"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/delete"
+                    android:text="@string/default_str"
                     android:textColor="@color/black"/>
             </LinearLayout>
         </LinearLayout>

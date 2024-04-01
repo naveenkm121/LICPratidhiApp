@@ -106,7 +106,7 @@ class UICommon {
 
 
         public  fun showAlertDialog(
-            act: Activity?,
+            context: Context,
             cancellable: Boolean, title: String?,
             message: String?,
             positiveBtn: String?,
@@ -114,7 +114,7 @@ class UICommon {
             neutralBtn: String,
             listener: AlertDialogListener?
         ) {
-            val builder = AlertDialog.Builder(act)
+            val builder = AlertDialog.Builder(context)
             builder.setTitle(title)
             builder.setMessage(message)
             builder.setCancelable(cancellable)
@@ -160,6 +160,7 @@ class UICommon {
             dialog.datePicker.maxDate = Date().time
             dialog.show()
         }
+
 
     }
 

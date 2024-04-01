@@ -4,11 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import com.ecommerce.app.data.CommonReq
-import com.ecommerce.app.data.address.AddAddressRes
+import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.PincodeRes
-import com.ecommerce.app.data.wishlist.WishlistRes
 import com.ecommerce.app.services.repository.UserRepository
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
@@ -34,7 +32,7 @@ class AddAddressViewModel @Inject constructor(private val userRepository: UserRe
     }
 
     val response: LiveData<ResourceViewState<PincodeRes>> = _response
-    val responseAddAddress: LiveData<ResourceViewState<AddAddressRes>> = _response_add_address
+    val responseAddAddress: LiveData<ResourceViewState<AddressDataRes>> = _response_add_address
 
     fun addAddress(request: AddressReq) {
         val req: String = Gson().toJson(request)

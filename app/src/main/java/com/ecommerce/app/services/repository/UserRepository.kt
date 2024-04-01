@@ -39,6 +39,9 @@ class UserRepository @Inject constructor(private val userRemoteDataSource: UserR
     fun addAddress(addAddressReq: AddressReq) = performGetOperation(
         networkCall = { userRemoteDataSource.addAddress(addAddressReq) }
     )
+    fun deleteAddress(id: Int) = performGetOperation(
+        networkCall = { userRemoteDataSource.deleteAddress(id) }
+    )
     fun getPincodeDetails(pincode:String) = performGetOperation(
         networkCall = { userRemoteDataSource.getPincodeDetails(pincode) }
     )

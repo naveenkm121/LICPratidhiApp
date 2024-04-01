@@ -1,5 +1,6 @@
 package com.ecommerce.app.ui.fragments
 
+import android.content.DialogInterface
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -18,9 +19,12 @@ import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.databinding.FragmentAddressBinding
 import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.viewmodels.AddressViewModel
+import com.ecommerce.app.utils.AlertDialogListener
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
+import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
+import com.ecommerce.app.utils.UICommon
 import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -59,6 +63,8 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
         })
     }
     private fun setupObservers() {
+
+
         viewModel.response.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 ResourceViewState.Status.SUCCESS -> {
@@ -91,6 +97,41 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
             }
         })
 
+        viewModel.responseDeleteAddress.observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+                ResourceViewState.Status.SUCCESS -> {
+                    setProgressBar(false)
+                    if (it.data != null && it.data.status == 1) {
+                        //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                       // addressItemList.remove(it.data)
+                        for (item in addressItemList) {
+                            DebugHandler.log("AddressList=="+item.name)
+                            if(item.id==it.data.data.id) {
+                                addressItemList.remove(item)
+                                break
+                            }
+                        }
+                        adapter.setItems(addressItemList)
+
+                    } else
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                }
+                ResourceViewState.Status.ERROR -> {
+                    setProgressBar(false)
+                    if (it.message?.contains("401") == true) {
+                        Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
+                        //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
+
+                    } else
+                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+
+                }
+                ResourceViewState.Status.LOADING ->{
+                    setProgressBar(true)
+                }
+            }
+        })
+
     }
 
     private fun setProgressBar(b: Boolean) {
@@ -104,7 +145,23 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
        selectedItem as AddressItem
         when(selectedAction){
             ScreenName.ACTION_DELETE_ADDRESS.value->{
+               // viewModel.deleteAddress(selectedItem.id)
+                UICommon.showAlertDialog(
+                    requireContext(), // Pass the context of the fragment
+                    false, // Cancellable
+                    getString(R.string.alert), // Title of the dialog
+                    getString(R.string.delete_address_message), // Message of the dialog
+                    getString(R.string.yes), // Text for positive button
+                    getString(R.string.no), // Text for negative button
+                    "", // Text for neutral button
+                    object : AlertDialogListener { // Listener for button clicks
 
+                        override fun onPositiveButton(dialog: DialogInterface?) {
+                          viewModel.deleteAddress(selectedItem.id)
+                           // adapter.notifyDataSetChanged()
+                        }
+                    }
+                )
             }
             ScreenName.ACTION_EDIT_ADDRESS.value->{
                 findNavController().navigate(

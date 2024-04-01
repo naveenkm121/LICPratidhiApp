@@ -106,4 +106,10 @@
     <string name="landmark_str">Landmark - %1$s</string>
     <string name="edit">Edit</string>
     <string name="delete">Delete</string>
+    <string name="default_str">Default</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="alert">Alert</string>
+    <string name="delete_address_message">Are you sure, you want to delete the Address ?</string>
+
 </resources>

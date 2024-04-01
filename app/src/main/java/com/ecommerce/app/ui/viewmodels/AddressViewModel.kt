@@ -5,6 +5,8 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
 import androidx.paging.PagingData
+import com.ecommerce.app.data.address.AddressDataRes
+import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.AddressRes
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.data.product.ProductReqParam
@@ -23,18 +25,30 @@ class AddressViewModel @Inject constructor(private val userRepository: UserRepos
 
 
     private val _request = MutableLiveData<String>()
+    private val _request_delete_address = MutableLiveData<Int>()
 
     private val _response = _request.switchMap { request->
         userRepository.getAddressList()
 
     }
+
+    private val _response_delete_address = _request_delete_address.switchMap { request->
+        userRepository.deleteAddress(request)
+
+    }
+
     val response: LiveData<ResourceViewState<AddressRes>> = _response
+    val responseDeleteAddress: LiveData<ResourceViewState<AddressDataRes>> = _response_delete_address
 
     fun getAddress(request: String?) {
         DebugHandler.log("CommonReq ::  $request")
         _request.value = request!!
 
     }
+    fun deleteAddress(request: Int?) {
+        DebugHandler.log("CommonReq ::  $request")
+        _request_delete_address.value = request!!
 
+    }
 
 }

@@ -208,6 +208,12 @@ class CommonViewHolder(
                 itemBinding.state.text= item.state
                 itemBinding.mobileTV.text= context.getString(R.string.mobile_str,item.mobile)
 
+                if(item.isDefault==1)
+                {
+                    itemBinding.defaultIV.setColorFilter(context.getColor(R.color.red))
+                    itemBinding.defaultTV.setTextColor(context.getColor(R.color.red))
+                }
+
                 itemBinding.deleteLL.setOnClickListener {
                     listener.onSelectItemRVType(item,ScreenName.ACTION_DELETE_ADDRESS.value)
                 }
