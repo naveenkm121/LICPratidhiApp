@@ -13,6 +13,7 @@ import retrofit2.http.Body
 import retrofit2.http.DELETE
 import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface UserService {
@@ -31,6 +32,9 @@ interface UserService {
 
     @DELETE("address/{id}")
     suspend fun deleteAddress(@Path("id") id:Int): Response<AddressDataRes>
+
+    @PUT("address/{id}")
+    suspend fun updateAddress(@Path("id") id:Int,@Body addressReq: AddressReq): Response<AddressDataRes>
     @POST("address")
     suspend fun addAddress(@Body addressReq: AddressReq): Response<AddressDataRes>
 

@@ -16,12 +16,9 @@ import com.ecommerce.app.R
 import com.ecommerce.app.constants.AppConstants
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.databinding.FragmentAddAddressBinding
-import com.ecommerce.app.databinding.FragmentAddressBinding
 import com.ecommerce.app.ui.viewmodels.AddAddressViewModel
-import com.ecommerce.app.ui.viewmodels.LoginViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
-import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
@@ -29,7 +26,6 @@ import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.PincodeRes
-import com.ecommerce.app.data.login.SignupReq
 import com.ecommerce.app.utils.CommonUtility
 import com.ecommerce.app.utils.GsonHelper
 import dagger.hilt.android.AndroidEntryPoint
@@ -39,6 +35,7 @@ class AddAddressFragment : Fragment() {
     private var binding: FragmentAddAddressBinding by autoCleared()
     private val viewModel: AddAddressViewModel by viewModels()
     private var addressReq: AddressReq = AddressReq()
+    private lateinit var  updateAddressItem:AddressItem
     private var isNewAddress=true
 
     override fun onCreateView(
@@ -53,9 +50,9 @@ class AddAddressFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         var addressData: String? =arguments?.getString(IntentConstants.ADDRESS_DATA)
         if(!addressData.isNullOrBlank()){
-            val addressItem=GsonHelper.fromJson(addressData,AddressItem::class.java)
+            updateAddressItem= GsonHelper.fromJson(addressData,AddressItem::class.java)!!
             isNewAddress=false
-            setDataOnViews(addressItem!!)
+            setDataOnViews(updateAddressItem!!)
         }
         // filterRes= GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_FILTER_DATA)!!,FilterRes::class.java)!!
         setOnClickListener()
@@ -75,7 +72,14 @@ class AddAddressFragment : Fragment() {
 
         binding.defaultAddCB.isChecked=(addressItem.isDefault==1)
     }
+    private fun setPincodeDetails(pincodeRes: PincodeRes) {
+        binding.pincodeTIL.error = ""
+        binding.cityET.setText(pincodeRes.data.district)
+        binding.stateET.setText(pincodeRes.data.state)
+        setupSpinner(binding.localitySpinner, pincodeRes.data.locality)
+        binding.localitySpinner.visibility = View.VISIBLE
 
+    }
     private fun validateInput(): Boolean {
         val username = binding.nameET.text.toString()
         val mobile = binding.mobileET.text.toString()
@@ -129,11 +133,7 @@ class AddAddressFragment : Fragment() {
 
 
         binding.defaultAddCB.setOnCheckedChangeListener { buttonView, isChecked ->
-            if (isChecked)
-                addressReq.isDefault=1
-           else
-                addressReq.isDefault=0
-
+            addressReq.isDefault = if (isChecked) 1 else 0
         }
 
         binding.proceedBTN.setOnClickListener {
@@ -148,11 +148,10 @@ class AddAddressFragment : Fragment() {
                 addressReq.state = binding.stateET.text.toString()
 
                 if(isNewAddress)
-                    viewModel.addAddress(addressReq)
+                    viewModel.addAddress(addressReq,ScreenName.REQUEST_ADD_ADDRESS.value)
                 else
-                    DebugHandler.log("Hello EDIT Button")
+                    viewModel.updateAddress(addressReq,ScreenName.REQUEST_UPDATE_ADDRESS.value,updateAddressItem.id)
 
-                DebugHandler.log("Address Req == "+ GsonHelper.toJson(addressReq))
 
             }
         }
@@ -160,24 +159,12 @@ class AddAddressFragment : Fragment() {
 
     }
 
-    private fun setPincodeDetails(pincodeRes: PincodeRes) {
-        binding.pincodeTIL.error = ""
-        binding.cityET.setText(pincodeRes.data.district)
-        binding.stateET.setText(pincodeRes.data.state)
-        setupSpinner(binding.localitySpinner, pincodeRes.data.locality)
-        binding.localitySpinner.visibility = View.VISIBLE
 
-    }
 
     private fun setupSpinner(spinner: Spinner, items: List<String>) {
-        // Create an ArrayAdapter using the list of items
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, items)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-
-        // Set the adapter to the Spinner
         spinner.adapter = adapter
-
-        // Set a listener to handle item selection
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
                 parent: AdapterView<*>,
@@ -206,12 +193,12 @@ class AddAddressFragment : Fragment() {
             when (it.status) {
 
                 ResourceViewState.Status.LOADING -> {
-                    // setProgressBar(true)
+                    setProgressBar(true)
                 }
 
                 ResourceViewState.Status.SUCCESS -> {
                     setProgressBar(false)
-                    if (it.data?.message?.startsWith(AppConstants.SUCCESS, true) == true) {
+                    if (it.data?.status==AppConstants.STATUS_SUCCESS)  {
                         setPincodeDetails(it.data)
 
                     } else {
@@ -223,7 +210,7 @@ class AddAddressFragment : Fragment() {
                 }
 
                 ResourceViewState.Status.ERROR -> {
-                  //  setProgressBar(true)
+                    setProgressBar(true)
                     Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
                 }
 
@@ -231,16 +218,16 @@ class AddAddressFragment : Fragment() {
 
         })
 
-        viewModel.responseAddAddress.observe(viewLifecycleOwner, Observer {
+        viewModel.responseAddress.observe(viewLifecycleOwner, Observer {
             when (it.status) {
 
                 ResourceViewState.Status.LOADING -> {
-                    // setProgressBar(true)
+                     setProgressBar(true)
                 }
 
                 ResourceViewState.Status.SUCCESS -> {
                     setProgressBar(false)
-                    if (it.data?.message?.startsWith(AppConstants.SUCCESS, true) == true) {
+                    if (it.data?.status==AppConstants.STATUS_SUCCESS) {
                         launchAddressListScreen()
                     } else {
                         Toast.makeText(requireContext(), it.data?.message, Toast.LENGTH_SHORT).show()
@@ -249,7 +236,7 @@ class AddAddressFragment : Fragment() {
                 }
 
                 ResourceViewState.Status.ERROR -> {
-                    //  setProgressBar(true)
+                      setProgressBar(true)
                     Toast.makeText(requireContext(), getString(R.string.something_went_wrong), Toast.LENGTH_SHORT).show()
                 }
 
@@ -266,9 +253,9 @@ class AddAddressFragment : Fragment() {
 
     private fun setProgressBar(b: Boolean) {
         if (!b) {
-            // binding.progressBar.visibility = View.GONE
+             binding.progressBar.visibility = View.GONE
         } else {
-            //   binding.progressBar.visibility = View.VISIBLE
+               binding.progressBar.visibility = View.VISIBLE
         }
     }
 }
