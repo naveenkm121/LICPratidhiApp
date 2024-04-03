@@ -47,7 +47,7 @@ class SubCategoryFragment : Fragment(), CommonSelectItemRVListerner {
             // Use the value as needed
         }
 
-        (activity as? HomeActivity)?.hideBottomNavigationView()
+        (activity as? HomeActivity)?.showBottomNavigationBar(false)
         setupRecyclerView()
     }
 

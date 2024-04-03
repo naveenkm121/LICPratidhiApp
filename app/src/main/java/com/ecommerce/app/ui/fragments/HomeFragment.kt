@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.data.home.HomeRes
 import com.ecommerce.app.data.home.ViewType
 import com.ecommerce.app.databinding.FragmentHomeBinding
+import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.ui.adapters.HomeAdapter
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.CommonUtility
@@ -22,8 +23,6 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
     private lateinit var homeAdapter: HomeAdapter
     private lateinit var homeRes: HomeRes
 
-
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,14 +36,9 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //setHasOptionsMenu(true)
-      //  setupCategoryRecyclerView()
-
         setupRecylerView()
 
     }
-
-
 
     private fun setupRecylerView()
     {
@@ -56,17 +50,13 @@ class HomeFragment : Fragment(),CommonSelectItemRVListerner {
         binding.recyclerView.layoutManager =  LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = homeAdapter
     }
-
-
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        //binding = null
-    }
-
     override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
        "Hellol"
     }
 
+    override fun onResume() {
+        super.onResume()
+        (activity as? HomeActivity)?.showBottomNavigationBar(true)
+    }
 
 }

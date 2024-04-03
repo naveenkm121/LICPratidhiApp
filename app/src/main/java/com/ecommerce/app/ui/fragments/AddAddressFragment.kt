@@ -54,7 +54,6 @@ class AddAddressFragment : Fragment() {
             isNewAddress=false
             setDataOnViews(updateAddressItem!!)
         }
-        // filterRes= GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_FILTER_DATA)!!,FilterRes::class.java)!!
         setOnClickListener()
         setupObservers()
 
@@ -69,8 +68,8 @@ class AddAddressFragment : Fragment() {
         binding.pincodeET.setText(addressItem.pincode)
         binding.cityET.setText(addressItem.city)
         binding.stateET.setText(addressItem.state)
-
         binding.defaultAddCB.isChecked=(addressItem.isDefault==1)
+        binding.proceedBTN.setText(getString(R.string.edit))
     }
     private fun setPincodeDetails(pincodeRes: PincodeRes) {
         binding.pincodeTIL.error = ""

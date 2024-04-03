@@ -30,6 +30,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@color/white"
         android:layout_gravity="bottom|end"
+        android:visibility="visible"
         app:menu="@menu/bottom_nav_menu_home" />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
