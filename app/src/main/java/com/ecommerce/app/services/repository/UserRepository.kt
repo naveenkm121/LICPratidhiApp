@@ -50,4 +50,7 @@ class UserRepository @Inject constructor(private val userRemoteDataSource: UserR
         networkCall = { userRemoteDataSource.getPincodeDetails(pincode) }
     )
 
+    fun getCartItems() = performGetOperation(
+        networkCall = { userRemoteDataSource.getCartItems() }
+    )
 }

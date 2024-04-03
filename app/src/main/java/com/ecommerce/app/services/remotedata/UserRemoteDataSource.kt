@@ -20,4 +20,6 @@ class UserRemoteDataSource @Inject constructor(private val userService: UserServ
     suspend fun updateAddress(id: Int,addressReq: AddressReq)=getResult { userService.updateAddress(id,addressReq) }
     suspend fun deleteAddress(id: Int)=getResult { userService.deleteAddress(id) }
     suspend fun getPincodeDetails(pincode:String )=getResult { userService.getPincodeDetails(pincode) }
+
+    suspend fun getCartItems( )=getResult { userService.getCartItems() }
 }

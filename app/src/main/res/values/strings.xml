@@ -17,7 +17,9 @@
     <string name="fragment_products">Products</string>
     <string name="fragment_product_details">Product Details</string>
     <string name="fragment_filter">Filters</string>
+    <string name="fragment_address">Address</string>
     <string name="fragment_add_address">Add Address</string>
+    <string name="fragment_cart">Cart</string>
 
     <!-- Strings related to login -->
     <string name="welcome_back">Welcome back</string>
@@ -110,6 +112,10 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="alert">Alert</string>
+    <string name="price_details">Price Details</string>
+    <string name="total_mrp">Total MRP</string>
+    <string name="total_discount">Total Discount</string>
+    <string name="total_amount">Total Amount</string>
     <string name="delete_address_message">Are you sure, you want to delete the Address ?</string>
 
 </resources>

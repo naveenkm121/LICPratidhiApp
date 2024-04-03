@@ -4,6 +4,7 @@ import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.AddressRes
 import com.ecommerce.app.data.address.PincodeRes
+import com.ecommerce.app.data.cart.CartRes
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.LoginRes
 import com.ecommerce.app.data.login.SignupReq
@@ -41,6 +42,7 @@ interface UserService {
     @GET("pincode/{pincode}")
     suspend fun getPincodeDetails(@Path("pincode") pincode:String): Response<PincodeRes>
 
-
+    @GET("cart")
+    suspend fun getCartItems(): Response<CartRes>
 
 }

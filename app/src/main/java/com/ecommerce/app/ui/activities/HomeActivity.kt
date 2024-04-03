@@ -133,7 +133,7 @@ class HomeActivity : AppCompatActivity() {
                         true
                     }
                     R.id.action_cart -> {
-                        launchWishlistScreen()
+                        launchCartScreen()
                         true
                     }
                     else -> false
@@ -144,8 +144,12 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun launchWishlistScreen(){
-        showBottomNavigationBar(false)
+       // showBottomNavigationBar(false)
         navController.navigate(R.id.wishlistFragment)
+    }
+    private fun launchCartScreen(){
+     //  showBottomNavigationBar(false)
+        navController.navigate(R.id.cartFragment)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

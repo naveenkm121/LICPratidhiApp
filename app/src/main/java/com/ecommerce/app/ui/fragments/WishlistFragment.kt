@@ -48,10 +48,8 @@ class WishlistFragment : Fragment(),CommonSelectItemRVListerner {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        //setHasOptionsMenu(true)
         setupRecyclerView()
         setupObservers()
-        DebugHandler.log("Session =="+SaveSharedPreference.getTokenValue(requireContext()))
         wishlistViewModel.getWishlist(null)
     }
 
@@ -100,16 +98,9 @@ class WishlistFragment : Fragment(),CommonSelectItemRVListerner {
 
 
     private fun setProgressBar(b: Boolean) {
-        if (!b) {
-           // binding.progressBarShim.shimmerLayout.visibility = View.GONE
-            binding.progressBar.visibility = View.GONE
-           // binding.progressBarShim.shimmerLayout.showShimmer(false)
-        } else {
-           // binding.progressBarShim.shimmerLayout.visibility = View.VISIBLE
-            binding.progressBar.visibility = View.VISIBLE
-           // binding.progressBarShim.shimmerLayout.showShimmer(true)
-        }
+        binding.progressBar.visibility = if (!b) View.GONE else View.VISIBLE
     }
+
     override fun onDestroyView() {
         super.onDestroyView()
     }

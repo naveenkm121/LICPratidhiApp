@@ -94,7 +94,7 @@
     <fragment
         android:id="@+id/addressFragment"
         android:name="com.ecommerce.app.ui.fragments.AddressFragment"
-        android:label="@string/fragment_category"
+        android:label="@string/fragment_address"
         tools:layout="@layout/fragment_address">
         <action
             android:id="@+id/action_addressFragment_to_addAddressFragment"
@@ -112,6 +112,13 @@
             app:destination="@id/addressFragment"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cartFragment"
+        android:name="com.ecommerce.app.ui.fragments.CartFragment"
+        android:label="@string/fragment_cart"
+        tools:layout="@layout/fragment_address">
     </fragment>
 
 </navigation>

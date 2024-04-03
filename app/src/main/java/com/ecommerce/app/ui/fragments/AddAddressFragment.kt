@@ -251,10 +251,6 @@ class AddAddressFragment : Fragment() {
     }
 
     private fun setProgressBar(b: Boolean) {
-        if (!b) {
-             binding.progressBar.visibility = View.GONE
-        } else {
-               binding.progressBar.visibility = View.VISIBLE
-        }
+        binding.progressBar.visibility = if (!b) View.GONE else View.VISIBLE
     }
 }
