@@ -49,6 +49,11 @@
         android:name="com.ecommerce.app.ui.fragments.ProductDetailFragment"
         android:label="@string/fragment_product_details"
         tools:layout="@layout/fragment_product_detail">
+        <action
+            android:id="@+id/action_productDetailFragment_to_cartFragment"
+            app:destination="@id/cartFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
 
     </fragment>
 

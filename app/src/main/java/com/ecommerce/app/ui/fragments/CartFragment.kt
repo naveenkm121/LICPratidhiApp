@@ -8,12 +8,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.cart.CartData
+import com.ecommerce.app.data.cart.CartItem
 import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentCartBinding
+import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.viewmodels.CartViewModel
+import com.ecommerce.app.utils.CommonSelectItemRVListerner
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.SaveSharedPreference
@@ -21,9 +26,11 @@ import com.ecommerce.app.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class CartFragment : Fragment() {
+class CartFragment : Fragment(), CommonSelectItemRVListerner {
     private var binding: FragmentCartBinding by autoCleared()
     private val viewModel: CartViewModel by viewModels()
+    private lateinit var adapter: CommonRVAdapter
+    private var cartItemList = ArrayList<CartItem>()
 
 
 
@@ -39,6 +46,7 @@ class CartFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
+        setupRecyclerView()
         viewModel.getCartItems("")
     }
 
@@ -48,6 +56,12 @@ class CartFragment : Fragment() {
         binding.discountValTV.setText(getString(R.string.input_rs_symbol,cartData.totalDiscountPrice.toString()))
         binding.totalValTV.setText(getString(R.string.input_rs_symbol,cartData.totalPrice.toString()))
     }
+
+    private fun setupRecyclerView() {
+        adapter = CommonRVAdapter(ScreenName.FRAGMENT_CART.value, this)
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.recyclerView.adapter = adapter
+    }
     private fun setupObservers() {
         viewModel.response.observe(viewLifecycleOwner, Observer {
             when (it.status) {
@@ -55,14 +69,14 @@ class CartFragment : Fragment() {
                     setProgressBar(false)
                     if (it.data != null && it.data.status == 1) {
                         setDataOnViews(it.data.data)
-                       /* if (it.data.data.isNotEmpty()) {
+                        if (!it.data.data.cartItems.isNullOrEmpty()) {
 
-                           // productListItem = it.data.data as ArrayList<WishlistItem>
-                           // adapter.setItem(productListItem)
+                            cartItemList = it.data.data.cartItems as ArrayList<CartItem>
+                            adapter.setItems(cartItemList)
                         } else {
                             //binding.noResultIV.visibility = View.VISIBLE
                             Toast.makeText(requireContext(), it.data.message, Toast.LENGTH_LONG).show()
-                        }*/
+                        }
                     } else
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
 
@@ -89,8 +103,9 @@ class CartFragment : Fragment() {
         binding.progressBar.visibility = if (!b) View.GONE else View.VISIBLE
     }
 
-
-
+    override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
+        TODO("Not yet implemented")
+    }
 
 
 }

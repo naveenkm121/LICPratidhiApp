@@ -2,15 +2,18 @@ package com.ecommerce.app.ui.fragments
 
 import android.graphics.Paint
 import android.os.Bundle
+import android.view.KeyEvent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.ScaleAnimation
+import android.view.inputmethod.EditorInfo
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.data.product.ProductImage
@@ -54,6 +57,7 @@ class ProductDetailFragment : Fragment() {
         viewModel.getProductDetailsById(prodId!!)
         setupToolbar(prodBrand)
         setupRecyclerView()
+        setOnClickListener()
         setupObservers()
 
     }
@@ -82,6 +86,19 @@ class ProductDetailFragment : Fragment() {
         binding.webView.loadDataWithBaseURL(null, productItem.description, "text/html", "UTF-8", null)
     }
 
+
+    private fun setOnClickListener() {
+
+
+
+        binding.buyBTN.setOnClickListener {
+            launchCartScreen()
+        }
+    }
+    private fun launchCartScreen() {
+        findNavController().navigate(R.id.action_productDetailFragment_to_cartFragment)
+
+    }
 
 
     private fun setupObservers(){

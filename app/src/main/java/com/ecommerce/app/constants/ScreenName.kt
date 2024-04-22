@@ -6,6 +6,7 @@ enum class ScreenName (val value: String) {
     FRAGMENT_HOME_TOP_CATEGORY("FragmentHomeTopCategory"),
     FRAGMENT_CATEGORY("FragmentCategory"),
     FRAGMENT_ADDRESS("FragmentAddress"),
+    FRAGMENT_CART("FragmentCart"),
 
     //Events
     ACTION_DELETE_ADDRESS("ActionDeleteAddress"),

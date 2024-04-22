@@ -117,5 +117,6 @@
     <string name="total_discount">Total Discount</string>
     <string name="total_amount">Total Amount</string>
     <string name="delete_address_message">Are you sure, you want to delete the Address ?</string>
+    <string name="input_quantity">Qty:%1$s</string>
 
 </resources>

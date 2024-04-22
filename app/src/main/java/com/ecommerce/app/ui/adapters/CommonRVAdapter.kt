@@ -13,10 +13,12 @@ import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.constants.HomeViewTypeEnum
 import com.ecommerce.app.data.address.AddressItem
+import com.ecommerce.app.data.cart.CartItem
 import com.ecommerce.app.data.category.Category
 import com.ecommerce.app.data.home.ViewItemData
 import com.ecommerce.app.databinding.ItemAddressBinding
 import com.ecommerce.app.databinding.ItemBigBannerBinding
+import com.ecommerce.app.databinding.ItemCartBinding
 import com.ecommerce.app.databinding.ItemCategoryBinding
 import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.databinding.ItemHomeProductBinding
@@ -110,6 +112,13 @@ class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelect
 
                 val binding: ItemAddressBinding =
                     ItemAddressBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+                return CommonViewHolder(parent.context, binding, fromScreen, listener)
+            }
+
+            ScreenName.FRAGMENT_CART.value -> {
+
+                val binding: ItemCartBinding =
+                    ItemCartBinding.inflate(LayoutInflater.from(parent.context), parent, false)
                 return CommonViewHolder(parent.context, binding, fromScreen, listener)
             }
 
@@ -223,6 +232,22 @@ class CommonViewHolder(
                 itemBinding.defaultLL.setOnClickListener {
                     listener.onSelectItemRVType(item,ScreenName.ACTION_DEFAULT_ADDRESS.value)
                 }
+            }
+
+            ScreenName.FRAGMENT_CART.value -> {
+                item as CartItem
+                itemBinding as ItemCartBinding
+                itemBinding.productBrandTV.text = item.brand
+                itemBinding.productNameTV.text=item.title
+                itemBinding.discountPriceTV.text=context.getString(R.string.input_rs_symbol,item.price.toString())
+                itemBinding.priceTV.text=context.getString(R.string.input_rs_symbol,item.price.toString())
+                itemBinding.discountTV.text="${item.discount_per}%"
+                itemBinding.priceTV.setPaintFlags(itemBinding.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
+                itemBinding.quantityTV.text=context.getString(R.string.input_quantity,item.quantity.toString())
+
+                Glide.with(context)
+                    .load(item.thumbnail)
+                    .into(itemBinding.productImageView)
             }
 
         }
