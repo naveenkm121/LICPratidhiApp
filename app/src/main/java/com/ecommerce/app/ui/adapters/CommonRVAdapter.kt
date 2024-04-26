@@ -248,6 +248,10 @@ class CommonViewHolder(
                 Glide.with(context)
                     .load(item.thumbnail)
                     .into(itemBinding.productImageView)
+
+                itemBinding.deleteIV.setOnClickListener {
+                    listener.onSelectItemRVType(item,ScreenName.ACTION_DELETE_CART.value)
+                }
             }
 
         }

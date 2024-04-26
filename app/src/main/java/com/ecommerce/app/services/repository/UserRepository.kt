@@ -53,4 +53,8 @@ class UserRepository @Inject constructor(private val userRemoteDataSource: UserR
     fun getCartItems() = performGetOperation(
         networkCall = { userRemoteDataSource.getCartItems() }
     )
+
+    fun deleteCartItem(id: Int) = performGetOperation(
+        networkCall = { userRemoteDataSource.deleteCartItem(id) }
+    )
 }

@@ -36,6 +36,7 @@ interface UserService {
 
     @PUT("address/{id}")
     suspend fun updateAddress(@Path("id") id:Int,@Body addressReq: AddressReq): Response<AddressDataRes>
+
     @POST("address")
     suspend fun addAddress(@Body addressReq: AddressReq): Response<AddressDataRes>
 
@@ -44,5 +45,8 @@ interface UserService {
 
     @GET("cart")
     suspend fun getCartItems(): Response<CartRes>
+
+    @DELETE("cart/{id}")
+    suspend fun deleteCartItem(@Path("id") id:Int): Response<CartRes>
 
 }

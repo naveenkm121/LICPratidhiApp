@@ -13,8 +13,13 @@ enum class ScreenName (val value: String) {
     ACTION_EDIT_ADDRESS("ActionEditAddress"),
     ACTION_DEFAULT_ADDRESS("ActionDefaultAddress"),
 
+    ACTION_DELETE_CART("ActionDeleteCart"),
+
     // Request API's
     REQUEST_ADD_ADDRESS("RequestAddAddress"),
     REQUEST_UPDATE_ADDRESS("RequestUpdateAddress"),
+
+    REQUEST_CART_LIST("RequestCartList"),
+    REQUEST_DELETE_CART_ITEM("RequestDeleteCartItem"),
 
 }
