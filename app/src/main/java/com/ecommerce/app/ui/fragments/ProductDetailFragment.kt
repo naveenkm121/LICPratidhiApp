@@ -16,10 +16,15 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
+import com.ecommerce.app.constants.ScreenName
+import com.ecommerce.app.data.address.AddressReq
+import com.ecommerce.app.data.cart.CartReq
 import com.ecommerce.app.data.product.ProductImage
 import com.ecommerce.app.data.product.ProductItem
 import com.ecommerce.app.databinding.FragmentProductDetailBinding
+import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.ui.adapters.ProductImageViewPagerAdapter
+import com.ecommerce.app.ui.viewmodels.CartViewModel
 import com.ecommerce.app.ui.viewmodels.ProductDetailViewModel
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
@@ -33,9 +38,12 @@ import dagger.hilt.android.AndroidEntryPoint
 
 class ProductDetailFragment : Fragment() {
     private val viewModel: ProductDetailViewModel by viewModels()
+    private val cartViewModel: CartViewModel by viewModels()
     private var binding:FragmentProductDetailBinding by autoCleared()
     private lateinit var adapter: ProductImageViewPagerAdapter
     private lateinit var productDetailPassObj: ProductItem
+    private lateinit var toolbar: Toolbar
+    private var prodId:Int=0
 
 
     override fun onCreateView(
@@ -51,8 +59,7 @@ class ProductDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-       // productDetailPassObj= GsonHelper.fromJson(arguments?.getString(IntentConstants.PRODUCT_DETAILS)!!,ProductItem::class.java)!!
-        val prodId= arguments?.getInt(IntentConstants.PRODUCT_ID)
+         prodId= arguments?.getInt(IntentConstants.PRODUCT_ID)!!
         val prodBrand= arguments?.getString(IntentConstants.PRODUCT_BRAND).toString()
         viewModel.getProductDetailsById(prodId!!)
         setupToolbar(prodBrand)
@@ -62,10 +69,7 @@ class ProductDetailFragment : Fragment() {
 
     }
 
-    private fun setupToolbar(title:String) {
-        val toolbar: Toolbar = requireActivity().findViewById<View>(R.id.toolbar) as Toolbar
-        toolbar.setTitle(title)
-    }
+
     private fun setupRecyclerView() {
         adapter = ProductImageViewPagerAdapter()
         binding.imageViewPager.adapter = adapter
@@ -86,10 +90,41 @@ class ProductDetailFragment : Fragment() {
         binding.webView.loadDataWithBaseURL(null, productItem.description, "text/html", "UTF-8", null)
     }
 
+    private fun setupToolbar(title:String) {
+        toolbar = requireActivity().findViewById<Toolbar>(R.id.toolbar)
+        toolbar.setTitle(title)
+        // toolbar.inflateMenu(R.menu.main)
+
+        // Handle menu item clicks if needed
+
+
+        toolbar.setOnMenuItemClickListener {
+            DebugHandler.log("hello  Cart 11 "+it.itemId)
+            when (it.itemId) {
+
+                R.id.action_cart -> {
+                    // Handle the action
+                    DebugHandler.log("hello  Cart 1")
+                    launchCartScreen()
+                    true
+                }
+                else -> false
+            }
+        }
+
+    }
 
     private fun setOnClickListener() {
 
+        binding.addToCartBTN.setOnClickListener {
+            //launchCartScreen()
+            DebugHandler.log("Hello Add to Cart")
+            var cartReq: CartReq = CartReq()
+            cartReq.prodId= prodId.toLong()
+            cartReq.quantity=1
+            cartViewModel.addToCartItems(cartReq)
 
+        }
 
         binding.buyBTN.setOnClickListener {
             launchCartScreen()
@@ -136,6 +171,24 @@ class ProductDetailFragment : Fragment() {
                 ResourceViewState.Status.LOADING ->{
                   //  setProgressBar(true)
                 }
+            }
+        })
+
+        cartViewModel.responseAddToCart.observe(viewLifecycleOwner, Observer {
+            when (it.status) {
+
+                ResourceViewState.Status.SUCCESS -> {
+                    if (it.data != null && it.data.status == 1) {
+                        var itemType:Int=it.data.data.cartItems.size
+                        ((requireActivity() as? HomeActivity)?.setupBadge(itemType))
+                    }
+
+                }
+
+                ResourceViewState.Status.ERROR -> {
+                    Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                }
+                ResourceViewState.Status.LOADING -> {}
             }
         })
 

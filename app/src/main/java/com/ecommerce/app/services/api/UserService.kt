@@ -4,6 +4,7 @@ import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.AddressRes
 import com.ecommerce.app.data.address.PincodeRes
+import com.ecommerce.app.data.cart.CartReq
 import com.ecommerce.app.data.cart.CartRes
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.LoginRes
@@ -48,5 +49,7 @@ interface UserService {
 
     @DELETE("cart/{id}")
     suspend fun deleteCartItem(@Path("id") id:Int): Response<CartRes>
+    @POST("cart")
+    suspend fun addToCart(@Body cartReq: CartReq): Response<CartRes>
 
 }

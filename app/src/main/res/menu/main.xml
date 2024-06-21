@@ -14,10 +14,17 @@
         android:title="Wishlist"
         android:iconTint="@color/white"
         app:showAsAction="ifRoom"/>
-    <item
+   <item
         android:id="@+id/action_cart"
         android:icon="@drawable/ic_outline_shopping_bag_24"
         android:title="Cart"
         android:iconTint="@color/white"
         app:showAsAction="ifRoom"/>
+ <!--   <item
+        android:id="@+id/action_cart"
+        android:icon="@drawable/ic_outline_shopping_bag_24"
+        android:title="Cart"
+        app:actionLayout="@layout/custom_cart_menu_item"
+        android:iconTint="@color/white"
+        app:showAsAction="always"/>-->
 </menu>

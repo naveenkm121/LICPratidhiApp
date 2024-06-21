@@ -21,5 +21,6 @@ enum class ScreenName (val value: String) {
 
     REQUEST_CART_LIST("RequestCartList"),
     REQUEST_DELETE_CART_ITEM("RequestDeleteCartItem"),
+    REQUEST_ADD_TO_CART("RequestAddToCart"),
 
 }

@@ -1,6 +1,7 @@
 package com.ecommerce.app.services.remotedata
 
 import com.ecommerce.app.data.address.AddressReq
+import com.ecommerce.app.data.cart.CartReq
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.SignupReq
 import com.ecommerce.app.services.api.UserService
@@ -24,4 +25,6 @@ class UserRemoteDataSource @Inject constructor(private val userService: UserServ
     suspend fun getCartItems( )=getResult { userService.getCartItems() }
 
     suspend fun deleteCartItem(id: Int)=getResult { userService.deleteCartItem(id) }
+
+    suspend fun addToCart(cartReq: CartReq)=getResult { userService.addToCart(cartReq) }
 }

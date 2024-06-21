@@ -5,6 +5,8 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
@@ -18,6 +20,8 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.databinding.ActivityHomeBinding
+import com.ecommerce.app.ui.fragments.CartFragment
+import com.ecommerce.app.ui.fragments.WishlistFragment
 import com.ecommerce.app.utils.DebugHandler
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -31,6 +35,9 @@ class HomeActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     private lateinit var navController: NavController
     private lateinit var navView: NavigationView
+
+    var textCartItemCount: TextView? = null
+    var mCartItemCount = 0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -111,7 +118,20 @@ class HomeActivity : AppCompatActivity() {
         addMenuProvider(object : MenuProvider {
 
             override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                menuInflater.inflate(com.ecommerce.app.R.menu.main, menu)
+                menuInflater.inflate(R.menu.main, menu)
+
+             /*   val cartItem = menu.findItem(R.id.action_cart)
+                // Get the action view of the cart item to set up the badge
+                val actionView: View = cartItem.actionView!!
+                // Assuming that the cart_badge is a TextView within the action view
+                textCartItemCount = actionView.findViewById(R.id.cart_badge)
+
+                actionView.setOnClickListener {
+                    DebugHandler.log("Hello Activity Cart 11")
+                    onOptionsItemSelected(cartItem)
+                }
+
+                setupBadge(mCartItemCount)*/
             }
 
             override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
@@ -129,10 +149,12 @@ class HomeActivity : AppCompatActivity() {
                         true
                     }
                     R.id.action_wishlist -> {
+                        DebugHandler.log("Hello Activity Wishlist")
                         launchWishlistScreen()
                         true
                     }
                     R.id.action_cart -> {
+                        DebugHandler.log("Hello Activity Cart")
                         launchCartScreen()
                         true
                     }
@@ -141,6 +163,22 @@ class HomeActivity : AppCompatActivity() {
             }
 
         })
+    }
+
+
+     fun setupBadge(mCartItemCount:Int) {
+        if (textCartItemCount != null) {
+            if (mCartItemCount == 0) {
+                if (textCartItemCount!!.visibility != View.GONE) {
+                    textCartItemCount!!.visibility = View.GONE
+                }
+            } else {
+                textCartItemCount!!.text = Math.min(mCartItemCount, 99).toString()
+                if (textCartItemCount!!.visibility != View.VISIBLE) {
+                    textCartItemCount!!.visibility = View.VISIBLE
+                }
+            }
+        }
     }
 
     private fun launchWishlistScreen(){
@@ -175,7 +213,7 @@ class HomeActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        showBottomNavigationBar(true)
+        showBottomNavigationBar(false)
     }
 
 
@@ -185,18 +223,14 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun removeFragmentFromStack() {
-        // Get the FragmentManager
         val fragmentManager = supportFragmentManager
-
-        // Check if there are any fragments in the back stack
         if (fragmentManager.backStackEntryCount > 0) {
-            // Pop the last fragment from the back stack
             fragmentManager.popBackStack()
         } else {
-            // If there are no fragments in the back stack, finish the activity
             finish()
         }
     }
+
 
 
 

@@ -8,6 +8,7 @@ import com.ecommerce.app.data.CommonReq
 import com.ecommerce.app.data.product.ProductDetailRes
 import com.ecommerce.app.data.product.ProductRes
 import com.ecommerce.app.services.repository.ProductRespository
+import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
 import com.google.gson.Gson
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -21,6 +22,7 @@ class ProductDetailViewModel @Inject constructor(private val productRespository:
     fun getProductDetailsById(prodId:Int){
         _request.value=prodId
         _prodId=prodId
+        DebugHandler.log("Hello getProduct")
 
     }
     private val _response = _request.switchMap {
