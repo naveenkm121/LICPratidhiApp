@@ -134,7 +134,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
 
     override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {
         selectedItem as CartItem
-
+        DebugHandler.log("Hello Action Name == "+selectedAction)
         when (selectedAction) {
 
             ScreenName.ACTION_DELETE_CART.value -> {
@@ -160,9 +160,8 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
             }
 
             ScreenName.ACTION_MINUS_FROM_CART.value->{
-                if(selectedItem.quantity>1)
+                if(selectedItem.quantity>0)
                 {
-                    selectedItem.quantity=selectedItem.quantity-1;
                     viewModel.updateCart(ScreenName.REQUEST_UPDATE_CART_ITEM.value,selectedItem,selectedItem.id)
                 }else{
                     UICommon.showAlertDialog(
@@ -186,13 +185,14 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
                 }
             }
 
-            ScreenName.ACTION_ADD_TO_CART.value->{
-                if(selectedItem.quantity>1)
+            ScreenName.ACTION_ADD_ITEM_TO_CART.value->{
+
+                if(selectedItem.quantity>0)
                 {
-                    selectedItem.quantity=selectedItem.quantity+1;
                     viewModel.updateCart(ScreenName.REQUEST_UPDATE_CART_ITEM.value,selectedItem,selectedItem.id)
                 }
 
+                DebugHandler.log("Hello Add Items")
             }
 
             else -> throw IllegalArgumentException("Invalid view type")

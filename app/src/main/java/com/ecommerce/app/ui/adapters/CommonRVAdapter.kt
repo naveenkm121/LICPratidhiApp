@@ -255,12 +255,19 @@ class CommonViewHolder(
                 }
 
                 itemBinding.minusBTN.setOnClickListener {
-                    itemBinding.editQuantityTV.text=(item.quantity-1).toString()
+                    var quantity= item.quantity
+                    quantity=quantity-1
+                    if(quantity<0) quantity=0
+                    item.quantity=quantity;
+                    itemBinding.editQuantityTV.text=item.quantity.toString()
                     listener.onSelectItemRVType(item,ScreenName.ACTION_MINUS_FROM_CART.value)
                 }
                 itemBinding.plusBTN.setOnClickListener {
-                    itemBinding.editQuantityTV.text=(item.quantity+1).toString()
-                    listener.onSelectItemRVType(item,ScreenName.ACTION_ADD_TO_CART.value)
+
+                    var quantity= item.quantity
+                    item.quantity=quantity+1;
+                    itemBinding.editQuantityTV.text=item.quantity.toString()
+                    listener.onSelectItemRVType(item,ScreenName.ACTION_ADD_ITEM_TO_CART.value)
                 }
             }
 
