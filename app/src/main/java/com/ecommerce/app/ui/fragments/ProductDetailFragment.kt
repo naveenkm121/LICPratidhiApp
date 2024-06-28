@@ -122,7 +122,7 @@ class ProductDetailFragment : Fragment() {
             var cartReq: CartReq = CartReq()
             cartReq.prodId= prodId.toLong()
             cartReq.quantity=1
-            cartViewModel.addToCartItems(cartReq)
+            cartViewModel.addToCartItems(ScreenName.REQUEST_ADD_TO_CART.value,cartReq)
 
         }
 

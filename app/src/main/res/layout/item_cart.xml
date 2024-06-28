@@ -105,6 +105,51 @@
         android:layout_marginTop="@dimen/margin5"
         app:layout_constraintTop_toBottomOf="@id/discountPriceTV"
         app:layout_constraintStart_toStartOf="@id/productBrandTV"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="5dp"
+        android:layout_marginTop="@dimen/margin5"
+        app:layout_constraintTop_toBottomOf="@id/discountPriceTV"
+        app:layout_constraintStart_toStartOf="@id/productBrandTV">
+
+        <Button
+            android:id="@+id/minusBTN"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/round_button"
+            android:text="−"
+            android:textSize="@dimen/text_18"
+            android:textColor="@android:color/white"
+            android:layout_marginEnd="8dp"/>
+
+        <TextView
+            android:id="@+id/editQuantityTV"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:text="1"
+            android:textSize="@dimen/text_18"
+            android:gravity="center"
+            android:minWidth="30dp"
+            android:padding="8dp"
+            android:background="@drawable/quantity_background"/>
+
+        <Button
+            android:id="@+id/plusBTN"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/round_button"
+            android:text="+"
+            android:textSize="@dimen/text_18"
+            android:textColor="@android:color/white"
+            android:layout_marginStart="8dp"/>
+
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -192,21 +192,7 @@ class CommonUtility {
         }
 
 
-        fun getModeMapFromModeList(mode: List<Int>): HashMap<Int, String> {
-            val modeMap = HashMap<Int, String>()
-            for (item in mode) {
-                when (item) {
-                    12 -> modeMap.put(12, "Yearly")
-                    6 -> modeMap.put(6, "Half-Yearly")
-                    3 -> modeMap.put(3, "Quaterly")
-                    1 -> modeMap.put(1, "Monthly")
-                    0 -> modeMap.put(1, "Single")
-                }
 
-            }
-
-            return modeMap
-        }
 
         fun getAgeFromDOBYYYYMMDD(dobInYYYYMMDD: String): String {
             return try {
@@ -322,7 +308,7 @@ class CommonUtility {
 
         }
 
-        private fun getCurrencyInShort(number: String):Double {
+        fun getCurrencyInShort(number: String):Double {
             try{
                 var numberInt=number.toDouble()
                 return when {
@@ -355,74 +341,7 @@ class CommonUtility {
             return dobDate
         }
 
-        fun getAgeNBD(dob: String?): Int {
-            var age = 0
-            try {
-                val today = Calendar.getInstance()
-                val year = today[Calendar.YEAR]
-                val month = today[Calendar.MONTH]
-                val date = today[Calendar.DATE]
-                val df = SimpleDateFormat("dd-MM-yyyy").parse(dob)
-                today.timeInMillis = df.time
-                val birthYear = today[Calendar.YEAR]
-                val birthMonth = today[Calendar.MONTH]
-                val birthDate = today[Calendar.DATE]
-                age = year - birthYear
-                var monthDiff = month - birthMonth
-                val dateDiff = date - birthDate
-                if (monthDiff < 0 && dateDiff < 0) {
-                    monthDiff = monthDiff - 1
-                }
-                if (monthDiff >= 0 && dateDiff < 0) {
-                    monthDiff = monthDiff - 1
-                }
-                if (monthDiff < 0) {
-                    age = age - 1
-                }
-                if (monthDiff < 0 && monthDiff >= -6) {
-                    age = age + 1
-                    return age
-                }
-                if (monthDiff >= 6) {
-                    age = age + 1
-                }
-            } catch (e: java.lang.Exception) {
-//            Common.trace(e); // Enter the correct code as per your application here
-                // logger.error(e.localizedMessage)
-            }
-            return age
-        }
 
-        fun getAgeLBD(dob: String?): Int {
-            var age = 0
-            try {
-                val today = Calendar.getInstance()
-                val year = today[Calendar.YEAR]
-                val month = today[Calendar.MONTH]
-                val date = today[Calendar.DATE]
-                val df = SimpleDateFormat("dd-MM-yyyy").parse(dob)
-                today.timeInMillis = df.time
-                val birthYear = today[Calendar.YEAR]
-                val birthMonth = today[Calendar.MONTH]
-                val birthDate = today[Calendar.DATE]
-                age = year - birthYear
-                var monthDiff = month - birthMonth
-                val dateDiff = date - birthDate
-                if (monthDiff < 0 && dateDiff < 0) {
-                    monthDiff = monthDiff - 1
-                }
-                if (monthDiff >= 0 && dateDiff < 0) {
-                    monthDiff = monthDiff - 1
-                }
-                if (monthDiff < 0) {
-                    age = age - 1
-                }
-            } catch (e: java.lang.Exception) {
-//            Common.trace(e); // Enter the correct code as per your application here
-                // logger.error(e.localizedMessage)
-            }
-            return age
-        }
 
 
         fun downloadPdf(baseActivity: Context, url: String?, title: String?): Long {
@@ -526,21 +445,6 @@ class CommonUtility {
             imageView.setImageBitmap(decodedImage)
         }
 
-        fun getPaymentModeFullName(mode: String): String {
-            val paymentMap: Map<String, String> = mapOf(
-                "Y" to "Yearly",
-                "H" to "Half-yearly",
-                "Q" to "Quaterly",
-                "M" to "Monthly",
-                "S" to "Single"
-
-            )
-            for ((key, value) in paymentMap) {
-                if (key.equals(mode))
-                    return value
-            }
-            return ""
-        }
 
 
 

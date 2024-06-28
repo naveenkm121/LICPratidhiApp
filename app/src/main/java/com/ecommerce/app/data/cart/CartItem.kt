@@ -7,7 +7,7 @@ data class CartItem(
     val id: Int,
     val price: Double,
     val prodId: Int,
-    val quantity: Int,
+    var quantity: Int,
     val thumbnail: String,
     val title: String,
     val totalDiscountPrice: Double,

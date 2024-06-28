@@ -7,6 +7,7 @@ import androidx.lifecycle.switchMap
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
+import com.ecommerce.app.data.cart.CartItem
 import com.ecommerce.app.data.cart.CartReq
 import com.ecommerce.app.data.cart.CartRes
 import com.ecommerce.app.services.repository.UserRepository
@@ -20,10 +21,12 @@ class CartViewModel @Inject constructor(private val userRepository: UserReposito
 
     private var cartId:Int=0
     private var requestType: String = ""
+    private lateinit var cartItem:CartItem
     private val _request = MutableLiveData<String>()
     private val _request_cart = MutableLiveData<CartReq>()
 
-    private val _response = _request.switchMap {
+    private val _response = _request.switchMap { request->
+
         when(requestType)
         {
             ScreenName.REQUEST_CART_LIST.value->{
@@ -33,6 +36,10 @@ class CartViewModel @Inject constructor(private val userRepository: UserReposito
             ScreenName.REQUEST_DELETE_CART_ITEM.value->{
                 userRepository.deleteCartItem(cartId)
             }
+            ScreenName.REQUEST_UPDATE_CART_ITEM.value->{
+                userRepository.updateCart(cartId,cartItem)
+            }
+
             else -> throw AssertionError()
         }
 
@@ -41,7 +48,18 @@ class CartViewModel @Inject constructor(private val userRepository: UserReposito
 
     private val _response_data_cart = _request_cart.switchMap { request->
 
+                //userRepository.addToCart(request)
+        when(requestType){
+
+            ScreenName.REQUEST_ADD_TO_CART.value->{
                 userRepository.addToCart(request)
+            }
+
+
+
+            else -> throw AssertionError()
+        }
+
 
     }
 
@@ -64,10 +82,20 @@ class CartViewModel @Inject constructor(private val userRepository: UserReposito
         _request.value = cartId.toString()
     }
 
-    fun addToCartItems(request: CartReq) {
+    fun addToCartItems(requestType:String,request: CartReq) {
         val req: String = Gson().toJson(request)
         DebugHandler.log("CommonReq ::  $req")
         _request_cart.value = request
+    }
+
+    fun updateCart(requestType:String,cartItem: CartItem,cartId:Int) {
+        val req: String = Gson().toJson(cartItem)
+        DebugHandler.log("CommonReq ::  $req")
+        DebugHandler.log("requestType ::  $requestType")
+        this.requestType=requestType
+        this.cartItem=cartItem
+        this.cartId =cartId
+        _request.value = requestType
     }
 
 }

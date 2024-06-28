@@ -14,6 +14,8 @@ enum class ScreenName (val value: String) {
     ACTION_DEFAULT_ADDRESS("ActionDefaultAddress"),
 
     ACTION_DELETE_CART("ActionDeleteCart"),
+    ACTION_MINUS_FROM_CART("ActionMinusFromCart"),
+    ACTION_ADD_TO_CART("ActionAddToCart"),
 
     // Request API's
     REQUEST_ADD_ADDRESS("RequestAddAddress"),
@@ -21,6 +23,7 @@ enum class ScreenName (val value: String) {
 
     REQUEST_CART_LIST("RequestCartList"),
     REQUEST_DELETE_CART_ITEM("RequestDeleteCartItem"),
+    REQUEST_UPDATE_CART_ITEM("RequestUpdateCartItem"),
     REQUEST_ADD_TO_CART("RequestAddToCart"),
 
 }

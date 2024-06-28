@@ -4,6 +4,7 @@ import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.liveData
 import com.ecommerce.app.data.address.AddressReq
+import com.ecommerce.app.data.cart.CartItem
 import com.ecommerce.app.data.cart.CartReq
 import com.ecommerce.app.data.login.LoginReq
 import com.ecommerce.app.data.login.SignupReq
@@ -61,5 +62,9 @@ class UserRepository @Inject constructor(private val userRemoteDataSource: UserR
 
     fun addToCart(cartReq: CartReq) = performGetOperation(
         networkCall = { userRemoteDataSource.addToCart(cartReq) }
+    )
+
+    fun updateCart(id: Int,cartItem:CartItem) = performGetOperation(
+        networkCall = { userRemoteDataSource.updateCart(id,cartItem) }
     )
 }

@@ -243,7 +243,8 @@ class CommonViewHolder(
                 itemBinding.priceTV.text=context.getString(R.string.input_rs_symbol,item.price.toString())
                 itemBinding.discountTV.text="${item.discount_per}%"
                 itemBinding.priceTV.setPaintFlags(itemBinding.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
-                itemBinding.quantityTV.text=context.getString(R.string.input_quantity,item.quantity.toString())
+                //itemBinding.quantityTV.text=context.getString(R.string.input_quantity,item.quantity.toString())
+                itemBinding.editQuantityTV.text=item.quantity.toString()
 
                 Glide.with(context)
                     .load(item.thumbnail)
@@ -251,6 +252,15 @@ class CommonViewHolder(
 
                 itemBinding.deleteIV.setOnClickListener {
                     listener.onSelectItemRVType(item,ScreenName.ACTION_DELETE_CART.value)
+                }
+
+                itemBinding.minusBTN.setOnClickListener {
+                    itemBinding.editQuantityTV.text=(item.quantity-1).toString()
+                    listener.onSelectItemRVType(item,ScreenName.ACTION_MINUS_FROM_CART.value)
+                }
+                itemBinding.plusBTN.setOnClickListener {
+                    itemBinding.editQuantityTV.text=(item.quantity+1).toString()
+                    listener.onSelectItemRVType(item,ScreenName.ACTION_ADD_TO_CART.value)
                 }
             }
 

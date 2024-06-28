@@ -17,10 +17,12 @@ import com.ecommerce.app.data.cart.CartData
 import com.ecommerce.app.data.cart.CartItem
 import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentCartBinding
+import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.ui.adapters.CommonRVAdapter
 import com.ecommerce.app.ui.viewmodels.CartViewModel
 import com.ecommerce.app.utils.AlertDialogListener
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
+import com.ecommerce.app.utils.CommonUtility
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
 import com.ecommerce.app.utils.SaveSharedPreference
@@ -63,7 +65,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
         binding.discountValTV.setText(
             getString(
                 R.string.input_rs_symbol,
-                cartData.totalDiscountPrice.toString()
+                CommonUtility.getCurrencyInShort(cartData.totalDiscountPrice.toString()).toString()
             )
         )
         binding.totalValTV.setText(
@@ -72,6 +74,8 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
                 cartData.totalPrice.toString()
             )
         )
+
+        ((requireActivity() as? HomeActivity)?.showBottomNavigationBar(false))
     }
 
     private fun setupRecyclerView() {
@@ -132,6 +136,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
         selectedItem as CartItem
 
         when (selectedAction) {
+
             ScreenName.ACTION_DELETE_CART.value -> {
                 // viewModel.deleteAddress(selectedItem.id)
                 UICommon.showAlertDialog(
@@ -152,6 +157,42 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
                         }
                     }
                 )
+            }
+
+            ScreenName.ACTION_MINUS_FROM_CART.value->{
+                if(selectedItem.quantity>1)
+                {
+                    selectedItem.quantity=selectedItem.quantity-1;
+                    viewModel.updateCart(ScreenName.REQUEST_UPDATE_CART_ITEM.value,selectedItem,selectedItem.id)
+                }else{
+                    UICommon.showAlertDialog(
+                        requireContext(), // Pass the context of the fragment
+                        false, // Cancellable
+                        getString(R.string.alert), // Title of the dialog
+                        getString(R.string.delete_cart_message), // Message of the dialog
+                        getString(R.string.yes), // Text for positive button
+                        getString(R.string.no), // Text for negative button
+                        "", // Text for neutral button
+                        object : AlertDialogListener { // Listener for button clicks
+
+                            override fun onPositiveButton(dialog: DialogInterface?) {
+                                viewModel.deleteCartItem(
+                                    ScreenName.REQUEST_DELETE_CART_ITEM.value,
+                                    selectedItem.id
+                                )
+                            }
+                        }
+                    )
+                }
+            }
+
+            ScreenName.ACTION_ADD_TO_CART.value->{
+                if(selectedItem.quantity>1)
+                {
+                    selectedItem.quantity=selectedItem.quantity+1;
+                    viewModel.updateCart(ScreenName.REQUEST_UPDATE_CART_ITEM.value,selectedItem,selectedItem.id)
+                }
+
             }
 
             else -> throw IllegalArgumentException("Invalid view type")
