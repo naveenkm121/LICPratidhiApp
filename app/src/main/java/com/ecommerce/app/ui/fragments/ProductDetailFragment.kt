@@ -26,6 +26,7 @@ import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.ui.adapters.ProductImageViewPagerAdapter
 import com.ecommerce.app.ui.viewmodels.CartViewModel
 import com.ecommerce.app.ui.viewmodels.ProductDetailViewModel
+import com.ecommerce.app.utils.CommonUtility
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
@@ -159,10 +160,9 @@ class ProductDetailFragment : Fragment() {
                 }
                 ResourceViewState.Status.ERROR -> {
                    // setProgressBar(false)
-                    DebugHandler.log("Error Naveen== "+it.message)
                     if (it.message?.contains("401") == true) {
                           Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
-                        //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
+                         activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
 
                     } else
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()

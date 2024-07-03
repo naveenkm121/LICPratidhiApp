@@ -65,8 +65,9 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
         binding.discountValTV.setText(
             getString(
                 R.string.input_rs_symbol,
-                CommonUtility.getCurrencyInShort(cartData.totalDiscountPrice.toString()).toString()
+                CommonUtility.roundOffToTwoDecimalPlaces(cartData.totalDiscountPrice).toString()
             )
+
         )
         binding.totalValTV.setText(
             getString(
@@ -113,7 +114,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
                             R.string.session_expired,
                             Toast.LENGTH_SHORT
                         ).show()
-                        //  activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
+                          activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
 
                     } else
                         Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()

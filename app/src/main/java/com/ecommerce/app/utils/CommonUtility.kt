@@ -18,12 +18,15 @@ import android.util.Patterns
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.core.content.FileProvider
+import com.ecommerce.app.ui.activities.LaunchActivity
 import com.google.gson.Gson
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
 import java.io.InputStream
+import java.math.BigDecimal
+import java.math.RoundingMode
 import java.text.NumberFormat
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -52,34 +55,6 @@ class CommonUtility {
         }
 
 
-        fun getTodayDateForNBDDMMYYYY(): String {
-            var date = System.currentTimeMillis()
-
-            val sdf = SimpleDateFormat(DATE_FORMAT_DDMMYYYY)
-            var todayDate = sdf.format(date)
-            var days = todayDate.substring(0, 2).toInt()
-            if (days > 28)
-                date -= ((days - 28) * 24 * 60 * 60 * 1000)
-            DebugHandler.log(" NBD Date ::" + sdf.format(date))
-            return sdf.format(date)
-        }
-
-        fun getTodayDateForNBYYYYMMDD(): String {
-            return try {
-                var date = System.currentTimeMillis()
-
-                val sdf = SimpleDateFormat(DATE_FORMAT_YYYYMMDD)
-                var todayDate = sdf.format(date)
-                var days = todayDate.substring(8, 10).toInt()
-                if (days > 28)
-                    date -= ((days - 28) * 24 * 60 * 60 * 1000)
-                return sdf.format(date)
-
-            } catch (e: Exception) {
-                ""
-            }
-
-        }
 
         fun getTodayDateYYYYMMDD(): String {
             return try {
@@ -559,6 +534,21 @@ class CommonUtility {
 
             return percentage.toString()+" %"
 
+        }
+
+        fun logoutAppSession(activity: Activity){
+            SaveSharedPreference.logout(activity)
+            val intent = Intent(activity, LaunchActivity::class.java).apply {
+                addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK)
+                addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            }
+            activity.startActivity(intent)
+            activity.finish()
+
+        }
+
+        fun roundOffToTwoDecimalPlaces(value: Double): Double {
+            return BigDecimal(value).setScale(2, RoundingMode.HALF_UP).toDouble()
         }
 
 
