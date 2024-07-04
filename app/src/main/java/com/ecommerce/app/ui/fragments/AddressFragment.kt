@@ -66,7 +66,7 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
         setupRecyclerView()
         setupObservers()
         setOnClickListener()
-        viewModel.getAddress(ScreenName.FRAGMENT_CATEGORY.value)
+        viewModel.getAddress(ScreenName.FRAGMENT_ADDRESS.value)
     }
 
     private fun setupRecyclerView() {
