@@ -123,7 +123,19 @@
         android:id="@+id/cartFragment"
         android:name="com.ecommerce.app.ui.fragments.CartFragment"
         android:label="@string/fragment_cart"
-        tools:layout="@layout/fragment_address">
+        tools:layout="@layout/fragment_cart">
+        <action
+            android:id="@+id/action_cartFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.ecommerce.app.ui.fragments.CheckoutFragment"
+        android:label="@string/fragment_checkout"
+        tools:layout="@layout/fragment_checkout">
     </fragment>
 
 </navigation>

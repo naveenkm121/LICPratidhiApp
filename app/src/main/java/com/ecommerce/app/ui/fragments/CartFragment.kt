@@ -9,12 +9,14 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.cart.CartData
 import com.ecommerce.app.data.cart.CartItem
+import com.ecommerce.app.data.cart.CartReq
 import com.ecommerce.app.data.wishlist.WishlistItem
 import com.ecommerce.app.databinding.FragmentCartBinding
 import com.ecommerce.app.ui.activities.HomeActivity
@@ -51,6 +53,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
         super.onViewCreated(view, savedInstanceState)
         setupObservers()
         setupRecyclerView()
+        setOnClickListener()
         viewModel.getCartItems(ScreenName.REQUEST_CART_LIST.value, "")
     }
 
@@ -84,6 +87,16 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
     }
+
+    private fun setOnClickListener() {
+
+        binding.proceedBTN.setOnClickListener {
+            findNavController().navigate(R.id.action_cartFragment_to_checkoutFragment)
+
+        }
+
+    }
+
 
     private fun setupObservers() {
         viewModel.response.observe(viewLifecycleOwner, Observer {

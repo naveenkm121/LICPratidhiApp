@@ -51,6 +51,7 @@
     <dimen name="radius40">40dp</dimen>
     <dimen name="radius50">50dp</dimen>
     <dimen name="radius60">60dp</dimen>
+    <dimen name="progressDotRadius">15dp</dimen>
 
     <!-- Eelevation  -->
     <dimen name="elevation2">1dp</dimen>
