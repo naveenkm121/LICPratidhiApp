@@ -536,6 +536,14 @@ class CommonUtility {
 
         }
 
+        fun getDiscountedPrice(originalPrice: Double, discountPercentage: Double): Double {
+            if (originalPrice < 0 || discountPercentage < 0) {
+                throw IllegalArgumentException("Original price and discount percentage must be non-negative")
+            }
+            val discountAmount = originalPrice * (discountPercentage / 100)
+            return originalPrice - discountAmount
+        }
+
         fun logoutAppSession(activity: Activity){
             SaveSharedPreference.logout(activity)
             val intent = Intent(activity, LaunchActivity::class.java).apply {

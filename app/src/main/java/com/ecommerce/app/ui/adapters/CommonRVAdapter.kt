@@ -24,6 +24,7 @@ import com.ecommerce.app.databinding.ItemCategoryHorizontalBinding
 import com.ecommerce.app.databinding.ItemHomeProductBinding
 import com.ecommerce.app.databinding.ItemSmallBannerBinding
 import com.ecommerce.app.utils.CommonSelectItemRVListerner
+import com.ecommerce.app.utils.CommonUtility
 
 
 class CommonRVAdapter(private val fromScreen: String, val listener: CommonSelectItemRVListerner) :
@@ -239,7 +240,7 @@ class CommonViewHolder(
                 itemBinding as ItemCartBinding
                 itemBinding.productBrandTV.text = item.brand
                 itemBinding.productNameTV.text=item.title
-                itemBinding.discountPriceTV.text=context.getString(R.string.input_rs_symbol,item.price.toString())
+                itemBinding.discountPriceTV.text=context.getString(R.string.input_rs_symbol,item.totalDiscountPrice.toString())
                 itemBinding.priceTV.text=context.getString(R.string.input_rs_symbol,item.price.toString())
                 itemBinding.discountTV.text="${item.discount_per}%"
                 itemBinding.priceTV.setPaintFlags(itemBinding.priceTV.getPaintFlags() or Paint.STRIKE_THRU_TEXT_FLAG)
