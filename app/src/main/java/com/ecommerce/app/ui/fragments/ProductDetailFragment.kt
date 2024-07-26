@@ -17,6 +17,7 @@ import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.constants.ScreenName
+import com.ecommerce.app.constants.SharedPrefs
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.cart.CartReq
 import com.ecommerce.app.data.product.ProductImage
@@ -30,6 +31,7 @@ import com.ecommerce.app.utils.CommonUtility
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.GsonHelper
 import com.ecommerce.app.utils.ResourceViewState
+import com.ecommerce.app.utils.SaveSharedPreference
 import com.ecommerce.app.utils.autoCleared
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
@@ -123,6 +125,7 @@ class ProductDetailFragment : Fragment() {
             var cartReq: CartReq = CartReq()
             cartReq.prodId= prodId.toLong()
             cartReq.quantity=1
+            cartReq.userId= SaveSharedPreference.getUserDetails(requireContext())!!.id.toLong()
             cartViewModel.addToCartItems(ScreenName.REQUEST_ADD_TO_CART.value,cartReq)
 
         }

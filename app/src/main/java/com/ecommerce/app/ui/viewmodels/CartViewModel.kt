@@ -85,6 +85,7 @@ class CartViewModel @Inject constructor(private val userRepository: UserReposito
     fun addToCartItems(requestType:String,request: CartReq) {
         val req: String = Gson().toJson(request)
         DebugHandler.log("CommonReq ::  $req")
+        this.requestType=requestType
         _request_cart.value = request
     }
 
