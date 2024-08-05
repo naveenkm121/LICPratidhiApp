@@ -222,6 +222,8 @@ class CommonViewHolder(
                 {
                     itemBinding.defaultIV.setColorFilter(context.getColor(R.color.red))
                     itemBinding.defaultTV.setTextColor(context.getColor(R.color.red))
+
+                    itemBinding.defaultCheckIV.visibility=View.VISIBLE
                 }
 
                 itemBinding.deleteLL.setOnClickListener {

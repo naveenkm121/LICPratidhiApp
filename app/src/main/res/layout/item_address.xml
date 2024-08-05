@@ -14,48 +14,61 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="@dimen/margin10">
-        <TextView
-            android:id="@+id/nameTV"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Naveen Kumar"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_18" />
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/nameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Naveen Kumar"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+                android:layout_alignParentLeft="true"/>
+            <ImageView
+                android:id="@+id/defaultCheckIV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_check_circle_outline_24"
+                android:layout_alignParentRight="true"
+                android:visibility="gone"/>
+        </RelativeLayout>
+
 
         <TextView
             android:id="@+id/address1TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="A 13, Jeeva Seva CHS"
-            android:textColor="@color/black"
+            android:textColor="@color/grey_dark"
             android:textSize="@dimen/text_16" />
         <TextView
             android:id="@+id/address2TV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Kishanpur Ramghat Road"
-            android:textColor="@color/black"
+            android:textColor="@color/grey_dark"
             android:textSize="@dimen/text_16" />
         <TextView
             android:id="@+id/landmark"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Landmark: Dominos Pizza"
-            android:textColor="@color/black"
+            android:textColor="@color/grey_dark"
             android:textSize="@dimen/text_16" />
         <TextView
             android:id="@+id/cityPincodeTV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Aligarh -202001"
-            android:textColor="@color/black"
+            android:textColor="@color/grey_dark"
             android:textSize="@dimen/text_16" />
         <TextView
             android:id="@+id/state"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Landmark: Dominos Pizza"
-            android:textColor="@color/black"
+            android:textColor="@color/grey_dark"
             android:textSize="@dimen/text_16"
             android:visibility="visible"/>
         <TextView
@@ -63,7 +76,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/mobile_str"
-            android:textColor="@color/black"
+            android:textColor="@color/grey_dark"
             android:textSize="@dimen/text_16" />
         <View
             android:layout_width="match_parent"
@@ -87,14 +100,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding2"
-                    android:src="@drawable/outline_edit_24"/>
+                    android:src="@drawable/outline_edit_24"
+                    app:tint="@color/grey_dark" />
 
                 <!-- Text for the first part -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/edit"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/grey_dark"/>
             </LinearLayout>
             <View
                 android:layout_width="0.5dp"
@@ -115,14 +129,15 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding2"
-                    android:src="@drawable/baseline_delete_outline_24"/>
+                    android:src="@drawable/baseline_delete_outline_24"
+                    app:tint="@color/grey_dark" />
 
                 <!-- Text for the second part -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/delete"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/grey_dark"/>
             </LinearLayout>
             <View
                 android:layout_width="0.5dp"
@@ -144,7 +159,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:padding="@dimen/padding2"
-                    android:src="@drawable/baseline_bookmark_border_24"/>
+                    android:src="@drawable/baseline_bookmark_border_24"
+                    app:tint="@color/grey_dark" />
 
                 <!-- Text for the third part -->
                 <TextView
@@ -152,7 +168,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="@string/default_str"
-                    android:textColor="@color/black"/>
+                    android:textColor="@color/grey_dark"/>
             </LinearLayout>
         </LinearLayout>
 

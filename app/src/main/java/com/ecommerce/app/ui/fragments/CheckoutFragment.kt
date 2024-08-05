@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.R.color.black
@@ -121,6 +122,10 @@ class CheckoutFragment : Fragment() {
             binding.defaultIV.setColorFilter(context.getColor(R.color.red))
             binding.defaultTV.setTextColor(context.getColor(R.color.red))
         }*/
+
+        binding.changeAddressBTN.setOnClickListener {
+            findNavController().navigate(R.id.action_checkoutFragment_to_addressFragment)
+        }
 
         ((requireActivity() as? HomeActivity)?.showBottomNavigationBar(false))
     }

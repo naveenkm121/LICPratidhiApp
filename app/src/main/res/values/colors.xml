@@ -21,6 +21,7 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="grey_dark">#636363</color>
     <color name="black60Percentage">#99000000</color>
     <color name="white30Percentage">#B3FFFFFF</color>
     <color name="text_main_head">@color/black60Percentage</color>
@@ -39,7 +40,7 @@
 
     <color name="blue_heading">#ffca08</color>
     <color name="med_grey">#808080</color>
-    <color name="text_dark">#636363</color>
+
 
     <color name="theme_blue">#00bcd4</color>
     <color name="selgreen">#7bb140</color>

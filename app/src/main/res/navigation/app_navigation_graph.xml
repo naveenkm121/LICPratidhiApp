@@ -136,6 +136,11 @@
         android:name="com.ecommerce.app.ui.fragments.CheckoutFragment"
         android:label="@string/fragment_checkout"
         tools:layout="@layout/fragment_checkout">
+        <action
+            android:id="@+id/action_checkoutFragment_to_addressFragment"
+            app:destination="@id/addressFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
 
 </navigation>
