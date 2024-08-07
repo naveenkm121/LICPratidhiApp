@@ -4,14 +4,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
-import androidx.paging.PagingData
+import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.AddressRes
-import com.ecommerce.app.data.product.ProductItem
-import com.ecommerce.app.data.product.ProductReqParam
-import com.ecommerce.app.data.wishlist.WishlistRes
-import com.ecommerce.app.services.repository.ProductRespository
 import com.ecommerce.app.services.repository.UserRepository
 import com.ecommerce.app.utils.DebugHandler
 import com.ecommerce.app.utils.ResourceViewState
@@ -23,31 +19,62 @@ import javax.inject.Inject
 class AddressViewModel @Inject constructor(private val userRepository: UserRepository):
     ViewModel() {
 
+    private var addressId:Int=0
+    private var requestType: String = ""
 
     private val _request = MutableLiveData<String>()
-    private val _request_delete_address = MutableLiveData<Int>()
+   // private val _request_address = MutableLiveData<Int>()
+
+    private val _request_address = MutableLiveData<AddressReq>()
 
     private val _response = _request.switchMap { request->
         userRepository.getAddressList()
 
     }
 
-    private val _response_delete_address = _request_delete_address.switchMap { request->
-        userRepository.deleteAddress(request)
+    private val _response_address = _request_address.switchMap { request->
+        //userRepository.deleteAddress(request)
+
+        when(requestType){
+
+            ScreenName.REQUEST_ADD_ADDRESS.value->{
+                userRepository.addAddress(request)
+            }
+            ScreenName.REQUEST_UPDATE_ADDRESS.value->{
+                DebugHandler.log("addressId ::  $addressId")
+                userRepository.updateAddress(addressId,request)
+            }
+            ScreenName.ACTION_DELETE_ADDRESS.value->{
+                userRepository.deleteAddress(addressId)
+            }
+
+            else -> throw AssertionError()
+        }
 
     }
 
     val response: LiveData<ResourceViewState<AddressRes>> = _response
-    val responseDeleteAddress: LiveData<ResourceViewState<AddressDataRes>> = _response_delete_address
+    val responseAddress: LiveData<ResourceViewState<AddressDataRes>> = _response_address
 
     fun getAddress(request: String?) {
         DebugHandler.log("CommonReq ::  $request")
         _request.value = request!!
 
     }
-    fun deleteAddress(request: Int?) {
-        DebugHandler.log("CommonReq ::  $request")
-        _request_delete_address.value = request!!
+    fun deleteAddress(requestType:String,addressId:Int) {
+        DebugHandler.log("CommonReq ::  $addressId")
+        this.requestType=requestType
+        this.addressId =addressId
+       // _request_address.value = request!!
+    }
+
+    fun updateAddress( requestType:String,request: AddressReq, addressId:Int) {
+        val req: String = Gson().toJson(request)
+        DebugHandler.log("CommonReq ::  $req ")
+        DebugHandler.log("requestType ::  $requestType")
+        this.requestType=requestType
+        this._request_address.value = request
+        this.addressId =addressId
 
     }
 

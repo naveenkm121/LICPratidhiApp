@@ -2,7 +2,6 @@ package com.ecommerce.app.ui.fragments
 
 import android.content.DialogInterface
 import android.content.res.ColorStateList
-import android.graphics.Color
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -12,9 +11,7 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.res.ResourcesCompat.getColor
 import androidx.core.os.bundleOf
 import androidx.core.view.MenuHost
 import androidx.core.view.MenuProvider
@@ -28,6 +25,7 @@ import com.ecommerce.app.R.color.red
 import com.ecommerce.app.constants.IntentConstants
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressItem
+import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.databinding.FragmentAddressBinding
 import com.ecommerce.app.ui.activities.HomeActivity
 import com.ecommerce.app.ui.adapters.CommonRVAdapter
@@ -152,7 +150,7 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
             }
         })
 
-        viewModel.responseDeleteAddress.observe(viewLifecycleOwner, Observer {
+        viewModel.responseAddress.observe(viewLifecycleOwner, Observer {
             when (it.status) {
                 ResourceViewState.Status.SUCCESS -> {
                     setProgressBar(false)
@@ -217,7 +215,7 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
                     object : AlertDialogListener { // Listener for button clicks
 
                         override fun onPositiveButton(dialog: DialogInterface?) {
-                            viewModel.deleteAddress(selectedItem.id)
+                            viewModel.deleteAddress(ScreenName.ACTION_DELETE_ADDRESS.value,selectedItem.id)
                             // adapter.notifyDataSetChanged()
                         }
                     }
@@ -234,7 +232,20 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
             }
 
             ScreenName.ACTION_DEFAULT_ADDRESS.value -> {
+                //viewModel.deleteAddress(ScreenName.ACTION_DELETE_ADDRESS.value,selectedItem.id)
+                var addressReq = AddressReq()
+                addressReq.isDefault=1
+                addressReq.name=selectedItem.name
+                addressReq.address1=selectedItem.address1
+                addressReq.address2=selectedItem.address2
+                addressReq.locality=selectedItem.locality
+                addressReq.landmark=selectedItem.landmark
+                addressReq.pincode=selectedItem.pincode
+                addressReq.city=selectedItem.city
+                addressReq.state=selectedItem.state
+                addressReq.mobile=selectedItem.mobile
 
+                viewModel.updateAddress(ScreenName.REQUEST_UPDATE_ADDRESS.value,addressReq,selectedItem.id)
             }
         }
     }
