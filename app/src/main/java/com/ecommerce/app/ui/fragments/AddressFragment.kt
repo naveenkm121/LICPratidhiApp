@@ -152,22 +152,29 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
 
         viewModel.responseAddress.observe(viewLifecycleOwner, Observer {
             when (it.status) {
+
                 ResourceViewState.Status.SUCCESS -> {
                     setProgressBar(false)
-                    if (it.data != null && it.data.status == 1) {
-                        //Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
-                        // addressItemList.remove(it.data)
-                        for (item in addressItemList) {
-                            DebugHandler.log("AddressList==" + item.name)
-                            if (item.id == it.data.data.id) {
-                                addressItemList.remove(item)
-                                break
+
+                    when (it.requestType) {
+                        ScreenName.ACTION_DELETE_ADDRESS.value -> {
+                            if (it.data != null && it.data.status == 1) {
+                                addressItemList.removeAll { item -> item.id == it.data.data.id }
+                                adapter.setItems(addressItemList)
+                            } else {
+                                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                             }
                         }
-                        adapter.setItems(addressItemList)
-
-                    } else
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                        ScreenName.REQUEST_UPDATE_ADDRESS.value -> {
+                            if (it.data != null && it.data.status == 1) {
+                                // Handle update address success case
+                                Toast.makeText(requireContext(), "Address updated successfully", Toast.LENGTH_SHORT).show()
+                                // Update your address list or UI accordingly
+                            } else {
+                                Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
                 }
 
                 ResourceViewState.Status.ERROR -> {

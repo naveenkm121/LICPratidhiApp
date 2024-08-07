@@ -48,6 +48,7 @@ clearTable:suspend()->Unit
     }
 */
 
+/*
 fun <T> performGetOperation(networkCall: suspend () -> ResourceViewState<T>): LiveData<ResourceViewState<T>> =
     liveData(Dispatchers.IO) {
         emit(ResourceViewState.loading())
@@ -59,5 +60,21 @@ fun <T> performGetOperation(networkCall: suspend () -> ResourceViewState<T>): Li
         } else if (responseStatus.status == ResourceViewState.Status.ERROR) {
             emit(ResourceViewState.error(responseStatus.message!!))
           //  emitSource(source)
+        }
+    }*/
+
+fun <T> performGetOperation(networkCall: suspend () -> ResourceViewState<T>): LiveData<ResourceViewState<T>> =
+    liveData(Dispatchers.IO) {
+        val responseStatus = networkCall.invoke()
+        emit(ResourceViewState.loading(responseStatus.requestType))
+        try {
+            //val responseStatus = networkCall.invoke()
+            if (responseStatus.status == ResourceViewState.Status.SUCCESS) {
+                emit(ResourceViewState.success(responseStatus.data, responseStatus.requestType))
+            } else if (responseStatus.status == ResourceViewState.Status.ERROR) {
+                emit(ResourceViewState.error(responseStatus.message ?: "Unknown error", responseStatus.requestType))
+            }
+        } catch (e: Exception) {
+            emit(ResourceViewState.error(e.message ?: "Unknown error", responseStatus.requestType))
         }
     }
