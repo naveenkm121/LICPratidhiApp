@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.map
 import androidx.lifecycle.switchMap
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
@@ -42,12 +43,12 @@ class AddressViewModel @Inject constructor(private val userRepository: UserRepos
                 userRepository.addAddress(request)
             }
 
-            ScreenName.REQUEST_UPDATE_ADDRESS.value -> {
+            RequestApiType.REQUEST_UPDATE_ADDRESS.value -> {
                 DebugHandler.log("addressId ::  $addressId")
                 userRepository.updateAddress(addressId, request)
             }
 
-            ScreenName.ACTION_DELETE_ADDRESS.value -> {
+            RequestApiType.REQUEST_DELETE_ADDRESS.value -> {
                 userRepository.deleteAddress(addressId)
             }
 

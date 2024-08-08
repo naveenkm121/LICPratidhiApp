@@ -23,6 +23,7 @@ import com.ecommerce.app.R
 import com.ecommerce.app.R.color.black
 import com.ecommerce.app.R.color.red
 import com.ecommerce.app.constants.IntentConstants
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.address.AddressReq
@@ -157,7 +158,7 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
                     setProgressBar(false)
 
                     when (it.requestType) {
-                        ScreenName.ACTION_DELETE_ADDRESS.value -> {
+                        RequestApiType.REQUEST_DELETE_ADDRESS.value -> {
                             if (it.data != null && it.data.status == 1) {
                                 addressItemList.removeAll { item -> item.id == it.data.data.id }
                                 adapter.setItems(addressItemList)
@@ -165,11 +166,19 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
                                 Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                             }
                         }
-                        ScreenName.REQUEST_UPDATE_ADDRESS.value -> {
+                        RequestApiType.REQUEST_UPDATE_ADDRESS.value -> {
                             if (it.data != null && it.data.status == 1) {
-                                // Handle update address success case
-                                Toast.makeText(requireContext(), "Address updated successfully", Toast.LENGTH_SHORT).show()
-                                // Update your address list or UI accordingly
+                                // Update isSelect to 1 and update the addressItemList
+                                addressItemList = addressItemList.map { item ->
+                                    if (item.id == it.data.data.id) {
+                                        item.copy(isDefault = 1)
+                                    } else {
+                                        item.copy(isDefault = 0)
+                                    }
+                                } as ArrayList<AddressItem>
+
+                                // Update the adapter with the new list
+                                adapter.setItems(addressItemList)
                             } else {
                                 Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                             }
@@ -222,7 +231,7 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
                     object : AlertDialogListener { // Listener for button clicks
 
                         override fun onPositiveButton(dialog: DialogInterface?) {
-                            viewModel.deleteAddress(ScreenName.ACTION_DELETE_ADDRESS.value,selectedItem.id)
+                            viewModel.deleteAddress(RequestApiType.REQUEST_DELETE_ADDRESS.value,selectedItem.id)
                             // adapter.notifyDataSetChanged()
                         }
                     }
@@ -252,7 +261,7 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
                 addressReq.state=selectedItem.state
                 addressReq.mobile=selectedItem.mobile
 
-                viewModel.updateAddress(ScreenName.REQUEST_UPDATE_ADDRESS.value,addressReq,selectedItem.id)
+                viewModel.updateAddress(RequestApiType.REQUEST_UPDATE_ADDRESS.value,addressReq,selectedItem.id)
             }
         }
     }
