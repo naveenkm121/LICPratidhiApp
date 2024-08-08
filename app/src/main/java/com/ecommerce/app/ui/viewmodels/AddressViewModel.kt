@@ -25,8 +25,6 @@ class AddressViewModel @Inject constructor(private val userRepository: UserRepos
     private var requestType: String = ""
 
     private val _request = MutableLiveData<String>()
-    // private val _request_address = MutableLiveData<Int>()
-
     private val _request_address = MutableLiveData<AddressReq>()
 
     private val _response = _request.switchMap { request ->
@@ -35,7 +33,6 @@ class AddressViewModel @Inject constructor(private val userRepository: UserRepos
     }
 
     private val _response_address = _request_address.switchMap { request ->
-        //userRepository.deleteAddress(request)
 
         when (requestType) {
 
@@ -59,24 +56,6 @@ class AddressViewModel @Inject constructor(private val userRepository: UserRepos
 
     }
 
-    /*    private val _response_address = _request_address.switchMap { request ->
-            when(requestType) {
-                ScreenName.REQUEST_ADD_ADDRESS.value -> {
-                    userRepository.addAddress(request)
-                }
-                ScreenName.REQUEST_UPDATE_ADDRESS.value -> {
-                    DebugHandler.log("addressId :: $addressId")
-                    userRepository.updateAddress(addressId, request)
-                }
-                ScreenName.ACTION_DELETE_ADDRESS.value -> {
-                    userRepository.deleteAddress(addressId)
-                }
-                else -> throw AssertionError()
-            }.map { response ->
-                ResourceViewState(response.status, response.data, response.message, requestType)
-            }
-        }
-        */
 
     val response: LiveData<ResourceViewState<AddressRes>> = _response
     val responseAddress: LiveData<ResourceViewState<AddressDataRes>> = _response_address

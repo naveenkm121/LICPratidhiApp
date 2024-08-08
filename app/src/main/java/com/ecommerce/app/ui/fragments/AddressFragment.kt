@@ -213,6 +213,10 @@ class AddressFragment : Fragment(), CommonSelectItemRVListerner {
         binding.fab.setOnClickListener({
             findNavController().navigate(R.id.action_addressFragment_to_addAddressFragment)
         })
+
+        binding.proceedBTN.setOnClickListener({
+            findNavController().navigate(R.id.action_addressFragment_to_checkoutFragment)
+        })
     }
 
     override fun onSelectItemRVType(selectedItem: Any, selectedAction: String) {

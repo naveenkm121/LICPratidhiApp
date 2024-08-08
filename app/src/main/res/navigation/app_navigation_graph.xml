@@ -106,6 +106,12 @@
             app:destination="@id/addAddressFragment"
             app:popEnterAnim="@android:anim/slide_in_left"
             app:popExitAnim="@android:anim/slide_out_right" />
+
+        <action
+            android:id="@+id/action_addressFragment_to_checkoutFragment"
+            app:destination="@id/checkoutFragment"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right" />
     </fragment>
     <fragment
         android:id="@+id/addAddressFragment"

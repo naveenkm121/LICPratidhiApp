@@ -22,7 +22,6 @@ class ProductDetailViewModel @Inject constructor(private val productRespository:
     fun getProductDetailsById(prodId:Int){
         _request.value=prodId
         _prodId=prodId
-        DebugHandler.log("Hello getProduct")
 
     }
     private val _response = _request.switchMap {
@@ -32,10 +31,4 @@ class ProductDetailViewModel @Inject constructor(private val productRespository:
     }
 
     val response: LiveData<ResourceViewState<ProductDetailRes>> = _response
-    // val response = productRemoteDataSource.getProductDetailsById(prodId)
-
-
-
-   // val response: LiveData<ResourceViewState<ProductDetailRes>> =  productRespository.getProductDetailsById(prodId = _prodId)
-
 }

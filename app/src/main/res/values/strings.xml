@@ -124,5 +124,6 @@
     <string name="address">Address</string>
     <string name="cart">Cart</string>
     <string name="change_add_addresss">Change or Add Address</string>
+    <string name="proceed">Proceed</string>
 
 </resources>

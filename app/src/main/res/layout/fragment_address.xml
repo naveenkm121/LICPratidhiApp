@@ -42,8 +42,45 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="@dimen/margin80"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/outline_add_home_work_48" />
+
+    <!-- Fixed Footer -->
+    <FrameLayout
+        android:id="@+id/footer"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:padding="@dimen/padding5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/proceedBTN"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin5"
+                android:layout_marginRight="@dimen/margin10"
+                android:layout_weight="1"
+                android:padding="@dimen/padding10"
+                android:text="@string/proceed"
+                android:textColor="@color/white"
+                app:backgroundTint="@color/select_color"
+                app:cornerRadius="@dimen/radius8"
+                app:iconGravity="textStart"
+                app:iconSize="@dimen/icon_size_24"
+                app:iconTint="@null" />
+        </LinearLayout>
+
+    </FrameLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

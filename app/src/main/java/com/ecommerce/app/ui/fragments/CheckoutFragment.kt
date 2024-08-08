@@ -172,7 +172,9 @@ class CheckoutFragment : Fragment() {
                         if (it.data.data.isNotEmpty()) {
                             addressItemList = it.data.data as ArrayList<AddressItem>
                            // adapter.setItems(addressItemList)
-                            setAddressDataOnViews(addressItemList.get(0))
+                            var addressItem=addressItemList.find { addressItem ->addressItem.isDefault==1  }
+                            addressItem?.let { it1 -> setAddressDataOnViews(it1) }
+
                         } else {
                             //binding.noResultIV.visibility = View.VISIBLE
                             Toast.makeText(requireContext(), it.data.message, Toast.LENGTH_LONG)
