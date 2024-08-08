@@ -17,13 +17,6 @@ enum class ScreenName (val value: String) {
     ACTION_MINUS_FROM_CART("ActionMinusFromCart"),
     ACTION_ADD_ITEM_TO_CART("ActionAddItemToCart"),
 
-    // Request API's
-    REQUEST_ADD_ADDRESS("RequestAddAddress"),
-    REQUEST_UPDATE_ADDRESS("RequestUpdateAddress"),
 
-    REQUEST_CART_LIST("RequestCartList"),
-    REQUEST_DELETE_CART_ITEM("RequestDeleteCartItem"),
-    REQUEST_UPDATE_CART_ITEM("RequestUpdateCartItem"),
-    REQUEST_ADD_TO_CART("RequestAddToCart"),
 
 }

@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
 import com.ecommerce.app.R.color.black
 import com.ecommerce.app.R.color.red
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.cart.CartData
@@ -57,7 +58,7 @@ class CheckoutFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setupViews()
         setupObservers()
-        viewModel.getCartItems(ScreenName.REQUEST_CART_LIST.value, "")
+        viewModel.getCartItems(RequestApiType.REQUEST_GET_CART_ITEMS.value, "")
         addressViewModel.getAddress(ScreenName.FRAGMENT_ADDRESS.value)
     }
 

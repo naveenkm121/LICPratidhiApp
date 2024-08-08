@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
@@ -29,14 +30,14 @@ class CartViewModel @Inject constructor(private val userRepository: UserReposito
 
         when(requestType)
         {
-            ScreenName.REQUEST_CART_LIST.value->{
+            RequestApiType.REQUEST_GET_CART_ITEMS.value->{
                 userRepository.getCartItems()
             }
 
-            ScreenName.REQUEST_DELETE_CART_ITEM.value->{
+            RequestApiType.REQUEST_DELETE_CART_ITEM.value->{
                 userRepository.deleteCartItem(cartId)
             }
-            ScreenName.REQUEST_UPDATE_CART_ITEM.value->{
+            RequestApiType.REQUEST_UPDATE_CART.value->{
                 userRepository.updateCart(cartId,cartItem)
             }
 
@@ -48,14 +49,10 @@ class CartViewModel @Inject constructor(private val userRepository: UserReposito
 
     private val _response_data_cart = _request_cart.switchMap { request->
 
-                //userRepository.addToCart(request)
         when(requestType){
-
-            ScreenName.REQUEST_ADD_TO_CART.value->{
+            RequestApiType.REQUEST_ADD_TO_CART.value->{
                 userRepository.addToCart(request)
             }
-
-
 
             else -> throw AssertionError()
         }

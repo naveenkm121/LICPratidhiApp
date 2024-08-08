@@ -12,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.ecommerce.app.R
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.cart.CartData
@@ -54,7 +55,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
         setupObservers()
         setupRecyclerView()
         setOnClickListener()
-        viewModel.getCartItems(ScreenName.REQUEST_CART_LIST.value, "")
+        viewModel.getCartItems(RequestApiType.REQUEST_GET_CART_ITEMS.value, "")
     }
 
     private fun setDataOnViews(cartData: CartData) {
@@ -165,7 +166,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
 
                         override fun onPositiveButton(dialog: DialogInterface?) {
                             viewModel.deleteCartItem(
-                                ScreenName.REQUEST_DELETE_CART_ITEM.value,
+                                RequestApiType.REQUEST_DELETE_CART_ITEM.value,
                                 selectedItem.id
                             )
                         }
@@ -176,7 +177,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
             ScreenName.ACTION_MINUS_FROM_CART.value->{
                 if(selectedItem.quantity>0)
                 {
-                    viewModel.updateCart(ScreenName.REQUEST_UPDATE_CART_ITEM.value,selectedItem,selectedItem.id)
+                    viewModel.updateCart(RequestApiType.REQUEST_UPDATE_CART.value,selectedItem,selectedItem.id)
                 }else{
                     UICommon.showAlertDialog(
                         requireContext(), // Pass the context of the fragment
@@ -190,7 +191,7 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
 
                             override fun onPositiveButton(dialog: DialogInterface?) {
                                 viewModel.deleteCartItem(
-                                    ScreenName.REQUEST_DELETE_CART_ITEM.value,
+                                    RequestApiType.REQUEST_DELETE_CART_ITEM.value,
                                     selectedItem.id
                                 )
                             }
@@ -200,13 +201,11 @@ class CartFragment : Fragment(), CommonSelectItemRVListerner {
             }
 
             ScreenName.ACTION_ADD_ITEM_TO_CART.value->{
-
                 if(selectedItem.quantity>0)
                 {
-                    viewModel.updateCart(ScreenName.REQUEST_UPDATE_CART_ITEM.value,selectedItem,selectedItem.id)
+                    viewModel.updateCart(RequestApiType.REQUEST_UPDATE_CART.value,selectedItem,selectedItem.id)
                 }
 
-                DebugHandler.log("Hello Add Items")
             }
 
             else -> throw IllegalArgumentException("Invalid view type")

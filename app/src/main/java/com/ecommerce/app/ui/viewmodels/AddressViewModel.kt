@@ -36,7 +36,7 @@ class AddressViewModel @Inject constructor(private val userRepository: UserRepos
 
         when (requestType) {
 
-            ScreenName.REQUEST_ADD_ADDRESS.value -> {
+            RequestApiType.REQUEST_ADD_ADDRESS.value -> {
                 userRepository.addAddress(request)
             }
 

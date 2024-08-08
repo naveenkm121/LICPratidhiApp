@@ -23,6 +23,7 @@ import com.ecommerce.app.utils.autoCleared
 import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.constants.IntentConstants
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.data.address.AddressItem
 import com.ecommerce.app.data.address.AddressReq
 import com.ecommerce.app.data.address.PincodeRes
@@ -147,9 +148,9 @@ class AddAddressFragment : Fragment() {
                 addressReq.state = binding.stateET.text.toString()
 
                 if(isNewAddress)
-                    viewModel.addAddress(addressReq,ScreenName.REQUEST_ADD_ADDRESS.value)
+                    viewModel.addAddress(addressReq,RequestApiType.REQUEST_ADD_ADDRESS.value)
                 else
-                    viewModel.updateAddress(addressReq,ScreenName.REQUEST_UPDATE_ADDRESS.value,updateAddressItem.id)
+                    viewModel.updateAddress(addressReq,RequestApiType.REQUEST_UPDATE_ADDRESS.value,updateAddressItem.id)
 
 
             }

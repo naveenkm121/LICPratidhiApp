@@ -45,7 +45,7 @@
     <string name="signup_with">Sign up with </string>
     <string name="facebook">Facebook</string>
     <string name="gmail">Gmail</string>
-    <string name="already_account">Already have an Account? </string>
+    <string name="already_account" translatable="false">Already have an Account? </string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>]
 
@@ -125,5 +125,6 @@
     <string name="cart">Cart</string>
     <string name="change_add_addresss">Change or Add Address</string>
     <string name="proceed">Proceed</string>
+    <string name="confirm">confirm</string>
 
 </resources>

@@ -16,6 +16,7 @@ import androidx.lifecycle.Observer
 import androidx.navigation.fragment.findNavController
 import com.ecommerce.app.R
 import com.ecommerce.app.constants.IntentConstants
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.constants.SharedPrefs
 import com.ecommerce.app.data.address.AddressReq
@@ -126,7 +127,7 @@ class ProductDetailFragment : Fragment() {
             cartReq.prodId= prodId.toLong()
             cartReq.quantity=1
             cartReq.userId= SaveSharedPreference.getUserDetails(requireContext())!!.id.toLong()
-            cartViewModel.addToCartItems(ScreenName.REQUEST_ADD_TO_CART.value,cartReq)
+            cartViewModel.addToCartItems(RequestApiType.REQUEST_ADD_TO_CART.value,cartReq)
 
         }
 

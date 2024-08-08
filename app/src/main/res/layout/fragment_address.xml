@@ -73,7 +73,7 @@
                 android:layout_marginRight="@dimen/margin10"
                 android:layout_weight="1"
                 android:padding="@dimen/padding10"
-                android:text="@string/proceed"
+                android:text="@string/confirm"
                 android:textColor="@color/white"
                 app:backgroundTint="@color/select_color"
                 app:cornerRadius="@dimen/radius8"

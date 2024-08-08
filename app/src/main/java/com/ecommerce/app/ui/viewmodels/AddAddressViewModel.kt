@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.switchMap
+import com.ecommerce.app.constants.RequestApiType
 import com.ecommerce.app.constants.ScreenName
 import com.ecommerce.app.data.address.AddressDataRes
 import com.ecommerce.app.data.address.AddressReq
@@ -31,10 +32,10 @@ class AddAddressViewModel @Inject constructor(private val userRepository: UserRe
 
         when(requestType){
 
-            ScreenName.REQUEST_ADD_ADDRESS.value->{
+            RequestApiType.REQUEST_ADD_ADDRESS.value->{
                 userRepository.addAddress(request)
             }
-            ScreenName.REQUEST_UPDATE_ADDRESS.value->{
+            RequestApiType.REQUEST_UPDATE_ADDRESS.value->{
                 userRepository.updateAddress(addressId,request)
             }
 
