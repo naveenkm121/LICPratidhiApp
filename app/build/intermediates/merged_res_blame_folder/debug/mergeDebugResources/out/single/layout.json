@@ -1,298 +1,302 @@
 [
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/app_bar_main.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/app_bar_main.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_plan.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_plan.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_invisible_progress_bar.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_invisible_progress_bar.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_mab.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_mab.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_bottom_button.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_bottom_button.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_boc.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_boc.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_cases.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_cases.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\login_fragment.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\login_fragment.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_shimmer_card.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_shimmer_card.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_ananda.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_ananda.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_nua.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_nua.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_bottom_button.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_bottom_button.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_splash.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_splash.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_shimmer_wish.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_wish.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_shimmer_line.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_shimmer_line.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_progress_bar.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_progress_bar.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_top_performers.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_top_performers.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_habit_question.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_habit_question.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/home_row_item.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/home_row_item.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_nb_perf_upto_month.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_nb_perf_upto_month.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/dialog_launch_app.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/dialog_launch_app.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_nb_for_day.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_nb_for_day.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/tag_row_item.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/tag_row_item.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_mab_details.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_mab_details.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_shimmer_placeholder_line.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_shimmer_placeholder_line.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_wish_rv.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_wish_rv.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_shimmer_placeholder_wish.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_shimmer_placeholder_wish.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_performers.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_performers.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_nbuptoday.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_nbuptoday.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_webview.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_webview.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_peristence.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_peristence.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\wishes_fragment.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\wishes_fragment.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_nomination.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_nomination.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\activity_launch.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\activity_launch.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/dailog_toset_pin.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/dailog_toset_pin.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_wishtags_rv.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_wishtags_rv.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_mab.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_mab.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_mab.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_mab.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/country_spinner_item.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/country_spinner_item.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_anada_emhr.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_anada_emhr.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_nb_perf_upto_month.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_nb_perf_upto_month.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\bottom_button_layout.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\bottom_button_layout.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_ananda.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_ananda.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\dialog_webview.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\dialog_webview.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_performers.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_performers.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_prospectives_details.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_prospectives_details.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/bottom_button_layout.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/bottom_button_layout.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\home_row_item.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\home_row_item.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_boc.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_boc.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\country_spinner_item.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\country_spinner_item.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_family_history.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_family_history.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_plan_perf.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_plan_perf.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_husband_policy.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_husband_policy.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_res_building.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_res_building.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/activity_launch.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/activity_launch.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_feedback.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_feedback.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_bottom_proceed.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_bottom_proceed.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\simple_rv_row_item.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\simple_rv_row_item.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/content_main.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/content_main.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_nua.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_nua.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/wishes_fragment.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/wishes_fragment.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\product_row_item.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\product_row_item.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_nua.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_nua.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_shimmer_placeholder_wish.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_placeholder_wish.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_nb_for_day.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_nb_for_day.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\nav_header_main.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\nav_header_main.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/activity_new_home.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/activity_new_home.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_emhr.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_emhr.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_mab_details.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_mab_details.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_contact_us.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_contact_us.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_resource.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_resource.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_new_home.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_new_home.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_shimmer_placeholder_card.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_shimmer_placeholder_card.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_question_util.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_question_util.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_wish_rv.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_wish_rv.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_shimmer_placeholder_card.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_placeholder_card.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_plan_perf.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_plan_perf.xml"
-    },
-    {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_home.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_home.xml"
-    },
-    {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_prospective_new.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_prospective_new.xml"
-    },
-    {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_mpin.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_mpin.xml"
-    },
-    {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_plan_perf.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_plan_perf.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\dialog_links.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\dialog_links.xml"
     },
     {
         "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/nav_header_main.xml",
         "source": "com.licapps.bmmis.app-main-65:/layout/nav_header_main.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/product_row_item.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/product_row_item.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_nbuptoday.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_nbuptoday.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_access_id_tag.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_access_id_tag.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_plan_perf.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_plan_perf.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/dialog_webview.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/dialog_webview.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_nb_for_day.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_nb_for_day.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_progress_bar.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_progress_bar.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\app_bar_main.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\app_bar_main.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_contact_us.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_contact_us.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_husband_policy.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_husband_policy.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_plan.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_plan.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_home.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_home.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_feedback.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_feedback.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_shimmer_reso.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_reso.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/spinner_item.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/spinner_item.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_shimmer_line.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_line.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_boc.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_boc.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_access_id_tag.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_access_id_tag.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_mab.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_mab.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_family_history.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_family_history.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_prosp.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_prosp.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_bottom_proceed.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_bottom_proceed.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_nb_for_day.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_nb_for_day.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\wish_detail_fragment.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\wish_detail_fragment.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_res_building.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_res_building.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_mpin.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_mpin.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_prospectives_details.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_prospectives_details.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\content_main.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\content_main.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_form_rv.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_form_rv.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_nomination.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_nomination.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_bottom_button_agree.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_bottom_button_agree.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\dialog_launch_app.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\dialog_launch_app.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/login_fragment.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/login_fragment.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_top_performers.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_top_performers.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_anada_emhr.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_anada_emhr.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_bottom_button_agree.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_bottom_button_agree.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_shimmer_wish.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_shimmer_wish.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_form_rv.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_form_rv.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_webview.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_webview.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_splash.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_splash.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/wish_detail_fragment.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/wish_detail_fragment.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_peristence.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_peristence.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/layout_shimmer_reso.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/layout_shimmer_reso.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\spinner_item.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\spinner_item.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_plan_performance.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_plan_performance.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_shimmer_placeholder_line.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_placeholder_line.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_question_util.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_question_util.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_boc.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_boc.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/fragment_new_home.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_new_home.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_nua.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_nua.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/dialog_links.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/dialog_links.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_cases.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_cases.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/simple_rv_row_item.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/simple_rv_row_item.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\dailog_toset_pin.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\dailog_toset_pin.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_wishtags_rv.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_wishtags_rv.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_prosp.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_prosp.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_habit_question.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_habit_question.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\item_plan_performance.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_plan_performance.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-mergeDebugResources-62:/layout/item_emhr.xml",
-        "source": "com.licapps.bmmis.app-main-65:/layout/item_emhr.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_prospective_new.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_prospective_new.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_invisible_progress_bar.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_invisible_progress_bar.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\activity_new_home.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\activity_new_home.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\layout_shimmer_card.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_card.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\tag_row_item.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\tag_row_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-mergeDebugResources-62:\\layout\\fragment_resource.xml",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\fragment_resource.xml"
     }
 ]

@@ -5,6 +5,7 @@ import android.app.ProgressDialog
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import androidx.core.view.GravityCompat
@@ -121,13 +122,23 @@ class NewHomeActivity : AppCompatActivity() {
 
     override fun onCreatePanelMenu(featureId: Int, menu: Menu): Boolean {
         menuInflater.inflate(R.menu.new_home, menu)
-      //  setPanelUI()
+        setPanelUI()
         return true
     }
 
     private fun setPanelUI() {
         var user=SaveSharedPreference.getUserDetails(this)
-       /* navView.nameTV.text = user?.name
+        val headerView = navView.getHeaderView(0)
+        val nameTV = headerView.findViewById<TextView>(R.id.nameTV)
+        val desgTV = headerView.findViewById<TextView>(R.id.desgTV)
+        val branchTV = headerView.findViewById<TextView>(R.id.branchTV)
+
+
+        nameTV.text = user?.name
+        desgTV.text = user?.designation
+        branchTV.text = user?.branch
+        /*
+        navView.nameTV.text = user?.name
         nav_view.desgTV.text = user?.designation
         nav_view.branchTV.text = user?.branch*/
     }
