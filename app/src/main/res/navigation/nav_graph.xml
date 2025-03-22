@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/newHomeFragment">
+
+    <fragment
+        android:id="@+id/newHomeFragment"
+        android:label="Home"
+        android:name="com.licapps.bmmis.ui.fragments.NewHomeFragment"
+        tools:layout="@layout/fragment_new_home">
+        <action
+            android:id="@+id/action_newHomeFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_newHomeFragment_to_wishesFragment"
+            app:destination="@id/wishesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.licapps.bmmis.ui.fragments.HomeFragment"
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_homeFragment_to_contact_us_Fragment"
+            app:destination="@id/contactUsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_prospectiveFragment"
+            app:destination="@id/prospectiveNewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_topPerformersFragment"
+            app:destination="@id/topPerformersFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_nbUptoDayFragment"
+            app:destination="@id/nbUptoDayFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
+        <action
+            android:id="@+id/action_homeFragment_to_nbUptoMonthFragment"
+            app:destination="@id/nbUptoMonthFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
+        <action
+            android:id="@+id/action_homeFragment_to_availableResourceFragment"
+            app:destination="@id/availableResourceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
+        <action
+            android:id="@+id/action_homeFragment_to_bocFragment"
+            app:destination="@id/bocFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_resBuildingFragment"
+            app:destination="@id/resBuildingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_nbForDayFragment"
+            app:destination="@id/nbForDayFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_nbChannelWiseFragment"
+            app:destination="@id/nbChannelWiseFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_activisationFragment"
+            app:destination="@id/activisationFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_mabFragment"
+            app:destination="@id/mabFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_anandaFragment"
+            app:destination="@id/anandaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_inactiveFragment"
+            app:destination="@id/inactiveFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_claimsFragment"
+            app:destination="@id/claimsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_wishesFragment"
+            app:destination="@id/wishesFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_eMhrFragment"
+            app:destination="@id/eMhrFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_planPerfFragment"
+            app:destination="@id/planPerfFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
+        <action
+            android:id="@+id/action_homeFragment_to_persistenceFragment"
+            app:destination="@id/peristenceFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
+        <action
+            android:id="@+id/action_homeFragment_to_nuaFragment"
+            app:destination="@id/nuaFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_homeFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+
+
+    </fragment>
+
+
+
+
+    <fragment
+        android:id="@+id/wishesFragment"
+        android:label="Greetings"
+        android:name="com.licapps.bmmis.ui.fragments.WishesFragment"
+        tools:layout="@layout/wishes_fragment">
+    </fragment>
+
+
+
+    <fragment
+        android:id="@+id/contactUsFragment"
+        android:label="Contact Us"
+        android:name="com.licapps.bmmis.ui.fragments.ContactUsFragment"
+        tools:layout="@layout/fragment_home">
+    </fragment>
+    <fragment
+        android:id="@+id/prospectiveFragment"
+        android:label="Prospectives"
+        android:name="com.licapps.bmmis.ui.fragments.ProspectivesFragment"
+        tools:layout="@layout/fragment_prospectives_details">
+    </fragment>
+    <fragment
+        android:id="@+id/prospectiveNewFragment"
+        android:label="Prospectives"
+        android:name="com.licapps.bmmis.ui.fragments.ProspectiveNewFragment"
+        tools:layout="@layout/fragment_prospectives_details">
+        <action
+            android:id="@+id/action_psopectiveFragment_to_prospectiveDetailsFragment"
+            app:destination="@id/prospectiveFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/topPerformersFragment"
+        android:label="Top Performers"
+        android:name="com.licapps.bmmis.ui.fragments.TopPerformersFragment"
+        tools:layout="@layout/fragment_top_performers">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nbUptoDayFragment"
+        android:label="NB upto day"
+        android:name="com.licapps.bmmis.ui.fragments.NBPerformanceFragment"
+        tools:layout="@layout/fragment_nbuptoday">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nbUptoMonthFragment"
+        android:label="NB upto Month"
+        android:name="com.licapps.bmmis.ui.fragments.NBPerfUptoMonthFragment"
+        tools:layout="@layout/fragment_nb_perf_upto_month">
+    </fragment>
+
+    <fragment
+        android:id="@+id/availableResourceFragment"
+        android:label="Available Resource"
+        android:name="com.licapps.bmmis.ui.fragments.ResourceFragment"
+        tools:layout="@layout/fragment_resource">
+    </fragment>
+
+    <fragment
+        android:id="@+id/bocFragment"
+        android:label="BOC Status"
+        android:name="com.licapps.bmmis.ui.fragments.BOCFragment"
+        tools:layout="@layout/fragment_boc">
+    </fragment>
+
+    <fragment
+        android:id="@+id/resBuildingFragment"
+        android:label="Resource Building"
+        android:name="com.licapps.bmmis.ui.fragments.ResourceBuildingFragment"
+        tools:layout="@layout/fragment_res_building">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nbForDayFragment"
+        android:label="NB for the Day"
+        android:name="com.licapps.bmmis.ui.fragments.NBForDayFragment"
+        tools:layout="@layout/fragment_nb_for_day">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nbChannelWiseFragment"
+        android:label="NB Channelwise"
+        android:name="com.licapps.bmmis.ui.fragments.NBChannelWiseFragment"
+        tools:layout="@layout/fragment_nb_for_day">
+    </fragment>
+
+    <fragment
+        android:id="@+id/activisationFragment"
+        android:label="Activisation"
+        android:name="com.licapps.bmmis.ui.fragments.ActivisationFragment"
+        tools:layout="@layout/fragment_res_building">
+    </fragment>
+    <fragment
+        android:id="@+id/mabFragment"
+        android:label="MAB"
+        android:name="com.licapps.bmmis.ui.fragments.MABFragment"
+        tools:layout="@layout/fragment_mab">
+        <action
+            android:id="@+id/action_mabFragment_to_mabDetailsFragment"
+            app:destination="@id/mabDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/anandaFragment"
+        android:label="Ananda"
+        android:name="com.licapps.bmmis.ui.fragments.AnandaFragment"
+        tools:layout="@layout/fragment_ananda">
+    </fragment>
+
+    <fragment
+        android:id="@+id/inactiveFragment"
+        android:label="Inactive Resources"
+        android:name="com.licapps.bmmis.ui.fragments.InactiveResourcesFragment"
+        tools:layout="@layout/fragment_res_building">
+        <action
+            android:id="@+id/action_inactiveFragment_to_inactiveResListFragment"
+            app:destination="@id/inactiveResListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/claimsFragment"
+        android:label="Claims"
+        android:name="com.licapps.bmmis.ui.fragments.ClaimsFragment"
+        tools:layout="@layout/fragment_nb_for_day">
+    </fragment>
+    <fragment
+        android:id="@+id/peristenceFragment"
+        android:label="Persistency"
+        android:name="com.licapps.bmmis.ui.fragments.PeristenceFragment"
+        tools:layout="@layout/fragment_peristence">
+    </fragment>
+    <fragment
+        android:id="@+id/nuaFragment"
+        android:label="New Underwriting App."
+        android:name="com.licapps.bmmis.ui.fragments.NUAFragment"
+        tools:layout="@layout/fragment_nua">
+    </fragment>
+    <fragment
+        android:id="@+id/mabDetailsFragment"
+        android:label="MAB for month"
+        android:name="com.licapps.bmmis.ui.fragments.MABDetailsFragment"
+        tools:layout="@layout/fragment_mab_details">
+    </fragment>
+    <fragment
+        android:id="@+id/eMhrFragment"
+        android:label="E-MHR"
+        android:name="com.licapps.bmmis.ui.fragments.EMHRFragment"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_eMhrFragment_to_webViewFragment"
+            app:destination="@id/webViewFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+        <action
+            android:id="@+id/action_eMhrFragment_to_ananda_emhrFragment"
+            app:destination="@id/anandaEmhrFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@android:anim/slide_in_left"
+            app:popExitAnim="@android:anim/slide_out_right"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/webViewFragment"
+        android:label="NAV of ULIP Policies"
+        android:name="com.licapps.bmmis.ui.fragments.WebViewFragment"
+        tools:layout="@layout/fragment_webview">
+    </fragment>
+
+    <fragment
+        android:id="@+id/planPerfFragment"
+        android:label="Plan Performance"
+        android:name="com.licapps.bmmis.ui.fragments.PlanPerfFragment"
+        tools:layout="@layout/fragment_mab_details">
+    </fragment>
+    <fragment
+        android:id="@+id/inactiveResListFragment"
+        android:label="Inactive Resources List"
+        android:name="com.licapps.bmmis.ui.fragments.InactiveResListFragment"
+        tools:layout="@layout/fragment_prospectives_details">
+    </fragment>
+
+    <fragment
+        android:id="@+id/anandaEmhrFragment"
+        android:label="Ananda e-MHR List"
+        android:name="com.licapps.bmmis.ui.fragments.AnadaEMHRFragment"
+        tools:layout="@layout/fragment_anada_emhr">
+    </fragment>
+
+
+</navigation>

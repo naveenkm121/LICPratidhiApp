@@ -1,0 +1,157 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ananda_bg">
+
+    <LinearLayout
+        android:id="@+id/searchLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:weightSum="2"
+        android:background="@color/white"
+        android:padding="@dimen/padding10">
+
+        <RadioGroup
+            android:id="@+id/filterRadioRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/proposalMRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By Proposal No."
+                android:checked="true"/>
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/ratingSheetMRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By Rating Sheet No." />
+
+
+        </RadioGroup>
+
+        <LinearLayout
+            android:id="@+id/proposalLL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/proposalTIL"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="Proposal No. "
+                android:layout_marginRight="@dimen/margin5">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/proposalET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionNext"
+                    android:windowSoftInputMode="adjustResize"
+                    android:inputType="number"
+                    android:maxLength="15"
+                    android:scrollIndicators="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/yearTIL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="Financial Year(YYYY)"
+                android:layout_marginLeft="@dimen/margin5"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/yearET"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:imeOptions="actionDone"
+                    android:windowSoftInputMode="adjustResize"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:scrollIndicators="none" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </LinearLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/sheetNumberTIL"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Rating Sheet No. "
+            android:visibility="gone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/sheetNumberET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:windowSoftInputMode="adjustResize"
+                android:inputType="number"
+                android:maxLength="15"
+                android:scrollIndicators="none" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/searchBTN"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="Search"
+            android:textColor="@color/white"
+            android:textSize="@dimen/text_16"
+            app:backgroundTint="@color/colorPrimary"
+            app:cornerRadius="@dimen/radius8"
+            app:rippleColor="@color/white"
+            app:strokeColor="@color/colorPrimary"
+            android:layout_marginTop="@dimen/margin10"
+            app:strokeWidth="1dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        style="@style/margin10LeftRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/searchLL">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/nuaRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:paddingTop="@dimen/padding10"
+            android:paddingBottom="@dimen/padding10" />
+
+        <include
+            android:id="@+id/progress_bar_shim"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/layout_shimmer_line"
+            android:visibility="gone" />
+
+        <include
+            android:id="@+id/progress_bar"
+            layout="@layout/layout_invisible_progress_bar" />
+
+        <ImageView
+            android:id="@+id/noResultIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_no_result"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

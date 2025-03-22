@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_home"
+        android:orderInCategory="100"
+        android:title="@string/menu_home"
+        app:showAsAction="never"
+        android:visible="false"
+        />
+    <item
+        android:id="@+id/action_sort"
+        android:icon="@drawable/ic_sort_24"
+        android:title="@string/sorting"
+        android:iconTint="@color/licYellowPrimary"
+        android:visible="false"
+        app:showAsAction="ifRoom">
+        <menu>
+
+            <item
+                android:id="@+id/action_sort_fp"
+                android:title="Sort by FP" />
+            <item
+                android:id="@+id/action_sort_nop"
+                android:title="Sort by NOP"
+                android:visible="false"/>
+
+            <item
+                android:id="@+id/action_sort_nsp"
+                android:title="Sort by NSP"
+                android:visible="false"/>
+            <item
+                android:id="@+id/action_sort_sp"
+                android:title="Sort by SP"
+                android:visible="false"/>
+            <item
+                android:id="@+id/action_sort_fyrp"
+                android:title="Sort by FYRP"
+                android:visible="false"/>
+            <item
+                android:id="@+id/action_sort_agents"
+                android:title="Sort by Agents"
+                android:visible="false"/>
+
+        </menu>
+    </item>
+    <item
+        android:id="@+id/action_share"
+        android:orderInCategory="100"
+        android:title="Share"
+        app:showAsAction="never"
+        android:visible="false"
+        />
+    <item
+        android:id="@+id/action_contact"
+        android:orderInCategory="100"
+        android:title="@string/contact_us"
+        app:showAsAction="never"
+        android:visible="false"
+        />
+    <item
+        android:id="@+id/action_logout"
+        android:orderInCategory="100"
+        android:title="@string/action_logout"
+        app:showAsAction="never"
+        />
+    <item
+        android:id="@+id/action_basic"
+        android:orderInCategory="100"
+        android:title="Share"
+        app:showAsAction="never"
+        android:visible="false"
+        />
+
+
+    <!--<item
+        android:id="@+id/action_language"
+        android:orderInCategory="100"
+        android:title="@string/change_language"
+        app:showAsAction="never" >
+        <menu>
+
+            <item
+                android:id="@+id/english"
+                android:title="English" />
+
+            <item
+                android:id="@+id/hindi"
+                android:title="Hindi" />
+        </menu>
+    </item>-->
+</menu>

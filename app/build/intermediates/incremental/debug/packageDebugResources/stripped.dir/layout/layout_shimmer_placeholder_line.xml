@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin10"
+    android:background="@color/white"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="1dp">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/height40"
+                android:background="@color/shimmer_placeholder"
+                card_view:layout_constraintStart_toStartOf="parent"
+                card_view:layout_constraintTop_toTopOf="parent" />
+
+</androidx.cardview.widget.CardView>

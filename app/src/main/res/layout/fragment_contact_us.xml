@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ananda_bg"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.ContactUsFragment">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height200"
+        android:background="@color/white">
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            android:src="@drawable/contact_us"
+            android:layout_centerInParent="true"/>
+    </RelativeLayout>
+
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/emailCardView"
+        style="@style/margin10LeftRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin15"
+        android:background="@color/white"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:padding="@dimen/padding5"
+                android:text="Email us"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_20"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                style="@style/margin25LeftRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/emailTxtTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin20"
+                    android:layout_marginBottom="@dimen/margin20"
+                    android:text="anandamobileapp@licindia.com"
+                    android:textColor="@color/blue_heading"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="@dimen/text_20" />
+
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/feedbackBTN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:text="Feedback"
+                    android:textColor="@color/violet_lic"
+                    android:textSize="@dimen/text_16"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="@dimen/radius8"
+                    app:rippleColor="@color/white"
+                    app:strokeColor="@color/violet_lic"
+                    app:strokeWidth="1dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>

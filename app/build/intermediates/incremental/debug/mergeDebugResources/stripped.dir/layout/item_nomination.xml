@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nomineeItemLL"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin5"
+    android:orientation="vertical"
+    android:visibility="gone"
+    >
+
+    <LinearLayout
+        android:id="@+id/planLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/dull_white">
+
+        <TextView
+            android:id="@+id/itemLabelTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:padding="@dimen/padding5"
+            android:text="Nominee"
+            android:layout_marginLeft="@dimen/margin10"
+            android:textColor="@color/blue_heading"
+            android:textSize="@dimen/text_18"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/deleteIV"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="center_vertical"
+            android:src="@android:drawable/ic_menu_delete"
+             />
+    </LinearLayout>
+
+    <TableLayout
+        android:id="@+id/planTL"
+        style="@style/margin10LeftRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/nameLabelTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/nominee_name"
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/nominneNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Naveen Kumar"
+                android:textAllCaps="true"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/relationshipLabelTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/relationship"
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/relationshipTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="Brother"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:id="@+id/ageLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/age"
+                    android:textColor="@color/med_grey"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/nomineeAgeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin5"
+                    android:layout_weight="1"
+                    android:text=" 23yrs"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/shareLL"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="horizontal"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Share :"
+                    android:textColor="@color/med_grey"
+                    android:textSize="@dimen/text_18" />
+
+                <TextView
+                    android:id="@+id/shareTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="100%"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/text_18" />
+            </LinearLayout>
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/address"
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/adddressTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:ellipsize="end"
+                android:maxLines="4"
+                android:text="Baba Market, Kishanpur ,\n Ramghat Road,Aligarh "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding5">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/pincode"
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/pincodeTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="202001"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/mobileRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding5"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/mobile_number"
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/mobileTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="9999999999"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18" />
+        </TableRow>
+        <TableRow
+            android:id="@+id/emailRow"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/padding5"
+            android:visibility="gone"
+            >
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="@string/email"
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18" />
+
+            <TextView
+                android:id="@+id/emailTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="test@test.com"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18" />
+        </TableRow>
+
+    </TableLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/dull_white" />
+
+</LinearLayout>

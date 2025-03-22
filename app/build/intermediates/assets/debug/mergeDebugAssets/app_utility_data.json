@@ -1,0 +1,489 @@
+{
+  "app_data": {
+    "user_type": [
+      {
+      "id": "XX",
+      "name": "Select Login Type "
+}     ,
+      {
+        "id": "A",
+        "name": "Agent/ CLIA with password"
+      },
+      {
+        "id": "Z",
+        "name": "Agent/ CLIA with OTP"
+      },
+      {
+        "id": "DO",
+        "name": "Development Officer (Non SBA) "
+      }     ,
+      {
+        "id": "SBA",
+        "name": "Senior Business Associate"
+      },
+      {
+        "id": "K",
+        "name": "Direct Sales Advisor"
+      },
+      {
+        "id": "S",
+        "name": "IMF with PO"
+      },
+      {
+        "id": "T",
+        "name": "IMF with ISP"
+      }
+
+    ],
+    "qualifications":[
+      {
+        "id": "6",
+        "name": "Professional"
+      },
+      {
+        "id": "5",
+        "name": "Graduate or Post-Graduate"
+      },
+      {
+        "id": "4",
+        "name": "HSC/12th"
+      },
+      {
+        "id": "3",
+        "name": "SSC/10th"
+      },
+      {
+        "id": "2",
+        "name": "9th Std for Non SSC"
+      },
+      {
+        "id": "1",
+        "name": "Literate upto 8th"
+      },
+      {
+        "id": "0",
+        "name": "Illiterate"
+      }
+    ],
+    "age_proofs":[
+      {
+        "id": "U",
+        "name": "Aadhaar with DOB"
+      }
+    ],
+    "address_proofs":[
+      {
+        "id": "J",
+        "name": "Aadhaar Card"
+      }
+    ],
+    "id_proofs":[
+      {
+        "id": "I",
+        "name": "Aadhaar Card"
+      }
+    ],
+    "marital_status":[
+      {
+        "id": "S",
+        "name": "Single"
+      },
+      {
+        "id": "M",
+        "name": "Married"
+      },
+      {
+        "id": "W",
+        "name": "Widowed"
+      },
+      {
+        "id": "D",
+        "name": "Divorced"
+      }
+    ],
+    "occupation": [
+      {
+        "id": "G1",
+        "name": "Service(Center/State Govt/PSU/ Firms)"
+      },
+      {
+        "id": "G2",
+        "name": "Service(Listed Companies/Pvt Inst.)"
+      },
+      {
+        "id": "G3",
+        "name": "Lecturer"
+      },
+      {
+        "id": "G4",
+        "name": "Teacher"
+      },
+      {
+        "id": "E1",
+        "name": "Chartered / Cost accountant"
+      },
+      {
+        "id": "E2",
+        "name": "Lawyer"
+      },
+      {
+        "id": "E3",
+        "name": "Management Consultant"
+      },
+      {
+        "id": "E4",
+        "name": "IT Consultant"
+      },
+      {
+        "id": "E5",
+        "name": "Engineer"
+      },
+      {
+        "id": "E6",
+        "name": "Architect"
+      },
+      {
+        "id": "E7",
+        "name": "Merchant Marine"
+      },
+      {
+        "id": "P1",
+        "name": "Doctor"
+      },
+      {
+        "id": "P2",
+        "name": "Nurse"
+      },
+      {
+        "id": "P3",
+        "name": "LIC Agents"
+      },
+      {
+        "id": "X1",
+        "name": "Self Employed with Tax"
+      },
+      {
+        "id": "S1",
+        "name": "Self Employed without Tax"
+      },
+      {
+        "id": "C1",
+        "name": "Business"
+      },
+      {
+        "id": "H1",
+        "name": "Housewife"
+      },
+      {
+        "id": "M1",
+        "name": "Major Student"
+      },
+      {
+        "id": "T1",
+        "name": "IT Payer unearned income"
+      },
+      {
+        "id": "O1",
+        "name": "Office goers not paying tax"
+      },
+      {
+        "id": "S2",
+        "name": "Others"
+      }
+
+    ],
+    "nature_of_duties": [
+      {
+        "id": "1",
+        "name": "Service"
+      },
+      {
+        "id": "7",
+        "name": "Business"
+      },
+      {
+        "id": "9",
+        "name": "Police Service"
+      },
+      {
+        "id": "0",
+        "name": "Unemployed"
+      },
+      {
+        "id": "8",
+        "name": "Others"
+      }
+
+    ],
+    "source_of_income": [
+      {
+        "id": "S1",
+        "name": "Salary"
+      },
+      {
+        "id": "S2",
+        "name": "Business"
+      },
+      {
+        "id": "H",
+        "name": "Husband Income"
+      },
+      {
+        "id": "P",
+        "name": "Proposer Income"
+      },
+      {
+        "id": "S3",
+        "name": "Pension"
+      },
+      {
+        "id": "S4",
+        "name": "Others"
+      }
+
+    ],
+    "obj_of_insurance": [
+      {
+        "id": "R1",
+        "name": "Risk Coverage with savings"
+      },
+      {
+        "id": "C1",
+        "name": "Suitable for children"
+      }
+
+    ],
+    "income_proof": [
+      {
+        "id": "N",
+        "name": "No Income Proof Submitted"
+      },
+      {
+        "id": "I",
+        "name": "IT Return"
+      },
+      {
+        "id": "S",
+        "name": "Salary Certificate"
+      },
+      {
+        "id": "C",
+        "name": "CA Certificate"
+      },
+      {
+        "id": "L",
+        "name": "P & L Account"
+      },
+      {
+        "id": "P",
+        "name": "Property Certificate issued by Govt. Authority"
+      },
+      {
+        "id": "O",
+        "name": "Others"
+      }
+
+    ],
+    "tax_brackets": [
+      {
+        "id": "0",
+        "name": "NIL"
+      },
+      {
+        "id": "1",
+        "name": "5"
+      },
+      {
+        "id": "2",
+        "name": "20"
+      },
+      {
+        "id": "3",
+        "name": "30"
+      }
+
+    ],
+    "relationships": [
+      {
+        "id": "F",
+        "name": "Father"
+      },
+      {
+        "id": "M",
+        "name": "Mother"
+      },
+      {
+        "id": "W",
+        "name": "Wife"
+      },
+      {
+        "id": "H",
+        "name": "Husband"
+      },
+      {
+        "id": "S",
+        "name": "Son"
+      },
+      {
+        "id": "D",
+        "name": "Daughter"
+      },
+      {
+        "id": "B",
+        "name": "Brother"
+      },
+      {
+        "id": "R",
+        "name": "Sister"
+      },
+      {
+        "id": "X",
+        "name": "Others"
+      }
+
+    ],
+    "state_Of_health": [
+      {
+        "id": "Good",
+        "name": "Good"
+      },
+      {
+        "id": "Not Good",
+        "name": "Not Good"
+      }
+
+    ],
+    "terms_of_acceptance": [
+      {
+        "id": "OR",
+        "name": "OR"
+      },
+      {
+        "id": "Extra",
+        "name": "Extra"
+      }
+
+    ],
+    "medical_options": [
+      {
+        "id": "G",
+        "name": "Non Medical General"
+      },
+      {
+        "id": "N",
+        "name": "Non Medical"
+      },
+      {
+        "id": "S",
+        "name": "Non Medical Special"
+      },
+      {
+        "id": "M",
+        "name": "Medical"
+      }
+    ],
+    "policy_status": [
+      {
+        "id": "21",
+        "name": "Inforce"
+      },
+      {
+        "id": "31",
+        "name": "Reduced Paidup"
+      },
+      {
+        "id": "41",
+        "name": "Lapsed without SV"
+      },
+      {
+        "id": "81",
+        "name": "Surrendered"
+      }
+    ],
+    "installment_mode": [
+      {
+        "id": "Y",
+        "name": "Yearly"
+      },
+      {
+        "id": "H",
+        "name": "Half-Yearly"
+      },
+      {
+        "id": "Q",
+        "name": "Quaterly"
+      },
+      {
+        "id": "M",
+        "name": "Monthly"
+      }
+    ],
+    "death_settlement_period": [
+      {
+        "id": "5",
+        "name": "5"
+      },
+      {
+        "id": "10",
+        "name": "10"
+      },
+      {
+        "id": "15",
+        "name": "15"
+      }
+    ],
+    "header_progress": [
+      {
+        "id": "1",
+        "name": "Address"
+      },
+      {
+        "id": "2",
+        "name": "Basic Info"
+      },
+      {
+        "id": "3",
+        "name": "Occupation"
+      },
+      {
+        "id": "4",
+        "name": "Add. Info"
+      },
+      {
+        "id": "5",
+        "name": "Prev. Policy"
+      },
+      {
+        "id": "6",
+        "name": "Family History"
+      },
+      {
+        "id": "8",
+        "name": "Health"
+      },
+      {
+        "id": "9",
+        "name": "Medical"
+      },
+      {
+        "id": "10",
+        "name": "Death Benefit"
+      },
+      {
+        "id": "11",
+        "name": "Nomination"
+      }
+
+    ],
+    "bank_account_type": [
+      {
+        "id": "Savings",
+        "name": "Savings"
+      },
+      {
+        "id": "Current",
+        "name": "Current"
+      }
+    ]
+  }
+}

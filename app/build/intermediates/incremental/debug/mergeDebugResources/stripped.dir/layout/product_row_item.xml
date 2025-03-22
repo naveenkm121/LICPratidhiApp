@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin10"
+    android:background="@color/white"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="1dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/padding10"
+            >
+
+            <ImageView
+                android:id="@+id/productIV"
+                android:layout_width="@dimen/width120"
+                android:layout_height="@dimen/height100"
+                android:src="@drawable/ic_no_result"
+                tools:ignore="MissingConstraints" />
+
+            <TextView
+                android:id="@+id/productNameTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/margin5"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="Plan 904 LIC Jeevan Arogya "
+                android:textColor="@color/blue_heading"
+                android:textSize="@dimen/text_16"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/productIV"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/productIdTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="UIN : 512NV309K"
+                android:textSize="@dimen/text_14"
+                app:layout_constraintStart_toStartOf="@+id/productNameTV"
+                app:layout_constraintTop_toBottomOf="@+id/productNameTV" />
+
+            <TextView
+                android:id="@+id/planTypeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Endownment"
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/text_14"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/productIdTV"
+                app:layout_constraintTop_toTopOf="@+id/productIdTV"
+                />
+
+            <TextView
+                android:id="@+id/minEntryAgeTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin8"
+                android:text="Entry Age :"
+                app:layout_constraintStart_toStartOf="@+id/productIdTV"
+                app:layout_constraintTop_toBottomOf="@+id/productIdTV" />
+
+            <TextView
+                android:id="@+id/minEntryAgeValueTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="18yrs"
+                android:textColor="@color/med_grey"
+                android:textStyle="bold"
+                app:layout_constraintStart_toEndOf="@+id/minEntryAgeTV"
+                app:layout_constraintTop_toTopOf="@+id/minEntryAgeTV" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/margin10"
+                app:layout_constraintStart_toStartOf="@+id/minEntryAgeTV"
+                app:layout_constraintTop_toBottomOf="@+id/minEntryAgeTV"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/feature1TV"
+                    android:text="Non-Linked"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <android.media.tv.TvView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin5"
+                    android:layout_marginBottom="@dimen/margin5"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_marginLeft="@dimen/margin10"/>
+                <TextView
+                    android:id="@+id/feature2TV"
+                    android:text="Single Premium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <android.media.tv.TvView
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="@dimen/margin5"
+                    android:layout_marginBottom="@dimen/margin5"
+                    android:layout_marginRight="@dimen/margin10"
+                    android:layout_marginLeft="@dimen/margin10"/>
+                <TextView
+                    android:text="ULIP"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

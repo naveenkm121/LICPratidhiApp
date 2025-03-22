@@ -1,0 +1,1094 @@
+{
+  "info": {
+    "count": "8"
+  },
+  "results": [
+    {
+      "id": "2",
+      "imageurl": "static/plan_images/915-NewJeevanAnand.png",
+      "brochurepdf": "static/brochures/915-NewJeevanAnand.pdf",
+      "shareable_ad_img": "static/ad_images/915-JeevanAnandAdEng.jpg",
+      "plannumber": "915",
+      "planname": "NEW JEEVAN ANAND",
+      "uin": "512N279V02",
+      "type": "Endowment",
+      "min_entryage": "18 Years (completed)",
+      "summary": "LIC’s New Jeevan Anand Plan is a non-linked, participating, individual, life assurance savings plan.",
+      "death_benefit": " On death during the Policy Term (which is same as premium paying term), Death Benefit, equal to “Sum Assured on Death” alongwith vested Simple Reversionary Bonuses and Final Additional bonus, if any, shall be payable; where “Sum Assured on Death” is higher of 125% of Basic Sum Assured or 7 times of annualized premium.\nThis death benefit (as defined above) shall not be less than 105% of total premiums paid as on date of death.\nOn death after expiry of the policy term: Basic Sum Assured shall be payable.",
+      "maturity_benefit": "On survival of Life Assured to end of the Policy Term provided all due premiums have been paid, “Sum Assured on Maturity” alongwith vested Simple Reversionary bonuses and Final Additional bonus, if any, shall be payable; where “Sum Assured on Maturity” is equal to the Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiums for at least 2 full years.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": false,
+        "isPTfixed": false,
+        "pt": [
+          15,
+          35
+        ],
+        "ppt": [
+          15,
+          35
+        ],
+        "minAgeatEntry": 18,
+        "maxAgeatEntry": 50,
+        "maxMatAge": 75,
+        "ptEQppt": true,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "ab_allowed": true,
+        "abRider": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "premiumOptions": null
+      }
+    },
+    {
+      "id": "3",
+      "imageurl": "static/plan_images/914-NewEndowment.png",
+      "brochurepdf": "static/brochures/914-NewEndowmentPlan.pdf",
+      "shareable_ad_img": "static/ad_images/914-NewEndowmentAdEng.jpg",
+      "plannumber": "914",
+      "planname": "NEW ENDOWMENT PLAN",
+      "uin": "512N277V02",
+      "type": "Endowment",
+      "min_entryage": "8 Years (completed)",
+      "summary": "LIC’s New Endowment Plan is a non-linked, participating, individual, life assurance savings plan.",
+      "death_benefit": " On death of the Life Assured during the Policy Term, Death Benefit equal to “Sum Assured on Death” along with vested Simple Reversionary bonuses and Final Additional bonus, if any, shall be payable; where “Sum Assured on Death” is defined as higher of Basic Sum Assured or 7 times of annualised premium.\nThis death benefit (as defined above) shall not be less than 105% of total premiums (excludes taxes, extra premium and Rider premiums, if any.)paid as on date of death. ",
+      "maturity_benefit": "On survival of Life Assured to end of the Policy Term, provided all due premiums have been paid, “Sum Assured on Maturity” along with vested Simple Reversionary bonuses and Final Additional bonus, if any, shall be payable; where “Sum Assured on Maturity” is equal to the Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiums for at least 2 full years.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": true,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": false,
+        "isPTfixed": false,
+        "pt": [
+          12,
+          35
+        ],
+        "ppt": [
+          12,
+          35
+        ],
+        "minAgeatEntry": 8,
+        "maxAgeatEntry": 55,
+        "maxMatAge": 75,
+        "ptEQppt": true,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "ab_allowed": true,
+        "abRider": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "premiumOptions": null
+      }
+    },
+    {
+      "id": "4",
+      "imageurl": "static/plan_images/933-NewJeevanLakshya.png",
+      "brochurepdf": "static/brochures/933-JeevanLakshya.pdf",
+      "shareable_ad_img": "static/ad_images/933-JeevanLakshayAdEng.jpg",
+      "plannumber": "933",
+      "planname": "NEW JEEVAN LAKSHYA",
+      "uin": "512N297V02",
+      "type": "Endowment",
+      "min_entryage": "18 Years (completed)",
+      "summary": "LIC’s Jeevan Lakshya is a non-linked, participating, individual, life assurance savings plan.\nThis plan provides for Annual Income benefit that may help to fulfill the needs of the family, primarily for the benefit of children, in case of unfortunate death of Policyholder any time before maturity and a lump sum amount at the time of maturity irrespective of survival of the Policyholder. ",
+      "death_benefit": " Death Benefit, defined as sum of “Sum Assured on Death”, with vested Simple Reversionary Bonuses and Final Additional Bonus, if any, shall be payable at various durations as mentioned below:\nWhere “Sum Assured on Death” is defined as the sum of:\nAnnual Income Benefit equal to 10% of the Basic Sum Assured, which shall be payable from the policy anniversary coinciding with or following the date of death of Life Assured, till the policy anniversary prior to the date of maturity.\n110% of Basic Sum Assured, which shall be payable on due date of maturity; and the vested Simple Reversionary Bonuses and Final Additional Bonus, if any, included in the Death Benefit, shall be payable on due date of maturity.",
+      "maturity_benefit": "On survival to the end of the policy term provided all due premiums have been paid, “Sum Assured on Maturity” along with vested Simple Reversionary bonuses and Final Additional bonus, if any, shall be payable; where Sum Assured on Maturity is equal to Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiums for at least 2 full years.\nsubject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 10000
+        },
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 10000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": false,
+        "isPTfixed": false,
+        "pt": [
+          13,
+          25
+        ],
+        "ppt": [
+          10,
+          22
+        ],
+        "minAgeatEntry": 18,
+        "maxAgeatEntry": 50,
+        "maxMatAge": 65,
+        "ptEQppt": true,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": null,
+        "ab_allowed": true,
+        "abRider": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "premiumOptions": null
+      }
+    },
+    {
+      "id": "5",
+      "imageurl": "static/plan_images/920-NewMoneyBack20YrsPlan.png",
+      "brochurepdf": "static/brochures/920-NewMoneyBack20YrsPlan.pdf",
+      "shareable_ad_img": "static/ad_images/920-Moneyback20YrsAdEng.jpg",
+      "plannumber": "920",
+      "planname": "NEW MONEY BACK 20yrs",
+      "uin": "512N280V02",
+      "type": "Moneyback",
+      "min_entryage": "13 Years (completed)",
+      "summary": "LIC’s New Money Back Plan- 20 years is a non-linked, participating, individual, life assurance savings plan.",
+      "death_benefit": " The Death Benefit payable, on death of the Life Assured during the policy term, shall be “Sum Assured on Death” alongwith vested Simple Reversionary Bonuses and Final Additional Bonus, if any. Where, “Sum Assured on Death” is defined as higher of 125% of the Basic Sum Assured or 7 times of annualized premium\nThis death benefit shall not be less than 105% of the total premiums (premiums exclude taxes including GST, extra premium and rider premium, if any.) paid as on date of death.",
+      "maturity_benefit": "On the Life Assured surviving to the end of the policy term, the “Sum Assured on Maturity” along with vested Simple Reversionary Bonuses and Final Additional Bonus, if any, shall be payable. Where the Sum Assured on Maturity is equal to 40% of the Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiums for at least 2 full years.\nsubject to certain conditions as stated in the plan conditions. ",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "isSinglePremium": false,
+        "isPTfixed": true,
+        "pt": [
+          20
+        ],
+        "ppt": [
+          15
+        ],
+        "minAgeatEntry": 13,
+        "maxAgeatEntry": 50,
+        "maxMatAge": 70,
+        "ptEQppt": false,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": 20,
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "sum_assured": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "ab_allowed": true,
+        "abRider": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "premiumOptions": null
+      },
+      "survival_benefit": "On the Life Assured surviving to the end of each of the specified durations i.e 5th, 10th & 15th policy year,20% of the Basic Sum Assured shall be payable"
+    },
+    {
+      "id": "6",
+      "imageurl": "static/plan_images/921-NewMoneyBack25YrsPlan.png",
+      "brochurepdf": "static/brochures/921-NewMoneyBack25YrsPlan.pdf",
+      "shareable_ad_img": "static/ad_images/921-Moneyback25YrsAdEng.jpg",
+      "plannumber": "921",
+      "planname": "NEW MONEY BACK 25yrs",
+      "uin": "512N278V02",
+      "type": "Moneyback",
+      "min_entryage": "13 Years (completed)",
+      "summary": "LIC’s New Money Back Plan- 25 years is a non-linked, participating, individual, life assurance savings plan.",
+      "death_benefit": "Death Benefit, defined as sum of “Sum Assured on Death” vested SimpleReversionary Bonuses and Final Additional Bonus, if any, shall bepayable; where, “Sum Assured on Death” is defined as higher of 125% ofthe Basic Sum Assured or 7 times of annualized premium.\nThis death benefit shall not be less than 105% of the total premiums(premiums exclude taxes including GST, extra premium and rider premium,if any.) paid as on date of death.",
+      "maturity_benefit": "On the Life Assured surviving to the end of the policy term, the “SumAssured on Maturity” along with vested Simple Reversionary Bonuses andFinal Additional Bonus, if any, shall be payable. Where the Sum Assuredon Maturity is equal to 40% of the Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiumsfor at least 2 full years, subject to certain conditions as stated inthe plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "isSinglePremium": false,
+        "isPTfixed": true,
+        "pt": [
+          25
+        ],
+        "ppt": [
+          20
+        ],
+        "minAgeatEntry": 13,
+        "maxAgeatEntry": 45,
+        "maxMatAge": 70,
+        "ptEQppt": false,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": 20,
+        "ab_allowed": true,
+        "addb_allowed": true,
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "sum_assured": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "abRider": {
+          "min": 20000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "premiumOptions": null
+      },
+      "survival_benefit": "On the Life Assured surviving to the end of each of the specifieddurations i.e 5th, 10th,15th & 20th policy year,15% of the Basic SumAssured shall be payable"
+    },
+    {
+      "id": "7",
+      "imageurl": "static/plan_images/860-BimaJyoti.png",
+      "brochurepdf": "static/brochures/860-BimaJyoti.pdf",
+      "shareable_ad_img": "static/ad_images/860-BimaJyotiAdEng.jpg",
+      "plannumber": "860",
+      "planname": "Bima Jyoti",
+      "uin": "512N339V01",
+      "type": "Endowment",
+      "min_entryage": "90 days (completed)",
+      "summary": "LIC’s Bima Jyoti Plan(Plan No. 860) is a Non-linked, Non-participating,Individual, Limited Premium Payment Life Insurance Savings Plan. Underthis plan, Guaranteed Additions shall accrue at the rate of Rs 50 per1000 Basic Sum Assured at the end of each Policy Year throughout thepolicy term.",
+      "death_benefit": "On death during the policy term before the Date of Commencement of Risk:  Return of premium(s) paid excluding taxes, any extra premium and rider premium(s), if any, shall be payable.\n\nOn death during the policy term after the Date of Commencement of Risk: “Sum Assured on Death” along with accrued Guaranteed Additions.Where “Sum Assured on Death” is defined as Higher of or\nThis death benefit shall not be less than 105% of the total premiums paid as on date of death. \n125% of Sum Assured 7 times of annualized premium",
+      "maturity_benefit": "On the Life Assured surviving to end of the Policy Term, “Sum Assuredon Maturity” along with accrued Guaranteed Addition, shall be payable.\nWhere “Sum Assured on Maturity” is equal to the Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiums for at least 2 full years.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Non-participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "isSinglePremium": false,
+        "isPTfixed": false,
+        "pt": [
+          15,
+          20
+        ],
+        "ppt": [
+          10,
+          15
+        ],
+        "minAgeatEntry": 900,
+        "maxAgeatEntry": 60,
+        "maxMatAge": 75,
+        "ptEQppt": false,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": 20,
+        "ab_allowed": true,
+        "addb_allowed": true,
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": true,
+        "sum_assured": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 25000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "abRider": {
+          "min": 20000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 25000
+        },
+        "premiumOptions": null
+      },
+      "survival_benefit": ""
+    },
+    {
+      "id": "8",
+      "imageurl": "static/plan_images/945-JeevanUmang.jpg",
+      "brochurepdf": "static/brochures/945-JeevanUmang.pdf",
+      "shareable_ad_img": "static/ad_images/945-JeevanUmangAdEng.jpg",
+      "plannumber": "945",
+      "planname": "Jeevan Umang",
+      "uin": "512N312V02",
+      "type": "Whole Life",
+      "min_entryage": "90 days (completed)",
+      "summary": "LIC's Jeevan Umang is a non-linked, participating, individual,whole life assurance plan which offers a combination of income and protection to your family.\nThis plan provides for annual survival benefits from the end of the premium paying term till maturity and a lump sum payment at the time of maturity or on death of the policyholder during the policy term.",
+      "death_benefit": "Plan provides for death benefit On Death after the commencement of Risk as sum of “Sum  Assured on Death” and vested Simple Reversionary Bonuses and Final Additional bonus, if any, shall be payable. Where “Sum Assured on Death” is defined as the highest of\n•7 times of annualised premium; or \n•Basic Sum Assured. ( sum assured on maturity and basic sum assured are same)\nThis death benefit shall not be less than 105% of all the premiums paid as on date of death. ",
+      "maturity_benefit": "On the life assured surviving to the end of the policy term, provided all due premiums have  been  paid,  “Sum  Assured  on  Maturity”  along  with  vested  Simple  Reversionary  Bonuses  (asmentioned in 3 below) and Final \nAdditional bonus, if any, shall be payable.  Where   “Sum   Assured on Maturity” is equal to Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiums for at least 2 full years.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Whole Life",
+      "planConditionPension": null,
+      "planCondition": {
+        "isSinglePremium": false,
+        "isPTfixed": true,
+        "pt": [],
+        "ppt": [
+          15,
+          20,
+          25,
+          30
+        ],
+        "minAgeatEntry": 900,
+        "maxAgeatEntry": 55,
+        "maxMatAge": 100,
+        "ptEQppt": false,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": 20,
+        "ab_allowed": true,
+        "addb_allowed": true,
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "sum_assured": {
+          "min": 200000,
+          "max": 10000000,
+          "multiple": 25000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "abRider": {
+          "min": 20000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 25000
+        },
+        "premiumOptions": null
+      },
+      "survival_benefit": "On the life assured surviving to the end of the premium paying term, provided all due premiums have  been  paid,  a  survival  benefit  equal  to  8%  of  Basic  Sum Assured shall be payable each year. The first  survival  benefit  payment  is  payable  at  the  end  of    premium paying  term  and  thereafter  on  completionof  each  subsequent  year  till  the  Life  assured  survives  or  till  the policy anniversary prior to the date of maturity, whichever is earlier."
+    },
+    {
+      "id": "9",
+      "imageurl": "static/plan_images/936-JeevanLabh.png",
+      "brochurepdf": "static/brochures/936-JeevanLabh.pdf",
+      "shareable_ad_img": "static/ad_images/936-JeevanLabhAdEng.jpg",
+      "planname": "NEW JEEVAN LABH",
+      "plannumber": "936",
+      "uin": "512N304V02",
+      "type": "Endowment",
+      "min_entryage": "8 Years (completed)",
+      "summary": "LIC’s Jeevan Labh Plan is a non-linked, participating, individual, life assurance savings plan.",
+      "death_benefit": " On death of the Life Assured during the Policy Term, Death Benefit equal to “Sum Assured on Death” along with vested Simple Reversionary bonuses and Final Additional bonus, if any, shall be payable; where “Sum Assured on Death” is defined as higher of Basic Sum Assured or 7 times of annualised premium.This death benefit shall not be less than 105% of the total premiums (premiums exclude taxes including GST, extra premium and rider premium, if any.) paid as on date of death.",
+      "maturity_benefit": "On survival of Life Assured to end of the Policy Term, provided all due premiums have been paid, “Sum Assured on Maturity” alongwith vested Simple Reversionary bonuses and Final Additional bonus, if any, shall be payable; where “Sum Assured on Maturity” is equal to the Basic Sum Assured.",
+      "loan": "Loan facility is available under this plan, after payment of premiums for at least 2 full years.\n\nSubject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 200000,
+          "max": 10000000,
+          "multiple": 10000
+        },
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": true,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": false,
+        "isPTfixed": true,
+        "pt": [
+          16,
+          21,
+          25
+        ],
+        "ppt": [
+          10,
+          15,
+          16
+        ],
+        "minAgeatEntry": 8,
+        "maxAgeatEntry": 59,
+        "maxMatAge": 75,
+        "ptEQppt": true,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "ab_allowed": true,
+        "abRider": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "premiumOptions": null
+      }
+    },
+    {
+      "id": "10",
+      "imageurl": "static/plan_images/916-BimaBachat.png",
+      "brochurepdf": "static/brochures/916-NewBimaBachat.pdf",
+      "shareable_ad_img": "static/ad_images/916_NewBimaBachatAdEng.jpg",
+      "planname": "NEW BIMA BACHAT",
+      "plannumber": "916",
+      "uin": "512N284V02",
+      "type": "Moneyback",
+      "min_entryage": "15 Years (completed)",
+      "summary": "LIC’s New Bima Bachat Plan is a participating, non-linked, life assurance savings cum protection plan, where premium is paid in lump sum at the outset of the policy. It is a money-back plan which provides financial protection against death during the policy term with the provision of payment of survival benefits at specified durations during the policy term.",
+      "death_benefit": "On death during first five policy years: Sum Assured on Death shall be payable. On death after completion of five policy years but before the date of maturity: Sum Assured on Death with Loyalty Addition, if any, shall be payable. where “Sum Assured on Death” is defined as higher of Basic Sum Assured or 1.25 times of the single premium. Single Premium referred above shall not include taxes, extra premium and rider premium(s) if any.",
+      "maturity_benefit": "On the Life Assured surviving to the end of the policy term Sum Assured on Maturity along with Loyalty Addition, if any, shall be payable. Where Sum Assured on Maturity is equal to Single Premium paid excluding taxes, Rider premium(s) and extra premium, if any.",
+      "loan": "Policy Loan will be available under this product at any time after completion of one policy year.\nSubject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Single Premium",
+      "feature2": "Non-Linked",
+      "feature3": "Participating",
+      "feature4": "Money Back",
+      "feature5": "Savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 35000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "tr_allowed": true,
+        "ci_allowed": false,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": true,
+        "isPTfixed": true,
+        "pt": [
+          9,
+          12,
+          15
+        ],
+        "ppt": [
+          1
+        ],
+        "minAgeatEntry": 15,
+        "maxAgeatEntry": 50,
+        "maxMatAge": 65,
+        "ptEQppt": false,
+        "mode": [
+          0
+        ],
+        "ab_allowed": false,
+        "premiumOptions": null
+      },
+      "survival_benefit": "On the life assured surviving to the end of the specified durations, the following benefit shall be payable:,For policy term 9 years : 15% of the Basic Sum Assured at the end of each of 3rd & 6th policy year. For policy term 12 years: 15% of the Basic Sum Assured at the end of each of 3rd , 6th & 9th policy year. For policy term 15 years: 15% of the Basic Sum Assured at the end of each of 3rd , 6th, 9th & 12th policy year."
+    },
+    {
+      "id": "11",
+      "imageurl": "static/plan_images/917-SingleEndowment.png",
+      "brochurepdf": "static/brochures/917-SingleEndowment.pdf",
+      "shareable_ad_img": "static/ad_images/917_SinglePremEndowmentAdEng.jpg",
+      "plannumber": "917",
+      "planname": "SINGLE PREMIUM ENDOWMENT",
+      "uin": "512N283V02",
+      "type": "Endowment",
+      "min_entryage": "90 days (completed)",
+      "summary": "LIC’s Single Premium Endowment Plan is a Non linked, Participating, Individual, Life Assurance, savings plan which offers an attractive combination of savings and protection features. The premium is paid in lump sum at the outset of the policy. This combination provides financial protection against death during the policy term with the provision of payment of lumpsum at the end of the selected policy term in case of his/her survival.",
+      "death_benefit": " On death during the policy term before the date of commencement of risk: Return of single premium (excluding taxes, extra premium and rider premiums if any), without interest.\n On death during the policy term after the date of commencement of risk: Sum Assured along with vested Simple Reversionary Bonuses and Final Additional Bonus, if any. Where, Sum Assured on Death is defined as higher of Basic Sum Assured or 1.25 times of Single premium (excluding taxes, extra premium and rider premiums, if any). ",
+      "maturity_benefit": "On Life Assured surviving the policy term, Sum Assured on Maturity, along with vested Simple Reversionary Bonuses and Final Additional Bonus if any, shall be payable. Where  Sum Assured on Maturity is equal to Basic Sum Assured.",
+      "loan": " Loan can be availed under this plan any time after completion of one policy year. The loan shall be equal to 90% of the surrender value as on date of sanction of loan.\nsubject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Single Premium",
+      "feature2": "Non-Linked",
+      "feature3": "Participating",
+      "feature4": "Savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 50000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "tr_allowed": true,
+        "ci_allowed": false,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": true,
+        "isPTfixed": false,
+        "pt": [
+          10,
+          25
+        ],
+        "ppt": [
+          1
+        ],
+        "minAgeatEntry": 900,
+        "maxAgeatEntry": 65,
+        "maxMatAge": 75,
+        "ptEQppt": false,
+        "mode": [
+          0
+        ],
+        "policyTerm": null,
+        "ab_allowed": false,
+        "premiumOptions": null
+      }
+    },
+    {
+      "id": "12",
+      "imageurl": "static/plan_images/943-AadharStambha.png",
+      "brochurepdf": "static/brochures/943-AAdharStambha.pdf",
+      "shareable_ad_img": "static/ad_images/943_944_AadharStambhShilaAdEng.jpg",
+      "plannumber": "943",
+      "planname": "AADHAAR STAMBH",
+      "uin": "512N310V02",
+      "type": "Endowment",
+      "min_entryage": "8 years (completed)",
+      "summary": "LIC’s Aadhaar Stambh is a Non-Linked, Participating, Individual, Life Assurance plan designed exclusively for male lives, which offers a combination of protection and savings. In addition, this plan also takes care of liquidity needs through its Auto Cover as well as loan facility.",
+      "death_benefit": " Death benefit payable On death of the Life Assured during the policy term provided policy is in-force (i.e. all due premiums have been paid) then: On death during first five years: Sum Assured on Death shall be payable.\n On death after completion of five policy years but before the date of maturity: Sum Assured on Death and Loyalty Addition, if any, shall be payable. Where, Sum Assured on Death is defined as higher of 100% of Basic Sum Assured or 7 times of annualised premium ",
+      "maturity_benefit": "On Life assured surviving to the end of the policy term, provided all due premiums have been paid (i.e. the policy is inforce), Sum Assured on Maturity along with Loyalty Addition, if any, shall be payable.\nWhere Sum Assured on Maturity is equal to Basic Sum Assured.",
+      "loan": "Loan can be availed during the policy term provided atleast two full years premiums have been paid.\nsubject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life Assurance",
+      "feature4": "Exclusively for Males",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 75000,
+          "max": 300000,
+          "multiple": 5000
+        },
+        "tr_allowed": false,
+        "ci_allowed": false,
+        "pwb_allowed": false,
+        "addb_allowed": false,
+        "isSinglePremium": false,
+        "isPTfixed": false,
+        "pt": [
+          10,
+          20
+        ],
+        "ppt": [
+          10,
+          20
+        ],
+        "minAgeatEntry": 8,
+        "maxAgeatEntry": 55,
+        "maxMatAge": 70,
+        "ptEQppt": true,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": null,
+        "ab_allowed": true,
+        "abRider": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "premiumOptions": null
+      }
+    },
+    {
+      "id": "13",
+      "imageurl": "static/plan_images/944-AadharShila.png",
+      "brochurepdf": "static/brochures/944-AAdharShila.pdf",
+      "shareable_ad_img": "static/ad_images/943_944_AadharStambhShilaAdEng.jpg",
+      "plannumber": "944",
+      "planname": "AADHAAR SHILA",
+      "uin": "512N309V02",
+      "type": "Endowment",
+      "min_entryage": "8 years (completed)",
+      "summary": "LIC’s Aadhaar Shila is a Non-Linked, Participating, Individual, Life Assurance plan designed exclusively for female lives, which offers a combination of protection and savings. In addition, this plan also takes care of liquidity needs through its Auto Cover as well as loan facility.",
+      "death_benefit": " Death benefit payable On death of the Life Assured during the policy term provided policy is in-force (i.e. all due premiums have been paid) then: On death during first five years: Sum Assured on Death shall be payable.\n On death after completion of five policy years but before the date of maturity: Sum Assured on Death and Loyalty Addition, if any, shall be payable. Where, Sum Assured on Death is defined as higher of 110% of Basic Sum Assured or 7 times of annualised premium ",
+      "maturity_benefit": "On Life assured surviving to the end of the policy term, provided all due premiums have been paid (i.e. the policy is inforce), Sum Assured on Maturity along with Loyalty Addition, if any, shall be payable.\nWhere Sum Assured on Maturity is equal to Basic Sum Assured.",
+      "loan": "Loan can be availed during the policy term provided the policy has acquired a surrender value.\nsubject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life Assurance",
+      "feature4": "Exclusively for Females",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 75000,
+          "max": 300000,
+          "multiple": 5000
+        },
+        "tr_allowed": false,
+        "ci_allowed": false,
+        "pwb_allowed": false,
+        "addb_allowed": false,
+        "isSinglePremium": false,
+        "isPTfixed": false,
+        "pt": [
+          10,
+          20
+        ],
+        "ppt": [
+          10,
+          20
+        ],
+        "minAgeatEntry": 8,
+        "maxAgeatEntry": 55,
+        "maxMatAge": 70,
+        "ptEQppt": true,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": null,
+        "ab_allowed": true,
+        "abRider": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "premiumOptions": null
+      }
+    },
+    {
+      "id": "14",
+      "imageurl": "static/plan_images/948-BimaShree.png",
+      "brochurepdf": "static/brochures/948-BimaShree.pdf",
+      "shareable_ad_img": "static/ad_images/948_BimaShreeAdEng.jpg",
+      "plannumber": "948",
+      "planname": "BIMA SHREE",
+      "uin": "512N316V02",
+      "type": "Moneyback",
+      "min_entryage": "8 Years (completed)",
+      "summary": "LIC’s Bima Shree plan is a Non-Linked, Participating, Individual, Life Assurance Savings Plan, offers a combination of protection and savings. This plan is specially designed for High Net-worth Individuals.",
+      "death_benefit": "On death during first five years: Death Benefit defined as sum of Sum Assured on Death and accrued Guaranteed Addition shall be payable. \nOn death after completion of five policy years but before the date of maturity: Death Benefit defined as sum of Sum Assured on Death and accrued Guaranteed Addition and Loyalty Addition, if any, shall be payable.\nWhere Sum Assured on Death is defined as the higher of 125% of Basic Sum Assured or 7 times of annualised premium",
+      "maturity_benefit": "On the life assured surviving to the end of the policy term, provided all due premiums have been paid, Sum Assured on Maturity along with accrued Guaranteed Additions and Loyalty Addition, if any, shall be payable.\nWhere Sum Assured on Maturity is as under: \n40% of Basic Sum Assured for policy term 14 years \n30% of Basic Sum Assured for policy term 16 years \n20% of Basic Sum assured for policy term 18 years \n10% of Basic Sum assured for policy term 20 years",
+      "loan": "Loan can be availed under the policy provided atleast two full years' premiums have been paid, subject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "isSinglePremium": false,
+        "isPTfixed": true,
+        "pt": [
+          14,
+          16,
+          18,
+          20
+        ],
+        "ppt": [
+          10,
+          12,
+          14,
+          16
+        ],
+        "minAgeatEntry": 8,
+        "maxAgeatEntry": 55,
+        "maxMatAge": 69,
+        "ptEQppt": true,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": 20,
+        "ab_allowed": true,
+        "addb_allowed": true,
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": true,
+        "sum_assured": {
+          "min": 1000000,
+          "max": 10000000,
+          "multiple": 100000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "abRider": {
+          "min": 20000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "premiumOptions": null
+      },
+      "survival_benefit": "On the life assured surviving to each of the specified durations during the policy term, provided all due premiums have been paid, a fixed percentage of Basic Sum Assured shall be payable. The fixed percentage for various policy terms is as below: \nFor policy term 14 years: 30% of Basic SumAssured on each of 10th and 12th policy anniversary.\nFor policy term 16 years: 35% of Basic SumAssured on each of 12th and 14th policy anniversary.\nFor policy term 18 years: 40% of Basic SumAssured on each of 14th and 16th policy anniversary.\nFor policy term 20 years: 45% of Basic SumAssured on each of 16th and 18th policy anniversary."
+    },
+    {
+      "id": "15",
+      "imageurl": "static/plan_images/947-JeevanShiromani.png",
+      "brochurepdf": "static/brochures/947-JeevanShiromani.pdf",
+      "shareable_ad_img": "static/ad_images/947_JeevanShiromaniAdEng.jpg",
+      "plannumber": "947",
+      "planname": "JEEVAN SHIROMANI",
+      "uin": "512N315V02",
+      "type": "Moneyback",
+      "min_entryage": "18 Years (completed)",
+      "summary": "LIC’s Jeevan Shiromani is a Non-Linked, Participating, Individual, Life Assurance Savings Plan, offers a combination of protection and savings. This plan is specially designed for High Net-worth Individuals.",
+      "death_benefit": "On death during first five years: Death Benefit defined as sum of Sum Assured on Death and accrued Guaranteed Addition shall be payable. \nOn death after completion of five policy years but before the date of maturity: Death Benefit defined as sum of Sum Assured on Death and accrued Guaranteed Addition and Loyalty Addition, if any, shall be payable.\nWhere Sum Assured on Death is defined as the higher of 125% of Basic Sum Assured or 7 times of annualised premium",
+      "maturity_benefit": "On the life assured surviving to the end of the policy term, provided all due premiums have been paid, Sum Assured on Maturity along with accrued Guaranteed Additions and Loyalty Addition, if any, shall be payable.\nWhere Sum Assured on Maturity is as under: \n40% of Basic Sum Assured for policy term 14 years \n30% of Basic Sum Assured for policy term 16 years \n20% of Basic Sum assured for policy term 18 years \n10% of Basic Sum assured for policy term 20 years",
+      "loan": "Loan can be availed during the policy term provided atleast one full year's premiums have been paid and on completion of one policy year, subject to certain conditions as stated in the plan conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured": {
+          "min": 10000000,
+          "max": 100000000,
+          "multiple": 500000
+        },
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "ab_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 20000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": false,
+        "isPTfixed": true,
+        "pt": [
+          14,
+          16,
+          18,
+          20
+        ],
+        "ppt": [
+          10,
+          12,
+          14,
+          16
+        ],
+        "minAgeatEntry": 18,
+        "maxAgeatEntry": 55,
+        "maxMatAge": 69,
+        "ptEQppt": false,
+        "mode": [
+          12,
+          6,
+          3,
+          1
+        ],
+        "policyTerm": 20,
+        "premiumOptions": null,
+        "abRider": {
+          "min": 20000,
+          "max": 20000000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 500000,
+          "max": 2500000,
+          "multiple": 500000
+        }
+      },
+      "survival_benefit": "On the life assured surviving to each of the specified durations during the policy term, provided all due premiums have been paid, a fixed percentage of Basic Sum Assured shall be payable. The fixed percentage for various policy terms is as below: \nFor policy term 14 years: 30% of Basic SumAssured on each of 10th and 12th policy anniversary.\nFor policy term 16 years: 35% of Basic SumAssured on each of 12th and 14th policy anniversary.\nFor policy term 18 years: 40% of Basic SumAssured on each of 14th and 16th policy anniversary.\nFor policy term 20 years: 45% of Basic SumAssured on each of 16th and 18th policy anniversary."
+    },
+    {
+      "id": "16",
+      "imageurl": "static/plan_images/861-BachatPlus.png",
+      "brochurepdf": "static/brochures/861-BachatPlus.pdf",
+      "shareable_ad_img": "static/ad_images/861_BachatPlusAdEng.jpg",
+      "plannumber": "861",
+      "planname": "BACHAT PLUS",
+      "uin": "512N340V01",
+      "type": "Endowment",
+      "min_entryage": "90 days (completed)/40 years (nearer birthday)",
+      "summary": "LIC’s Bachat Plus plan is a Non-Linked, Participating, Individual LifeAssurance Savings plan. Under this plan, the premium can be paid eitheras LumpSum (Single Premium) or as Limited Premium with a Premium PaymentTerm of 5 years.",
+      "death_benefit": "",
+      "maturity_benefit": "If a Life Assured, who has exercised Settlement Option againstMaturity Benefit, desires to withdraw this option and commute theoutstanding instalments the same shall be allowed on receipt of writtenrequest from the Life Assured. In such case, the lumpsum amount, whichis higher of the following, shall be paid and the policy shallterminate. -  discounted value of all the future instalments due; or-  (the original amount for which settlement option was exercised) less (sum of total instalments already paid);The interest rates applicable for discounting the future instalmentpayments shall be as fixed by the Corporation from time to time.After the Date of Maturity, in case of death of the Life Assured,who has exercised Settlement Option, the outstanding instalments willcontinue to be paid to the nominee as per the option exercised by theLife Assured and no alteration whatsoever shall be allowed to be made bythe nominee.",
+      "loan": "Loan facility is available under this plan subject to conditions.",
+      "tax_benefit": "",
+      "feature1": "Non-Linked",
+      "feature2": "Participating",
+      "feature3": "Life assurance savings",
+      "planConditionPension": null,
+      "planCondition": {
+        "sum_assured_options":
+        [
+          {
+            "min": 100000,
+            "max": 900000,
+            "multiple": 25000
+          },
+          {
+            "min": 900000,
+            "max": 100000000,
+            "multiple": 500000
+          }
+        ]
+
+      ,
+
+
+        "sum_assured": {
+          "min": 100000,
+          "max": 100000000,
+          "multiple": 500000
+        },
+        "tr_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "ab_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "isSinglePremium": true,
+        "isPTfixed": false,
+        "pt": [
+          10,25
+        ],
+        "ppt": [
+          5
+        ],
+        "minAgeatEntry": 900,
+        "minAgeatEntryL2": 18,
+        "maxAgeatEntryS1": 44,
+        "maxAgeatEntryS2": 70,
+        "maxAgeatEntryL1": 60,
+        "maxAgeatEntryL2": 65,
+        "maxMatAge": 69,
+        "ptEQppt": false,
+        "mode": [
+          12,
+          6,
+          3,
+          1,
+          0
+        ],
+        "policyTerm": 20,
+        "premiumOptions": null,
+        "abRider": {
+          "min": 20000,
+          "max": 20000000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 500000,
+          "max": 2500000,
+          "multiple": 500000
+        }
+      },
+      "survival_benefit": ""
+    }
+  ]
+}

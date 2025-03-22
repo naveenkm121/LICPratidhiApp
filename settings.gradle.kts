@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ECommerceApp"
+rootProject.name = "BMMisapp"
 include(":app")
  

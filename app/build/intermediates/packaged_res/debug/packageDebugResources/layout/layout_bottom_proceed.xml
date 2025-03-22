@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/bottomLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:background="@color/white"
+    android:orientation="horizontal">
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/proceedBTN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/margin5"
+        android:padding="@dimen/padding5"
+        android:text="@string/proceed"
+        android:textColor="@color/violet_lic"
+        android:textSize="@dimen/text_16"
+        app:backgroundTint="@color/white"
+        app:cornerRadius="@dimen/radius8"
+        app:rippleColor="@color/white"
+        app:strokeColor="@color/violet_lic"
+        app:strokeWidth="1dp" />
+</LinearLayout>

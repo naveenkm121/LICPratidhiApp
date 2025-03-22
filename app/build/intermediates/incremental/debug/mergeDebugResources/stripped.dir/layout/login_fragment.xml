@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context=".ui.fragments.LoginFragment">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/height125"
+        android:visibility="visible"
+         android:src="@drawable/ic_lic_digital_logo"
+        android:layout_marginTop="@dimen/margin100"
+       />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/loginCardView"
+        style="@style/margin10LeftRight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin25"
+        android:background="@color/whitetrans"
+        android:visibility="visible"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp"
+        app:cardUseCompatPadding="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:padding="@dimen/padding5"
+                android:text="@string/login"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_20"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                style="@style/margin25LeftRight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/userIdTIL"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/sr_no">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/userIdET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionNext"
+                        android:windowSoftInputMode="adjustResize"
+                        android:inputType="number"
+                        android:maxLength="6"
+                        android:scrollIndicators="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/passwordTIL"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:hint="@string/password">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/passwordET"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:windowSoftInputMode="adjustResize"
+                        android:inputType="textPassword"
+                        android:maxLength="16"
+                        android:scrollIndicators="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/signInBTN"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/margin10"
+                    android:layout_marginBottom="@dimen/margin10"
+                    android:text="@string/signin"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="@dimen/text_16"
+                    app:backgroundTint="@color/white"
+                    app:cornerRadius="@dimen/radius8"
+                    app:rippleColor="@color/white"
+                    app:strokeColor="@color/colorPrimary"
+                    app:strokeWidth="1dp" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

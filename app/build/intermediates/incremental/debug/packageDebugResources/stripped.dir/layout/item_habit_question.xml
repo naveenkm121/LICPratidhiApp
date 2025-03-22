@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/headingSwitch"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/skin_color"
+        android:gravity="left"
+        android:padding="@dimen/padding10"
+        android:text="@string/alcoholic_drinks"
+        android:textColor="@color/blue_heading"
+        android:textOff="@string/no"
+        android:textOn="@string/yes"
+        android:textSize="@dimen/text_20"
+        android:textStyle="bold"
+        android:thumb="@drawable/switch_custom_thumb"
+        app:showText="true"
+        app:track="@drawable/custom_track" />
+
+    <LinearLayout
+        android:id="@+id/editFieldsLL"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="@dimen/margin5"
+        android:layout_marginBottom="@dimen/margin5"
+        android:visibility="gone">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/quantityTIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/yes_quantity_consumed">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/quantityET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionNext"
+                android:inputType="text"
+                android:maxEms="15"
+                android:scrollIndicators="none"
+                android:windowSoftInputMode="adjustResize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/discontinueTIL"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margin5"
+            android:hint="@string/if_stopped_duration">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/discontinueET"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:imeOptions="actionDone"
+                android:inputType="text"
+                android:maxEms="10"
+                android:scrollIndicators="none"
+                android:windowSoftInputMode="adjustResize" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
+

@@ -1,0 +1,153 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ananda_bg">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        style="@style/margin10LeftRight">
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/performersChipCG"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/doChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dev Off" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/agentChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Agents" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/cliaChip"
+                style="@style/Widget.MaterialComponents.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="CLIA" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+        <RadioGroup
+            android:id="@+id/filterRadioRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/performersChipCG"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/nopMRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By NOP" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/fpMRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="By FP" />
+        </RadioGroup>
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/headerCV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/filterRadioRG"
+            android:layout_marginTop="@dimen/margin10"
+            android:background="@color/white"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="1dp">
+
+            <com.google.android.material.circularreveal.CircularRevealLinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:orientation="horizontal"
+
+                >
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/srNoMTV"
+                    style="@style/textListHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".15"
+                    android:gravity="center"
+                    android:padding="@dimen/padding5"
+                    android:text="S.No."
+
+                    >
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/doNameMTV"
+                    style="@style/textListHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:padding="@dimen/padding5"
+                    android:text="Name">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/nopfpMTV"
+                    style="@style/textListHeading"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight=".3"
+                    android:gravity="center"
+                    android:padding="@dimen/padding5"
+                    android:text="NOP/FP">
+
+                </com.google.android.material.textview.MaterialTextView>
+
+            </com.google.android.material.circularreveal.CircularRevealLinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/casesRV"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/headerCV"
+            android:paddingBottom="@dimen/padding10" />
+
+        <include
+            android:id="@+id/progress_bar_shim"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            layout="@layout/layout_shimmer_line"
+            android:layout_below="@id/headerCV"
+            />
+        <include
+            android:id="@+id/progress_bar"
+            layout="@layout/layout_invisible_progress_bar"
+            />
+
+        <ImageView
+            android:id="@+id/noResultIV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/ic_no_result"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

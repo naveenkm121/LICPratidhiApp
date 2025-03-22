@@ -1,0 +1,1134 @@
+{
+  "result": {
+    "paymentTypes": [
+      {
+        "id": "1",
+        "name": "Single"
+      },
+      {
+        "id": "5",
+        "name": "Limited"
+      }
+    ],
+    "options": [
+      {
+        "id": "1",
+        "name": "Option 1"
+      },
+      {
+        "id": "2",
+        "name": "Option 2"
+      }
+    ],
+    "paymentMode": [
+      {
+        "id": "12",
+        "name": "Yearly"
+      },
+      {
+        "id": "6",
+        "name": "Half-Yearly"
+      },
+      {
+        "id": "3",
+        "name": "Quaterly"
+      },
+      {
+        "id": "1",
+        "name": "Monthly"
+      },
+      {
+        "id": "0",
+        "name": "Single"
+      }
+    ],
+    "residence_status": [
+      {
+        "id": "R",
+        "name": "Indian Resident"
+      },
+      {
+        "id": "N",
+        "name": "Non Resident Indian"
+      },
+      {
+        "id": "F",
+        "name": "F.N.I.O"
+      }
+    ],
+    "gender": [
+      {
+        "id": "M",
+        "name": "Male"
+      },
+      {
+        "id": "F",
+        "name": "Female"
+      },
+      {
+        "id": "T",
+        "name": "Others"
+      }
+    ],
+    "accident_benefit_mode": [
+      {
+        "id": "Y",
+        "name": "AB Required"
+      },
+      {
+        "id": "E",
+        "name": "ADDB Required"
+      },
+      {
+        "id": "N",
+        "name": "NOT Required"
+      },
+      {
+        "id": "D",
+        "name": "AB Required while on Police Duty"
+      },
+      {
+        "id": "P",
+        "name": "ADDB Required while on Police Duty"
+      }
+    ],
+    "country": [
+      {
+        "id": "India",
+        "name": "India"
+      },
+      {
+        "id": "ALGERIA",
+        "name": "ALGERIA"
+      },
+      {
+        "id": "ANGOLA",
+        "name": "ANGOLA"
+      },
+      {
+        "id": "ANGUILLA",
+        "name": "ANGUILLA"
+      },
+      {
+        "id": "ARMENIA (OTHERS)",
+        "name": "ARMENIA (OTHERS)"
+      },
+      {
+        "id": "ARMENIA (NAGORNO-KARABAKH)",
+        "name": "ARMENIA (NAGORNO-KARABAKH)"
+      },
+      {
+        "id": "ARUBA",
+        "name": "ARUBA"
+      },
+      {
+        "id": "BAHAMAS",
+        "name": "BAHAMAS"
+      },
+      {
+        "id": "BANGLADESH (RANGAPUR, JHANJALI)",
+        "name": "BANGLADESH (RANGAPUR, JHANJALI)"
+      },
+      {
+        "id": "BANGLADESH (RAJSHAHI, ISHURDI)",
+        "name": "BANGLADESH (RAJSHAHI, ISHURDI)"
+      },
+      {
+        "id": "BANGLADESH (KHULANA, SYLHET)",
+        "name": "BANGLADESH (KHULANA, SYLHET)"
+      },
+      {
+        "id": "BANGLADESH (CHITTAGONG)",
+        "name": "BANGLADESH (CHITTAGONG)"
+      },
+      {
+        "id": "BELGIUM",
+        "name": "BELGIUM"
+      },
+      {
+        "id": "BENIN",
+        "name": "BENIN"
+      },
+      {
+        "id": "BOSNIA",
+        "name": "BOSNIA"
+      },
+      {
+        "id": "BOTSWANA",
+        "name": "BOTSWANA"
+      },
+      {
+        "id": "BRAZIL",
+        "name": "BRAZIL"
+      },
+      {
+        "id": "BRUNEI",
+        "name": "BRUNEI"
+      },
+      {
+        "id": "BURUNDI",
+        "name": "BURUNDI"
+      },
+      {
+        "id": "CAMEROON",
+        "name": "CAMEROON"
+      },
+      {
+        "id": "CAYMAN ISLANDS",
+        "name": "CAYMAN ISLANDS"
+      },
+      {
+        "id": "CAPE VERDE",
+        "name": "CAPE VERDE"
+      },
+      {
+        "id": "CHAD",
+        "name": "CHAD"
+      },
+      {
+        "id": "COLOMBIA",
+        "name": "COLOMBIA"
+      },
+      {
+        "id": "COMOROS",
+        "name": "COMOROS"
+      },
+      {
+        "id": "COSTA RICA",
+        "name": "COSTA RICA"
+      },
+      {
+        "id": "COTE D IVOIRE",
+        "name": "COTE D IVOIRE"
+      },
+      {
+        "id": "CUBA",
+        "name": "CUBA"
+      },
+      {
+        "id": "DOMINICAN REPUBLIC",
+        "name": "DOMINICAN REPUBLIC"
+      },
+      {
+        "id": "ECUADOR (CARCHI, SUCUMBIOS)",
+        "name": "ECUADOR (CARCHI, SUCUMBIOS)"
+      },
+      {
+        "id": "ECUADOR (IMBABURA, ESMERALDAS)",
+        "name": "ECUADOR (IMBABURA, ESMERALDAS)"
+      },
+      {
+        "id": "ECUADOR (OTHERS)",
+        "name": "ECUADOR (OTHERS)"
+      },
+      {
+        "id": "EGYPT",
+        "name": "EGYPT"
+      },
+      {
+        "id": "EL SALVADOR",
+        "name": "EL SALVADOR"
+      },
+      {
+        "id": "ERITREA",
+        "name": "ERITREA"
+      },
+      {
+        "id": "FIJI",
+        "name": "FIJI"
+      },
+      {
+        "id": "GAMBIA (THE GAMBIA)",
+        "name": "GAMBIA (THE GAMBIA)"
+      },
+      {
+        "id": "GERMANY",
+        "name": "GERMANY"
+      },
+      {
+        "id": "GEORGIA",
+        "name": "GEORGIA"
+      },
+      {
+        "id": "GUATEMALA",
+        "name": "GUATEMALA"
+      },
+      {
+        "id": "GUINEA BISSAU",
+        "name": "GUINEA BISSAU"
+      },
+      {
+        "id": "HONG KONG (PART OF CHINA)",
+        "name": "HONG KONG (PART OF CHINA)"
+      },
+      {
+        "id": "INDONESIA (CENTRAL SULAWESI MALUKU)",
+        "name": "INDONESIA (CENTRAL SULAWESI MALUKU)"
+      },
+      {
+        "id": "INDONESIA (BORDER WITH EAST TIMOR)",
+        "name": "INDONESIA (BORDER WITH EAST TIMOR)"
+      },
+      {
+        "id": "INDONESIA (OTHERS)",
+        "name": "INDONESIA (OTHERS)"
+      },
+      {
+        "id": "IRAN",
+        "name": "IRAN"
+      },
+      {
+        "id": "ISRAEL TEL AVIV",
+        "name": "ISRAEL TEL AVIV"
+      },
+      {
+        "id": "ISRAEL WESTBANK, GAZA,JERUSALEM",
+        "name": "ISRAEL WESTBANK, GAZA,JERUSALEM"
+      },
+      {
+        "id": "ISRAEL (OTHER CITIES)",
+        "name": "ISRAEL (OTHER CITIES)"
+      },
+      {
+        "id": "KIRIBATI",
+        "name": "KIRIBATI"
+      },
+      {
+        "id": "KUWAIT",
+        "name": "KUWAIT"
+      },
+      {
+        "id": "KYRGYZSTAN",
+        "name": "KYRGYZSTAN"
+      },
+      {
+        "id": "LEBANON",
+        "name": "LEBANON"
+      },
+      {
+        "id": "LITHUANIA",
+        "name": "LITHUANIA"
+      },
+      {
+        "id": "MADAGASCAR (CAPITAL ONLY)",
+        "name": "MADAGASCAR (CAPITAL ONLY)"
+      },
+      {
+        "id": "MADEIRA",
+        "name": "MADEIRA"
+      },
+      {
+        "id": "MALI",
+        "name": "MALI"
+      },
+      {
+        "id": "MAURITANIA",
+        "name": "MAURITANIA"
+      },
+      {
+        "id": "MAURITIUS",
+        "name": "MAURITIUS"
+      },
+      {
+        "id": "MICRONESIA",
+        "name": "MICRONESIA"
+      },
+      {
+        "id": "MOROCCO (CASABLANCA, FEZ, TANGIER)",
+        "name": "MOROCCO (CASABLANCA, FEZ, TANGIER)"
+      },
+      {
+        "id": "MOROCCO (RABAT)",
+        "name": "MOROCCO (RABAT)"
+      },
+      {
+        "id": "MOZAMBIQUE(NAMPULA, MANICA, SOFALA)",
+        "name": "MOZAMBIQUE(NAMPULA, MANICA, SOFALA)"
+      },
+      {
+        "id": "MOZAMBIQUE (OTHERS)",
+        "name": "MOZAMBIQUE (OTHERS)"
+      },
+      {
+        "id": "MYANMAR (BURMA)",
+        "name": "MYANMAR (BURMA)"
+      },
+      {
+        "id": "NEPAL (JANAKPURA, RANGELI)",
+        "name": "NEPAL (JANAKPURA, RANGELI)"
+      },
+      {
+        "id": "NEPAL (OTHERS)",
+        "name": "NEPAL (OTHERS)"
+      },
+      {
+        "id": "NETHERLANDS",
+        "name": "NETHERLANDS"
+      },
+      {
+        "id": "NICARAGUA",
+        "name": "NICARAGUA"
+      },
+      {
+        "id": "NIGER",
+        "name": "NIGER"
+      },
+      {
+        "id": "NIGERIA",
+        "name": "NIGERIA"
+      },
+      {
+        "id": "NORTH KOREA",
+        "name": "NORTH KOREA"
+      },
+      {
+        "id": "PALESTINE",
+        "name": "PALESTINE"
+      },
+      {
+        "id": "PERU (LIMA)",
+        "name": "PERU (LIMA)"
+      },
+      {
+        "id": "PERU (AYACHUCO, APURIMAC, CUSCO)",
+        "name": "PERU (AYACHUCO, APURIMAC, CUSCO)"
+      },
+      {
+        "id": "PHILIPPINES (MINDANAO, ZAMBOANGA)",
+        "name": "PHILIPPINES (MINDANAO, ZAMBOANGA)"
+      },
+      {
+        "id": "PHILIPPINES (SULU ARCHIPELAGO)",
+        "name": "PHILIPPINES (SULU ARCHIPELAGO)"
+      },
+      {
+        "id": "POLAND",
+        "name": "POLAND"
+      },
+      {
+        "id": "ROMANIA",
+        "name": "ROMANIA"
+      },
+      {
+        "id": "RUSSIA (CHECHNYA, DAGESTAN)",
+        "name": "RUSSIA (CHECHNYA, DAGESTAN)"
+      },
+      {
+        "id": "RUSSIA (KABARDINO-BALKARIA)",
+        "name": "RUSSIA (KABARDINO-BALKARIA)"
+      },
+      {
+        "id": "RUSSIA (KARACHY-CHERKESSIA)",
+        "name": "RUSSIA (KARACHY-CHERKESSIA)"
+      },
+      {
+        "id": "RWANDA",
+        "name": "RWANDA"
+      },
+      {
+        "id": "SAMOA",
+        "name": "SAMOA"
+      },
+      {
+        "id": "SAN MARINO",
+        "name": "SAN MARINO"
+      },
+      {
+        "id": "SENEGAL",
+        "name": "SENEGAL"
+      },
+      {
+        "id": "SIERRA LEONE",
+        "name": "SIERRA LEONE"
+      },
+      {
+        "id": "SOLOMON ISLAND",
+        "name": "SOLOMON ISLAND"
+      },
+      {
+        "id": "SOMALIA",
+        "name": "SOMALIA"
+      },
+      {
+        "id": "SOUTH AFRICA",
+        "name": "SOUTH AFRICA"
+      },
+      {
+        "id": "ST KITTS AND NEVIS",
+        "name": "ST KITTS AND NEVIS"
+      },
+      {
+        "id": "ST VINCENT AND GRENADINES",
+        "name": "ST VINCENT AND GRENADINES"
+      },
+      {
+        "id": "SWEDEN",
+        "name": "SWEDEN"
+      },
+      {
+        "id": "TAJIKISTAN",
+        "name": "TAJIKISTAN"
+      },
+      {
+        "id": "TONGA - NUKUALOFA",
+        "name": "TONGA - NUKUALOFA"
+      },
+      {
+        "id": "TUNISIA",
+        "name": "TUNISIA"
+      },
+      {
+        "id": "TURKEY",
+        "name": "TURKEY"
+      },
+      {
+        "id": "TURKMENISTAN",
+        "name": "TURKMENISTAN"
+      },
+      {
+        "id": "VANUATU",
+        "name": "VANUATU"
+      },
+      {
+        "id": "VENEZUELA - CARACAS",
+        "name": "VENEZUELA - CARACAS"
+      },
+      {
+        "id": "VENEZUELA - OTHERS",
+        "name": "VENEZUELA - OTHERS"
+      },
+      {
+        "id": "VIETNAM (OTHERS)",
+        "name": "VIETNAM (OTHERS)"
+      },
+      {
+        "id": "YEMEN",
+        "name": "YEMEN"
+      },
+      {
+        "id": "OTHERS",
+        "name": "OTHERS"
+      },
+      {
+        "id": "GABON",
+        "name": "GABON"
+      },
+      {
+        "id": "GHANA",
+        "name": "GHANA"
+      },
+      {
+        "id": "GUYANA",
+        "name": "GUYANA"
+      },
+      {
+        "id": "JAMAICA",
+        "name": "JAMAICA"
+      },
+      {
+        "id": "KAZAKHSTAN (STD OCCUPATIONS ONLY)",
+        "name": "KAZAKHSTAN (STD OCCUPATIONS ONLY)"
+      },
+      {
+        "id": "LESOTHO",
+        "name": "LESOTHO"
+      },
+      {
+        "id": "MACEDONIA",
+        "name": "MACEDONIA"
+      },
+      {
+        "id": "MALAWI",
+        "name": "MALAWI"
+      },
+      {
+        "id": "MOLDOVA",
+        "name": "MOLDOVA"
+      },
+      {
+        "id": "MONTENEGRO",
+        "name": "MONTENEGRO"
+      },
+      {
+        "id": "MOROCCO (MARRAKESH, SALE, MEKNES)",
+        "name": "MOROCCO (MARRAKESH, SALE, MEKNES)"
+      },
+      {
+        "id": "NAMIBIA",
+        "name": "NAMIBIA"
+      },
+      {
+        "id": "PANAMA",
+        "name": "PANAMA"
+      },
+      {
+        "id": "PERU (OTHERS)",
+        "name": "PERU (OTHERS)"
+      },
+      {
+        "id": "SAO TOME AND PRINCIPE",
+        "name": "SAO TOME AND PRINCIPE"
+      },
+      {
+        "id": "SURINAME",
+        "name": "SURINAME"
+      },
+      {
+        "id": "TANZANIA",
+        "name": "TANZANIA"
+      },
+      {
+        "id": "TIBET (CHINA)",
+        "name": "TIBET (CHINA)"
+      },
+      {
+        "id": "ZAMBIA",
+        "name": "ZAMBIA"
+      },
+      {
+        "id": "ANDORRA",
+        "name": "ANDORRA"
+      },
+      {
+        "id": "ANTIGUA AND BARBUDA",
+        "name": "ANTIGUA AND BARBUDA"
+      },
+      {
+        "id": "ARGENTINA",
+        "name": "ARGENTINA"
+      },
+      {
+        "id": "AUSTRALIA",
+        "name": "AUSTRALIA"
+      },
+      {
+        "id": "AUSTRIA",
+        "name": "AUSTRIA"
+      },
+      {
+        "id": "BAHRAIN",
+        "name": "BAHRAIN"
+      },
+      {
+        "id": "BARBADOS",
+        "name": "BARBADOS"
+      },
+      {
+        "id": "BELARUS",
+        "name": "BELARUS"
+      },
+      {
+        "id": "BELIZE",
+        "name": "BELIZE"
+      },
+      {
+        "id": "BERMUDA",
+        "name": "BERMUDA"
+      },
+      {
+        "id": "BHUTAN",
+        "name": "BHUTAN"
+      },
+      {
+        "id": "BOLIVIA",
+        "name": "BOLIVIA"
+      },
+      {
+        "id": "BRITISH VIRGIN ISLANDS",
+        "name": "BRITISH VIRGIN ISLANDS"
+      },
+      {
+        "id": "BULGARIA",
+        "name": "BULGARIA"
+      },
+      {
+        "id": "CANADA",
+        "name": "CANADA"
+      },
+      {
+        "id": "CANARY ISLANDS",
+        "name": "CANARY ISLANDS"
+      },
+      {
+        "id": "CHILE",
+        "name": "CHILE"
+      },
+      {
+        "id": "CHINA",
+        "name": "CHINA"
+      },
+      {
+        "id": "CROATIA",
+        "name": "CROATIA"
+      },
+      {
+        "id": "CURACAO",
+        "name": "CURACAO"
+      },
+      {
+        "id": "CYPRUS",
+        "name": "CYPRUS"
+      },
+      {
+        "id": "CZECH REPUBLIC",
+        "name": "CZECH REPUBLIC"
+      },
+      {
+        "id": "ESTONIA",
+        "name": "ESTONIA"
+      },
+      {
+        "id": "FALKLAND ISLANDS(UK)",
+        "name": "FALKLAND ISLANDS(UK)"
+      },
+      {
+        "id": "FINLAND",
+        "name": "FINLAND"
+      },
+      {
+        "id": "FRENCH GUIANA",
+        "name": "FRENCH GUIANA"
+      },
+      {
+        "id": "FRENCH POLYNESIA",
+        "name": "FRENCH POLYNESIA"
+      },
+      {
+        "id": "GIBRALTAR",
+        "name": "GIBRALTAR"
+      },
+      {
+        "id": "GREECE",
+        "name": "GREECE"
+      },
+      {
+        "id": "GRENADA",
+        "name": "GRENADA"
+      },
+      {
+        "id": "GUADELOUPE",
+        "name": "GUADELOUPE"
+      },
+      {
+        "id": "GUAM",
+        "name": "GUAM"
+      },
+      {
+        "id": "HUNGARY",
+        "name": "HUNGARY"
+      },
+      {
+        "id": "ICELAND",
+        "name": "ICELAND"
+      },
+      {
+        "id": "IRELAND                            05",
+        "name": "IRELAND                            05"
+      },
+      {
+        "id": "ITALY",
+        "name": "ITALY"
+      },
+      {
+        "id": "JAPAN",
+        "name": "JAPAN"
+      },
+      {
+        "id": "JORDAN",
+        "name": "JORDAN"
+      },
+      {
+        "id": "LAOS",
+        "name": "LAOS"
+      },
+      {
+        "id": "LATVIA",
+        "name": "LATVIA"
+      },
+      {
+        "id": "LEICHTENSTEIN",
+        "name": "LEICHTENSTEIN"
+      },
+      {
+        "id": "LIUXEMBERG",
+        "name": "LIUXEMBERG"
+      },
+      {
+        "id": "MACAU (PART OF CHINA)",
+        "name": "MACAU (PART OF CHINA)"
+      },
+      {
+        "id": "MALAYSIA",
+        "name": "MALAYSIA"
+      },
+      {
+        "id": "MALDIVES",
+        "name": "MALDIVES"
+      },
+      {
+        "id": "MARSHALL ISLANDS",
+        "name": "MARSHALL ISLANDS"
+      },
+      {
+        "id": "MARTINIQUE (FRANCE)",
+        "name": "MARTINIQUE (FRANCE)"
+      },
+      {
+        "id": "MEXICO",
+        "name": "MEXICO"
+      },
+      {
+        "id": "MONACO",
+        "name": "MONACO"
+      },
+      {
+        "id": "NAURU",
+        "name": "NAURU"
+      },
+      {
+        "id": "NETHERLAND ANTILLES",
+        "name": "NETHERLAND ANTILLES"
+      },
+      {
+        "id": "NEW CALEDONIA",
+        "name": "NEW CALEDONIA"
+      },
+      {
+        "id": "NORWAY",
+        "name": "NORWAY"
+      },
+      {
+        "id": "OMAN",
+        "name": "OMAN"
+      },
+      {
+        "id": "PALAU",
+        "name": "PALAU"
+      },
+      {
+        "id": "PARAGUAY MAJOR CITIES",
+        "name": "PARAGUAY MAJOR CITIES"
+      },
+      {
+        "id": "PHILIPPINES",
+        "name": "PHILIPPINES"
+      },
+      {
+        "id": "PORTUGAL",
+        "name": "PORTUGAL"
+      },
+      {
+        "id": "QATAR",
+        "name": "QATAR"
+      },
+      {
+        "id": "RUSSIA (OTHERS)",
+        "name": "RUSSIA (OTHERS)"
+      },
+      {
+        "id": "SAUDI ARABIA",
+        "name": "SAUDI ARABIA"
+      },
+      {
+        "id": "SERBIA",
+        "name": "SERBIA"
+      },
+      {
+        "id": "SINGAPORE",
+        "name": "SINGAPORE"
+      },
+      {
+        "id": "SLOVAK REP",
+        "name": "SLOVAK REP"
+      },
+      {
+        "id": "SLOVENIA",
+        "name": "SLOVENIA"
+      },
+      {
+        "id": "SPAIN",
+        "name": "SPAIN"
+      },
+      {
+        "id": "SRI LANKA",
+        "name": "SRI LANKA"
+      },
+      {
+        "id": "ST LUCIA",
+        "name": "ST LUCIA"
+      },
+      {
+        "id": "ST MARTIN (FRANCE AND HOLLAND)",
+        "name": "ST MARTIN (FRANCE AND HOLLAND)"
+      },
+      {
+        "id": "SWITZERLAND",
+        "name": "SWITZERLAND"
+      },
+      {
+        "id": "TAIWAN",
+        "name": "TAIWAN"
+      },
+      {
+        "id": "TRINIDAD AND TOBAGO (TT)",
+        "name": "TRINIDAD AND TOBAGO (TT)"
+      },
+      {
+        "id": "TURKS AND CAICOS",
+        "name": "TURKS AND CAICOS"
+      },
+      {
+        "id": "UAE",
+        "name": "UAE"
+      },
+      {
+        "id": "UK",
+        "name": "UK"
+      },
+      {
+        "id": "URUGUAY",
+        "name": "URUGUAY"
+      },
+      {
+        "id": "USA",
+        "name": "USA"
+      },
+      {
+        "id": "US VIRGIN ISLANDS",
+        "name": "US VIRGIN ISLANDS"
+      },
+      {
+        "id": "VIETNAM - HO CHI MINH CITY",
+        "name": "VIETNAM - HO CHI MINH CITY"
+      },
+      {
+        "id": "AZERBAIJAN (BAKU ONLY)",
+        "name": "AZERBAIJAN (BAKU ONLY)"
+      },
+      {
+        "id": "CHECHEN REPUBLIC",
+        "name": "CHECHEN REPUBLIC"
+      },
+      {
+        "id": "ETHIOPIA",
+        "name": "ETHIOPIA"
+      },
+      {
+        "id": "HONDURAS",
+        "name": "HONDURAS"
+      },
+      {
+        "id": "KENYA",
+        "name": "KENYA"
+      },
+      {
+        "id": "MOROCCO (OTHER)",
+        "name": "MOROCCO (OTHER)"
+      },
+      {
+        "id": "PAKISTAN",
+        "name": "PAKISTAN"
+      },
+      {
+        "id": "PHILIPPINES (PENINSULA)",
+        "name": "PHILIPPINES (PENINSULA)"
+      },
+      {
+        "id": "TOGO",
+        "name": "TOGO"
+      },
+      {
+        "id": "ZIMBABVE",
+        "name": "ZIMBABVE"
+      },
+      {
+        "id": "DENMARK",
+        "name": "DENMARK"
+      },
+      {
+        "id": "NEW ZEALAND",
+        "name": "NEW ZEALAND"
+      },
+      {
+        "id": "ALBANIA",
+        "name": "ALBANIA"
+      },
+      {
+        "id": "BANGLADESH (OTHERS)",
+        "name": "BANGLADESH (OTHERS)"
+      },
+      {
+        "id": "CAMBODIA",
+        "name": "CAMBODIA"
+      },
+      {
+        "id": "DOMINICA",
+        "name": "DOMINICA"
+      },
+      {
+        "id": "FRANCE",
+        "name": "FRANCE"
+      },
+      {
+        "id": "GREEN LAND",
+        "name": "GREEN LAND"
+      },
+      {
+        "id": "KOSOVO",
+        "name": "KOSOVO"
+      },
+      {
+        "id": "MALTA",
+        "name": "MALTA"
+      },
+      {
+        "id": "MONGOLIA",
+        "name": "MONGOLIA"
+      },
+      {
+        "id": "PARAGUAY (OTHERS)",
+        "name": "PARAGUAY (OTHERS)"
+      },
+      {
+        "id": "SEYCHELLES",
+        "name": "SEYCHELLES"
+      },
+      {
+        "id": "SWAZILAND",
+        "name": "SWAZILAND"
+      },
+      {
+        "id": "TUVALU",
+        "name": "TUVALU"
+      },
+      {
+        "id": "REUNION (FRANCE)",
+        "name": "REUNION (FRANCE)"
+      },
+      {
+        "id": "SOUTH KOREA",
+        "name": "SOUTH KOREA"
+      },
+      {
+        "id": "THAILAND",
+        "name": "THAILAND"
+      },
+      {
+        "id": "AFGHANISTAN",
+        "name": "AFGHANISTAN"
+      },
+      {
+        "id": "AZERBAIJAN (OTHERS)",
+        "name": "AZERBAIJAN (OTHERS)"
+      },
+      {
+        "id": "BANGLADESH (NAOGAON, ROHANPUR)",
+        "name": "BANGLADESH (NAOGAON, ROHANPUR)"
+      },
+      {
+        "id": "BURKINA FASO",
+        "name": "BURKINA FASO"
+      },
+      {
+        "id": "CENTRAL AFRICAN REPUBLICS",
+        "name": "CENTRAL AFRICAN REPUBLICS"
+      },
+      {
+        "id": "DEMOCRATIC REPUBLIC OF CONGO- ZAIRE",
+        "name": "DEMOCRATIC REPUBLIC OF CONGO- ZAIRE"
+      },
+      {
+        "id": "EQUATORIAL GUINEA-MALABO",
+        "name": "EQUATORIAL GUINEA-MALABO"
+      },
+      {
+        "id": "GUINEA",
+        "name": "GUINEA"
+      },
+      {
+        "id": "INDONESIA (ACEH, PAPUA)",
+        "name": "INDONESIA (ACEH, PAPUA)"
+      },
+      {
+        "id": "IRAQ",
+        "name": "IRAQ"
+      },
+      {
+        "id": "IVORY COAST",
+        "name": "IVORY COAST"
+      },
+      {
+        "id": "LIBERIA",
+        "name": "LIBERIA"
+      },
+      {
+        "id": "MONTSERRAT",
+        "name": "MONTSERRAT"
+      },
+      {
+        "id": "NEPAL (SOUTH TERRAI REGION,BIRGANK)",
+        "name": "NEPAL (SOUTH TERRAI REGION,BIRGANK)"
+      },
+      {
+        "id": "NIUE",
+        "name": "NIUE"
+      },
+      {
+        "id": "PAPUA NEW GUINEA",
+        "name": "PAPUA NEW GUINEA"
+      },
+      {
+        "id": "PERU(ENE APURIMAC RIVER VALLEY-VRAE",
+        "name": "PERU(ENE APURIMAC RIVER VALLEY-VRAE"
+      },
+      {
+        "id": "RUSSIA (INGUSHETIA)",
+        "name": "RUSSIA (INGUSHETIA)"
+      },
+      {
+        "id": "RUSSIA (NORTH OSSETIA)",
+        "name": "RUSSIA (NORTH OSSETIA)"
+      },
+      {
+        "id": "SUDAN",
+        "name": "SUDAN"
+      },
+      {
+        "id": "UGANDA",
+        "name": "UGANDA"
+      },
+      {
+        "id": "WESTERN SAHARA",
+        "name": "WESTERN SAHARA"
+      },
+      {
+        "id": "BANGLADESH (MACHANGANJ, MYMENSINGH)",
+        "name": "BANGLADESH (MACHANGANJ, MYMENSINGH)"
+      },
+      {
+        "id": "DJIBOUTI",
+        "name": "DJIBOUTI"
+      },
+      {
+        "id": "HAITI",
+        "name": "HAITI"
+      },
+      {
+        "id": "MADAGASCAR (OTHERS)",
+        "name": "MADAGASCAR (OTHERS)"
+      },
+      {
+        "id": "PERU (JUNIN \u0026 HUANCAVELICA REGIONS)",
+        "name": "PERU (JUNIN \u0026 HUANCAVELICA REGIONS)"
+      },
+      {
+        "id": "UZBEKISTAN",
+        "name": "UZBEKISTAN"
+      },
+      {
+        "id": "VATICAN",
+        "name": "VATICAN"
+      }
+    ]
+  }
+}

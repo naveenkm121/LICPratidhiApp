@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card_view_bt8"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:layout_margin="1dp"
+    card_view:cardCornerRadius="4dp"
+    card_view:cardElevation="0dp"
+    card_view:cardMaxElevation="1dp"
+
+    >
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/nameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="5dp"
+            android:text="Name of Agent"
+            android:textColor="@color/black"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/codeTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="4dp"
+            android:layout_marginRight="4dp"
+            android:text="Code"
+            android:textColor="@color/black"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="@+id/nameTV" />
+
+        <ImageView
+            android:id="@+id/mobileImageview"
+            android:layout_width="@dimen/radius30"
+            android:layout_height="@dimen/radius20"
+            android:layout_marginTop="@dimen/margin8"
+            android:layout_marginLeft="5dp"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/nameTV"
+            android:src="@android:drawable/ic_menu_call"
+            card_view:tint="@color/blue_heading" />
+        <TextView
+            android:id="@+id/mobileTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginLeft="2dp"
+            android:layout_marginTop="8dp"
+            android:text="000000000"
+            android:textColor="@color/blue_heading"
+            card_view:layout_constraintStart_toEndOf="@+id/mobileImageview"
+            card_view:layout_constraintTop_toBottomOf="@+id/nameTV" />
+
+        <TextView
+            android:id="@+id/noOfLivesTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textColor="@color/red"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="@+id/mobileTV" />
+
+        <TextView
+            android:id="@+id/textView35"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="17dp"
+            android:layout_marginRight="17dp"
+            android:text="No of Lives :"
+            card_view:layout_constraintEnd_toStartOf="@+id/noOfLivesTV"
+            card_view:layout_constraintTop_toTopOf="@+id/mobileTV" />
+
+        <TextView
+            android:id="@+id/textView37"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="5dp"
+            android:text="FYRP : "
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/mobileTV" />
+
+        <TextView
+            android:id="@+id/fyrpTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:text="0"
+            android:textColor="@color/red"
+            card_view:layout_constraintStart_toEndOf="@+id/textView37"
+            card_view:layout_constraintTop_toTopOf="@+id/textView37" />
+
+        <TextView
+            android:id="@+id/fypTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="5dp"
+            android:layout_marginRight="5dp"
+            android:text="0"
+            android:textColor="@color/red"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="@+id/fyrpTV" />
+
+        <TextView
+            android:id="@+id/textView40"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:text="FYP : "
+            card_view:layout_constraintEnd_toStartOf="@+id/fypTV"
+            card_view:layout_constraintTop_toTopOf="@+id/fyrpTV" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/margin2"
+            android:background="@color/black"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@id/fyrpTV"
+            android:visibility="gone"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.cardview.widget.CardView>

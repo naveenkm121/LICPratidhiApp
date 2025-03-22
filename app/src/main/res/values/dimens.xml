@@ -2,13 +2,7 @@
     <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
-    <dimen name="nav_header_vertical_spacing">8dp</dimen>
-    <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen name="fragment_horizontal_margin">16dp</dimen>
-    <dimen name="fragment_vertical_margin">16dp</dimen>
-
     <dimen name="item_offset">10dp</dimen>
     <dimen name="detail_backdrop_height">250dp</dimen>
     <dimen name="backdrop_title">30dp</dimen>
@@ -29,21 +23,23 @@
     <dimen name="ic_album_overflow_height">30dp</dimen>
     <dimen name="ic_album_overflow_margin_top">10dp</dimen>
 
-    <dimen name="icon_size_24">24sp</dimen>
-
     <dimen name="drawerWidth">260dp</dimen>
 
     // padding
+    <dimen name="padding2">2dp</dimen>
+    <dimen name="padding5">5dp</dimen>
+    <dimen name="padding8">8dp</dimen>
+    <dimen name="padding10">10dp</dimen>
+    <dimen name="padding15">15dp</dimen>
+    <dimen name="padding20">20dp</dimen>
 
+    <dimen name="padding30">20dp</dimen>
 
     <dimen name="width120">120dp</dimen>
     <dimen name="width150">150dp</dimen>
     <dimen name="height190">200dp</dimen>
     <dimen name="height200">200dp</dimen>
     <dimen name="height220">220dp</dimen>
-
-    <!-- radius  -->
-    <dimen name="radius5">5dp</dimen>
     <dimen name="radius8">8dp</dimen>
     <dimen name="radius10">10dp</dimen>
     <dimen name="radius20">20dp</dimen>
@@ -51,12 +47,6 @@
     <dimen name="radius40">40dp</dimen>
     <dimen name="radius50">50dp</dimen>
     <dimen name="radius60">60dp</dimen>
-    <dimen name="progressDotRadius">15dp</dimen>
-
-    <!-- Eelevation  -->
-    <dimen name="elevation2">1dp</dimen>
-    <dimen name="elevation5">5dp</dimen>
-
 
     <!--margin -->
     <dimen name="negativeMargin20">-30dp</dimen>
@@ -68,32 +58,16 @@
     <dimen name="margin16">16dp</dimen>
     <dimen name="margin20">20dp</dimen>
     <dimen name="margin25">25dp</dimen>
+    <dimen name="toolbarLeftMargin">40dp</dimen>
     <dimen name="margin30">30dp</dimen>
     <dimen name="margin40">40dp</dimen>
     <dimen name="margin45">45dp</dimen>
     <dimen name="margin50">50dp</dimen>
-    <dimen name="margin60">60dp</dimen>
-    <dimen name="margin80">80dp</dimen>
     <dimen name="margin100">100dp</dimen>
     <dimen name="margin150">150dp</dimen>
-
-    <!--padding  -->
-    <dimen name="padding2">2dp</dimen>
-    <dimen name="padding4">4dp</dimen>
-    <dimen name="padding5">5dp</dimen>
-    <dimen name="padding8">8dp</dimen>
-    <dimen name="padding10">10dp</dimen>
-    <dimen name="padding12">12dp</dimen>
-    <dimen name="padding15">15dp</dimen>
-    <dimen name="padding20">20dp</dimen>
-    <dimen name="padding30">20dp</dimen>
-    <dimen name="padding50">50dp</dimen>
-
-
     <dimen name="height30">25dp</dimen>
     <dimen name="height_30">30dp</dimen>
-    <dimen name="height250">250dp</dimen>
-    <dimen name="height270">270dp</dimen>
+
     <dimen name="height40">40dp</dimen>
     <dimen name="height45">45dp</dimen>
     <dimen name="height50">50dp</dimen>
@@ -104,19 +78,15 @@
     <dimen name="height80">80dp</dimen>
     <dimen name="width100">100dp</dimen>
     <dimen name="height100">100dp</dimen>
-    <dimen name="height300">300dp</dimen>
-    <dimen name="height400">400dp</dimen>
-    <dimen name="height480">480dp</dimen>
+    <dimen name="height300">350dp</dimen>
     <dimen name="width200">200dp</dimen>
     <dimen name="width250">250dp</dimen>
     <dimen name="width280">280dp</dimen>
     <dimen name="height125">125dp</dimen>
-    <dimen name="height140">140dp</dimen>
     <dimen name="height150">150dp</dimen>
     <dimen name="height180">180dp</dimen>
     <dimen name="radius35">35dp</dimen>
     <dimen name="radius120">120dp</dimen>
-    <dimen name="toolbarLeftMargin">40dp</dimen>
 
     <!-- text -->
     <dimen name="text_10">10sp</dimen>
@@ -135,8 +105,12 @@
     <dimen name="mediumText">18dp</dimen>
     <dimen name="smallText">14dp</dimen>
     <dimen name="largeText">20dp</dimen>
-
-
+    <dimen name="nav_header_vertical_spacing">8dp</dimen>
+    <dimen name="nav_header_height">176dp</dimen>
+    <dimen name="margin60">60dp</dimen>
+    <dimen name="margin80">80dp</dimen>
+    <dimen name="padding50">50dp</dimen>
+    <dimen name="padding12">12dp</dimen>
 
     <dimen name="font_size_16">16sp</dimen>
     <dimen name="font_size_24">24sp</dimen>
@@ -152,8 +126,5 @@
     <!--StepView dimen-->
     <dimen name="sv_circle_radius">14dp</dimen>
     <dimen name="sv_step_number_text">12dp</dimen>
-    <dimen name="text_margin">16dp</dimen>
-    <dimen name="list_item_spacing">16dp</dimen>
-    <dimen name="list_item_spacing_half">8dp</dimen>
-    <dimen name="radius_6">6dp</dimen>
+
 </resources>

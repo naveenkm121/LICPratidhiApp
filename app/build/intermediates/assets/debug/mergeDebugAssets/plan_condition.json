@@ -1,0 +1,174 @@
+{
+  "planConditionResult": [
+    {
+      "planId": 2,
+      "planNumber": "915",
+      "planCondition": {
+        "sum_assured": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "tr_allowed": true,
+        "dab_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "dab": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "minAgeatEntry": 18,
+        "maxAgeatEntry": 50,
+        "maxMatAge": 75,
+        "ptEQppt": true,
+        "mode": "120603010299"
+      }
+    },
+    {
+      "planId": 4,
+      "planNumber": "914",
+      "planCondition": {
+        "sum_assured": {
+          "min": 100000,
+          "max": null,
+          "multiple": 5000
+        },
+        "tr_allowed": true,
+        "dab_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "dab": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        },
+        "minAgeatEntry": 8,
+        "maxAgeatEntry": 55,
+        "maxMatAge": 75,
+        "ptEQppt": true,
+        "mode": "120603010299"
+      }
+    },
+    {
+      "planId": 5,
+      "planNumber": "933",
+      "planCondition": {
+        "minAgeatEntry": 18,
+        "maxAgeatEntry": 50,
+        "maxMatAge": 65,
+        "ptEQppt": true,
+        "mode": "1206030102",
+        "policyTerm": null,
+        "ppt": null,
+        "tr_allowed": true,
+        "dab_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "sum_assured": {
+          "min": 100000,
+          "max": null,
+          "multiple": 10000
+        },
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 10000
+        },
+        "addb_rider": {
+          "min": 10000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "dab": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        }
+      }
+    },
+    {
+      "planId": 6,
+      "planNumber": "920",
+      "planCondition": {
+        "minAgeatEntry": 13,
+        "maxAgeatEntry": 50,
+        "maxMatAge": 70,
+        "ptEQppt": false,
+        "mode": "1206030102",
+        "policyTerm": 20,
+        "ppt": 15,
+        "tr_allowed": true,
+        "dab_allowed": true,
+        "ci_allowed": true,
+        "pwb_allowed": false,
+        "addb_allowed": true,
+        "sum_assured": {
+          "min": 100000,
+          "max": null,
+          "multiple": 5000
+        },
+        "term_rider": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "critical_illness": {
+          "min": 100000,
+          "max": 2500000,
+          "multiple": 5000
+        },
+        "addb_rider": {
+          "min": 100000,
+          "max": 10000000,
+          "multiple": 5000
+        },
+        "dab": {
+          "min": 20000,
+          "multiple": 5000,
+          "max": 10000000
+        }
+      }
+    }
+
+
+  ]
+}

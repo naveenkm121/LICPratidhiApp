@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margin10"
+    android:background="@color/ananda_bg"
+    app:cardCornerRadius="5dp"
+    app:cardElevation="1dp"
+    android:foreground="?android:attr/selectableItemBackground"
+    android:clickable="true">
+
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/padding10"
+        android:orientation="vertical"
+        >
+        <RadioGroup
+            android:id="@+id/filterRadioRG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/performersChipCG"
+            android:orientation="horizontal">
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/growthMRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:text="By Growth" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/volumeMRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:text="By Volume" />
+
+            <com.google.android.material.radiobutton.MaterialRadioButton
+                android:id="@+id/a2bMRB"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_18"
+                android:text="By A2B" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/branchNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/margin5"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="71M"
+            android:textColor="@color/colorPrimary"
+            android:textSize="@dimen/text_20"
+            android:textStyle="bold"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Policies : "
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/nopTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="SP : "
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/spTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="NSP : "
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/nspTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="FYRP : "
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/fyrpTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="NPPOL : "
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/nppolTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text="WRP : "
+                android:textColor="@color/med_grey"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/wrpTV"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:text=" "
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_18"
+                android:textStyle="bold"
+                android:layout_weight="3"
+                />
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <include
+        android:id="@+id/progress_bar"
+        layout="@layout/layout_progress_bar"/>
+
+
+</androidx.cardview.widget.CardView>
