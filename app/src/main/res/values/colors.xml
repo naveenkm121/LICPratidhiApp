@@ -24,7 +24,7 @@
     <color name="colorPratidhScreenBg">#dfe2e2</color>
 
  <!--  Sorting Heading Color color -->
-    <color name="colorSortAsc">#b55a21</color>
+    <color name="colorSortAsc">@color/green_success</color>
     <color name="colorSortDesc">@color/red</color>
     <color name="ananda_bg">@color/colorPratidhScreenBg</color>
 

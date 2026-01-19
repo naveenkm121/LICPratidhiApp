@@ -23,153 +23,157 @@ import com.licapps.bmmis.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class TopPerformersFragment : Fragment(), TopPerformersListAdapter.CasesListItemListener {
+class TopPerformersFragment :
+    Fragment(),
+    TopPerformersListAdapter.CasesListItemListener {
 
     private var binding: FragmentTopPerformersBinding by autoCleared()
     private val viewModel: TopPerformersViewModel by viewModels()
     private lateinit var adapter: TopPerformersListAdapter
+
     private var topPerformersList = ArrayList<Performer>()
     private val apiRequest = CommonReq()
-    private var whichRequest  = 0
-    private var type  = 0
-    private var sortFPAsc=true
-    private var sortNOPAsc=true;
-    private var isNOPSelected=true;
+
+    private var whichRequest = 0
+    private var type = 0
+    private var isNOPSelected = true
+
+    // Sorting state
+    private var sortAsc = true
+    private var currentSort = AppConstants.SORT_NOP
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = FragmentTopPerformersBinding.inflate(inflater, container, false)
         return binding.root
     }
 
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setHasOptionsMenu(true)
-        //  screenToShow = arguments?.getString(IntentConstants.CASES_REQ_SCREEN).toString()
-        apiRequest.branch=(activity as NewHomeActivity).branch
+
+        apiRequest.branch = (activity as NewHomeActivity).branch
+
         setupRecyclerView()
         setupObservers()
-       // setRadioButtons()
-       // setChipsGroup()
-        setOnClickHandle()
-       // viewModel.getTopPerformers(apiRequest,whichRequest )
-      //  binding.doChip.isChecked=true
         setupSelectors()
+        setupSortClick()
+
+        // Initial load
         whichRequest = 0
         type = whichRequest
         binding.filterToggleGroup.check(R.id.nopBtn)
         viewModel.getTopPerformers(apiRequest, type)
-
-
     }
 
-   /* private fun setChipsGroup() {
-        binding.performersChipCG.setOnCheckedChangeListener { group, id -> when (id) {
-                    R.id.doChip -> {
-                        whichRequest=0
-                       binding.filterRadioRG.clearCheck()
-                       binding.nopMRB.isChecked=true
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorHomeCardBg));
+    /* -------------------- Tabs + Toggle -------------------- */
 
-                    }
-                    R.id.agentChip -> {
-                        whichRequest=2
-                        binding.filterRadioRG.clearCheck()
-                        binding.nopMRB.isChecked=true
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorHomeCardBg));
-                    }
-                    R.id.cliaChip -> {
-                        whichRequest=4
-                        binding.filterRadioRG.clearCheck()
-                        binding.nopMRB.isChecked=true
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorHomeCardBg));
+    private fun setupSelectors() {
 
+        // Tabs (DO / CLIA / Agent)
+        binding.performersTabLayout.addOnTabSelectedListener(
+            object : TabLayout.OnTabSelectedListener {
+
+                override fun onTabSelected(tab: TabLayout.Tab?) {
+
+                    whichRequest = when (tab?.position) {
+                        0 -> 0   // DO
+                        1 -> 4   // CLIA
+                        else -> 2 // Agent
                     }
+
+                    type = if (isNOPSelected) whichRequest else whichRequest + 1
+                    DebugHandler.log("whichRequest == $type")
+
+                    resetSortUI()
+                    adapter.clear()
+                    viewModel.getTopPerformers(apiRequest, type)
                 }
 
+                override fun onTabUnselected(tab: TabLayout.Tab?) {}
+                override fun onTabReselected(tab: TabLayout.Tab?) {}
+            }
+        )
+
+        // NOP / FP toggle
+        binding.filterToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
+            if (isChecked) {
+
+                isNOPSelected = checkedId == R.id.nopBtn
+                type = if (isNOPSelected) whichRequest else whichRequest + 1
+                DebugHandler.log("whichRequest == $type")
+                binding.nopfpMTV.text = if (isNOPSelected) "NOP" else "FP"
+                resetSortUI()
+                adapter.clear()
+                viewModel.getTopPerformers(apiRequest, type)
+            }
         }
     }
 
-    private fun setRadioButtons() {
-       binding.filterRadioRG.setOnCheckedChangeListener { group, id ->
-           when (id) {
-               R.id.nopMRB -> {
-                        isNOPSelected=true;
-                       adapter.clear()
-                       type=whichRequest
-                       viewModel.getTopPerformers(apiRequest, type)
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorHomeCardBg));
+    /* -------------------- Sorting -------------------- */
 
+    private fun setupSortClick() {
+        binding.sortHeaderLL.setOnClickListener {
+            currentSort =
+                if (isNOPSelected) AppConstants.SORT_NOP else AppConstants.SORT_FP
 
-               }
-               R.id.fpMRB -> {
-                   isNOPSelected=false;
-                       adapter.clear()
-                       type = whichRequest + 1
-                       viewModel.getTopPerformers(apiRequest, type)
-                   binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorHomeCardBg));
-
-               }
-           }
-
-       }
+            sortResult(currentSort)
+        }
     }
-*/
-   private fun setupSelectors() {
 
-       // TAB selection = DO/CLIA/AGENT
-       binding.performersTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
-           override fun onTabSelected(tab: TabLayout.Tab?) {
+    private fun resetSortUI() {
+        sortAsc = true
+        binding.sortIV.setImageResource(R.drawable.ic_arrow_up)
+        binding.sortIV.setColorFilter(
+            resources.getColor(R.color.colorSortDesc)
+        )
+    }
 
-               when (tab?.position) {
-                   0 -> whichRequest = 0  // DO base
-                   1 -> whichRequest = 4  // CLIA base
-                   2 -> whichRequest = 2  // AGENT base
-               }
+    private fun sortResult(sortFilter: String) {
 
-               // Reapply NOP or FP depending on current selection
-               type = if (isNOPSelected) whichRequest else whichRequest + 1
-               DebugHandler.log("whichRequest=="+type)
-               adapter.clear()
-               viewModel.getTopPerformers(apiRequest, type)
+        if (topPerformersList.isEmpty()) return
 
-             //  binding.filterToggleGroup.check(R.id.nopBtn)
-           }
+        when (sortFilter) {
 
-           override fun onTabUnselected(tab: TabLayout.Tab?) {}
-           override fun onTabReselected(tab: TabLayout.Tab?) {}
-       })
+            AppConstants.SORT_NOP -> {
+                topPerformersList.sortWith { lhs, rhs ->
+                    if (sortAsc)
+                        rhs.nop.toInt().compareTo(lhs.nop.toInt())
+                    else
+                        lhs.nop.toInt().compareTo(rhs.nop.toInt())
+                }
+            }
 
-       // NOP / FP Toggle
-       binding.filterToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
-           if (isChecked) {
-               isNOPSelected = checkedId == R.id.nopBtn
-
-               // Decide final type based on current tab + toggle
-               type = if (isNOPSelected) whichRequest else whichRequest + 1
-               DebugHandler.log("whichRequest=="+type)
-               adapter.clear()
-               viewModel.getTopPerformers(apiRequest, type)
-               binding.nopfpMTV.setBackgroundColor(resources.getColor(R.color.colorHomeCardBg))
-           }
-       }
-   }
-
-    private fun setOnClickHandle(){
-
-        binding.nopfpMTV.setOnClickListener {
-
-            if(isNOPSelected)
-                sortResult(AppConstants.SORT_NOP)
-            else
-                sortResult(AppConstants.SORT_FP)
+            AppConstants.SORT_FP -> {
+                topPerformersList.sortWith { lhs, rhs ->
+                    if (sortAsc)
+                        rhs.fp.toDouble().compareTo(lhs.fp.toDouble())
+                    else
+                        lhs.fp.toDouble().compareTo(rhs.fp.toDouble())
+                }
+            }
         }
 
+        // Update icon
+        if (sortAsc) {
+            binding.sortIV.setImageResource(R.drawable.ic_arrow_down)
+            binding.sortIV.setColorFilter(
+                resources.getColor(R.color.colorSortDesc)
+            )
+        } else {
+            binding.sortIV.setImageResource(R.drawable.ic_arrow_up)
+            binding.sortIV.setColorFilter(
+                resources.getColor(R.color.colorSortAsc)
+            )
+        }
 
+        sortAsc = !sortAsc
+        adapter.setItems(topPerformersList)
     }
+
+    /* -------------------- RecyclerView -------------------- */
 
     private fun setupRecyclerView() {
         adapter = TopPerformersListAdapter(this)
@@ -177,145 +181,71 @@ class TopPerformersFragment : Fragment(), TopPerformersListAdapter.CasesListItem
         binding.casesRV.adapter = adapter
     }
 
+    /* -------------------- Observer -------------------- */
 
     private fun setupObservers() {
         viewModel.responseNOP.observe(viewLifecycleOwner, Observer {
+
             when (it.status) {
+
                 Resource.Status.SUCCESS -> {
                     setProgressBar(false)
-                    if (it.data != null) {
-                        if (it.data.data.isNotEmpty()) {
-                            // binding.progressBar.visibility = View.GONE
-                           // topPerformersList.clear()
-                               topPerformersList= it.data.data as ArrayList<Performer>
 
-                            topPerformersList.forEachIndexed {index, it1->
-                                run {
-                                    it1.srno =index+1
-                                    it1.type = type
-                                }
-                            }
-                            binding.noResultIV.visibility = View.GONE
-                            adapter.setItems(topPerformersList)
-                        } else {
-                            binding.noResultIV.visibility = View.VISIBLE
+                    if (it.data != null && it.data.data.isNotEmpty()) {
 
+                        topPerformersList = it.data.data as ArrayList<Performer>
+                        topPerformersList.forEachIndexed { index, performer ->
+                            performer.srno = index + 1
+                            performer.type = type
                         }
-                    } else
-                        Toast.makeText(
-                            requireContext(),
-                            R.string.err_in_response,
-                            Toast.LENGTH_SHORT
-                        ).show()
 
+                        binding.noResultIV.visibility = View.GONE
+                        adapter.setItems(topPerformersList)
+
+                    } else {
+                        binding.noResultIV.visibility = View.VISIBLE
+                    }
                 }
+
                 Resource.Status.ERROR -> {
                     setProgressBar(false)
-                    if(it.message?.contains("401")==true){
-                        Toast.makeText(requireContext(), R.string.session_expired, Toast.LENGTH_SHORT).show()
-                        activity?.let { it1 -> CommonUtility.logoutAppSession(it1) };
+
+                    if (it.message?.contains("401") == true) {
+                        Toast.makeText(
+                            requireContext(),
+                            R.string.session_expired,
+                            Toast.LENGTH_SHORT
+                        ).show()
+                        activity?.let { act ->
+                            CommonUtility.logoutAppSession(act)
+                        }
+                    } else {
+                        Toast.makeText(
+                            requireContext(),
+                            it.message,
+                            Toast.LENGTH_SHORT
+                        ).show()
                     }
-                    else
-                        Toast.makeText(requireContext(), it.message, Toast.LENGTH_SHORT).show()
                 }
-                Resource.Status.LOADING ->
-                    setProgressBar(true)
+
+                Resource.Status.LOADING -> setProgressBar(true)
             }
         })
-
-    }
-
-    override fun onPrepareOptionsMenu(menu: Menu){
-        super.onPrepareOptionsMenu(menu)
-        menu.findItem(R.id.action_sort).isVisible=true
-        val  sortFBMenu=menu.findItem(R.id.action_sort_fp)
-        sortFBMenu.isVisible=true
-        sortFBMenu.title="Sort by NOP/FP"
-
-
-    }
-
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        return when (item.itemId) {
-
-            R.id.action_sort_fp -> {
-
-                if(isNOPSelected)
-                    sortResult(AppConstants.SORT_NOP)
-                else
-                    sortResult(AppConstants.SORT_FP)
-
-                true
-            }
-
-
-            else -> super.onOptionsItemSelected(item)
-        }
-    }
-
-
-
-    private fun sortResult(sortFilter:String )
-    {
-        if(!topPerformersList.isNullOrEmpty()) {
-
-
-          //  binding.nopMTV.setBackgroundColor(getResources().getColor(R.color.colorPrimaryDark));
-            binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorPrimary));
-
-            when (sortFilter) {
-                AppConstants.SORT_NOP -> {
-                    if (sortNOPAsc) {
-                        topPerformersList.sortWith(Comparator { lhs, rhs ->
-                            if (lhs.nop.toInt() > rhs.nop.toInt()) -1 else if (lhs.nop.toInt() < rhs.nop.toInt()) 1 else 0
-                        })
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorSortAsc));
-
-                    } else {
-                        topPerformersList.sortWith(Comparator { lhs, rhs ->
-                            if (lhs.nop.toInt() < rhs.nop.toInt()) -1 else if (lhs.nop.toInt() > rhs.nop.toInt()) 1 else 0
-                        })
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorSortDesc));
-                    }
-
-                    sortNOPAsc = !sortNOPAsc
-                }
-
-                AppConstants.SORT_FP -> {
-                    if (sortFPAsc) {
-                        topPerformersList.sortWith(Comparator { lhs, rhs ->
-                            if (lhs.fp.toDouble() > rhs.fp.toDouble()) -1 else if (lhs.fp.toDouble() < rhs.fp.toDouble()) 1 else 0
-                        })
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorSortAsc));
-                    } else {
-                        topPerformersList.sortWith(Comparator { lhs, rhs ->
-                            if (lhs.fp.toDouble() < rhs.fp.toDouble()) -1 else if (lhs.fp.toDouble() > rhs.fp.toDouble()) 1 else 0
-                        })
-                        binding.nopfpMTV.setBackgroundColor(getResources().getColor(R.color.colorSortDesc));
-                    }
-                    sortFPAsc = !sortFPAsc
-                }
-
-
-            }
-
-            adapter.setItems(topPerformersList)
-        }
     }
 
     override fun onClickedListItem(case: Performer) {
+        // Handle item click if needed
     }
-    private fun setProgressBar(b: Boolean) {
-        if (!b) {
-            binding.progressBarShim.shimmerLayout.visibility = View.GONE
-            binding.progressBar.progressBar.visibility = View.GONE
-            binding.progressBarShim.shimmerLayout.showShimmer(false)
-        } else {
+
+    private fun setProgressBar(show: Boolean) {
+        if (show) {
             binding.progressBarShim.shimmerLayout.visibility = View.VISIBLE
             binding.progressBar.progressBar.visibility = View.VISIBLE
             binding.progressBarShim.shimmerLayout.showShimmer(true)
+        } else {
+            binding.progressBarShim.shimmerLayout.visibility = View.GONE
+            binding.progressBar.progressBar.visibility = View.GONE
+            binding.progressBarShim.shimmerLayout.showShimmer(false)
         }
     }
-
 }
