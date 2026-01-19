@@ -1481,6 +1481,7 @@ color androidx_core_ripple_material_light
 color androidx_core_secondary_text_default_material_light
 color app_text_color
 color app_text_color_transparent
+color backgroundLight
 color background_floating_material_dark
 color background_floating_material_light
 color background_material_dark
@@ -1523,6 +1524,7 @@ color common_google_signin_btn_text_light_disabled
 color common_google_signin_btn_text_light_focused
 color common_google_signin_btn_text_light_pressed
 color common_google_signin_btn_tint
+color darkBlue
 color design_bottom_navigation_shadow_color
 color design_box_stroke_color
 color design_dark_default_color_background
@@ -2241,6 +2243,7 @@ color notification_icon_bg_color
 color notification_material_background_media_default_color
 color orange
 color pink
+color primaryBlue
 color primary_dark_material_dark
 color primary_dark_material_light
 color primary_material_dark
@@ -2268,9 +2271,13 @@ color switch_thumb_normal_material_dark
 color switch_thumb_normal_material_light
 color teal_200
 color teal_700
+color textBlue
 color text_dark
 color theme_blue
 color theme_pink
+color toggle_bg_selector
+color toggle_selector_blue
+color toggle_text_selector
 color tooltip_background_dark
 color tooltip_background_light
 color violet_lic
@@ -3275,6 +3282,8 @@ drawable ananda_splash
 drawable app_logo
 drawable avd_hide_password
 drawable avd_show_password
+drawable bg_home_fragment
+drawable bg_toggle_container
 drawable btn_checkbox_checked_mtrl
 drawable btn_checkbox_checked_to_unchecked_mtrl_animation
 drawable btn_checkbox_unchecked_mtrl
@@ -3314,6 +3323,7 @@ drawable googleg_disabled_color_18
 drawable googleg_standard_color_18
 drawable gradient_bottom
 drawable greetings_icon
+drawable header_gradient
 drawable ic_aa
 drawable ic_aadhaar
 drawable ic_admin_job
@@ -3358,6 +3368,9 @@ drawable ic_pending_leads
 drawable ic_plan
 drawable ic_search_black_24
 drawable ic_sort_24
+drawable ic_tab_agent
+drawable ic_tab_clia
+drawable ic_tab_do
 drawable m3_avd_hide_password
 drawable m3_avd_show_password
 drawable m3_bottom_sheet_drag_handle
@@ -3439,6 +3452,7 @@ drawable spinner_background
 drawable switch_custom_thumb
 drawable tab_background_selected
 drawable tab_background_unselected
+drawable tab_selector_background
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3580,7 +3594,6 @@ id agencyCodeMTV
 id agencyCodeTV
 id agencyNameMTV
 id agencyNameTV
-id agentChip
 id agentHeadingMTV
 id agentsMTV
 id alertTitle
@@ -3678,7 +3691,6 @@ id chronometer
 id circle_center
 id claimsFragment
 id clear_text
-id cliaChip
 id clip_horizontal
 id clip_vertical
 id clockwise
@@ -3741,7 +3753,6 @@ id discontinueET
 id discontinueTIL
 id disjoint
 id displayMTV
-id doChip
 id doNameMTV
 id downloadIV
 id dragAnticlockwise
@@ -3790,6 +3801,7 @@ id fill_horizontal
 id fill_vertical
 id filled
 id filterRadioRG
+id filterToggleGroup
 id fitCenter
 id fitEnd
 id fitStart
@@ -3800,8 +3812,8 @@ id flip
 id floating
 id forDayMRB
 id forever
+id fpBtn
 id fpLabelTV
-id fpMRB
 id fpMTV
 id fpTV
 id fpiMTV
@@ -3991,8 +4003,8 @@ id nomineeAgeTV
 id nomineeItemLL
 id nominneNameTV
 id none
+id nopBtn
 id nopHeadingMTV
-id nopMRB
 id nopMTV
 id nopTV
 id nopfpMTV
@@ -4047,6 +4059,7 @@ id peekHeight
 id percent
 id percentMTV
 id performersChipCG
+id performersTabLayout
 id peristenceFragment
 id pin
 id pin1ET
@@ -5612,6 +5625,7 @@ style RtlOverlay_Widget_AppCompat_Search_DropDown_Text
 style RtlOverlay_Widget_AppCompat_SearchView_MagIcon
 style RtlUnderlay_Widget_AppCompat_ActionButton
 style RtlUnderlay_Widget_AppCompat_ActionButton_Overflow
+style ShapeAppearance_App_SmallComponent
 style ShapeAppearance_M3_Comp_Badge_Large_Shape
 style ShapeAppearance_M3_Comp_Badge_Shape
 style ShapeAppearance_M3_Comp_BottomAppBar_Container_Shape
@@ -5674,6 +5688,7 @@ style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Day
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Window_Fullscreen
 style ShapeAppearanceOverlay_MaterialComponents_MaterialCalendar_Year
 style ShapeAppearanceOverlay_MaterialComponents_TextInputLayout_FilledBox
+style TextAppearance_App_Tab
 style TextAppearance_AppCompat
 style TextAppearance_AppCompat_Body1
 style TextAppearance_AppCompat_Body2
@@ -6023,6 +6038,7 @@ style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
 style ToolBarStyle
+style Widget_App_ToggleItem
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

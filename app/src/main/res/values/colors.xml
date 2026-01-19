@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <color name="primaryBlue">#003B8E</color>
+    <color name="darkBlue">#001F63</color>
+    <color name="textBlue">#002C6E</color>
+    <color name="backgroundLight">#F5F8FF</color>
+
     <!-- <color name="colorPrimary">#0d47a1</color>-->
     <color name="licBluePrimaryDark">#003c84</color>
     <color name="licBluePrimary">#0a4d83</color>
@@ -12,7 +18,7 @@
     <!--  Home color -->
     <color name="colorHomeCardBg">@color/licBluePrimary</color>
     <color name="colorHomeCardText">@color/licYellowPrimary</color>
-    <color name="colorHomeBg">@color/colorHomeCardText</color>
+    <color name="colorHomeBg">#FFF0F0F0</color>
 
     <color name="colorPratidhScreenBg">#dfe2e2</color>
 

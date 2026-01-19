@@ -4,7 +4,7 @@
             "outputFile": "com.licapps.bmmis.app-mergeDebugResources-61:/values-v22/values-v22.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\1b3d2d8e0ec2f98f6a4763aad13c0a3d\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
+                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\6d330464e788bbe0adc35a8b6ec929eb\\transformed\\appcompat-1.6.1\\res\\values-v22\\values-v22.xml",
                     "from": {
                         "startLines": "2,3,4,9",
                         "startColumns": "4,4,4,4",

@@ -4,7 +4,7 @@
             "outputFile": "com.licapps.bmmis.app-mergeDebugResources-61:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\1b3d2d8e0ec2f98f6a4763aad13c0a3d\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\6d330464e788bbe0adc35a8b6ec929eb\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -15,7 +15,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\d82f00bc8878a9376eddc7c38db052f3\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\833cd266025c7c35940f87cd6bf3a51e\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -34,7 +34,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\d40f4800cc13911e67c1b27622aac81d\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Naveen\\.gradle\\caches\\transforms-4\\070ae8ef1fd022954e037fa8a633fcb4\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

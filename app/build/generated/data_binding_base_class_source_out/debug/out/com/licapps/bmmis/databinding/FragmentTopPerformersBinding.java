@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,9 +12,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import com.google.android.material.chip.Chip;
-import com.google.android.material.chip.ChipGroup;
-import com.google.android.material.radiobutton.MaterialRadioButton;
+import com.google.android.material.button.MaterialButton;
+import com.google.android.material.button.MaterialButtonToggleGroup;
+import com.google.android.material.tabs.TabLayout;
 import com.google.android.material.textview.MaterialTextView;
 import com.licapps.bmmis.R;
 import java.lang.NullPointerException;
@@ -27,25 +26,16 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
   private final RelativeLayout rootView;
 
   @NonNull
-  public final Chip agentChip;
-
-  @NonNull
   public final RecyclerView casesRV;
-
-  @NonNull
-  public final Chip cliaChip;
-
-  @NonNull
-  public final Chip doChip;
 
   @NonNull
   public final MaterialTextView doNameMTV;
 
   @NonNull
-  public final RadioGroup filterRadioRG;
+  public final MaterialButtonToggleGroup filterToggleGroup;
 
   @NonNull
-  public final MaterialRadioButton fpMRB;
+  public final MaterialButton fpBtn;
 
   @NonNull
   public final CardView headerCV;
@@ -54,13 +44,13 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
   public final ImageView noResultIV;
 
   @NonNull
-  public final MaterialRadioButton nopMRB;
+  public final MaterialButton nopBtn;
 
   @NonNull
   public final MaterialTextView nopfpMTV;
 
   @NonNull
-  public final ChipGroup performersChipCG;
+  public final TabLayout performersTabLayout;
 
   @NonNull
   public final LayoutInvisibleProgressBarBinding progressBar;
@@ -71,26 +61,23 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
   @NonNull
   public final MaterialTextView srNoMTV;
 
-  private FragmentTopPerformersBinding(@NonNull RelativeLayout rootView, @NonNull Chip agentChip,
-      @NonNull RecyclerView casesRV, @NonNull Chip cliaChip, @NonNull Chip doChip,
-      @NonNull MaterialTextView doNameMTV, @NonNull RadioGroup filterRadioRG,
-      @NonNull MaterialRadioButton fpMRB, @NonNull CardView headerCV, @NonNull ImageView noResultIV,
-      @NonNull MaterialRadioButton nopMRB, @NonNull MaterialTextView nopfpMTV,
-      @NonNull ChipGroup performersChipCG, @NonNull LayoutInvisibleProgressBarBinding progressBar,
+  private FragmentTopPerformersBinding(@NonNull RelativeLayout rootView,
+      @NonNull RecyclerView casesRV, @NonNull MaterialTextView doNameMTV,
+      @NonNull MaterialButtonToggleGroup filterToggleGroup, @NonNull MaterialButton fpBtn,
+      @NonNull CardView headerCV, @NonNull ImageView noResultIV, @NonNull MaterialButton nopBtn,
+      @NonNull MaterialTextView nopfpMTV, @NonNull TabLayout performersTabLayout,
+      @NonNull LayoutInvisibleProgressBarBinding progressBar,
       @NonNull LayoutShimmerLineBinding progressBarShim, @NonNull MaterialTextView srNoMTV) {
     this.rootView = rootView;
-    this.agentChip = agentChip;
     this.casesRV = casesRV;
-    this.cliaChip = cliaChip;
-    this.doChip = doChip;
     this.doNameMTV = doNameMTV;
-    this.filterRadioRG = filterRadioRG;
-    this.fpMRB = fpMRB;
+    this.filterToggleGroup = filterToggleGroup;
+    this.fpBtn = fpBtn;
     this.headerCV = headerCV;
     this.noResultIV = noResultIV;
-    this.nopMRB = nopMRB;
+    this.nopBtn = nopBtn;
     this.nopfpMTV = nopfpMTV;
-    this.performersChipCG = performersChipCG;
+    this.performersTabLayout = performersTabLayout;
     this.progressBar = progressBar;
     this.progressBarShim = progressBarShim;
     this.srNoMTV = srNoMTV;
@@ -123,27 +110,9 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.agentChip;
-      Chip agentChip = ViewBindings.findChildViewById(rootView, id);
-      if (agentChip == null) {
-        break missingId;
-      }
-
       id = R.id.casesRV;
       RecyclerView casesRV = ViewBindings.findChildViewById(rootView, id);
       if (casesRV == null) {
-        break missingId;
-      }
-
-      id = R.id.cliaChip;
-      Chip cliaChip = ViewBindings.findChildViewById(rootView, id);
-      if (cliaChip == null) {
-        break missingId;
-      }
-
-      id = R.id.doChip;
-      Chip doChip = ViewBindings.findChildViewById(rootView, id);
-      if (doChip == null) {
         break missingId;
       }
 
@@ -153,15 +122,15 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.filterRadioRG;
-      RadioGroup filterRadioRG = ViewBindings.findChildViewById(rootView, id);
-      if (filterRadioRG == null) {
+      id = R.id.filterToggleGroup;
+      MaterialButtonToggleGroup filterToggleGroup = ViewBindings.findChildViewById(rootView, id);
+      if (filterToggleGroup == null) {
         break missingId;
       }
 
-      id = R.id.fpMRB;
-      MaterialRadioButton fpMRB = ViewBindings.findChildViewById(rootView, id);
-      if (fpMRB == null) {
+      id = R.id.fpBtn;
+      MaterialButton fpBtn = ViewBindings.findChildViewById(rootView, id);
+      if (fpBtn == null) {
         break missingId;
       }
 
@@ -177,9 +146,9 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.nopMRB;
-      MaterialRadioButton nopMRB = ViewBindings.findChildViewById(rootView, id);
-      if (nopMRB == null) {
+      id = R.id.nopBtn;
+      MaterialButton nopBtn = ViewBindings.findChildViewById(rootView, id);
+      if (nopBtn == null) {
         break missingId;
       }
 
@@ -189,9 +158,9 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.performersChipCG;
-      ChipGroup performersChipCG = ViewBindings.findChildViewById(rootView, id);
-      if (performersChipCG == null) {
+      id = R.id.performersTabLayout;
+      TabLayout performersTabLayout = ViewBindings.findChildViewById(rootView, id);
+      if (performersTabLayout == null) {
         break missingId;
       }
 
@@ -215,9 +184,9 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
         break missingId;
       }
 
-      return new FragmentTopPerformersBinding((RelativeLayout) rootView, agentChip, casesRV,
-          cliaChip, doChip, doNameMTV, filterRadioRG, fpMRB, headerCV, noResultIV, nopMRB, nopfpMTV,
-          performersChipCG, binding_progressBar, binding_progressBarShim, srNoMTV);
+      return new FragmentTopPerformersBinding((RelativeLayout) rootView, casesRV, doNameMTV,
+          filterToggleGroup, fpBtn, headerCV, noResultIV, nopBtn, nopfpMTV, performersTabLayout,
+          binding_progressBar, binding_progressBarShim, srNoMTV);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

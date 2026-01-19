@@ -36,6 +36,7 @@ color ananda_bg
 color ananda_logo_color
 color app_text_color
 color app_text_color_transparent
+color backgroundLight
 color black
 color blackTransparent
 color black_trans
@@ -49,6 +50,7 @@ color colorPrimary
 color colorPrimaryDark
 color colorSortAsc
 color colorSortDesc
+color darkBlue
 color dull_white
 color edit_text_bg
 color green
@@ -65,6 +67,7 @@ color mab_text
 color med_grey
 color orange
 color pink
+color primaryBlue
 color red
 color selgreen
 color shimmer_placeholder
@@ -72,9 +75,13 @@ color skin_color
 color splash_bg
 color teal_200
 color teal_700
+color textBlue
 color text_dark
 color theme_blue
 color theme_pink
+color toggle_bg_selector
+color toggle_selector_blue
+color toggle_text_selector
 color violet_lic
 color white
 color whitetrans
@@ -195,11 +202,14 @@ drawable agency_biz_tracker_grey
 drawable ananda_logo_new
 drawable ananda_splash
 drawable app_logo
+drawable bg_home_fragment
+drawable bg_toggle_container
 drawable contact_us
 drawable custom_thumb
 drawable custom_track
 drawable gradient_bottom
 drawable greetings_icon
+drawable header_gradient
 drawable ic_aa
 drawable ic_aadhaar
 drawable ic_admin_job
@@ -226,6 +236,9 @@ drawable ic_open_link
 drawable ic_pending_leads
 drawable ic_plan
 drawable ic_sort_24
+drawable ic_tab_agent
+drawable ic_tab_clia
+drawable ic_tab_do
 drawable product_tags
 drawable round_button
 drawable round_button_pressed
@@ -235,6 +248,7 @@ drawable spinner_background
 drawable switch_custom_thumb
 drawable tab_background_selected
 drawable tab_background_unselected
+drawable tab_selector_background
 id All
 id Circle
 id Line
@@ -299,7 +313,6 @@ id agencyCodeMTV
 id agencyCodeTV
 id agencyNameMTV
 id agencyNameTV
-id agentChip
 id agentHeadingMTV
 id agentsMTV
 id amtMTV
@@ -348,7 +361,6 @@ id categoryNameTV
 id centurionCardView
 id channelsMTV
 id claimsFragment
-id cliaChip
 id codeTV
 id commCardView
 id commLabelTV
@@ -369,7 +381,6 @@ id detailTV
 id discontinueET
 id discontinueTIL
 id displayMTV
-id doChip
 id doNameMTV
 id downloadIV
 id drawer_layout
@@ -387,9 +398,10 @@ id feebackBoxTIL
 id feedbackBTN
 id feedbackBoxET
 id filterRadioRG
+id filterToggleGroup
 id forDayMRB
+id fpBtn
 id fpLabelTV
-id fpMRB
 id fpMTV
 id fpTV
 id fpiMTV
@@ -451,8 +463,8 @@ id noResultIV
 id nomineeAgeTV
 id nomineeItemLL
 id nominneNameTV
+id nopBtn
 id nopHeadingMTV
-id nopMRB
 id nopMTV
 id nopTV
 id nopfpMTV
@@ -471,6 +483,7 @@ id passwordET
 id passwordTIL
 id percentMTV
 id performersChipCG
+id performersTabLayout
 id peristenceFragment
 id pin1ET
 id pin1TIL
@@ -1143,6 +1156,8 @@ style CollapsedAppBar
 style CustomDialog
 style DialogAnimation
 style ExpandedAppBar
+style ShapeAppearance.App.SmallComponent
+style TextAppearance.App.Tab
 style Theme.AgentsApp
 style Theme.AgentsApp.AppBarOverlay
 style Theme.AgentsApp.NoActionBar
@@ -1151,6 +1166,7 @@ style Theme.AgentsApp.NoActionBar.NoActionBar
 style Theme.AgentsApp.NoActionBar.PopupOverlay
 style Theme.AgentsApp.PopupOverlay
 style ToolBarStyle
+style Widget.App.ToggleItem
 style margin10LeftRight
 style margin15LeftRight
 style margin20LeftRight
