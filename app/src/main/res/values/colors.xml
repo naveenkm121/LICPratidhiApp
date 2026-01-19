@@ -5,10 +5,11 @@
     <color name="darkBlue">#001F63</color>
     <color name="textBlue">#002C6E</color>
     <color name="backgroundLight">#F5F8FF</color>
+    <color name="colorHeadingBlue">#003B8E</color>
 
     <!-- <color name="colorPrimary">#0d47a1</color>-->
     <color name="licBluePrimaryDark">#003c84</color>
-    <color name="licBluePrimary">#0a4d83</color>
+    <color name="licBluePrimary">#1E40AF</color>
     <color name="licYellowPrimary">#ffca08</color>
 
     <!--  Toolbar color -->
@@ -16,8 +17,8 @@
     <color name="colorPrimary">@color/licBluePrimary</color>
 
     <!--  Home color -->
-    <color name="colorHomeCardBg">@color/licBluePrimary</color>
-    <color name="colorHomeCardText">@color/licYellowPrimary</color>
+    <color name="colorHomeCardBg">#1E40AF</color>
+    <color name="colorHomeCardText">@color/white</color>
     <color name="colorHomeBg">#FFF0F0F0</color>
 
     <color name="colorPratidhScreenBg">#dfe2e2</color>
