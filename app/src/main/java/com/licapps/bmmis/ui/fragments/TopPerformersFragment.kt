@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.tabs.TabLayout
 import com.licapps.bmmis.R
 import com.licapps.bmmis.constants.AppConstants
 import com.licapps.bmmis.data.model.prospectives.CommonReq
@@ -16,6 +17,7 @@ import com.licapps.bmmis.ui.activities.NewHomeActivity
 import com.licapps.bmmis.ui.adapters.TopPerformersListAdapter
 import com.licapps.bmmis.ui.viewmodels.TopPerformersViewModel
 import com.licapps.bmmis.utils.CommonUtility
+import com.licapps.bmmis.utils.DebugHandler
 import com.licapps.bmmis.utils.Resource
 import com.licapps.bmmis.utils.autoCleared
 import dagger.hilt.android.AndroidEntryPoint
@@ -50,15 +52,21 @@ class TopPerformersFragment : Fragment(), TopPerformersListAdapter.CasesListItem
         apiRequest.branch=(activity as NewHomeActivity).branch
         setupRecyclerView()
         setupObservers()
-        setRadioButtons()
-        setChipsGroup()
+       // setRadioButtons()
+       // setChipsGroup()
         setOnClickHandle()
        // viewModel.getTopPerformers(apiRequest,whichRequest )
-        binding.doChip.isChecked=true
+      //  binding.doChip.isChecked=true
+        setupSelectors()
+        whichRequest = 0
+        type = whichRequest
+        binding.filterToggleGroup.check(R.id.nopBtn)
+        viewModel.getTopPerformers(apiRequest, type)
+
 
     }
 
-    private fun setChipsGroup() {
+   /* private fun setChipsGroup() {
         binding.performersChipCG.setOnCheckedChangeListener { group, id -> when (id) {
                     R.id.doChip -> {
                         whichRequest=0
@@ -109,7 +117,46 @@ class TopPerformersFragment : Fragment(), TopPerformersListAdapter.CasesListItem
 
        }
     }
+*/
+   private fun setupSelectors() {
 
+       // TAB selection = DO/CLIA/AGENT
+       binding.performersTabLayout.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
+           override fun onTabSelected(tab: TabLayout.Tab?) {
+
+               when (tab?.position) {
+                   0 -> whichRequest = 0  // DO base
+                   1 -> whichRequest = 4  // CLIA base
+                   2 -> whichRequest = 2  // AGENT base
+               }
+
+               // Reapply NOP or FP depending on current selection
+               type = if (isNOPSelected) whichRequest else whichRequest + 1
+               DebugHandler.log("whichRequest=="+type)
+               adapter.clear()
+               viewModel.getTopPerformers(apiRequest, type)
+
+             //  binding.filterToggleGroup.check(R.id.nopBtn)
+           }
+
+           override fun onTabUnselected(tab: TabLayout.Tab?) {}
+           override fun onTabReselected(tab: TabLayout.Tab?) {}
+       })
+
+       // NOP / FP Toggle
+       binding.filterToggleGroup.addOnButtonCheckedListener { _, checkedId, isChecked ->
+           if (isChecked) {
+               isNOPSelected = checkedId == R.id.nopBtn
+
+               // Decide final type based on current tab + toggle
+               type = if (isNOPSelected) whichRequest else whichRequest + 1
+               DebugHandler.log("whichRequest=="+type)
+               adapter.clear()
+               viewModel.getTopPerformers(apiRequest, type)
+               binding.nopfpMTV.setBackgroundColor(resources.getColor(R.color.colorHomeCardBg))
+           }
+       }
+   }
 
     private fun setOnClickHandle(){
 
