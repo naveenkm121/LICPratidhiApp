@@ -4,11 +4,14 @@ package com.licapps.bmmis.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
+import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.textview.MaterialTextView;
 import com.licapps.bmmis.R;
 import java.lang.NullPointerException;
@@ -17,28 +20,47 @@ import java.lang.String;
 
 public final class ItemPerformersBinding implements ViewBinding {
   @NonNull
-  private final CardView rootView;
+  private final MaterialCardView rootView;
+
+  @NonNull
+  public final FrameLayout avatarContainer;
+
+  @NonNull
+  public final MaterialTextView avatarText;
 
   @NonNull
   public final MaterialTextView doNameMTV;
 
   @NonNull
+  public final ImageView medalIV;
+
+  @NonNull
   public final MaterialTextView nopfpMTV;
 
   @NonNull
-  public final MaterialTextView srNoMTV;
+  public final TextView srNoMTV;
 
-  private ItemPerformersBinding(@NonNull CardView rootView, @NonNull MaterialTextView doNameMTV,
-      @NonNull MaterialTextView nopfpMTV, @NonNull MaterialTextView srNoMTV) {
+  @NonNull
+  public final MaterialTextView typeMTV;
+
+  private ItemPerformersBinding(@NonNull MaterialCardView rootView,
+      @NonNull FrameLayout avatarContainer, @NonNull MaterialTextView avatarText,
+      @NonNull MaterialTextView doNameMTV, @NonNull ImageView medalIV,
+      @NonNull MaterialTextView nopfpMTV, @NonNull TextView srNoMTV,
+      @NonNull MaterialTextView typeMTV) {
     this.rootView = rootView;
+    this.avatarContainer = avatarContainer;
+    this.avatarText = avatarText;
     this.doNameMTV = doNameMTV;
+    this.medalIV = medalIV;
     this.nopfpMTV = nopfpMTV;
     this.srNoMTV = srNoMTV;
+    this.typeMTV = typeMTV;
   }
 
   @Override
   @NonNull
-  public CardView getRoot() {
+  public MaterialCardView getRoot() {
     return rootView;
   }
 
@@ -63,9 +85,27 @@ public final class ItemPerformersBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.avatarContainer;
+      FrameLayout avatarContainer = ViewBindings.findChildViewById(rootView, id);
+      if (avatarContainer == null) {
+        break missingId;
+      }
+
+      id = R.id.avatarText;
+      MaterialTextView avatarText = ViewBindings.findChildViewById(rootView, id);
+      if (avatarText == null) {
+        break missingId;
+      }
+
       id = R.id.doNameMTV;
       MaterialTextView doNameMTV = ViewBindings.findChildViewById(rootView, id);
       if (doNameMTV == null) {
+        break missingId;
+      }
+
+      id = R.id.medalIV;
+      ImageView medalIV = ViewBindings.findChildViewById(rootView, id);
+      if (medalIV == null) {
         break missingId;
       }
 
@@ -76,12 +116,19 @@ public final class ItemPerformersBinding implements ViewBinding {
       }
 
       id = R.id.srNoMTV;
-      MaterialTextView srNoMTV = ViewBindings.findChildViewById(rootView, id);
+      TextView srNoMTV = ViewBindings.findChildViewById(rootView, id);
       if (srNoMTV == null) {
         break missingId;
       }
 
-      return new ItemPerformersBinding((CardView) rootView, doNameMTV, nopfpMTV, srNoMTV);
+      id = R.id.typeMTV;
+      MaterialTextView typeMTV = ViewBindings.findChildViewById(rootView, id);
+      if (typeMTV == null) {
+        break missingId;
+      }
+
+      return new ItemPerformersBinding((MaterialCardView) rootView, avatarContainer, avatarText,
+          doNameMTV, medalIV, nopfpMTV, srNoMTV, typeMTV);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

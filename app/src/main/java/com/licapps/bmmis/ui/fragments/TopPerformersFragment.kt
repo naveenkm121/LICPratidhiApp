@@ -125,7 +125,7 @@ class TopPerformersFragment :
 
     private fun resetSortUI() {
         sortAsc = true
-        binding.sortIV.setImageResource(R.drawable.ic_arrow_up)
+        binding.sortIV.setImageResource(R.drawable.ic_arrow_down)
         binding.sortIV.setColorFilter(
             resources.getColor(R.color.colorSortDesc)
         )

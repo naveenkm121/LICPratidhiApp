@@ -2,10 +2,13 @@ package com.licapps.bmmis.ui.adapters
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.licapps.bmmis.R
 import com.licapps.bmmis.data.model.topperformers.Performer
@@ -89,30 +92,50 @@ class TopPerformersViewHolder(
             )
         }
 
-        /* ---------------- Rank / Vector Medal ---------------- */
-        when (item.srno - 1) {
-            0 -> {
-                itemBinding.medalIV.visibility = View.VISIBLE
-                itemBinding.medalIV.setImageResource(R.drawable.ic_medal_gold)
-                itemBinding.srNoMTV.visibility = View.GONE
+        /* ---------------- Rank / Trophy (Single Vector + Tint) ---------------- */
+
+        if (item.srno in 1..3) {
+
+            itemBinding.medalIV.visibility = View.VISIBLE
+            itemBinding.srNoMTV.visibility = View.GONE
+
+            // Single vector
+            itemBinding.medalIV.setImageResource(R.drawable.ic_cup)
+
+            // Tint based on rank
+            val tintColorRes = when (item.srno) {
+                1 -> R.color.cup_gold
+                2 -> R.color.cup_silver
+                3 -> R.color.cup_bronze
+                else -> null
             }
-            1 -> {
-                itemBinding.medalIV.visibility = View.VISIBLE
-                itemBinding.medalIV.setImageResource(R.drawable.ic_medal_silver)
-                itemBinding.srNoMTV.visibility = View.GONE
+
+            tintColorRes?.let {
+                itemBinding.medalIV.imageTintList =
+                    ColorStateList.valueOf(ContextCompat.getColor(mContext, it))
             }
-            2 -> {
-                itemBinding.medalIV.visibility = View.VISIBLE
-                itemBinding.medalIV.setImageResource(R.drawable.ic_medal_bronze)
-                itemBinding.srNoMTV.visibility = View.GONE
-            }
-            else -> {
-                itemBinding.medalIV.visibility = View.GONE
-                itemBinding.srNoMTV.visibility = View.VISIBLE
-                itemBinding.srNoMTV.text = item.srno.toString()
-                itemBinding.srNoMTV.setTextColor(Color.parseColor("#64748B"))
-            }
+
+            // Clear any previous animation (RecyclerView safety)
+            itemBinding.medalIV.clearAnimation()
+
+            // Bounce animation ONLY for top 3
+            val animation = AnimationUtils.loadAnimation(
+                mContext,
+                R.anim.bounce_scale
+            )
+            itemBinding.medalIV.startAnimation(animation)
+
+        } else {
+
+            // Important to avoid animation reuse
+            itemBinding.medalIV.clearAnimation()
+            itemBinding.medalIV.visibility = View.GONE
+
+            itemBinding.srNoMTV.visibility = View.VISIBLE
+            itemBinding.srNoMTV.text = item.srno.toString()
+            itemBinding.srNoMTV.setTextColor(Color.parseColor("#64748B"))
         }
+
 
         /* ---------------- Name + Value ---------------- */
         val displayName: String

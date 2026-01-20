@@ -24,7 +24,7 @@
     <color name="colorPratidhScreenBg">#dfe2e2</color>
 
  <!--  Sorting Heading Color color -->
-    <color name="colorSortAsc">@color/green_success</color>
+    <color name="colorSortAsc">@color/teal_700</color>
     <color name="colorSortDesc">@color/red</color>
     <color name="ananda_bg">@color/colorPratidhScreenBg</color>
 
@@ -70,5 +70,9 @@
     <color name="btn_choose">#a52a2a</color>
     <color name="ic_launcher_background">#0D4C92</color>
     <color name="light_blue">#ADD8E6</color>
+
+    <color name="cup_gold">#FACC15</color>
+    <color name="cup_silver">#CBD5E1</color>
+    <color name="cup_bronze">#FB923C</color>
 
 </resources>

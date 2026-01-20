@@ -4,16 +4,16 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\navigation\\nav_graph.xml"
     },
     {
-        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_enquiry.png.flat",
-        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_enquiry.png"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_spinner_item.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\spinner_item.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_item_plan_performance.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_plan_performance.xml"
     },
     {
-        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_spinner_item.xml.flat",
-        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\spinner_item.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_enquiry.png.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_enquiry.png"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable-v24_ic_launcher_foreground.xml.flat",
@@ -52,12 +52,16 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_nomination.xml"
     },
     {
-        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_activity_launch.xml.flat",
-        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\activity_launch.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_bg_avatar_circle.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\bg_avatar_circle.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_open_link.jpeg.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_open_link.jpeg"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_activity_launch.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\activity_launch.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_layout_shimmer_placeholder_line.xml.flat",
@@ -80,10 +84,6 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\mipmap-xxxhdpi\\ic_launcher_foreground.png"
     },
     {
-        "merged": "com.licapps.bmmis.app-debug-63:/drawable_ic_tab_clia.xml.flat",
-        "source": "com.licapps.bmmis.app-main-65:/drawable/ic_tab_clia.xml"
-    },
-    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\anim_slide_out_left.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\anim\\slide_out_left.xml"
     },
@@ -92,12 +92,12 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\wishes_fragment.xml"
     },
     {
-        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable-v24_tab_background_selected.xml.flat",
-        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable-v24\\tab_background_selected.xml"
-    },
-    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_country_spinner_item.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\country_spinner_item.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable-v24_tab_background_selected.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable-v24\\tab_background_selected.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
@@ -156,10 +156,6 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_progress_bar.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-debug-63:/drawable_ic_tab_agent.xml.flat",
-        "source": "com.licapps.bmmis.app-main-65:/drawable/ic_tab_agent.xml"
-    },
-    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_layout_shimmer_placeholder_card.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\layout_shimmer_placeholder_card.xml"
     },
@@ -184,16 +180,16 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_cases.xml"
     },
     {
+        "merged": "com.licapps.bmmis.app-debug-63:/drawable_ic_cup.xml.flat",
+        "source": "com.licapps.bmmis.app-main-65:/drawable/ic_cup.xml"
+    },
+    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_bg_home_fragment.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\bg_home_fragment.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_content_main.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\content_main.xml"
-    },
-    {
-        "merged": "com.licapps.bmmis.app-debug-63:/layout_fragment_top_performers.xml.flat",
-        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_top_performers.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable-v24_product_tags.xml.flat",
@@ -208,8 +204,16 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_boc.xml"
     },
     {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_outline_arrow_drop_up_24.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\outline_arrow_drop_up_24.xml"
+    },
+    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\color_toggle_bg_selector.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\color\\toggle_bg_selector.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_sort.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_sort.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\mipmap-xhdpi_ic_launcher.png.flat",
@@ -228,12 +232,24 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\switch_custom_thumb.xml"
     },
     {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_arrow_down.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_arrow_down.xml"
+    },
+    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_app_bar_main.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\app_bar_main.xml"
     },
     {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_medal_bronze.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_medal_bronze.xml"
+    },
+    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_round_button_pressed.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\round_button_pressed.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_medal_silver.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_medal_silver.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_arrow_down_.xml.flat",
@@ -288,16 +304,16 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ananda_logo_new.png"
     },
     {
+        "merged": "com.licapps.bmmis.app-debug-63:/layout_fragment_prospective_new.xml.flat",
+        "source": "com.licapps.bmmis.app-main-65:/layout/fragment_prospective_new.xml"
+    },
+    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_nav_header_main.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\nav_header_main.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\mipmap-hdpi_ic_launcher_foreground.png.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\mipmap-hdpi\\ic_launcher_foreground.png"
-    },
-    {
-        "merged": "com.licapps.bmmis.app-debug-63:/drawable_tab_selector_background.xml.flat",
-        "source": "com.licapps.bmmis.app-main-65:/drawable/tab_selector_background.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_fragment_feedback.xml.flat",
@@ -360,8 +376,12 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_habit_question.xml"
     },
     {
-        "merged": "com.licapps.bmmis.app-debug-63:/drawable_bg_toggle_container.xml.flat",
-        "source": "com.licapps.bmmis.app-main-65:/drawable/bg_toggle_container.xml"
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_tab_selector_background.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\tab_selector_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_tab_agent.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_tab_agent.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_lic_digital_logo.jpg.flat",
@@ -382,6 +402,10 @@
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_item_family_history.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_family_history.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_medal_gold.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_medal_gold.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_item_nua.xml.flat",
@@ -492,10 +516,6 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\mipmap-xxhdpi\\ic_launcher_round.png"
     },
     {
-        "merged": "com.licapps.bmmis.app-debug-63:/drawable_ic_tab_do.xml.flat",
-        "source": "com.licapps.bmmis.app-main-65:/drawable/ic_tab_do.xml"
-    },
-    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\menu_new_home.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\menu\\new_home.xml"
     },
@@ -516,6 +536,10 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_mab.xml"
     },
     {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_tab_clia.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_tab_clia.xml"
+    },
+    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\anim_slide_in_right.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\anim\\slide_in_right.xml"
     },
@@ -530,6 +554,10 @@
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_tag_row_item.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\tag_row_item.xml"
+    },
+    {
+        "merged": "com.licapps.bmmis.app-debug-63:/anim_bounce_scale.xml.flat",
+        "source": "com.licapps.bmmis.app-main-65:/anim/bounce_scale.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_fragment_nb_for_day.xml.flat",
@@ -620,6 +648,10 @@
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\agency_biz_tracker_grey.png"
     },
     {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_arrow_up.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_arrow_up.xml"
+    },
+    {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_item_question_util.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\item_question_util.xml"
     },
@@ -630,6 +662,10 @@
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_dialog_launch_app.xml.flat",
         "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\layout\\dialog_launch_app.xml"
+    },
+    {
+        "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\drawable_ic_tab_do.xml.flat",
+        "source": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-main-65:\\drawable\\ic_tab_do.xml"
     },
     {
         "merged": "C:\\Users\\Naveen\\.gradle\\daemon\\8.7\\com.licapps.bmmis.app-debug-63:\\layout_activity_new_home.xml.flat",

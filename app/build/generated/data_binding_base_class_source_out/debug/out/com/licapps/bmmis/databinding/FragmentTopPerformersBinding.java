@@ -5,10 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -38,7 +38,7 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
   public final MaterialButton fpBtn;
 
   @NonNull
-  public final CardView headerCV;
+  public final LinearLayout headerCV;
 
   @NonNull
   public final ImageView noResultIV;
@@ -59,15 +59,22 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
   public final LayoutShimmerLineBinding progressBarShim;
 
   @NonNull
+  public final LinearLayout sortHeaderLL;
+
+  @NonNull
+  public final ImageView sortIV;
+
+  @NonNull
   public final MaterialTextView srNoMTV;
 
   private FragmentTopPerformersBinding(@NonNull RelativeLayout rootView,
       @NonNull RecyclerView casesRV, @NonNull MaterialTextView doNameMTV,
       @NonNull MaterialButtonToggleGroup filterToggleGroup, @NonNull MaterialButton fpBtn,
-      @NonNull CardView headerCV, @NonNull ImageView noResultIV, @NonNull MaterialButton nopBtn,
+      @NonNull LinearLayout headerCV, @NonNull ImageView noResultIV, @NonNull MaterialButton nopBtn,
       @NonNull MaterialTextView nopfpMTV, @NonNull TabLayout performersTabLayout,
       @NonNull LayoutInvisibleProgressBarBinding progressBar,
-      @NonNull LayoutShimmerLineBinding progressBarShim, @NonNull MaterialTextView srNoMTV) {
+      @NonNull LayoutShimmerLineBinding progressBarShim, @NonNull LinearLayout sortHeaderLL,
+      @NonNull ImageView sortIV, @NonNull MaterialTextView srNoMTV) {
     this.rootView = rootView;
     this.casesRV = casesRV;
     this.doNameMTV = doNameMTV;
@@ -80,6 +87,8 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
     this.performersTabLayout = performersTabLayout;
     this.progressBar = progressBar;
     this.progressBarShim = progressBarShim;
+    this.sortHeaderLL = sortHeaderLL;
+    this.sortIV = sortIV;
     this.srNoMTV = srNoMTV;
   }
 
@@ -135,7 +144,7 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
       }
 
       id = R.id.headerCV;
-      CardView headerCV = ViewBindings.findChildViewById(rootView, id);
+      LinearLayout headerCV = ViewBindings.findChildViewById(rootView, id);
       if (headerCV == null) {
         break missingId;
       }
@@ -178,6 +187,18 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
       }
       LayoutShimmerLineBinding binding_progressBarShim = LayoutShimmerLineBinding.bind(progressBarShim);
 
+      id = R.id.sortHeaderLL;
+      LinearLayout sortHeaderLL = ViewBindings.findChildViewById(rootView, id);
+      if (sortHeaderLL == null) {
+        break missingId;
+      }
+
+      id = R.id.sortIV;
+      ImageView sortIV = ViewBindings.findChildViewById(rootView, id);
+      if (sortIV == null) {
+        break missingId;
+      }
+
       id = R.id.srNoMTV;
       MaterialTextView srNoMTV = ViewBindings.findChildViewById(rootView, id);
       if (srNoMTV == null) {
@@ -186,7 +207,7 @@ public final class FragmentTopPerformersBinding implements ViewBinding {
 
       return new FragmentTopPerformersBinding((RelativeLayout) rootView, casesRV, doNameMTV,
           filterToggleGroup, fpBtn, headerCV, noResultIV, nopBtn, nopfpMTV, performersTabLayout,
-          binding_progressBar, binding_progressBarShim, srNoMTV);
+          binding_progressBar, binding_progressBarShim, sortHeaderLL, sortIV, srNoMTV);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
